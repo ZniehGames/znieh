@@ -1,0 +1,9 @@
+default:
+    formatters:
+        pretty:
+            verbose:  true
+            paths:    false
+            snippets: false
+    extensions:
+           Behat\Symfony2Extension: ~
+    suites:

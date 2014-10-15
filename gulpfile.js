@@ -6,10 +6,11 @@ var gulp       = require('gulp'),
     jshint     = require('gulp-jshint'),
     concat     = require('gulp-concat'),
     livereload = require('gulp-livereload'),
-    coffeeify  = require('gulp-coffeeify')
-    ngAnnotate = require('gulp-ng-annotate')
-    uglify     = require('gulp-uglify')
-    sourcemaps = require('gulp-sourcemaps');
+    coffeeify  = require('gulp-coffeeify'),
+    ngAnnotate = require('gulp-ng-annotate'),
+    uglify     = require('gulp-uglify'),
+    sourcemaps = require('gulp-sourcemaps'),
+    to5        = require('gulp-6to5');
 
 var paths = {
 	scss: './client/src/scss',
@@ -56,6 +57,7 @@ gulp.task('lint', function() {
 gulp.task('js', function () {
   gulp.src([paths.js + '/**/module.js', paths.js + '/**/*.js'])
   .pipe(sourcemaps.init())
+    .pipe(to5())
     .pipe(concat('app.js'))
     .pipe(ngAnnotate())
     .pipe(uglify())

@@ -8,12 +8,12 @@
   "author": "spyl",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "protractor": "^1.2.0",
     "chai": "~1.8.1",
     "chai-as-promised": "^4.1.0",
     "connect-livereload": "~0.4.0",
     "cucumber": "^0.4.4",
     "gulp": "~3.8.8",
+    "gulp-6to5": "^1.0.1",
     "gulp-browserify": "~0.5.0",
     "gulp-coffeeify": "~0.1.2",
     "gulp-compass": "1.1.7",
@@ -26,6 +26,7 @@
     "gulp-sourcemaps": "^1.1.1",
     "gulp-uglify": "^0.3.1",
     "path": "~0.4.9",
+    "protractor": "^1.2.0",
     "request": "~2.37.0",
     "vinyl-source-stream": "~0.1.1"
   }

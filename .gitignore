@@ -28,6 +28,7 @@ bin/phpunit
 bin/sql-formatter
 bin/security-checker
 
+vagrant/*
 vendor/*
 composer.phar
 
@@ -36,6 +37,5 @@ node_modules/*
 
 npm-debug.log
 .sass-cache/*
-vagrant/.vagrant/*
 .idea/*
 

@@ -3,8 +3,8 @@ parameters:
     database_host:     127.0.0.1
     database_port:     null
     database_name:     znieh
-    database_user:     root
-    database_password: null
+    database_user:     znieh
+    database_password: znieh
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1

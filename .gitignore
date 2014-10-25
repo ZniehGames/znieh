@@ -15,11 +15,11 @@ app/var/jwt/public.pem
 /* Assets */
 
 web/bundles/*
-client/css/
-client/js/
-client/vendor/
-client/tmp/
 web/uploads/*
+
+client/dist/
+client/app/vendor/
+client/tmp/
 
 bin/behat
 bin/doctrine*
@@ -38,4 +38,6 @@ node_modules/*
 npm-debug.log
 .sass-cache/*
 .idea/*
+
+
 

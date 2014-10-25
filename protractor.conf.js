@@ -9,6 +9,14 @@ exports.config = {
     }
   },
 
+  // A callback function called once protractor is ready and available, and
+  // before the specs are executed
+  // You can specify a file containing code to run by setting onPrepare to
+  // the filename string.
+  onPrepare: function() {
+    console.log('ready');
+  },
+
   framework: 'cucumber',
 
   specs: [

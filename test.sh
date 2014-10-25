@@ -12,4 +12,4 @@ export DISPLAY=:99
 gulp
 php bin/phpspec run
 php bin/behat
-protractor cucumberConf.js
+protractor protractor.conf.js

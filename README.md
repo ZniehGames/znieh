@@ -4,16 +4,13 @@ Znieh
 ## Pull the code
 
     git clone git@github.com:ZniehGames/znieh.git
-
-    
-## Grab submodules
-    
     git submodule init
     git submodule update
     
 ## Installation
 
-It's recommended that you use the provided vagrant environment.
+It's recommended that you use the provided [vagrant](https://github.com/ZniehGames/znieh-vagrant) environment.
+
 Inside vagrant (/var/www/znieh) run the following commands:
     
 ### Generate the SSH keys

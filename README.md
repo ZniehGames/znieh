@@ -11,6 +11,9 @@ Znieh
     git submodule init
     git submodule update
     
+## Installation
+
+    
 ## Generate the SSH keys :
 
     openssl genrsa -out app/var/jwt/private.pem -aes256 4096

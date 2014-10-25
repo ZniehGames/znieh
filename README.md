@@ -25,6 +25,11 @@ Inside vagrant (/var/www/znieh) run the following commands:
     composer install
     npm install
     bower install
+    
+### Issues
+
+    php -d memory_limit=-1 /usr/local/bin/composer update
+    php -d memory_limit=-1 /usr/local/bin/composer install
 
 ### Generate assets
 

@@ -90,10 +90,10 @@ sensio_framework_extra:
         annotations: false
 
 lexik_jwt_authentication:
-    private_key_path: %kernel.root_dir%/var/jwt/private.pem   # ssh private key path
-    public_key_path:  %kernel.root_dir%/var/jwt/public.pem    # ssh public key path
-    pass_phrase:      'spyl'                                      # ssh key pass phrase
-    token_ttl:        86400                                   # token ttl - defaults to 86400
+    private_key_path: %private_key_path%   # ssh private key path
+    public_key_path:  %public_key_path%    # ssh public key path
+    pass_phrase:      %pass_phrase%        # ssh key pass phrase
+    token_ttl:        %token_ttl%          # token ttl - defaults to 86400
 
 # fos_user:
 #     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'

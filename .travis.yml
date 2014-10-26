@@ -17,8 +17,7 @@ git:
   submodules: false
 
 env:
-  - BASE_URL="http://localhost"
-  - API_BASE_URL="http://127.0.0.2/app_test.php"
+  - BASE_URL="http://localhost" API_BASE_URL="http://127.0.0.2/app_test.php"
 
 before_script:
 # Prepare Webserver

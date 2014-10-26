@@ -75,9 +75,9 @@ after_success:
 
 after_script:
   - php -v
+  - curl 127.0.0.2/app_test.php/hello/travis
   - cat /tmp/logs/test.log
   - sudo cat /var/log/apache2/error.log
   - curl 127.0.0.1
   - curl 127.0.0.2/hello/travis
-  - curl api.znieh.dev
 

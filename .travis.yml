@@ -3,6 +3,12 @@ language: php
 php:
   - 5.6
 
+services:
+#  - rabbitmq # will start rabbitmq-server
+#  - mongodb
+#  - redis-server
+#  - elasticsearch
+
 cache:
     directories:
         - ~/.composer/cache
@@ -11,7 +17,8 @@ git:
   submodules: false
 
 env:
-  - BASE_URL="http://localhost/app_test.php"
+  - BASE_URL="http://localhost"
+  - API_BASE_URL="http://127.0.0.2/app_test.php"
 
 before_script:
 # Prepare Webserver
@@ -24,8 +31,11 @@ before_script:
  - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
 
 # Configure apache virtual hosts
- - sudo cp -f app/config/travis-ci-apache /etc/apache2/sites-available/default
- - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
+ - sudo cp -f app/config/travis-ci-apache-api.conf /etc/apache2/sites-available/api.conf
+ - sudo cp -f app/config/travis-ci-apache-client.conf /etc/apache2/sites-available/client.conf
+ - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/api.conf
+ - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/client.conf
+ - sudo a2ensite api.conf client.conf
  - sudo service apache2 restart
 
 # Set the GitHub OAuth token to make use of the 6000 per hour rate limit
@@ -43,7 +53,7 @@ before_script:
 
 # Assets dependencies
  - npm install
- - npm install -g bower protractor cucumber
+ - npm install -g bower protractor cucumber karma-cli
  - bower install
 
 # Protractor
@@ -55,14 +65,14 @@ before_script:
  - /usr/bin/Xvfb :99.0 -ac -screen 0 1024x768x24 &
 
 script:
-    - gulp && php bin/phpspec run && php bin/behat && protractor cucumberConf.js
+    - gulp && php bin/phpspec run && php bin/behat && protractor protractor.conf.js
 
 after_success:
     - openssl aes-256-cbc -K $encrypted_168c5169b1c4_key -iv $encrypted_168c5169b1c4_iv -in app/config/id_rsa.enc -out app/config/id_rsa -d
     - gem install capifony
-    - if [ $TRAVIS_BRANCH == 'master' ]; then
-        cap deploy;
-      fi
+#    - if [ $TRAVIS_BRANCH == 'master' ]; then
+#        cap deploy;
+#      fi
 
 after_script:
   - php -v

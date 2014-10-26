@@ -1,6 +1,6 @@
 
 var gulp       = require('gulp'),
-	  sass       = require('gulp-sass'),
+	sass       = require('gulp-sass'),
     minifyCSS  = require('gulp-minify-css'),
     jshint     = require('gulp-jshint'),
     concat     = require('gulp-concat'),
@@ -8,51 +8,34 @@ var gulp       = require('gulp'),
     uglify     = require('gulp-uglify'),
     sourcemaps = require('gulp-sourcemaps'),
     to5        = require('gulp-6to5'),
-    cache      = require("gulp-cached"),
-    scsslint   = require("gulp-scss-lint"),
-    jade       = require("gulp-jade"),
-    plumber    = require("gulp-plumber"),
-    rename     = require("gulp-rename"),
-    csslint    = require("gulp-csslint");
-
-/*
-var paths = {
-  dist: './client/dist',
-	scss: './client/src/scss',
-	css_compiled: './client/css',
-	js_compiled: './client/js',
-	js: './client/src/js',
-	img: './client/img'
-};
-*/
+    cache      = require('gulp-cached'),
+    scsslint   = require('gulp-scss-lint'),
+    jade       = require('gulp-jade'),
+    plumber    = require('gulp-plumber'),
+    rename     = require('gulp-rename'),
+    csslint    = require('gulp-csslint');
 
 var paths = {};
-
 paths.app = './client/app/';
 paths.dist = './client/dist/';
 paths.tmp = './client/tmp/';
+paths.images = paths.app + 'images/**/*';
+paths.fonts = paths.app + 'fonts/**/*';
+paths.css = paths.app + 'styles/vendor/*.css';
 
 paths.jade = [
-    paths.app + "index.jade",
-    paths.app + "partials/**/*.jade",
+    paths.app + 'index.jade',
+    paths.app + 'partials/**/*.jade',
 ];
-
-paths.images = paths.app + "images/**/*";
-
-paths.css = paths.app + "styles/vendor/*.css";
 paths.sass = [
-    paths.app + "styles/**/*.scss"
+    paths.app + 'styles/**/*.scss'
 ]
-
 paths.js = [
     paths.app + 'js/**/module.js',
     paths.app + 'js/**/*.js'
 ]
 
-var jsFile = 'app.js';
-
 var options = {};
-
 options.sass = {
     errLogToConsole: true,
     sourceComments: 'none',
@@ -60,30 +43,32 @@ options.sass = {
     outputStyle: 'compressed'
 }
 
+// Layout
 gulp.task('jade-deploy', function() {
   gulp.src(paths.jade)
       .pipe(plumber())
-      .pipe(cache("jade"))
+      .pipe(cache('jade'))
       .pipe(jade({pretty: false}))
-      .pipe(gulp.dest(paths.dist + "partials/"))
+      .pipe(gulp.dest(paths.dist + 'partials/'))
 });
 
 gulp.task('jade-watch', function() {
   gulp.src(paths.jade)
         .pipe(plumber())
-        .pipe(cache("jade"))
-        //.pipe(jadeInheritance({basedir: "./client/app"}))
+        .pipe(cache('jade'))
+        //.pipe(jadeInheritance({basedir: './client/app'}))
         .pipe(jade({pretty: true}))
         .pipe(gulp.dest(paths.dist))
 });
 
 gulp.task('templates', function() {
-    gulp.src(paths.app + "index.jade")
+    gulp.src(paths.app + 'index.jade')
         .pipe(plumber())
         .pipe(jade({pretty: true, locals:{v:(new Date()).getTime()}}))
         .pipe(gulp.dest(paths.dist))
 });
 
+// CSS related tasks
 gulp.task('sass-lint', function() {
     gulp.src(paths.sass)
         .pipe(cache('sasslint'))
@@ -93,15 +78,15 @@ gulp.task('sass-lint', function() {
 gulp.task('sass', function() {
     gulp.src([paths.app + '/styles/layout.scss'])
         .pipe(plumber())
-        .pipe(concat("all.scss"))
+        .pipe(concat('all.scss'))
         .pipe(sass(options.sass))
-        .pipe(rename("app.css"))
+        .pipe(rename('app.css'))
         .pipe(gulp.dest(paths.tmp))
 });
 
 gulp.task('css-vendor', function() {
     gulp.src(paths.css)
-        .pipe(concat("vendor.css"))
+        .pipe(concat('vendor.css'))
         .pipe(gulp.dest(paths.tmp))
 });
 
@@ -113,57 +98,71 @@ gulp.task('css-lint-app', ['sass'], function() {
 
 gulp.task('styles-watch', ['sass', 'css-vendor', 'css-lint-app'], function() {
     gulp.src([
-            paths.tmp + "vendor.css",
-            paths.tmp + "app.css"
+            paths.tmp + 'vendor.css',
+            paths.tmp + 'app.css'
         ])
-        .pipe(concat("main.css"))
-        .pipe(gulp.dest(paths.dist + "styles/"))
+        .pipe(concat('layout.css'))
+        .pipe(gulp.dest(paths.dist + 'styles/'))
 });
 
-gulp.task('styles-deploy', ['sass', "css-vendor"], function() {
+gulp.task('styles-deploy', ['sass', 'css-vendor'], function() {
     gulp.src([
-            paths.tmp + "vendor.css",
-            paths.tmp + "app.css"
+            paths.tmp + 'vendor.css',
+            paths.tmp + 'app.css'
         ])
-        .pipe(concat("main.css"))
+        .pipe(concat('layout.css'))
         .pipe(minifyCSS())
-        .pipe(gulp.dest(paths.dist + "styles/"))
+        .pipe(gulp.dest(paths.dist + 'styles/'))
 });
-
-
-
 
 // JS Related tasks
-
 gulp.task('js-lint', function() {
-  gulp.src(paths.js)
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
+    gulp.src(paths.js)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
 });
 
 gulp.task('js', ['js-lint'], function () {
-  gulp.src(paths.js)
-  .pipe(sourcemaps.init())
-    .pipe(to5())
-    .pipe(concat('app.js'))
-    .pipe(ngAnnotate())
-    .pipe(uglify({preserveComments: false}))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest(paths.dist + 'js/'))
+    gulp.src(paths.js)
+        .pipe(sourcemaps.init())
+        .pipe(to5())
+        .pipe(concat('app.js'))
+        .pipe(ngAnnotate())
+        .pipe(uglify({preserveComments: false}))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.dist + 'js/'))
 });
+
+
+// Common tasks
+
+gulp.task('copy-images', function() {
+    gulp.src(paths.images)
+        .pipe(gulp.dest(paths.dist +'/images/'))
+});
+
+gulp.task('copy-fonts', function() {
+    gulp.src(paths.fonts)
+        .pipe(gulp.dest(paths.dist +'/fonts/'))
+});
+
+gulp.task('copy', ['copy-images', 'copy-fonts']);
 
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
     gulp.watch(paths.jade, ['jade-watch']);
+    gulp.watch(paths.app + 'index.jade', ['templates']);
     gulp.watch(paths.sass, ['styles-watch']);
-    gulp.watch(paths.js, ['js-lint', 'js']);
+    gulp.watch(paths.js, ['js']);
+    gulp.watch(paths.images, ['copy-images']);
 });
 
 // The default task (called when you run gulp from cli)
 gulp.task('default', [
   'jade-deploy',
   'templates',
-  'styles-watch',
-  'js'
+  'styles-deploy',
+  'js',
+  'copy'
 ]);

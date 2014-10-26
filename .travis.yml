@@ -46,7 +46,7 @@ before_script:
  - composer install --no-progress --prefer-dist
  - php app/console doctrine:database:create --env=test
  - php app/console doctrine:schema:create --env=test
- - php app/console doctrine:fixtures:load -n --env=test
+# - php app/console doctrine:fixtures:load -n --env=test
  - mkdir -p app/cache app/logs
  - chmod -R 777 /tmp/cache /tmp/logs app/cache app/logs
 
@@ -77,4 +77,6 @@ after_script:
   - php -v
   - cat /tmp/logs/test.log
   - sudo cat /var/log/apache2/error.log
+  - curl 127.0.0.1
+  - curl 127.0.0.2/hello/travis
 

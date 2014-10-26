@@ -79,4 +79,5 @@ after_script:
   - sudo cat /var/log/apache2/error.log
   - curl 127.0.0.1
   - curl 127.0.0.2/hello/travis
+  - curl api.znieh.dev
 

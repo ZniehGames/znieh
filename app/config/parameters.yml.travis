@@ -18,7 +18,7 @@ parameters:
     debug_redirects:        false
     use_assetic_controller: true
 
-    base_url: http://localhost/
+    base_url: http://127.0.0.2/
     private_key_path: %kernel.root_dir%/var/jwt/private-test.pem
     public_key_path:  %kernel.root_dir%/var/jwt/public-test.pem
     pass_phrase:      'spyl'

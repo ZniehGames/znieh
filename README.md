@@ -1,7 +1,5 @@
 # Znieh Games
-
 ## Customize your units like never before
-========================
 
 For issues, including feature requests, see the [Issue Tracker](https://github.com/ZniehGames/znieh/issues).
 
@@ -14,6 +12,7 @@ on structure, documentation, and code conventions.
     git submodule update --init
 
 It's recommended that you use the provided [vagrant](https://github.com/ZniehGames/znieh-vagrant) environment.
+
 Inside the VM (`vagrant ssh` and`cd /var/www/znieh`), run the following commands:
 
 * `composer install` for symfony deps

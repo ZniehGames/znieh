@@ -1,5 +1,12 @@
-Znieh
+# Znieh Games
+
+## Customize your units like never before
 ========================
+
+For issues, including feature requests, see the [Issue Tracker](https://github.com/ZniehGames/znieh/issues).
+
+See [CONTRIBUTING.md](https://github.com/ZniehGames/znieh/tree/master/CONTRIBUTING.md) for information
+on structure, documentation, and code conventions.
 
 ## Development
 
@@ -7,13 +14,13 @@ Znieh
     git submodule update --init
 
 It's recommended that you use the provided [vagrant](https://github.com/ZniehGames/znieh-vagrant) environment.
-Inside vagrant in /var/www/znieh run the following commands:
+Inside the VM (`vagrant ssh`) `cd /var/www/znieh`, then run the following commands:
 
-* composer install for symfony deps
-* npm install for gulp and Node.js deps
-* bower install for frontend deps
-* gulp  to build
-* gulp watch  to build & rebuild on changes
+* `composer install` for symfony deps
+* `npm install` for gulp and Node.js deps
+* `bower install` for frontend deps
+* `gulp`  to build
+* `gulp watch`  to build & rebuild on changes
 
 ## Using in production
 

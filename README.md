@@ -1,35 +1,25 @@
 Znieh
 ========================
 
-## Pull the code
+## Development
 
     git clone git@github.com:ZniehGames/znieh.git
-    git submodule init
-    git submodule update
-
-## Installation
+    git submodule update --init
 
 It's recommended that you use the provided [vagrant](https://github.com/ZniehGames/znieh-vagrant) environment.
+Inside vagrant in /var/www/znieh run the following commands:
 
-Inside vagrant (/var/www/znieh) run the following commands:
+* composer install for symfony deps
+* npm install for gulp and Node.js deps
+* bower install for frontend deps
+* gulp  to build
+* gulp watch  to build & rebuild on changes
 
-### Install dependencies
+## Using in production
 
-    composer install
-    npm install
-    bower install
-
-### Generate assets
-
-    gulp
-    gulp watch
-
-
-## Production only
-
-### Generate the SSH keys
+You must generate your own SSH keys for JWT Authentification
 
     openssl genrsa -out app/var/jwt/private.pem -aes256 4096
     openssl rsa -pubout -in app/var/jwt/private.pem -out app/var/jwt/public.pem
 
-    Modify app/config/parameters.yml according to your needs
+Then modify SSH keys path and the pass phrase in app/config/parameters.yml according to your needs.

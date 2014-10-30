@@ -14,7 +14,7 @@ exports.config = {
   // You can specify a file containing code to run by setting onPrepare to
   // the filename string.
   onPrepare: function() {
-    console.log('ready');
+    console.log('Ready !');
   },
 
   framework: 'cucumber',
@@ -24,7 +24,9 @@ exports.config = {
   ],
 
   cucumberOpts: {
-    require: [],
+    require: [
+      'client/tests/helloSteps.js'
+    ],
     format: 'pretty'
   }
 };

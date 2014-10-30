@@ -31,8 +31,16 @@ paths.sass = [
     paths.app + 'styles/**/*.scss'
 ]
 paths.js = [
-    paths.app + 'js/**/module.js',
+    paths.app + 'js/app.js',
     paths.app + 'js/**/*.js'
+]
+paths.jsvendor = [
+    paths.app + 'vendor/jquery/dist/jquery.js',
+    paths.app + 'vendor/angular/angular.js',
+    paths.app + 'vendor/angular-route/angular-route.js',
+    paths.app + 'vendor/lodash/dist/lodash.js',
+    paths.app + 'vendor/restangular/dist/restangular.js',
+
 ]
 
 var options = {};
@@ -122,7 +130,7 @@ gulp.task('js-lint', function() {
         .pipe(jshint.reporter('default'))
 });
 
-gulp.task('js', ['js-lint'], function () {
+gulp.task('js', ['js-lint'], function() {
     gulp.src(paths.js)
         .pipe(sourcemaps.init())
         .pipe(to5())
@@ -133,6 +141,15 @@ gulp.task('js', ['js-lint'], function () {
         .pipe(gulp.dest(paths.dist + 'js/'))
 });
 
+gulp.task('js-vendor', function() {
+    gulp.src(paths.jsvendor)
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(concat('vendor.js'))
+        .pipe(uglify({mangle:false, preserveComments: false}))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.dist + 'js/'))
+});
 
 // Common tasks
 
@@ -148,13 +165,13 @@ gulp.task('copy-fonts', function() {
 
 gulp.task('copy', ['copy-images', 'copy-fonts']);
 
-
 // Rerun the task when a file changes
 gulp.task('watch', function() {
     gulp.watch(paths.jade, ['jade-watch']);
     gulp.watch(paths.app + 'index.jade', ['templates']);
     gulp.watch(paths.sass, ['styles-watch']);
     gulp.watch(paths.js, ['js']);
+    gulp.watch(paths.jsvendor, ['js-vendor']);
     gulp.watch(paths.images, ['copy-images']);
 });
 
@@ -164,5 +181,6 @@ gulp.task('default', [
   'templates',
   'styles-deploy',
   'js',
+  'js-vendor',
   'copy'
 ]);

@@ -9,9 +9,17 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class HelloController extends Controller
 {
     /**
+     * @Route("/hello")
+     */
+    public function indexAction()
+    {
+        return new JsonResponse(['greg', 'florian', 'ramos']);
+    }
+
+    /**
      * @Route("/hello/{name}")
      */
-    public function indexAction($name)
+    public function helloAction($name)
     {
         return new JsonResponse(['name' => $name]);
     }

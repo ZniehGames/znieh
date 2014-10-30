@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5d1d95400b328d20c781094cd003968b",
+    "hash": "ba52d64ae0911fb1d73f739b67dabd40",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -5387,9 +5387,7 @@
             "time": "2014-09-26 05:59:17"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "stof/doctrine-extensions-bundle": 20,
@@ -5404,6 +5402,7 @@
         "hwi/oauth-bundle": 20,
         "braincrafted/bootstrap-bundle": 15,
         "lexik/jwt-authentication-bundle": 0,
+        "nelmio/cors-bundle": 20,
         "behat/symfony2-extension": 20,
         "behat/mink-extension": 20,
         "behat/mink": 20,
@@ -5415,7 +5414,5 @@
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

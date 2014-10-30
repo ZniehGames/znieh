@@ -13,12 +13,15 @@ var gulp       = require('gulp'),
     jade       = require('gulp-jade'),
     plumber    = require('gulp-plumber'),
     rename     = require('gulp-rename'),
+    wrap       = require('gulp-wrap'),
+    traceur    = require('gulp-traceur'),
     csslint    = require('gulp-csslint');
 
 var paths = {};
 paths.app = './client/app/';
 paths.dist = './client/dist/';
 paths.tmp = './client/tmp/';
+paths.config = './client/config/';
 paths.images = paths.app + 'images/**/*';
 paths.fonts = paths.app + 'fonts/**/*';
 paths.css = paths.app + 'styles/vendor/*.css';
@@ -31,8 +34,9 @@ paths.sass = [
     paths.app + 'styles/**/*.scss'
 ]
 paths.js = [
+    paths.tmp + 'conf.js',
     paths.app + 'js/app.js',
-    paths.app + 'js/**/*.js'
+    paths.app + 'js/**/*.js',
 ]
 paths.jsvendor = [
     paths.app + 'vendor/jquery/dist/jquery.js',
@@ -124,7 +128,15 @@ gulp.task('styles-deploy', ['sass', 'css-vendor'], function() {
 });
 
 // JS Related tasks
-gulp.task('js-lint', function() {
+
+gulp.task('js-config', function() {
+    gulp.src(paths.config + 'main.json')
+        .pipe(wrap("/* jshint unused: false */var config = <%= contents %>;"))
+        .pipe(concat('conf.js'))
+        .pipe(gulp.dest(paths.tmp))
+});
+
+gulp.task('js-lint', ['js-config'], function() {
     gulp.src(paths.js)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))

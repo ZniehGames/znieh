@@ -55,6 +55,9 @@ before_script:
  - npm install -g bower protractor cucumber karma-cli
  - bower install
 
+# JS specific
+- cp client/config/main.json.travis client/config/main.json
+
 # Protractor
  - sudo apt-get update
  - sudo apt-get install chromium-browser

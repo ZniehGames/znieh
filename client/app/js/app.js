@@ -1,5 +1,7 @@
 'use strict';
 
+// you can use the global config (define by client/config/main.json)
+
 var app = angular.module('znieh', [
   'ngRoute',
   'restangular',
@@ -7,7 +9,7 @@ var app = angular.module('znieh', [
 
 app.config(function ($routeProvider, RestangularProvider) {
 
-    RestangularProvider.setBaseUrl('http://api.znieh.dev');
+    RestangularProvider.setBaseUrl(config.api);
 
     $routeProvider.
       when('/', {

@@ -56,7 +56,7 @@ before_script:
  - bower install
 
 # JS specific
-- cp client/config/main.json.travis client/config/main.json
+ - cp client/config/main.json.travis client/config/main.json
 
 # Protractor
  - sudo apt-get update
@@ -81,6 +81,3 @@ after_script:
   - curl 127.0.0.2/app_test.php/hello/travis
   - cat /tmp/logs/test.log
   - sudo cat /var/log/apache2/error.log
-  - curl 127.0.0.1
-  - curl 127.0.0.2/hello/travis
-

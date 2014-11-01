@@ -16,7 +16,7 @@ It's recommended that you use the provided [vagrant](https://github.com/ZniehGam
 Inside the VM (`vagrant ssh` and`cd /var/www/znieh`), run the following commands:
 
 * `composer install` for symfony deps
-* `npm install` for gulp and Node.js deps
+* `npm install` for gulp and Node.js deps (in case of errors of npm EEXIST `npm install --no-bin-links`)
 * `bower install` for frontend deps
 * `gulp`  to build
 * `gulp watch`  to build & rebuild on changes

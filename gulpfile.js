@@ -24,7 +24,6 @@ paths.tmp = './client/tmp/';
 paths.config = './client/config/';
 paths.images = paths.app + 'images/**/*';
 paths.fonts = paths.app + 'fonts/**/*';
-paths.css = paths.app + 'styles/vendor/*.css';
 
 paths.jade = [
     paths.app + 'index.jade',
@@ -32,11 +31,12 @@ paths.jade = [
 ];
 paths.sass = [
     paths.app + 'styles/**/*.scss'
-]
+];
+paths.css = [];
 paths.js = [
     paths.app + 'js/app.js',
     paths.app + 'js/**/*.js',
-]
+];
 paths.jsvendor = [
     paths.app + 'vendor/jquery/dist/jquery.js',
     paths.app + 'vendor/angular/angular.js',
@@ -44,14 +44,13 @@ paths.jsvendor = [
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',
 
-]
+];
 
 var options = {};
 options.sass = {
     errLogToConsole: true,
     sourceComments: 'none',
     sourceMap: 'scss',
-    outputStyle: 'compressed'
 }
 
 // Layout
@@ -87,7 +86,7 @@ gulp.task('sass-lint', function() {
 });
 
 gulp.task('sass', function() {
-    gulp.src([paths.app + '/styles/layout.scss'])
+    return gulp.src([paths.app + '/styles/layout.scss'])
         .pipe(plumber())
         .pipe(concat('all.scss'))
         .pipe(sass(options.sass))

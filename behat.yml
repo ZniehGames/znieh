@@ -1,0 +1,21 @@
+default:
+    formatters:
+        pretty:
+            verbose:  true
+            paths:    false
+            snippets: false
+    extensions:
+           Behat\Symfony2Extension: ~
+           Behat\MinkExtension:
+              sessions:
+                  default:
+                      symfony2: ~
+                  javascript:
+                      selenium2: ~
+              browser_name: firefox
+              show_auto:    false
+    suites:
+        api:
+            paths: [ %paths.base%/features/api ]
+            contexts:
+                - AppBundle\Behat\WebApiContext

@@ -1,0 +1,9 @@
+extends ./navbar.jade
+
+block content
+  form.navbar-form.navbar-right(role="search")
+      .form-group
+        input.form-control(type="text" name="username" placeholder="Username")
+      .form-group
+        input.form-control(type="text" name="password" placeholder="Password")
+      button.btn.btn-default(type="submit") Sign In

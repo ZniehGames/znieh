@@ -10,6 +10,11 @@ html(lang="en", ng-app="znieh")
 
     body
 
+        include ./partials/navbar_login.jade
+
         ng-view
-        script(src="/js/vendor.js")
+
+        include ./partials/footer.jade
+
+        script(src="/js/vendor.js?v=#{v}")
         script(src="/js/app.js?v=#{v}")

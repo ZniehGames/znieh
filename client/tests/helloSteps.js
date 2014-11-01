@@ -7,8 +7,8 @@ var expect = chai.expect;
 
 module.exports = function() {
 
-    this.Given(/^I am on the homepage$/, function(next) {
-        browser.get(env.baseUrl);
+    this.Given(/^I am on the hello page$/, function(next) {
+        browser.get(env.baseUrl + '/#/hello');
         next();
     });
 

@@ -13,6 +13,9 @@ app.config(function ($routeProvider, RestangularProvider) {
 
     $routeProvider.
       when('/', {
+        templateUrl: 'partials/homepage/index.html',
+      }).
+      when('/hello', {
         templateUrl: 'partials/hello.html',
         controller: 'HelloCtrl'
       }).

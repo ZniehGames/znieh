@@ -19,7 +19,7 @@
     "angular": "~1.2.21",
     "angular-resource": "~1.2.23",
     "angular-route": "~1.2.23",
-    "bootstrap-sass-official": "v3.2.0+2",
+    "bootstrap-sass-official": "~3.3.0",
     "lodash": "~2.4.1",
     "restangular": "~1.4.0",
     "angular-hotkeys": "chieffancypants/angular-hotkeys#~1.4.3",

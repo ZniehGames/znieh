@@ -13,15 +13,14 @@ module.exports = function() {
     });
 
     this.Then(/^I can see a list of names$/, function(next) {
-
-        mangas = element.all(by.css('li')).map(function(e, index) {
+        names = element.all(by.css('ul:not(.nav) li')).map(function(e, index) {
           return {
             index: index,
             text: e.getText()
           };
         });
 
-        expect(mangas).to.eventually.eql([
+        expect(names).to.eventually.eql([
             {index: 0, text: 'Hello greg !'},
             {index: 1, text: 'Hello florian !'},
             {index: 2, text: 'Hello ramos !'}

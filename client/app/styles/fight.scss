@@ -1,0 +1,62 @@
+.unit-block {
+    width: 80px;
+    height: 64px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.left-side {
+    float: left;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+
+    .unit-block {
+        border: 2px solid darkgreen;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    .unit-block:hover, .unit-block.active {
+        width: 250px;
+        margin-right: -170px;
+    }
+}
+
+.right-side {
+    float: left;
+    text-align: right;
+    z-index: 2;
+    position: relative;
+
+    .unit-block {
+        border: 2px solid darkblue;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    .unit-block:hover, .unit-block.active {
+        width: 250px;
+        margin-left: -170px;
+    }
+}
+
+.game-app {
+    float: left;
+    width: 800px;
+    height: 500px;
+    border: 2px solid darkred;
+    z-index: 1;
+    background-color: #fff;
+    position: relative;
+}
+
+.game-block {
+    width: 1000px;
+}

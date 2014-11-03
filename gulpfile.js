@@ -69,8 +69,8 @@ gulp.task('jade-watch', function() {
         .pipe(plumber())
         .pipe(cache('jade'))
         //.pipe(jadeInheritance({basedir: './client/app'}))
-        .pipe(jade({pretty: true}))
-        .pipe(gulp.dest(paths.dist))
+        .pipe(jade({pretty: false}))
+        .pipe(gulp.dest(paths.dist + 'partials/'))
 });
 
 gulp.task('templates', function() {

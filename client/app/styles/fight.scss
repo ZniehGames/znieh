@@ -1,8 +1,17 @@
 .unit-block {
-    width: 80px;
+    width: 100px;
     height: 64px;
     overflow: hidden;
     margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 5px 0px 5px 5px;
+
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .left-side {
@@ -11,18 +20,46 @@
     z-index: 2;
     position: relative;
 
-    .unit-block {
-        border: 2px solid darkgreen;
-        -webkit-transition: all .3s ease-in-out;
-        -moz-transition: all .3s ease-in-out;
-        -o-transition: all .3s ease-in-out;
-        -ms-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-    }
-
     .unit-block:hover, .unit-block.active {
         width: 250px;
         margin-right: -170px;
+    }
+
+    .unit-block {
+        .mini {
+            float: left;
+            width: 95px;
+        }
+
+        h1 {
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            padding: 0;
+            margin: 0 0 5px 0;
+            width: 70px;
+        }
+
+        .avatar {
+            float: left;
+            margin-right: 3px;
+        }
+
+        .progress {
+            height: 8px;
+            margin-bottom: 3px;
+            border-radius: 2px;
+            width: 50px;
+        }
+
+        .stats {
+            margin-top: 3px;
+            height: 29px;
+
+            img {
+                margin-right: 2px;
+            }
+        }
     }
 }
 
@@ -32,18 +69,55 @@
     z-index: 2;
     position: relative;
 
-    .unit-block {
-        border: 2px solid darkblue;
-        -webkit-transition: all .3s ease-in-out;
-        -moz-transition: all .3s ease-in-out;
-        -o-transition: all .3s ease-in-out;
-        -ms-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-    }
-
     .unit-block:hover, .unit-block.active {
         width: 250px;
-        margin-left: -170px;
+        margin-left: -150px;
+
+        .details {
+            display: block;
+        }
+    }
+
+    .unit-block {
+        .details {
+            float: left;
+            display: none;
+        }
+        .mini {
+            float: right;
+            width: 95px;
+        }
+
+        h1 {
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            padding: 0;
+            margin: 0 0 5px 0;
+            width: 70px;
+        }
+
+        .avatar {
+            float: right;
+            margin-left: 3px;
+        }
+
+        .progress {
+            height: 8px;
+            margin-bottom: 3px;
+            border-radius: 2px;
+            width: 50px;
+            float: right;
+        }
+
+        .stats {
+            margin-top: 3px;
+            height: 29px;
+
+            img {
+                margin-left: 2px;
+            }
+        }
     }
 }
 
@@ -58,5 +132,6 @@
 }
 
 .game-block {
+    padding-top: 5px;
     width: 1000px;
 }

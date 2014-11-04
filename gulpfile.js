@@ -46,6 +46,7 @@ paths.jsvendor = [
     paths.app + 'vendor/angular-toastr/dist/angular-toastr.js',
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',
+    paths.app + 'vendor/phaser.js',
 ];
 
 var options = {};

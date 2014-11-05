@@ -24,6 +24,7 @@ paths.tmp = './client/tmp/';
 paths.config = './client/config/';
 paths.images = paths.app + 'images/**/*';
 paths.fonts = paths.app + 'fonts/**/*';
+paths.json = paths.app + 'json/**/*';
 
 paths.jade = [
     paths.app + 'index.jade',
@@ -170,6 +171,11 @@ gulp.task('js-vendor', function() {
         .pipe(gulp.dest(paths.dist + 'js/'))
 });
 
+gulp.task('copy-json', function() {
+    gulp.src(paths.json)
+        .pipe(gulp.dest(paths.dist +'/json/'))
+});
+
 // Common tasks
 gulp.task('copy-images', function() {
     gulp.src(paths.images)
@@ -199,6 +205,7 @@ gulp.task('default', [
   'templates',
   'styles-deploy',
   'js',
+  'copy-json',
   'js-vendor',
   'copy'
 ]);

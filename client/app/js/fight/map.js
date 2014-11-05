@@ -1,6 +1,6 @@
 'use strict';
 
-var game = new Phaser.Game(900, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render : render});
+var game = new Phaser.Game(900, 600, Phaser.AUTO, 'game-app', { preload: preload, create: create, update: update, render : render});
 
 var map;
 var layer;
@@ -8,8 +8,8 @@ var player;
 
 function preload() {
   game.load.tilemap('map', '../../json/map.json', null, Phaser.Tilemap.TILED_JSON);
-  game.load.image('map_tiles', 'game/sprites/maps/tiles.jpg');
-  game.load.spritesheet('nigga', 'game/sprites/units/perso_casqueArgent.png', 40, 50);
+  game.load.image('map_tiles', '../../images/fight/sprites/maps/tiles.jpg');
+  game.load.spritesheet('nigga', '../../images/fight/sprites/units/perso_casqueArgent.png', 40, 50);
 }
 
 function create() {

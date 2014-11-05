@@ -30,6 +30,7 @@ paths.jade = [
     paths.app + 'index.jade',
     paths.app + 'partials/**/*.jade',
 ];
+
 paths.sass = [
     paths.app + 'styles/**/*.scss'
 ];
@@ -38,8 +39,14 @@ paths.css = [
 ];
 paths.js = [
     paths.app + 'js/app.js',
-    paths.app + 'js/**/*.js',
+    paths.app + 'js/controllers/*.js',
 ];
+
+// Paths for linting and copy wihtout concat inside app.js
+paths.jscopy = [
+    paths.app + 'js/fight/*.js',
+];
+
 paths.jsvendor = [
     paths.app + 'vendor/jquery/dist/jquery.js',
     paths.app + 'vendor/angular/angular.js',
@@ -176,6 +183,11 @@ gulp.task('copy-json', function() {
         .pipe(gulp.dest(paths.dist +'/json/'))
 });
 
+gulp.task('copy-js', ['js-lint'], function() {
+    gulp.src(paths.jscopy)
+        .pipe(gulp.dest(paths.dist +'/js/'))
+});
+
 // Common tasks
 gulp.task('copy-images', function() {
     gulp.src(paths.images)
@@ -195,6 +207,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.app + 'index.jade', ['templates']);
     gulp.watch(paths.sass, ['styles-watch']);
     gulp.watch(paths.js, ['js']);
+    gulp.watch(paths.jscopy, ['copy-js']);
     gulp.watch(paths.jsvendor, ['js-vendor']);
     gulp.watch(paths.images, ['copy-images']);
 });
@@ -206,6 +219,7 @@ gulp.task('default', [
   'styles-deploy',
   'js',
   'copy-json',
+  'copy-js',
   'js-vendor',
   'copy'
 ]);

@@ -22,6 +22,7 @@
     "lodash": "~2.4.1",
     "restangular": "~1.4.0",
     "angular-bootstrap": "~0.11.0",
-    "angular-toastr": "git://github.com/spyl94/angular-toastr#0200134a08"
+    "angular-toastr": "git://github.com/spyl94/angular-toastr#0200134a08",
+    "phaser": "2.1.3"
   }
 }

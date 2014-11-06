@@ -1,6 +1,6 @@
 'use strict';
 
-var game = new Phaser.Game(700, 500, Phaser.AUTO, 'game-app', { preload: preload, create: create, update: update, render : render});
+var game = new Phaser.Game(800, 480, Phaser.AUTO, 'game-app', { preload: preload, create: create, update: update, render : render});
 
 var map;
 var layer;

@@ -27,7 +27,8 @@ exports.config = {
 
   cucumberOpts: {
     require: [
-      'client/tests/helloSteps.js'
+      'client/tests/helloSteps.js',
+      'client/tests/homePageSteps.js'
     ],
     format: 'pretty'
   }

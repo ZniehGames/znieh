@@ -49,7 +49,7 @@ class WebApiContext extends DefaultContext
      */
     public function iSendARequestWithValues($method, $url, TableNode $table)
     {
-        $request = $client->createRequest($url, ['json' => $table->getHash()]);
+        $request = $this->client->createRequest($method, 'app_test.php'.$url, ['body' => $table->getHash(), 'exceptions' => false]);
         $this->response = $this->client->send($request);
     }
 

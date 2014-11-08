@@ -35,7 +35,7 @@
     "gulp-wrap": "^0.5.0",
     "karma": "^0.12.24",
     "path": "~0.4.9",
-    "protractor": "^1.2.0",
+    "protractor": "^1.4.0",
     "request": "~2.37.0",
     "vinyl-source-stream": "~0.1.1"
   },

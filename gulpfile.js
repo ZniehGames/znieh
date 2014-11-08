@@ -32,7 +32,9 @@ paths.jade = [
 paths.sass = [
     paths.app + 'styles/**/*.scss'
 ];
-paths.css = [];
+paths.css = [
+    paths.app + 'vendor/angular-toastr/dist/angular-toastr.css',
+];
 paths.js = [
     paths.app + 'js/app.js',
     paths.app + 'js/**/*.js',
@@ -41,9 +43,9 @@ paths.jsvendor = [
     paths.app + 'vendor/jquery/dist/jquery.js',
     paths.app + 'vendor/angular/angular.js',
     paths.app + 'vendor/angular-route/angular-route.js',
+    paths.app + 'vendor/angular-toastr/dist/angular-toastr.js',
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',
-
 ];
 
 var options = {};
@@ -95,7 +97,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('css-vendor', function() {
-    gulp.src(paths.css)
+    return gulp.src(paths.css)
         .pipe(concat('vendor.css'))
         .pipe(gulp.dest(paths.tmp))
 });

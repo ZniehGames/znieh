@@ -5,6 +5,7 @@
 var app = angular.module('znieh', [
   'ngRoute',
   'restangular',
+  'toastr'
 ]);
 
 app.config(function ($routeProvider, RestangularProvider) {

@@ -1,0 +1,10 @@
+Znieh\Model\Email:
+    type:  entity
+    table: email
+    id:
+        email:
+            type: string
+            length: 50
+    fields:
+      createdAt:
+        type: datetime

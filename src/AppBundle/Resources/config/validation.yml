@@ -1,0 +1,40 @@
+Znieh\Model\Email:
+  properties:
+    email:
+      - Email:
+          message: "'{{ value }}' n'est pas un email valide."
+          checkMX: true
+      - NotBlank:
+
+Znieh\Model\User:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: username
+  properties:
+    username:
+      - NotBlank:
+          message: fos_user.username.blank
+      - Length:
+          min: 2
+          minMessage: fos_user.username.short
+          max: 255
+          maxMessage: fos_user.username.long
+    email:
+      - Email:
+          message: "'{{ value }}' n'est pas un email valide."
+          checkMX: true
+      - NotBlank:
+          message: fos_user.email.blank
+      - Length:
+          min: 2
+          minMessage: fos_user.email.short
+          max: 254
+          maxMessage: fos_user.email.long
+
+    plainPassword:
+      - NotBlank:
+          message: fos_user.password.blank
+      - Length:
+          min: 2
+          max: 4096
+          minMessage: fos_user.password.short

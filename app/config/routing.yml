@@ -1,8 +1,15 @@
+users:
+    type:     rest
+    resource: AppBundle\Controller\UsersController
+
+emails:
+    type:     rest
+    resource: AppBundle\Controller\EmailsController
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
     prefix:   /
 
 api_login_check:
-   path: /api/login_check
-
+   path: /login_check

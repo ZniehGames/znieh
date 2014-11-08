@@ -18,4 +18,4 @@ default:
         api:
             paths: [ %paths.base%/features/api ]
             contexts:
-                - AppBundle\Behat\WebApiContext
+                - AppBundle\Behat\UserContext

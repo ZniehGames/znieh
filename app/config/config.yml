@@ -1,6 +1,8 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: services.yml }
+
 
 framework:
     #esi:             ~
@@ -11,7 +13,7 @@ framework:
         strict_requirements: ~
     form:            ~
     csrf_protection: ~
-    validation:      { enable_annotations: true }
+    validation:      { enabled: true, enable_annotations: false }
     templating:
         engines: ['twig']
         #assets_version: SomeVersionScheme
@@ -58,6 +60,12 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping: false
+        mappings:
+            AppBundle:
+                    type: yml
+                    dir: %kernel.root_dir%/../src/AppBundle/Resources/config/doctrine
+                    prefix: Znieh\Model
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -68,6 +76,7 @@ swiftmailer:
     spool:     { type: memory }
 
 fos_rest:
+    disable_csrf_role: ROLE_USER
     param_fetcher_listener: true
     body_listener: true
     format_listener: true
@@ -111,7 +120,7 @@ nelmio_cors:
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
             max_age: 3600
 
-# fos_user:
-#     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
-#     firewall_name: login
-#     user_class: UserBundle\Model\User
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: api
+    user_class: Znieh\Model\User

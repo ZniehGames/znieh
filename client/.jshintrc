@@ -21,6 +21,7 @@
   "globals": {
     "angular": true,
     "config": true,
-    "toastr": true
+    "toastr": true,
+    "Phaser": true
   }
 }

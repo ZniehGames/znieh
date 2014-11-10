@@ -14,8 +14,8 @@ web_profiler:
 
 doctrine:
     dbal:
-        dbname: %database_name%_test
-        user:   %database_user%_test
+        dbname: %test_database_name%
+        user:   %test_database_user%
 
 swiftmailer:
     disable_delivery: true

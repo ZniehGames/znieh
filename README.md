@@ -1,6 +1,8 @@
 # Znieh Games
 ## Customize your units like never before
 
+[![Build Status](https://travis-ci.org/ZniehGames/znieh.svg?branch=master)](https://travis-ci.org/ZniehGames/znieh)
+
 For issues, including feature requests, see the [Issue Tracker](https://github.com/ZniehGames/znieh/issues).
 
 See [CONTRIBUTING.md](https://github.com/ZniehGames/znieh/tree/master/CONTRIBUTING.md) for information

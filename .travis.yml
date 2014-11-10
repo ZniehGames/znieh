@@ -67,7 +67,11 @@ before_script:
  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99.0 -ac -screen 0 1280x1024x24"
 
 script:
-    - gulp && php bin/phpspec run && php bin/behat && protractor protractor.conf.js
+    - gulp
+    - php app/console security:check
+    - php bin/phpspec run
+    - php bin/behat
+    - protractor protractor.conf.js
 
 after_success:
     - openssl aes-256-cbc -K $encrypted_168c5169b1c4_key -iv $encrypted_168c5169b1c4_iv -in app/config/id_rsa.enc -out app/config/id_rsa -d

@@ -12,6 +12,31 @@
     -o-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+
+    .mini {
+        width: 95px;
+    }
+
+    h1 {
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        padding: 0;
+        width: 70px;
+        margin: 0 0 5px 0;
+    }
+
+    .progress {
+        height: 8px;
+        margin-bottom: 3px;
+        border-radius: 2px;
+        width: 50px;
+    }
+
+    .stats {
+        margin-top: 3px;
+        height: 29px;
+    }
 }
 
 .left-side {
@@ -28,16 +53,6 @@
     .unit-block {
         .mini {
             float: left;
-            width: 95px;
-        }
-
-        h1 {
-            font-size: 10px;
-            font-weight: bold;
-            text-align: center;
-            padding: 0;
-            margin: 0 0 5px 0;
-            width: 70px;
         }
 
         .avatar {
@@ -45,17 +60,7 @@
             margin-right: 3px;
         }
 
-        .progress {
-            height: 8px;
-            margin-bottom: 3px;
-            border-radius: 2px;
-            width: 50px;
-        }
-
         .stats {
-            margin-top: 3px;
-            height: 29px;
-
             img {
                 margin-right: 2px;
             }
@@ -72,10 +77,6 @@
     .unit-block:hover, .unit-block.active {
         width: 250px;
         margin-left: -150px;
-
-        .details {
-            display: block;
-        }
     }
 
     .unit-block {
@@ -83,18 +84,9 @@
             float: left;
             display: none;
         }
+
         .mini {
             float: right;
-            width: 95px;
-        }
-
-        h1 {
-            font-size: 10px;
-            font-weight: bold;
-            text-align: center;
-            padding: 0;
-            margin: 0 0 5px 0;
-            width: 70px;
         }
 
         .avatar {
@@ -103,17 +95,10 @@
         }
 
         .progress {
-            height: 8px;
-            margin-bottom: 3px;
-            border-radius: 2px;
-            width: 50px;
             float: right;
         }
 
         .stats {
-            margin-top: 3px;
-            height: 29px;
-
             img {
                 margin-left: 2px;
             }
@@ -125,9 +110,7 @@
     float: left;
     width: 800px;
     height: 500px;
-    border: 2px solid darkred;
     z-index: 1;
-    background-color: #fff;
     position: relative;
 }
 

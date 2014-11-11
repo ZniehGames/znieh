@@ -77,6 +77,11 @@
     .unit-block:hover, .unit-block.active {
         width: 250px;
         margin-left: -150px;
+
+        .details {
+            float: left;
+            display: block;
+        }
     }
 
     .unit-block {
@@ -112,9 +117,28 @@
     height: 500px;
     z-index: 1;
     position: relative;
+    border: 1px solid darkblue;
+    margin-bottom: 10px;
 }
 
 .game-block {
     padding-top: 5px;
     width: 1000px;
+}
+
+.fight-log {
+    width: 800px;
+    margin: auto;
+
+    .logs {
+        height: 120px;
+        overflow: auto;
+        font-size:12px;
+        line-height: 15px;
+
+        .log {
+            display: block;
+            margin-bottom: 2px;
+        }
+    }
 }

@@ -178,11 +178,6 @@ gulp.task('copy-json', function() {
         .pipe(gulp.dest(paths.dist +'/json/'))
 });
 
-gulp.task('copy-js', ['js-lint'], function() {
-    gulp.src(paths.jscopy)
-        .pipe(gulp.dest(paths.dist +'/js/'))
-});
-
 // Common tasks
 gulp.task('copy-images', function() {
     gulp.src(paths.images)
@@ -214,7 +209,6 @@ gulp.task('default', [
   'styles-deploy',
   'js',
   'copy-json',
-  'copy-js',
   'js-vendor',
   'copy'
 ]);

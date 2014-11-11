@@ -112,9 +112,26 @@
     height: 500px;
     z-index: 1;
     position: relative;
+    border: 1px solid darkblue;
+    margin-bottom: 10px;
 }
 
 .game-block {
     padding-top: 5px;
     width: 1000px;
+}
+
+.fight-log {
+    width: 800px;
+    margin: auto;
+
+    .logs {
+        font-size:12px;
+        line-height: 15px;
+
+        .log {
+            display: block;
+            margin-bottom: 2px;
+        }
+    }
 }

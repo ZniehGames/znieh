@@ -39,12 +39,7 @@ paths.css = [
 ];
 paths.js = [
     paths.app + 'js/app.js',
-    paths.app + 'js/controllers/*.js',
-];
-
-// Paths for linting and copy wihtout concat inside app.js
-paths.jscopy = [
-    paths.app + 'js/fight/*.js',
+    paths.app + 'js/**/*.js',
 ];
 
 paths.jsvendor = [

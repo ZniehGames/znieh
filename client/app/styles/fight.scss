@@ -77,6 +77,11 @@
     .unit-block:hover, .unit-block.active {
         width: 250px;
         margin-left: -150px;
+
+        .details {
+            float: left;
+            display: block;
+        }
     }
 
     .unit-block {
@@ -126,6 +131,8 @@
     margin: auto;
 
     .logs {
+        height: 120px;
+        overflow: auto;
         font-size:12px;
         line-height: 15px;
 

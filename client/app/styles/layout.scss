@@ -4,6 +4,7 @@
 
 //@import "base";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap";
+@import "fight.scss";
 
 body {
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
@@ -15,4 +16,3 @@ body {
     background-size: cover;
 }
 
-@import "fight.scss";

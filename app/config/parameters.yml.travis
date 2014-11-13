@@ -2,9 +2,12 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     null
-    database_name:     baka
+    database_name:     znieh
     database_user:     travis
     database_password: ~
+
+    test_database_name: znieh_test
+    test_database_user: travis
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1

@@ -23,3 +23,5 @@ parameters:
     public_key_path:  %kernel.root_dir%/var/jwt/public-test.pem
     pass_phrase:      'spyl'
     token_ttl:        86400
+    test_database_name: znieh_test
+    test_database_user: znieh_test

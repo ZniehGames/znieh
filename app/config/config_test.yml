@@ -12,6 +12,11 @@ web_profiler:
     toolbar: false
     intercept_redirects: false
 
+doctrine:
+    dbal:
+        dbname: %test_database_name%
+        user:   %test_database_user%
+
 swiftmailer:
     disable_delivery: true
 

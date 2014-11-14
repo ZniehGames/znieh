@@ -233,6 +233,7 @@ gulp.task('default', [
   'templates',
   'styles-deploy',
   'js',
+  'game',
   'copy-json',
   'js-vendor',
   'copy',

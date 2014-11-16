@@ -69,6 +69,6 @@ class FightPhaser{
 angular.module('znieh')
 	.controller('FightCtrl', function () {
 
-	this.fightPhaser = new FightPhaser();
-	
+	this.fightPhaser = System.get('main')['default'].start();
+
 });

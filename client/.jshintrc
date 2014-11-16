@@ -22,6 +22,7 @@
     "angular": true,
     "config": true,
     "toastr": true,
-    "Phaser": true
+    "Phaser": true,
+    "System": true
   }
 }

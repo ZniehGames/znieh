@@ -42,7 +42,12 @@ paths.js = [
     paths.app + 'js/**/*.js',
 ];
 
+paths.game = [
+    paths.app + 'game/**/*.js',
+];
+
 paths.jsvendor = [
+    paths.app + 'vendor/traceur-runtime/traceur-runtime.js',
     paths.app + 'vendor/jquery/dist/jquery.js',
     paths.app + 'vendor/angular/angular.js',
     paths.app + 'vendor/angular-route/angular-route.js',
@@ -161,6 +166,25 @@ gulp.task('js', ['js-config', 'js-build'], function() {
     gulp.src(_paths)
         .pipe(concat('app.js'))
         .pipe(gulp.dest(paths.dist + 'js/'))
+});
+
+gulp.task('game-js-lint', function() {
+    return gulp.src(paths.game)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
+});
+
+gulp.task('game', ['game-js-lint'], function() {
+    return gulp.src(paths.game)
+        .pipe(sourcemaps.init())
+        .pipe(traceur({
+            modules: 'register',
+            moduleName: true
+        }))
+        .pipe(concat('game.js'))
+        //.pipe(uglify({preserveComments: false}))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.dist + 'js/'));
 });
 
 gulp.task('js-vendor', function() {

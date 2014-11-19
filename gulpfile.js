@@ -221,6 +221,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.app + 'index.jade', ['templates']);
     gulp.watch(paths.sass, ['styles-watch']);
     gulp.watch(paths.js, ['js']);
+    gulp.watch(paths.game, ['game']);
     gulp.watch(paths.jscopy, ['copy-js']);
     gulp.watch(paths.jsvendor, ['js-vendor']);
     gulp.watch(paths.images, ['copy-images']);
@@ -234,5 +235,6 @@ gulp.task('default', [
   'js',
   'copy-json',
   'js-vendor',
-  'copy'
+  'copy',
+  'game'
 ]);

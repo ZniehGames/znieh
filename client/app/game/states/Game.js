@@ -9,7 +9,7 @@ class Game {
         this.selectedSprite = null;
         this.game = null;
         this.spriteLists = [];
-        this.mapUtils = new MapUtils();
+        this.mapUtils = new MapUtils(this);
         this.spriteUtils = new SpriteUtils(this);
     }
 
@@ -27,15 +27,17 @@ class Game {
         this.layer = this.map.createLayer('Map');
         this.layer.resizeWorld();
 
-        this.result = this.mapUtils.getBlockedTiles(this.game.cache.getTilemapData('map').data);
+        this.result = this.mapUtils.getBlockedTiles();
         this.map.setCollision(this.result, true);
 
         this.layer.debug = true;
         this.game.physics.setBoundsToWorld(true, true, true, true, false);
         
-        this.spriteLists.push(this.spriteUtils.addSprite());
+        //this.spriteLists.push(this.spriteUtils.addSprite({'placement' : { 'x' : 0, 'y' : 0}}));
+        //this.spriteLists.push(this.spriteUtils.addSprite({'placement' : { 'x' : 1, 'y' : 0}}));
+        //this.spriteLists.push(this.spriteUtils.addSprite({'placement' : { 'x' : 2, 'y' : 0}}));
 
-        this.spriteLists[0].events.onInputDown.add(this.spriteUtils.selectSprite, this.spriteUtils);  
+        this.mapUtils.addEventListenerToMap();
 
         console.log('Hello Game!');
     }

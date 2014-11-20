@@ -11,6 +11,7 @@ class Game {
         this.spriteLists = [];
         this.mapUtils = new MapUtils(this);
         this.spriteUtils = new SpriteUtils(this);
+        this.spriteGroup = null;
     }
 
     preload() {
@@ -37,6 +38,8 @@ class Game {
         //this.spriteLists.push(this.spriteUtils.addSprite({'placement' : { 'x' : 1, 'y' : 0}}));
         //this.spriteLists.push(this.spriteUtils.addSprite({'placement' : { 'x' : 2, 'y' : 0}}));
 
+        this.spriteGroup = this.game.add.group();
+        
         this.mapUtils.addEventListenerToMap();
 
         console.log('Hello Game!');

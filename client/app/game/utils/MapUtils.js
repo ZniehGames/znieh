@@ -16,32 +16,39 @@ class MapUtils {
         function toInt(element) {
           arrayInt.push(parseInt(element));
         }
-
         result.forEach(toInt);
         return arrayInt;
     }
 
     addEventListenerToMap(){
-    	this.stateGame.game.input.onDown.add(this.stateGame.mapUtils.selectTile, this.stateGame.mapUtils, 0);
+    	this.stateGame.game.input.onDown.add(this.stateGame.mapUtils.selectTilePlacement, this.stateGame.mapUtils, 0);
     }
 
     removeEventListenerToMap(){
-    	this.stateGame.game.input.onDown.remove(this.stateGame.mapUtils.selectTile, this.stateGame.mapUtils);
+    	this.stateGame.game.input.onDown.remove(this.stateGame.mapUtils.selectTilePlacement, this.stateGame.mapUtils);
     }
 
-    selectTile(pointer)
+    selectTilePlacement(pointer)
     {
-    	var tile = this.stateGame.layer.getTiles(pointer.x,pointer.y,0,0);
-    	tile = tile[0];
-
-    	if(tile.collides) {
-    		console.log('Vous ne pouvez pas le placer ici ;)');
+    	// We check if a sprite is not under the pointer
+    	var under = this.stateGame.game.physics.arcade.getObjectsUnderPointer(pointer, this.stateGame.spriteGroup);
+    	
+    	if(under === undefined || under.length === 0) {
+    		// We take the tile selected for ckeck collision and get his position  
+	    	var tile = this.stateGame.layer.getTiles(pointer.x,pointer.y,0,0);
+	    	tile = tile[0];
+	    	if(tile.collides) {
+	    		console.log('Vous ne pouvez pas le placer ici ;)');
+	    	}
+	    	else{
+		    	var optionsPlacement = {'placement' : { 'x' : tile.worldX, 'y' : tile.worldY}};
+		    	this.stateGame.spriteUtils.addSprite(optionsPlacement);
+	    	}
+	    	//this.removeEventListenerToMap();
     	}
-    	else{
-	    	var optionsPlacement = {'placement' : { 'x' : tile.worldX, 'y' : tile.worldY}};
-	    	this.stateGame.spriteUtils.addSprite(optionsPlacement);
+    	else {
+    		console.log('under was not empty or undefined...');
     	}
-    	//this.removeEventListenerToMap();
     }
 }
 

@@ -3,8 +3,6 @@
 class SpriteUtils {
 
   constructor(stateGame) {
-    console.log(stateGame);
-    console.log(stateGame.game);
     this.stateGame = stateGame;
   }
 
@@ -14,7 +12,6 @@ class SpriteUtils {
   }
 
   moveSelected(pointer) {
-    //console.log(selectedSprite);
     if (this.stateGame.selectedSprite !== null) { 
       this.stateGame.selectedSprite.x = pointer.x;
       this.stateGame.selectedSprite.y = pointer.y;
@@ -26,7 +23,7 @@ class SpriteUtils {
   addSprite(options){
     var sprite;
 
-    console.log(options);
+    //console.log(options);
     sprite = this.stateGame.game.add.sprite(options.placement.x, options.placement.y, 'nigga');
     sprite.enableBody = true;
 
@@ -57,7 +54,9 @@ class SpriteUtils {
 
     //this.addEventsListenerToSprite(sprite);
 
-    return sprite;
+    this.stateGame.spriteLists.push(sprite);
+
+    this.stateGame.spriteGroup.add(sprite);
   }
 
   addEventsListenerToSprite(sprite) {

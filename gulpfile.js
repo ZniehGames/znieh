@@ -24,11 +24,13 @@ paths.tmp = './client/tmp/';
 paths.config = './client/config/';
 paths.images = paths.app + 'images/**/*';
 paths.fonts = paths.app + 'fonts/**/*';
+paths.json = paths.app + 'json/**/*';
 
 paths.jade = [
     paths.app + 'index.jade',
     paths.app + 'partials/**/*.jade',
 ];
+
 paths.sass = [
     paths.app + 'styles/**/*.scss'
 ];
@@ -39,13 +41,20 @@ paths.js = [
     paths.app + 'js/app.js',
     paths.app + 'js/**/*.js',
 ];
+
+paths.game = [
+    paths.app + 'game/**/*.js',
+];
+
 paths.jsvendor = [
+    paths.app + 'vendor/traceur-runtime/traceur-runtime.js',
     paths.app + 'vendor/jquery/dist/jquery.js',
     paths.app + 'vendor/angular/angular.js',
     paths.app + 'vendor/angular-route/angular-route.js',
     paths.app + 'vendor/angular-toastr/dist/angular-toastr.js',
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',
+    paths.app + 'vendor/phaser/build/phaser.js',
 ];
 
 var options = {};
@@ -159,6 +168,25 @@ gulp.task('js', ['js-config', 'js-build'], function() {
         .pipe(gulp.dest(paths.dist + 'js/'))
 });
 
+gulp.task('game-js-lint', function() {
+    return gulp.src(paths.game)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
+});
+
+gulp.task('game', ['game-js-lint'], function() {
+    return gulp.src(paths.game)
+        .pipe(sourcemaps.init())
+        .pipe(traceur({
+            modules: 'register',
+            moduleName: true
+        }))
+        .pipe(concat('game.js'))
+        //.pipe(uglify({preserveComments: false}))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.dist + 'js/'));
+});
+
 gulp.task('js-vendor', function() {
     gulp.src(paths.jsvendor)
         .pipe(plumber())
@@ -167,6 +195,11 @@ gulp.task('js-vendor', function() {
         .pipe(uglify({mangle:false, preserveComments: false}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.dist + 'js/'))
+});
+
+gulp.task('copy-json', function() {
+    gulp.src(paths.json)
+        .pipe(gulp.dest(paths.dist +'/json/'))
 });
 
 // Common tasks
@@ -188,6 +221,8 @@ gulp.task('watch', function() {
     gulp.watch(paths.app + 'index.jade', ['templates']);
     gulp.watch(paths.sass, ['styles-watch']);
     gulp.watch(paths.js, ['js']);
+    gulp.watch(paths.game, ['game']);
+    gulp.watch(paths.jscopy, ['copy-js']);
     gulp.watch(paths.jsvendor, ['js-vendor']);
     gulp.watch(paths.images, ['copy-images']);
 });
@@ -198,6 +233,8 @@ gulp.task('default', [
   'templates',
   'styles-deploy',
   'js',
+  'copy-json',
   'js-vendor',
-  'copy'
+  'copy',
+  'game'
 ]);

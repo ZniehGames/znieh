@@ -31,11 +31,16 @@ class MapUtils {
 
     selectTile(pointer)
     {
-    	var tile = this.stateGame.layer.getTiles(pointer.x,pointer.y,0,0,false);
-    	console.log(tile);
-    	//var optionsPlacement = {'placement' : { 'x' : tile[0].worldX+tile[0].centerX, 'y' : tile[0].worldY+tile[0].centerY}};
-    	var optionsPlacement = {'placement' : { 'x' : tile[0].worldX, 'y' : tile[0].worldY}};
-    	this.stateGame.spriteUtils.addSprite(optionsPlacement);
+    	var tile = this.stateGame.layer.getTiles(pointer.x,pointer.y,0,0);
+    	tile = tile[0];
+
+    	if(tile.collides) {
+    		console.log('Vous ne pouvez pas le placer ici ;)');
+    	}
+    	else{
+	    	var optionsPlacement = {'placement' : { 'x' : tile.worldX, 'y' : tile.worldY}};
+	    	this.stateGame.spriteUtils.addSprite(optionsPlacement);
+    	}
     	//this.removeEventListenerToMap();
     }
 }

@@ -47,7 +47,13 @@ class SpriteUtils {
     
     sprite.inputEnabled = true;
 
-    sprite.animations.play('right');
+    if(sprite.x > (this.stateGame.game.world.width/2)){
+      sprite.animations.play('left');
+    }
+    else{
+      sprite.animations.play('right');
+    }
+
 
     //this.addEventsListenerToSprite(sprite);
 

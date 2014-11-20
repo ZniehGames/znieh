@@ -1,3 +1,20 @@
+@import "fight-log.scss";
+
+.game-app {
+    float: left;
+    width: 800px;
+    height: 500px;
+    z-index: 1;
+    position: relative;
+    border: 1px solid darkblue;
+    margin-bottom: 10px;
+}
+
+.game-block {
+    padding-top: 5px;
+    width: 1000px;
+}
+
 .unit-block {
     width: 100px;
     height: 64px;
@@ -7,11 +24,7 @@
     border: 2px solid rgba(0, 0, 0, 0.3);
     padding: 5px 0px 5px 5px;
 
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    @include transition( all .3s ease-in-out );
 
     .mini {
         width: 95px;
@@ -107,38 +120,6 @@
             img {
                 margin-left: 2px;
             }
-        }
-    }
-}
-
-.game-app {
-    float: left;
-    width: 800px;
-    height: 500px;
-    z-index: 1;
-    position: relative;
-    border: 1px solid darkblue;
-    margin-bottom: 10px;
-}
-
-.game-block {
-    padding-top: 5px;
-    width: 1000px;
-}
-
-.fight-log {
-    width: 800px;
-    margin: auto;
-
-    .logs {
-        height: 120px;
-        overflow: auto;
-        font-size:12px;
-        line-height: 15px;
-
-        .log {
-            display: block;
-            margin-bottom: 2px;
         }
     }
 }

@@ -20,6 +20,9 @@ app.config(function ($routeProvider, RestangularProvider) {
         templateUrl: 'partials/hello.html',
         controller: 'HelloCtrl'
       }).
+      when('/fight', {
+        templateUrl: 'partials/fightpage/index.html',
+      }).
       otherwise({
         redirectTo: '/'
       });

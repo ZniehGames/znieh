@@ -1,9 +1,13 @@
 .navbar.navbar-inverse.navbar-fixed-top
-  .container
+  .container-fluid
     .navbar-header
       button.navbar-toggle.collapsed(data-toggle="collapse")
       a.navbar-brand(href="#") Znieh Games
 
     .collapse.navbar-collapse
       ul.nav.navbar-nav
+        li.active
+          a(href="#") Home
+        li
+          a(href="#fight") Fight
       block content

@@ -70,7 +70,7 @@ gulp.task('jade-watch', function() {
         .pipe(cache('jade'))
         //.pipe(jadeInheritance({basedir: './client/app'}))
         .pipe(jade({pretty: true}))
-        .pipe(gulp.dest(paths.dist))
+        .pipe(gulp.dest(paths.dist + 'partials/'))
 });
 
 gulp.task('templates', function() {

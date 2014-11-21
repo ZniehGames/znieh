@@ -29,6 +29,7 @@ paths.json = paths.app + 'json/**/*';
 paths.jade = [
     paths.app + 'index.jade',
     paths.app + 'partials/**/*.jade',
+    paths.app + 'partials/*.jade',
 ];
 
 paths.sass = [

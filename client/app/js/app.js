@@ -23,6 +23,9 @@ app.config(function ($routeProvider, RestangularProvider) {
       when('/fight', {
         templateUrl: 'partials/fightpage/index.html',
       }).
+      when('/search', {
+        templateUrl: 'partials/fightsearch/index.html',
+      }).
       otherwise({
         redirectTo: '/'
       });

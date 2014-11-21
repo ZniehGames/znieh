@@ -34,7 +34,11 @@
         "lexik/jwt-authentication-bundle": "@stable",
         "nelmio/cors-bundle": "~1.3@dev",
         "hautelook/alice-bundle": "0.2.*",
-        "h4cc/alice-fixtures-bundle": "dev-master"
+        "h4cc/alice-fixtures-bundle": "dev-master",
+        "hipaway-travel/mandrill-bundle": "dev-master",
+        "swarrot/swarrot-bundle": "v1.1.1",
+        "swarrot/swarrot": "@stable",
+        "videlalvaro/php-amqplib": "v2.1.0"
     },
     "require-dev": {
         "sensio/generator-bundle":           "~2.3",

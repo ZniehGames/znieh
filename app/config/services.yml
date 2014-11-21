@@ -10,3 +10,14 @@ services:
     arguments: ["@team_loader"]
   team_loader:
     class: Znieh\Loader\TeamLoader
+  global_mailer:
+    class: Znieh\Mailer\GlobalMailer
+    arguments: [@hip_mandrill.dispatcher]
+  email_registration_listener:
+    class: AppBundle\EventListener\EmailRegistrationListener
+    arguments: [@swarrot.publisher]
+    tags:
+      - { name: kernel.event_listener, event: email.registration, method: onEmailRegistration }
+  email_registration.processor:
+    class: AppBundle\Processor\EmailRegistrationProcessor
+    arguments: [@global_mailer]

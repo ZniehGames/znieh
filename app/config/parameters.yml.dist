@@ -25,3 +25,9 @@ parameters:
     token_ttl:        86400
     test_database_name: znieh_test
     test_database_user: znieh_test
+
+    rabbitmq_host: 127.0.0.1
+    rabbitmq_port: 5672
+    rabbitmq_login: admin
+    rabbitmq_password: admin
+    mandrill_api_key: xxxx

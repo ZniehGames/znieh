@@ -26,3 +26,9 @@ parameters:
     public_key_path:  %kernel.root_dir%/var/jwt/public-test.pem
     pass_phrase:      'spyl'
     token_ttl:        86400
+
+    rabbitmq_host: 127.0.0.1
+    rabbitmq_port: 5672
+    rabbitmq_login: guest
+    rabbitmq_password: guest
+    mandrill_api_key: xxxx

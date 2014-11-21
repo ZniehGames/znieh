@@ -13,6 +13,8 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use Znieh\Model\Email;
 use Znieh\Form\EmailRegistrationForm;
+use AppBundle\Event\EmailRegistrationEvent;
+use AppBundle\AppEvents;
 
 class EmailsController extends FOSRestController
 {
@@ -41,8 +43,10 @@ class EmailsController extends FOSRestController
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $dispatcher = $this->get('event_dispatcher');
             $em->persist($email);
             $em->flush();
+            $dispatcher->dispatch(AppEvents::EMAIL_REGISTRATION, new EmailRegistrationEvent($email));
             return new JsonResponse(['message' => 'Email created.'], 201);
         }
 

@@ -125,6 +125,7 @@ fos_user:
     firewall_name: api
     user_class: Znieh\Model\User
 
+
 hautelook_alice:
     locale: fr_FR
 
@@ -135,3 +136,36 @@ jms_serializer:
             Znieh:
                 namespace_prefix: "Znieh\\Model"
                 path: "%kernel.root_dir%/../src/AppBundle/Resources/config/serializer"
+
+hip_mandrill:
+    api_key: "%mandrill_api_key%"
+    default:
+        sender: team@zniehgames.com
+        sender_name: Team Znieh Games
+        #subaccount: Project # Optionally define a subaccount to use
+
+swarrot:
+    provider: amqp_lib # pecl or amqp_lib
+    default_connection: rabbitmq
+    connections:
+        rabbitmq:
+            host: "%rabbitmq_host%"
+            port: "%rabbitmq_port%"
+            login: "%rabbitmq_login%"
+            password: "%rabbitmq_password%"
+            vhost: '/'
+    processors_stack:
+            signal_handler: 'Swarrot\Processor\SignalHandler\SignalHandlerProcessor'
+            ack: 'Swarrot\Processor\Ack\AckProcessor'
+            max_messages: 'Swarrot\Processor\MaxMessages\MaxMessagesProcessor'
+            retry: 'Swarrot\Processor\Retry\RetryProcessor'
+            exception_catcher: 'Swarrot\Processor\ExceptionCatcher\ExceptionCatcherProcessor'
+            max_execution_time: 'Swarrot\Processor\MaxExecutionTime\MaxExecutionTimeProcessor'
+    consumers:
+        email_registration:
+            processor: email_registration.processor
+            extras:
+                requeue_on_error: false
+    messages_types:
+        email_registration:
+            exchange: email_registration

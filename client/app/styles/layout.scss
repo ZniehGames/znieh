@@ -8,3 +8,56 @@
 @import "fightpage/fight.scss";
 @import "_homepage.scss";
 
+/* Hide for mobile, show later */
+.sidebar {
+    display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-left: -20px;
+
+    li > a {
+        padding: 8px 10px 6px 10px;
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-sidebar > li:last-child > a {
+      border-bottom: 1px solid #eee;
+    }
+    .nav-sidebar > .active > a,
+    .nav-sidebar > .active > a:hover,
+    .nav-sidebar > .active > a:focus {
+      color: #fff;
+      background-color: #428bca;
+    }
+}
+
+.nav-sidebar.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.main {
+  padding: 20px;
+}
+
+.main .page-header {
+  margin-top: 0;
+}

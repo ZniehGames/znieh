@@ -7,6 +7,8 @@
 @import "../vendor/bourbon/dist/bourbon";
 @import "fightpage/fight.scss";
 @import "_homepage.scss";
+@import "fightsearch/search.scss";
+
 
 /* Hide for mobile, show later */
 .sidebar {
@@ -34,17 +36,18 @@
     li > a {
         padding: 8px 10px 6px 10px;
         text-align: center;
-        border-top: 1px solid #eee;
+        border-top: 1px solid #d2d2d2;
     }
 
-    .nav-sidebar > li:last-child > a {
-      border-bottom: 1px solid #eee;
+    li:last-child > a {
+      border-bottom: 1px solid #d2d2d2;
     }
-    .nav-sidebar > .active > a,
-    .nav-sidebar > .active > a:hover,
-    .nav-sidebar > .active > a:focus {
-      color: #fff;
-      background-color: #428bca;
+    .active > a,
+    .active > a:hover,
+    .active > a:focus {
+        color: white;
+        background-color: #AD979E;
+        border-bottom: 4px solid #9a878d;
     }
 }
 

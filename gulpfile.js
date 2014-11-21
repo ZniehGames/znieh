@@ -37,6 +37,10 @@ paths.sass = [
 paths.css = [
     paths.app + 'vendor/angular-toastr/dist/angular-toastr.css',
 ];
+paths.fonts = [
+    paths.app + 'fonts/**/*',
+    paths.app + 'vendor/bootstrap-sass-official/assets/fonts/*/*',
+];
 paths.js = [
     paths.app + 'js/app.js',
     paths.app + 'js/**/*.js',

@@ -6,6 +6,10 @@ emails:
     type:     rest
     resource: AppBundle\Controller\EmailsController
 
+teams:
+    type:     rest
+    resource: AppBundle\Controller\TeamsController
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

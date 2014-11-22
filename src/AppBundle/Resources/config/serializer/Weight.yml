@@ -1,0 +1,5 @@
+Znieh\Model\Weight:
+  exclusion_policy: ALL
+  properties:
+    name:
+      expose: true

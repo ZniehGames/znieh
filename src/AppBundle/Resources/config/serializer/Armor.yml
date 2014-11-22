@@ -1,0 +1,25 @@
+Znieh\Model\Armor:
+  exclusion_policy: ALL
+  properties:
+    name:
+      expose: true
+    helm:
+      expose: true
+    torso:
+      expose: true
+    gloves:
+      expose: true
+    greaves:
+      expose: true
+    boots:
+      expose: true
+  virtual_properties:
+    getDefense:
+      serialized_name: defense
+      type: integer
+    getBonuses:
+      serialized_name: bonuses
+      type: array
+    getPoints:
+      serialized_name: points
+      type: integer

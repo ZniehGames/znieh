@@ -1,0 +1,23 @@
+Znieh\Model\Weapon:
+  exclusion_policy: ALL
+  properties:
+    name:
+      expose: true
+    parts:
+      expose: true
+  virtual_properties:
+    getMinDamage:
+      serialized_name: min_damage
+      type: integer
+    getMaxDamage:
+      serialized_name: max_damage
+      type: integer
+    getDamageType:
+      serialized_name: damage_type
+      type: string
+    getBonuses:
+      serialized_name: bonuses
+      type: array
+    getPoints:
+      serialized_name: points
+      type: integer

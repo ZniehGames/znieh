@@ -1,0 +1,17 @@
+Znieh\Model\WeaponType:
+  epee:
+    name: Épée
+    parts: [ @lame, @pommeau, @garde, @manche ]
+    building: @forge
+  hache:
+    name: Hache
+    parts: [ @tete_hache, @hampe, @poignee ]
+    building: @forge
+  marteau:
+    name: Marteau
+    parts: [ @tete_marteau, @hampe, @poignee ]
+    building: @forge
+  # arc:
+  #   name: Arc
+  #   parts: [ @corde, @fleche, @part_arc, @poignee_arc ]
+  #   building: @archerie

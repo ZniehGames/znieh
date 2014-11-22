@@ -1,0 +1,77 @@
+Znieh\Model\ArmorPartType:
+  casque_lourd:
+    name: Casque lourd
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  torse_lourd:
+    name: Torse lourd
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  jambes_lourd:
+    name: Jambes lourdes
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  bottes_lourd:
+    name: Bottes lourdes
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  gants_lourd:
+    name: Gants lourds
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  casque_intermediaire:
+    name: Casque intermédiaire
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  torse_intermediaire:
+    name: Torse intermédiaire
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  jambes_intermediaire:
+    name: Jambes intermédiaires
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  bottes_intermerdiaire:
+    name: Bottes intermédiaires
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  gants_intermediaire:
+    name: Gants intermédiaires
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  casque_leger:
+    name: Casque léger
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  torse_leger:
+    name: Torse léger
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  jambes_leger:
+    name: Jambes légères
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  bottes_leger:
+    name: Bottes légères
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+  gants_leger:
+    name: Gants légers
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+

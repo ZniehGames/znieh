@@ -1,0 +1,7 @@
+Znieh\Model\RuneType:
+  mineur:
+    name: Mineur
+  majeur:
+    name: Majeur
+  superieur:
+    name: Supérieur

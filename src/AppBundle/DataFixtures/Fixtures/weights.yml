@@ -1,0 +1,7 @@
+Znieh\Model\Weight:
+  fin:
+    name: Fin
+  moyen:
+    name: Moyen
+  muscle:
+    name: Musclé

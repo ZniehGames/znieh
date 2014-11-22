@@ -1,0 +1,3055 @@
+Znieh\Model\ArmorPart:
+  # Casques
+  ## Lourds
+  casque_en_cuivre_de_vie:
+    name: Casque en cuivre de vie
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_de_penetration:
+    name: Casque en cuivre de pénétration
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_de_precision:
+    name: Casque en cuivre de précision
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_d_esquive:
+    name: Casque en cuivre d'esquive
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_de_parade:
+    name: Casque en cuivre de parade
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_de_defense:
+    name: Casque en cuivre de défense
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_de_force:
+    name: Casque en cuivre de force
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_d_agilite:
+    name: Casque en cuivre d'agilité
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_d_intelligence:
+    name: Casque en cuivre d'intelligence
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_cuivre_d_armure:
+    name: Casque en cuivre d'armure
+    type: @casque_lourd
+    step: @casques_en_cuivre
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  casque_en_bronze_de_vie:
+    name: Casque en bronze de vie
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_de_penetration:
+    name: Casque en bronze de pénétration
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_de_precision:
+    name: Casque en bronze de précision
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_d_esquive:
+    name: Casque en bronze d'esquive
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_de_parade:
+    name: Casque en bronze de parade
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_de_defense:
+    name: Casque en bronze de défense
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_de_force:
+    name: Casque en bronze de force
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_d_agilite:
+    name: Casque en bronze d'agilité
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_d_intelligence:
+    name: Casque en bronze d'intelligence
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_bronze_d_armure:
+    name: Casque en bronze d'armure
+    type: @casque_lourd
+    step: @casques_en_bronze
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #intérmédiaire
+  casque_en_reche_de_vie:
+    name: Casque en cuir rêche de vie
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_de_penetration:
+    name: Casque en cuir rêche de pénétration
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_de_precision:
+    name: Casque en cuir rêche de précision
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_d_esquive:
+    name: Casque en cuir rêche d'esquive
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_de_parade:
+    name: Casque en cuir rêche de parade
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_de_defense:
+    name: Casque en cuir rêche de défense
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_de_force:
+    name: Casque en cuir rêche de force
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_d_agilite:
+    name: Casque en cuir rêche d'agilité
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_d_intelligence:
+    name: Casque en cuir rêche d'intelligence
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_reche_d_armure:
+    name: Casque en cuir rêche d'armure
+    type: @casque_intermediaire
+    step: @casques_en_cuir_reche
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  casque_en_brut_de_vie:
+    name: Casque en cuir brut de vie
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_de_penetration:
+    name: Casque en cuir brut de pénétration
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_de_precision:
+    name: Casque en cuir brut de précision
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_d_esquive:
+    name: Casque en cuir brut d'esquive
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_de_parade:
+    name: Casque en cuir brut de parade
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_de_defense:
+    name: Casque en cuir brut de défense
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_de_force:
+    name: Casque en cuir brut de force
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_d_agilite:
+    name: Casque en cuir brut d'agilité
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_d_intelligence:
+    name: Casque en cuir brut d'intelligence
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_brut_d_armure:
+    name: Casque en cuir brut d'armure
+    type: @casque_intermediaire
+    step: @casques_en_cuir_brut
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #léger
+  casque_en_etmineure_de_vie:
+    name: Casque en Etoffe mineure de vie
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_de_penetration:
+    name: Casque en Etoffe mineure de pénétration
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_de_precision:
+    name: Casque en Etoffe mineure de précision
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_d_esquive:
+    name: Casque en Etoffe mineure d'esquive
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_de_parade:
+    name: Casque en Etoffe mineure de parade
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_de_defense:
+    name: Casque en Etoffe mineure de défense
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_de_force:
+    name: Casque en Etoffe mineure de force
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_d_agilite:
+    name: Casque en Etoffe mineure d'agilité
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_d_intelligence:
+    name: Casque en Etoffe mineure d'intelligence
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etmineure_d_armure:
+    name: Casque en Etoffe mineure d'armure
+    type: @casque_leger
+    step: @casques_en_etoffe_mineure
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  casque_en_etstandart_de_vie:
+    name: Casque en Etoffe standart de vie
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_de_penetration:
+    name: Casque en Etoffe standart de pénétration
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_de_precision:
+    name: Casque en Etoffe standart de précision
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_d_esquive:
+    name: Casque en Etoffe standart d'esquive
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_de_parade:
+    name: Casque en Etoffe standart de parade
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_de_defense:
+    name: Casque en Etoffe standart de défense
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_de_force:
+    name: Casque en Etoffe standart de force
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_d_agilite:
+    name: Casque en Etoffe standart d'agilité
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_d_intelligence:
+    name: Casque en Etoffe standart d'intelligence
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  casque_en_etstandart_d_armure:
+    name: Casque en Etoffe standart d'armure
+    type: @casque_leger
+    step: @casques_en_etoffe_standart
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #_______________________________________________
+  #_______________________________________________
+  #Torse
+  #Lourds
+  torse_en_cuivre_de_vie:
+    name: Torse en cuivre de vie
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_de_penetration:
+    name: Torse en cuivre de pénétration
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_de_precision:
+    name: Torse en cuivre de précision
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: {precisione: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_d_esquive:
+    name: Torse en cuivre d'esquive
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_de_parade:
+    name: Torse en cuivre de parade
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_de_defense:
+    name: Torse en cuivre de défense
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_de_force:
+    name: Torse en cuivre de force
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_d_agilite:
+    name: Torse en cuivre d'agilité
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_d_intelligence:
+    name: Torse en cuivre d'intelligence
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_cuivre_d_armure:
+    name: Torse en cuivre d'armure
+    type: @torse_lourd
+    step: @torses_en_cuivre
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  torse_en_bronze_de_vie:
+    name: Torse en bronze de vie
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_de_penetration:
+    name: Torse en bronze de pénétration
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_de_precision:
+    name: Torse en bronze de précision
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: {precisione: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_d_esquive:
+    name: Torse en bronze d'esquive
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_de_parade:
+    name: Torse en bronze de parade
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_de_defense:
+    name: Torse en bronze de défense
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_de_force:
+    name: Torse en bronze de force
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_d_agilite:
+    name: Torse en bronze d'agilité
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_d_intelligence:
+    name: Torse en bronze d'intelligence
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_bronze_d_armure:
+    name: Torse en bronze d'armure
+    type: @torse_lourd
+    step: @torses_en_bronze
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #intérmédiaire
+  torse_en_reche_de_vie:
+    name: Torse en cuir rêche de vie
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_de_penetration:
+    name: Torse en cuir rêche de pénétration
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_de_precision:
+    name: Torse en cuir rêche de précision
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_d_esquive:
+    name: Torse en cuir rêche d'esquive
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_de_parade:
+    name: Torse en cuir rêche de parade
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_de_defense:
+    name: Torse en cuir rêche de défense
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_de_force:
+    name: Torse en cuir rêche de force
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_d_agilite:
+    name: Torse en cuir rêche d'agilité
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_d_intelligence:
+    name: Torse en cuir rêche d'intelligence
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_reche_d_armure:
+    name: Torse en cuir rêche d'armure
+    type: @torse_intermediaire
+    step: @torses_en_cuir_reche
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  torse_en_brut_de_vie:
+    name: Torse en cuir brut de vie
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_de_penetration:
+    name: Torse en cuir brut de pénétration
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_de_precision:
+    name: Torse en cuir brut de précision
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_d_esquive:
+    name: Torse en cuir brut d'esquive
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_de_parade:
+    name: Torse en cuir brut de parade
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_de_defense:
+    name: Torse en cuir brut de défense
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_de_force:
+    name: Torse en cuir brut de force
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_d_agilite:
+    name: Torse en cuir brut d'agilité
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_d_intelligence:
+    name: Torse en cuir brut d'intelligence
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_brut_d_armure:
+    name: Torse en cuir brut d'armure
+    type: @torse_intermediaire
+    step: @torses_en_cuir_brut
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #léger
+  torse_en_etmineure_de_vie:
+    name: Torse en Etoffe mineure de vie
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_de_penetration:
+    name: Torse en Etoffe mineure de pénétration
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_de_precision:
+    name: Torse en Etoffe mineure de précision
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: {precisione: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_d_esquive:
+    name: Torse en Etoffe mineure d'esquive
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_de_parade:
+    name: Torse en Etoffe mineure de parade
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_de_defense:
+    name: Torse en Etoffe mineure de défense
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_de_force:
+    name: Torse en Etoffe mineure de force
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_d_agilite:
+    name: Torse en Etoffe mineure d'agilité
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_d_intelligence:
+    name: Torse en Etoffe mineure d'intelligence
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etmineure_d_armure:
+    name: Torse en Etoffe mineure d'armure
+    type: @torse_leger
+    step: @torses_en_etoffe_mineure
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  torse_en_etstandart_de_vie:
+    name: Torse en Etoffe standart de vie
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_de_penetration:
+    name: Torse en Etoffe standart de pénétration
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_de_precision:
+    name: Torse en Etoffe standart de précision
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: {precisione: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_d_esquive:
+    name: Torse en Etoffe standart d'esquive
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_de_parade:
+    name: Torse en Etoffe standart de parade
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_de_defense:
+    name: Torse en Etoffe standart de défense
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_de_force:
+    name: Torse en Etoffe standart de force
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_d_agilite:
+    name: Torse en Etoffe standart d'agilité
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_d_intelligence:
+    name: Torse en Etoffe standart d'intelligence
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  torse_en_etstandart_d_armure:
+    name: Torse en Etoffe standart d'armure
+    type: @torse_leger
+    step: @torses_en_etoffe_standart
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #_______________________________________________
+  #_______________________________________________
+  #Jambes
+  #Lourds
+  jambes_en_cuivre_de_vie:
+    name: Jambes en cuivre de vie
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_de_penetration:
+    name: Jambes en cuivre de pénétration
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_de_precision:
+    name: Jambes en cuivre de précision
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_d_esquive:
+    name: Jambes en cuivre d'esquive
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_de_parade:
+    name: Jambes en cuivre de parade
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_de_defense:
+    name: Jambes en cuivre de défense
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_de_force:
+    name: Jambes en cuivre de force
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_d_agilite:
+    name: Jambes en cuivre d'agilité
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_d_intelligence:
+    name: Jambes en cuivre d'intelligence
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_cuivre_d_armure:
+    name: Jambes en cuivre d'armure
+    type: @jambes_lourd
+    step: @jambes_en_cuivre
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  jambes_en_bronze_de_vie:
+    name: Jambes en bronze de vie
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_de_penetration:
+    name: Jambes en bronze de pénétration
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_de_precision:
+    name: Jambes en bronze de précision
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_d_esquive:
+    name: Jambes en bronze d'esquive
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_de_parade:
+    name: Jambes en bronze de parade
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_de_defense:
+    name: Jambes en bronze de défense
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_de_force:
+    name: Jambes en bronze de force
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_d_agilite:
+    name: Jambes en bronze d'agilité
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_d_intelligence:
+    name: Jambes en bronze d'intelligence
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_bronze_d_armure:
+    name: Jambes en bronze d'armure
+    type: @jambes_lourd
+    step: @jambes_en_bronze
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #intérmédiaire
+  jambes_en_reche_de_vie:
+    name: Jambes en cuir rêche de vie
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_de_penetration:
+    name: Jambes en cuir rêche de pénétration
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_de_precision:
+    name: Jambes en cuir rêche de précision
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_d_esquive:
+    name: Jambes en cuir rêche d'esquive
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_de_parade:
+    name: Jambes en cuir rêche de parade
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_de_defense:
+    name: Jambes en cuir rêche de défense
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_de_force:
+    name: Jambes en cuir rêche de force
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_d_agilite:
+    name: Jambes en cuir rêche d'agilité
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_d_intelligence:
+    name: Jambes en cuir rêche d'intelligence
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_reche_d_armure:
+    name: Jambes en cuir rêche d'armure
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_reche
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  jambes_en_brut_de_vie:
+    name: Jambes en cuir brut de vie
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_de_penetration:
+    name: Jambes en cuir brut de pénétration
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_de_precision:
+    name: Jambes en cuir brut de précision
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_d_esquive:
+    name: Jambes en cuir brut d'esquive
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_de_parade:
+    name: Jambes en cuir brut de parade
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_de_defense:
+    name: Jambes en cuir brut de défense
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_de_force:
+    name: Jambes en cuir brut de force
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_d_agilite:
+    name: Jambes en cuir brut d'agilité
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_d_intelligence:
+    name: Jambes en cuir brut d'intelligence
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_brut_d_armure:
+    name: Jambes en cuir brut d'armure
+    type: @jambes_intermediaire
+    step: @jambes_en_cuir_brut
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #léger
+  jambes_en_etmineure_de_vie:
+    name: Jambes en Etoffe mineure de vie
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_de_penetration:
+    name: Jambes en Etoffe mineure de pénétration
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_de_precision:
+    name: Jambes en Etoffe mineure de précision
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_d_esquive:
+    name: Jambes en Etoffe mineure d'esquive
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_de_parade:
+    name: Jambes en Etoffe mineure de parade
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_de_defense:
+    name: Jambes en Etoffe mineure de défense
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_de_force:
+    name: Jambes en Etoffe mineure de force
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_d_agilite:
+    name: Jambes en Etoffe mineure d'agilité
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_d_intelligence:
+    name: Jambes en Etoffe mineure d'intelligence
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etmineure_d_armure:
+    name: Jambes en Etoffe mineure d'armure
+    type: @jambes_leger
+    step: @jambes_en_etoffe_mineure
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  jambes_en_etstandart_de_vie:
+    name: Jambes en Etoffe standart de vie
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_de_penetration:
+    name: Jambes en Etoffe standart de pénétration
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_de_precision:
+    name: Jambes en Etoffe standart de précision
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_d_esquive:
+    name: Jambes en Etoffe standart d'esquive
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_de_parade:
+    name: Jambes en Etoffe standart de parade
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_de_defense:
+    name: Jambes en Etoffe standart de défense
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_de_force:
+    name: Jambes en Etoffe standart de force
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_d_agilite:
+    name: Jambes en Etoffe standart d'agilité
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_d_intelligence:
+    name: Jambes en Etoffe standart d'intelligence
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  jambes_en_etstandart_d_armure:
+    name: Jambes en Etoffe standart d'armure
+    type: @jambes_leger
+    step: @jambes_en_etoffe_standart
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #_______________________________________________
+  #_______________________________________________
+  #Bottes
+  #Lourds
+  bottes_en_cuivre_de_vie:
+    name: Bottes en cuivre de vie
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_de_penetration:
+    name: Bottes en cuivre de pénétration
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_de_precision:
+    name: Bottes en cuivre de précision
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_d_esquive:
+    name: Bottes en cuivre d'esquive
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_de_parade:
+    name: Bottes en cuivre de parade
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_de_defense:
+    name: Bottes en cuivre de défense
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_de_force:
+    name: Bottes en cuivre de force
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_d_agilite:
+    name: Bottes en cuivre d'agilité
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_d_intelligence:
+    name: Bottes en cuivre d'intelligence
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_cuivre_d_armure:
+    name: Bottes en cuivre d'armure
+    type: @bottes_lourd
+    step: @bottes_en_cuivre
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  bottes_en_bronze_de_vie:
+    name: Bottes en bronze de vie
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_de_penetration:
+    name: Bottes en bronze de pénétration
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_de_precision:
+    name: Bottes en bronze de précision
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_d_esquive:
+    name: Bottes en bronze d'esquive
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_de_parade:
+    name: Bottes en bronze de parade
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_de_defense:
+    name: Bottes en bronze de défense
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_de_force:
+    name: Bottes en bronze de force
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_d_agilite:
+    name: Bottes en bronze d'agilité
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_d_intelligence:
+    name: Bottes en bronze d'intelligence
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_bronze_d_armure:
+    name: Bottes en bronze d'armure
+    type: @bottes_lourd
+    step: @bottes_en_bronze
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #intérmédiaire
+  bottes_en_reche_de_vie:
+    name: Bottes en cuir rêche de vie
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_de_penetration:
+    name: Bottes en cuir rêche de pénétration
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_de_precision:
+    name: Bottes en cuir rêche de précision
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_d_esquive:
+    name: Bottes en cuir rêche d'esquive
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_de_parade:
+    name: Bottes en cuir rêche de parade
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_de_defense:
+    name: Bottes en cuir rêche de défense
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_de_force:
+    name: Bottes en cuir rêche de force
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_d_agilite:
+    name: Bottes en cuir rêche d'agilité
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_d_intelligence:
+    name: Bottes en cuir rêche d'intelligence
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_reche_d_armure:
+    name: Bottes en cuir rêche d'armure
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_reche
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  bottes_en_brut_de_vie:
+    name: Bottes en cuir brut de vie
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_de_penetration:
+    name: Bottes en cuir brut de pénétration
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_de_precision:
+    name: Bottes en cuir brut de précision
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_d_esquive:
+    name: Bottes en cuir brut d'esquive
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_de_parade:
+    name: Bottes en cuir brut de parade
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_de_defense:
+    name: Bottes en cuir brut de défense
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_de_force:
+    name: Bottes en cuir brut de force
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_d_agilite:
+    name: Bottes en cuir brut d'agilité
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_d_intelligence:
+    name: Bottes en cuir brut d'intelligence
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_brut_d_armure:
+    name: Bottes en cuir brut d'armure
+    type: @bottes_intermerdiaire
+    step: @bottes_en_cuir_brut
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #léger
+  bottes_en_etmineure_de_vie:
+    name: Bottes en Etoffe mineure de vie
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_de_penetration:
+    name: Bottes en Etoffe mineure de pénétration
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_de_precision:
+    name: Bottes en Etoffe mineure de précision
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_d_esquive:
+    name: Bottes en Etoffe mineure d'esquive
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_de_parade:
+    name: Bottes en Etoffe mineure de parade
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_de_defense:
+    name: Bottes en Etoffe mineure de défense
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_de_force:
+    name: Bottes en Etoffe mineure de force
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_d_agilite:
+    name: Bottes en Etoffe mineure d'agilité
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_d_intelligence:
+    name: Bottes en Etoffe mineure d'intelligence
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etmineure_d_armure:
+    name: Bottes en Etoffe mineure d'armure
+    type: @bottes_leger
+    step: @bottes_en_etoffe_mineure
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  bottes_en_etstandart_de_vie:
+    name: Bottes en Etoffe standart de vie
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_de_penetration:
+    name: Bottes en Etoffe standart de pénétration
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_de_precision:
+    name: Bottes en Etoffe standart de précision
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_d_esquive:
+    name: Bottes en Etoffe standart d'esquive
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_de_parade:
+    name: Bottes en Etoffe standart de parade
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_de_defense:
+    name: Bottes en Etoffe standart de défense
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_de_force:
+    name: Bottes en Etoffe standart de force
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_d_agilite:
+    name: Bottes en Etoffe standart d'agilité
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_d_intelligence:
+    name: Bottes en Etoffe standart d'intelligence
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  bottes_en_etstandart_d_armure:
+    name: Bottes en Etoffe standart d'armure
+    type: @bottes_leger
+    step: @bottes_en_etoffe_standart
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #_______________________________________________
+  #_______________________________________________
+  #Bottes
+  #Lourds
+  gants_en_cuivre_de_vie:
+    name: Gants en cuivre de vie
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_de_penetration:
+    name: Gants en cuivre de pénétration
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_de_precision:
+    name: Gants en cuivre de précision
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_d_esquive:
+    name: Gants en cuivre d'esquive
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_de_parade:
+    name: Gants en cuivre de parade
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_de_defense:
+    name: Gants en cuivre de défense
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_de_force:
+    name: Gants en cuivre de force
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_d_agilite:
+    name: Gants en cuivre d'agilité
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_d_intelligence:
+    name: Gants en cuivre d'intelligence
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_cuivre_d_armure:
+    name: Gants en cuivre d'armure
+    type: @gants_lourd
+    step: @gants_en_cuivre
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  gants_en_bronze_de_vie:
+    name: Gants en bronze de vie
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_de_penetration:
+    name: Gants en bronze de pénétration
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_de_precision:
+    name: Gants en bronze de précision
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_d_esquive:
+    name: Gants en bronze d'esquive
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_de_parade:
+    name: Gants en bronze de parade
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_de_defense:
+    name: Gants en bronze de défense
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_de_force:
+    name: Gants en bronze de force
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_d_agilite:
+    name: Gants en bronze d'agilité
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_d_intelligence:
+    name: Gants en bronze d'intelligence
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_bronze_d_armure:
+    name: Gants en bronze d'armure
+    type: @gants_lourd
+    step: @gants_en_bronze
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #intérmédiaire
+  gants_en_reche_de_vie:
+    name: Gants en cuir rêche de vie
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_de_penetration:
+    name: Gants en cuir rêche de pénétration
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_de_precision:
+    name: Gants en cuir rêche de précision
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_d_esquive:
+    name: Gants en cuir rêche d'esquive
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_de_parade:
+    name: Gants en cuir rêche de parade
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_de_defense:
+    name: Gants en cuir rêche de défense
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_de_force:
+    name: Gants en cuir rêche de force
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_d_agilite:
+    name: Gants en cuir rêche d'agilité
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_d_intelligence:
+    name: Gants en cuir rêche d'intelligence
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_reche_d_armure:
+    name: Gants en cuir rêche d'armure
+    type: @gants_intermediaire
+    step: @gants_en_cuir_reche
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  gants_en_brut_de_vie:
+    name: Gants en cuir brut de vie
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_de_penetration:
+    name: Gants en cuir brut de pénétration
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_de_precision:
+    name: Gants en cuir brut de précision
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { vie: precision}
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_d_esquive:
+    name: Gants en cuir brut d'esquive
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_de_parade:
+    name: Gants en cuir brut de parade
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_de_defense:
+    name: Gants en cuir brut de défense
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_de_force:
+    name: Gants en cuir brut de force
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_d_agilite:
+    name: Gants en cuir brut d'agilité
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_d_intelligence:
+    name: Gants en cuir brut d'intelligence
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_brut_d_armure:
+    name: Gants en cuir brut d'armure
+    type: @gants_intermediaire
+    step: @gants_en_cuir_brut
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  #léger
+  gants_en_etmineure_de_vie:
+    name: Gants en Etoffe mineure de vie
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_de_penetration:
+    name: Gants en Etoffe mineure de pénétration
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_de_precision:
+    name: Gants en Etoffe mineure de précision
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_d_esquive:
+    name: Gants en Etoffe mineure d'esquive
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_de_parade:
+    name: Gants en Etoffe mineure de parade
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_de_defense:
+    name: Gants en Etoffe mineure de défense
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_de_force:
+    name: Gants en Etoffe mineure de force
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_d_agilite:
+    name: Gants en Etoffe mineure d'agilité
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_d_intelligence:
+    name: Gants en Etoffe mineure d'intelligence
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etmineure_d_armure:
+    name: Gants en Etoffe mineure d'armure
+    type: @gants_leger
+    step: @gants_en_etoffe_mineure
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  #__________________________________________
+  gants_en_etstandart_de_vie:
+    name: Gants en Etoffe standart de vie
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { vie: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_de_penetration:
+    name: Gants en Etoffe standart de pénétration
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { penetration: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_de_precision:
+    name: Gants en Etoffe standart de précision
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { precision: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_d_esquive:
+    name: Gants en Etoffe standart d'esquive
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { esquive: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_de_parade:
+    name: Gants en Etoffe standart de parade
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { parade: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_de_defense:
+    name: Gants en Etoffe standart de défense
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { defense: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_de_force:
+    name: Gants en Etoffe standart de force
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { force: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_d_agilite:
+    name: Gants en Etoffe standart d'agilité
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { agilite: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_d_intelligence:
+    name: Gants en Etoffe standart d'intelligence
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { intelligence: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+  gants_en_etstandart_d_armure:
+    name: Gants en Etoffe standart d'armure
+    type: @gants_leger
+    step: @gants_en_etoffe_standart
+    defense: 5
+    # effects: { armure: 20 }
+    bonuses:
+        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "Power", modifier: 30 }
+    points: 1
+

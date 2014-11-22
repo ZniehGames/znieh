@@ -1,0 +1,7 @@
+Znieh\Model\Size:
+  petit:
+    name: Petit
+  normal:
+    name: Normal
+  grand:
+    name: Grand

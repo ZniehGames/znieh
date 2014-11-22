@@ -1,0 +1,25 @@
+Znieh\Model\WeaponPartType:
+  lame:
+    name: Lame
+  pommeau:
+    name: Pommeau
+  manche:
+    name: Manche
+  garde:
+    name: Garde
+  tete_hache:
+    name: Tête de hache
+  tete_marteau:
+    name: Tête de marteau
+  hampe:
+    name: Hampe
+  poignee:
+    name: Poignée
+  # corde:
+  #   name: Corde
+  # fleche:
+  #   name: Flèche
+  # part_arc:
+  #   name: Arc
+  # poignee_arc:
+  #   name: Poignée d'arc

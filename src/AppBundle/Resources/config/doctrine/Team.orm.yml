@@ -1,0 +1,48 @@
+Znieh\Model\Team:
+    type:  entity
+    table: team
+    repositoryClass: Znieh\Repository\TeamRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+      createdAt:
+        type: datetime
+      updatedAt:
+        type: datetime
+      name:
+        type: string
+        length: 255
+      selected:
+        type: boolean
+        nullable: false
+
+    manyToMany:
+      units:
+        targetEntity: Unit
+        inversedBy: teams
+        joinTable:
+          name: teams_units
+          joinColumns:
+            team_id:
+              referencedColumnName: id
+              nullable: false
+              unique: false
+          inverseJoinColumns:
+            unit_id:
+              referencedColumnName: id
+              columnDefinition: INT NULL
+        cascade:
+          - persist
+
+    manyToOne:
+        user:
+          targetEntity: User
+          joinColumn:
+            name: user_id
+            referencedColumnName: id
+
+    lifecycleCallbacks:
+        prePersist: [ prePersistTimestamp ]

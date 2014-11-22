@@ -1,0 +1,53 @@
+Znieh\Model\Unit:
+    type:  entity
+    table: unit
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+      createdAt:
+        type: datetime
+      updatedAt:
+        type: datetime
+      name:
+        type: string
+        length: 255
+
+    manyToMany:
+       teams:
+         targetEntity: Team
+         mappedBy: units
+
+    manyToOne:
+        user:
+          targetEntity: User
+          joinColumn:
+            name: user_id
+            referencedColumnName: id
+        size:
+          targetEntity: Size
+          joinColumn:
+            name: size_id
+            referencedColumnName: id
+        weight:
+          targetEntity: Weight
+          joinColumn:
+            name: weight_id
+            referencedColumnName: id
+        armor:
+          targetEntity: Armor
+          joinColumn:
+            name: armor_id
+            referencedColumnName: id
+          cascade: ["persist"]
+        weapon:
+          targetEntity: Weapon
+          joinColumn:
+            name: weapon_id
+            referencedColumnName: id
+          cascade: ["persist"]
+
+    lifecycleCallbacks:
+        prePersist: [ prePersistTimestamp ]

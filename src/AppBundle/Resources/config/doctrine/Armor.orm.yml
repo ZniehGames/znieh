@@ -1,0 +1,53 @@
+Znieh\Model\Armor:
+    type:  entity
+    table: armor
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+      createdAt:
+        type: datetime
+      updatedAt:
+        type: datetime
+
+    manyToOne:
+        helm:
+          targetEntity: ArmorPiece
+          joinColumn:
+            name: helm_id
+            referencedColumnName: id
+          cascade: ["persist"]
+        torso:
+          targetEntity: ArmorPiece
+          joinColumn:
+            name: torso_id
+            referencedColumnName: id
+          cascade: ["persist"]
+        gloves:
+          targetEntity: ArmorPiece
+          joinColumn:
+            name: gloves_id
+            referencedColumnName: id
+          cascade: ["persist"]
+        greaves:
+          targetEntity: ArmorPiece
+          joinColumn:
+            name: greaves_id
+            referencedColumnName: id
+          cascade: ["persist"]
+        boots:
+          targetEntity: ArmorPiece
+          joinColumn:
+            name: boots_id
+            referencedColumnName: id
+          cascade: ["persist"]
+        user:
+          targetEntity: User
+          joinColumn:
+            name: user_id
+            referencedColumnName: id
+
+    lifecycleCallbacks:
+        prePersist: [ prePersistTimestamp ]

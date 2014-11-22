@@ -1,0 +1,14 @@
+Znieh\Model\ArmorPartType:
+    type:  entity
+    table: armor_part_types
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        bonuses:
+            type: array

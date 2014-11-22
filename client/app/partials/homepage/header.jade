@@ -1,10 +1,12 @@
 header.business-header
+  .logo
 
 .container
   .row
-    .col-md-8
-      h1.tagline Avec Znieh, dit adieu aux classes prédéfinies et customises toi-même tes unités !
-      h2.tagline Le braingame qui met à rude épreuve ta stratégie...
-    .col-md-4(ng-controller="OpenRegistrationCtrl")
+    .col-md-12
+      h1.tagline Le Free to Play qui met fin aux classes prédéfinies !
+      h2.tagline Compose toi-même tes unités et combat des milliers d’adversaires...
+  .row
+    .col-md-4.col-md-offset-4(ng-controller="OpenRegistrationCtrl")
       include ./register_newsletter.jade
       include ./register_user.jade

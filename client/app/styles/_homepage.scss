@@ -1,0 +1,27 @@
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.landscape {
+    display: block;
+    background: url('../images/landscape.jpg') center center no-repeat scroll;
+    background-size: cover;
+}
+
+.logo {
+    margin: 0 auto;
+    display: block;
+    height: 274px;
+    width: 300px;
+    background: url('../images/logo-with-name.png') center center no-repeat scroll;
+    background-size: cover;
+}
+
+.business-header {
+  height: 320px;
+  padding-top: 15px;
+}
+
+.homepage-layer {
+  background: rgba(255,255,255, 0.6);
+}

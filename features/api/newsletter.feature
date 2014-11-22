@@ -1,7 +1,7 @@
 Feature: Newsletter
 
   Background:
-    Given the database is empty
+    Given the database contains fixtures
 
   Scenario: Register new email
     When I send a POST request to "/emails" with values:

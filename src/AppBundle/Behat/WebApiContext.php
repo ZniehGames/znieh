@@ -71,6 +71,7 @@ class WebApiContext extends DefaultContext
     public function theJsonResponseShouldMatch(PyStringNode $pattern)
     {
         $this->response->json(); // check if json
+        var_dump((string) $this->response->getBody()); // eases debug
         \PHPUnit_Framework_Assert::assertTrue(match((string) $this->response->getBody(), $pattern->getRaw()));
     }
 }

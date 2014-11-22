@@ -143,48 +143,35 @@ abstract class DefaultContext extends RawMinkContext implements Context, KernelA
     }
 
     /**
-     * Load a data fixture class
-     *
-     * @param \Doctrine\Common\DataFixtures\Loader $loader    Data fixtures loader
-     * @param string                               $className Class name of fixture
-     */
-    public function loadFixtureClass(Loader $loader, $className)
-    {
-        $fixture = new $className();
-        if ($loader->hasFixture($fixture)) {
-            unset($fixture);
-            return;
-        }
-        $loader->addFixture(new $className);
-        if ($fixture instanceof DependentFixtureInterface) {
-            foreach ($fixture->getDependencies() as $dependency) {
-                $this->loadFixtureClass($loader, $dependency);
-            }
-        }
-    }
-
-    /**
-     * Load a data fixture class
-     *
-     * @param \Doctrine\Common\DataFixtures\Loader $loader     Data fixtures loader
-     * @param array                                $classNames Array of class names of fixtures
-     */
-    public function loadFixtureClasses(Loader $loader, array $classNames)
-    {
-        foreach ($classNames as $className) {
-            $this->loadFixtureClass($loader, $className);
-        }
-    }
-
-    /**
      * Execute the fixtures
      *
      * @param \Doctrine\Common\DataFixtures\Loader $loader     Data fixtures loader
      */
     public function purgeAndExecuteFixtures(Loader $loader)
     {
-        $executor = new ORMExecutor($this->getService('doctrine.orm.entity_manager'), new ORMPurger());
-        $executor->execute($loader->getFixtures());
+        $manager = $this->getService('h4cc_alice_fixtures.manager');
+        $objects = $manager->loadFiles([
+            __DIR__.'/../DataFixtures/Fixtures/sizes.yml',
+            __DIR__.'/../DataFixtures/Fixtures/weights.yml',
+            __DIR__.'/../DataFixtures/Fixtures/sprites.yml',
+            __DIR__.'/../DataFixtures/Fixtures/buildings.yml',
+            __DIR__.'/../DataFixtures/Fixtures/steps.yml',
+            __DIR__.'/../DataFixtures/Fixtures/armorPartTypes.yml',
+            __DIR__.'/../DataFixtures/Fixtures/armorTypes.yml',
+            __DIR__.'/../DataFixtures/Fixtures/armorParts.yml',
+            __DIR__.'/../DataFixtures/Fixtures/weaponPartTypes.yml',
+            __DIR__.'/../DataFixtures/Fixtures/weaponTypes.yml',
+            __DIR__.'/../DataFixtures/Fixtures/weaponParts.yml',
+            __DIR__.'/../DataFixtures/Fixtures/runeTypes.yml',
+            __DIR__.'/../DataFixtures/Fixtures/runes.yml',
+        ], 'yaml');
+        $manager->persist($objects, true);
+        $objects = $manager->loadFiles([
+            __DIR__.'/../DataFixtures/Fixtures/users.yml',
+            __DIR__.'/../DataFixtures/Fixtures/units.yml',
+            __DIR__.'/../DataFixtures/Fixtures/teams.yml',
+        ], 'yaml');
+        $manager->persist($objects, false);
     }
 
     /**

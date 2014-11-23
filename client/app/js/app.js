@@ -23,7 +23,7 @@ app.config(function ($routeProvider, RestangularProvider) {
       when('/fight', {
         templateUrl: 'partials/fightpage/index.html',
       }).
-      when('/fight/search', {
+      when('/search', {
         templateUrl: 'partials/fightsearch/index.html',
       }).
       otherwise({

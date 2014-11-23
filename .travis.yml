@@ -46,7 +46,6 @@ before_script:
  - composer install --no-progress --prefer-dist
  - php app/console doctrine:database:create --env=test
  - php app/console doctrine:schema:create --env=test
-# - php app/console doctrine:fixtures:load -n --env=test
  - mkdir -p app/cache app/logs
  - chmod -R 777 /tmp/cache /tmp/logs app/cache app/logs
 
@@ -68,6 +67,7 @@ before_script:
 
 script:
     - gulp
+    - php app/console doctrine:fixtures:load -n --env=test
     - php app/console security:check
     - php bin/phpspec run
     - php bin/behat

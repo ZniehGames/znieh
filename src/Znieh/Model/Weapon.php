@@ -6,7 +6,7 @@ class Weapon
 {
   use \Znieh\Traits\NamableEntity;
   use \Znieh\Traits\TimestampableEntity;
-  use \Znieh\Traits\OwnedByUSerEntity;
+  use \Znieh\Traits\OwnedByUserEntity;
 
   private $id;
   private $parts;

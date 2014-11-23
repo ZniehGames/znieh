@@ -2,10 +2,11 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Hautelook\AliceBundle\Alice\DataFixtureLoader;
 use Nelmio\Alice\Fixtures;
 
-class ContentLoader extends DataFixtureLoader
+class ContentLoader extends DataFixtureLoader implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
@@ -27,5 +28,13 @@ class ContentLoader extends DataFixtureLoader
             __DIR__ . '/../Fixtures/runeTypes.yml',
             __DIR__ . '/../Fixtures/runes.yml',
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getOrder()
+    {
+        return 1;
     }
 }

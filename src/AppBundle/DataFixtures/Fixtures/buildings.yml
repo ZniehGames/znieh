@@ -1,0 +1,10 @@
+Znieh\Model\Building:
+  forge:
+    name: Forge
+    description: Vous permet de créer des armes.
+  armurerie:
+    name: Armurerie
+    description: Vous permet de créer des armures.
+  bibliotheque:
+    name: Bibliothèque
+    description: Vous permet de débloquer des sorts.

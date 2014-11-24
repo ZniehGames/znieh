@@ -1,0 +1,5 @@
+Znieh\Model\User:
+    user{1..10}:
+        username: <username()>
+        password: <password()>
+        email: <email()>

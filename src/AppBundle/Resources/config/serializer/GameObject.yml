@@ -1,0 +1,9 @@
+Znieh\Model\GameObject:
+  exclusion_policy: ALL
+  properties:
+    name:
+      expose: true
+    bonuses:
+      expose: true
+    points:
+      expose: true

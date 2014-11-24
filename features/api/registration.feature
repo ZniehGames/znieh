@@ -1,7 +1,7 @@
 Feature: Registration
 
   Background:
-    Given the database is empty
+    Given the database contains fixtures
 
   Scenario: Register new user
     When I send a POST request to "/users" with values:

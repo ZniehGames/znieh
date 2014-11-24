@@ -1,0 +1,10 @@
+Znieh\Model\ArmorType:
+  lourd:
+    name: Lourd
+    parts: [ @casque_lourd, @torse_lourd, @jambes_lourd, @bottes_lourd, @gants_lourd]
+  intermediaire:
+    name: Intermédiaire
+    parts: [ @casque_intermediaire, @torse_intermediaire, @jambes_intermediaire, @bottes_intermerdiaire, @gants_intermediaire]
+  leger:
+    name: Léger
+    parts: [ @casque_leger, @torse_leger, @jambes_leger, @bottes_leger, @gants_leger]

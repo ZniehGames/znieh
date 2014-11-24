@@ -1,0 +1,7 @@
+Znieh\Model\ArmorPart:
+  exclusion_policy: ALL
+  properties:
+    type:
+      expose: true
+    defense:
+      expose: true

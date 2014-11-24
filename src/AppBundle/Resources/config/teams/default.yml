@@ -1,0 +1,102 @@
+name: Défaut
+units:
+   1:
+      name: Jacky
+      size: Normal
+      weight: Musclé
+      sprite: perso_petit
+      weapon:
+        type: Épée
+        parts: [ Lame de dague en cuivre, Garde ciselée en cuivre, Manche en cèdre de pénétration, Pommeau en cuivre de précision]
+      armor:
+        pieces:
+          helm:
+            part: Casque en cuir brut d'armure
+            rune: Rune du survivant majeur
+          torso:
+            part: Torse en cuir rêche de parade
+            rune: Rune de rayonement majeur
+          gloves:
+            part: Gants en cuir rêche de parade
+            rune: Rune de rayonement majeur
+          greaves:
+            part: Jambes en cuir rêche de précision
+            rune: Rune de rayonement majeur
+          boots:
+            part: Bottes en cuir rêche de défense
+            rune: Rune de bénédiction mineur
+   2:
+      name: Bobby
+      size: Normal
+      weight: Musclé
+      sprite: perso_casque
+      weapon:
+        type: Épée
+        parts: [ Lame de dague en cuivre, Garde ciselée en cuivre, Manche en cèdre de pénétration, Pommeau en cuivre de précision]
+      armor:
+        pieces:
+          helm:
+            part: Casque en cuir brut d'armure
+            rune: Rune du survivant majeur
+          torso:
+            part: Torse en cuir rêche de parade
+            rune: Rune de rayonement majeur
+          gloves:
+            part: Gants en cuir rêche de parade
+            rune: Rune de rayonement majeur
+          greaves:
+            part: Jambes en cuir rêche de précision
+            rune: Rune de rayonement majeur
+          boots:
+            part: Bottes en cuir rêche de défense
+            rune: Rune de bénédiction mineur
+   3:
+      name: Neirda
+      size: Normal
+      weight: Musclé
+      sprite: perso_casque_argent
+      weapon:
+        type: Hache
+        parts: [ Tête de Labrys en cuivre, Hampe en cèdre de vie, Poignée en panier en cuivre ]
+      armor:
+        pieces:
+          helm:
+            part: Casque en cuir brut d'armure
+            rune: Rune du survivant majeur
+          torso:
+            part: Torse en cuir rêche de parade
+            rune: Rune de rayonement majeur
+          gloves:
+            part: Gants en cuir rêche de parade
+            rune: Rune de rayonement majeur
+          greaves:
+            part: Jambes en cuir rêche de précision
+            rune: Rune de rayonement majeur
+          boots:
+            part: Bottes en cuir rêche de défense
+            rune: Rune de bénédiction mineur
+   4:
+      name: Sam Soul
+      size: Normal
+      weight: Musclé
+      sprite: perso_casque_Or
+      weapon:
+        type: Hache
+        parts: [ Tête de Labrys en cuivre, Hampe en cèdre de vie, Poignée en panier en cuivre ]
+      armor:
+        pieces:
+          helm:
+            part: Casque en cuir brut d'armure
+            rune: Rune du survivant majeur
+          torso:
+            part: Torse en cuir rêche de parade
+            rune: Rune de rayonement majeur
+          gloves:
+            part: Gants en cuir rêche de parade
+            rune: Rune de rayonement majeur
+          greaves:
+            part: Jambes en cuir rêche de précision
+            rune: Rune de rayonement majeur
+          boots:
+            part: Bottes en cuir rêche de défense
+            rune: Rune de bénédiction mineur

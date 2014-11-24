@@ -1,0 +1,27 @@
+Znieh\Model\ArmorType:
+    type:  entity
+    table: armor_types
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+
+    manyToMany:
+        parts:
+          targetEntity: ArmorPartType
+          joinColumn:
+            name: part_type_id
+            referencedColumnName: id
+          cascade: ["persist"]
+
+    manyToOne:
+        building:
+          targetEntity: Building
+          joinColumn:
+            name: building_id
+            referencedColumnName: id

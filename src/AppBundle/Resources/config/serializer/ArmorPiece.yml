@@ -1,0 +1,7 @@
+Znieh\Model\ArmorPiece:
+  exclusion_policy: ALL
+  properties:
+    part:
+      expose: true
+    rune:
+      expose: true

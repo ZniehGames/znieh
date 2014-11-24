@@ -1,0 +1,24 @@
+Znieh\Model\UnlockedGameObject:
+    type:  entity
+    table: unlocked_game_object
+    id:
+        object:
+            associationKey: true
+        user:
+            associationKey: true
+    fields:
+      createdAt:
+        type: datetime
+
+    manyToOne:
+        object:
+          targetEntity: GameObject
+          inversedBy: unlockeds
+          joinColumn:
+            name: object_id
+            referencedColumnName: id
+        user:
+          targetEntity: User
+          joinColumn:
+            name: user_id
+            referencedColumnName: id

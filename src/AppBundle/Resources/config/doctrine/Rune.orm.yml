@@ -1,0 +1,9 @@
+Znieh\Model\Rune:
+    type:  entity
+
+    manyToOne:
+        type:
+          targetEntity: RuneType
+          joinColumn:
+            name: type_id
+            referencedColumnName: id

@@ -1,0 +1,36 @@
+Znieh\Model\Weapon:
+    type:  entity
+    table: weapon
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+      createdAt:
+        type: datetime
+      updatedAt:
+        type: datetime
+
+    manyToOne:
+        user:
+          targetEntity: User
+          joinColumn:
+            name: user_id
+            referencedColumnName: id
+        type:
+          targetEntity: WeaponType
+          joinColumn:
+            name: type_id
+            referencedColumnName: id
+
+    manyToMany:
+        parts:
+          targetEntity: WeaponPart
+          joinColumn:
+            name: part_id
+            referencedColumnName: id
+          cascade: ["persist"]
+
+    lifecycleCallbacks:
+        prePersist: [ prePersistTimestamp ]

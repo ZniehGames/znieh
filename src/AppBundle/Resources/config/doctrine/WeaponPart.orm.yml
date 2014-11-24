@@ -1,0 +1,15 @@
+Znieh\Model\WeaponPart:
+    type:  entity
+
+    fields:
+      minDamage:
+        type: integer
+      maxDamage:
+        type: integer
+
+    manyToOne:
+        type:
+          targetEntity: WeaponPartType
+          joinColumn:
+            name: type_id
+            referencedColumnName: id

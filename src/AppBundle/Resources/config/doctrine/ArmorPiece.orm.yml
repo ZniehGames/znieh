@@ -1,0 +1,20 @@
+Znieh\Model\ArmorPiece:
+    type:  entity
+    table: armor_pieces
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    manyToOne:
+        part:
+          targetEntity: ArmorPart
+          joinColumn:
+            name: part_id
+            referencedColumnName: id
+        rune:
+          targetEntity: Rune
+          joinColumn:
+            name: rune_id
+            referencedColumnName: id

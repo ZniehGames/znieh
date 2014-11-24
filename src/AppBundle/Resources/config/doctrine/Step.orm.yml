@@ -1,0 +1,30 @@
+Znieh\Model\Step:
+    type:  entity
+    table: step
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+      name:
+        type: string
+        length: 255
+      costs:
+        type: array
+      points:
+        type: integer
+
+    manyToOne:
+        building:
+          targetEntity: Building
+          joinColumn:
+            name: building_id
+            referencedColumnName: id
+        parent:
+          targetEntity: Step
+          joinColumn:
+            name: parent_id
+            referencedColumnName: id
+            nullable: true
+            onDelete: CASCADE

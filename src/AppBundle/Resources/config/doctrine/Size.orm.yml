@@ -1,0 +1,12 @@
+Znieh\Model\Size:
+    type:  entity
+    table: size
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+      name:
+        type: string
+        length: 255

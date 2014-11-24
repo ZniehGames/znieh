@@ -124,3 +124,14 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: api
     user_class: Znieh\Model\User
+
+hautelook_alice:
+    locale: fr_FR
+
+jms_serializer:
+    metadata:
+        auto_detection: true
+        directories:
+            Znieh:
+                namespace_prefix: "Znieh\\Model"
+                path: "%kernel.root_dir%/../src/AppBundle/Resources/config/serializer"

@@ -7,6 +7,15 @@ use Doctrine\Common\DataFixtures\Loader;
 
 class UserContext extends WebApiContext
 {
+
+    /**
+     * @Given /^the database contains fixtures$/
+     */
+    public function theDatabaseContainsFixtures()
+    {
+        $this->purgeAndExecuteFixtures(new Loader());
+    }
+
     /**
      * @Given /^There is a user "([^"]+)"$/
      */

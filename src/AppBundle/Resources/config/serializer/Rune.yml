@@ -1,0 +1,5 @@
+Znieh\Model\Rune:
+  exclusion_policy: ALL
+  properties:
+    type:
+      expose: true

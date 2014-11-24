@@ -1,0 +1,13 @@
+Znieh\Model\ArmorPart:
+    type:  entity
+
+    fields:
+      defense:
+        type: integer
+
+    manyToOne:
+        type:
+          targetEntity: ArmorPartType
+          joinColumn:
+            name: type_id
+            referencedColumnName: id

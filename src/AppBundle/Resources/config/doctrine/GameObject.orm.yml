@@ -1,0 +1,40 @@
+Znieh\Model\GameObject:
+  type: entity
+  table: game_objects
+  inheritanceType: SINGLE_TABLE
+  discriminatorColumn:
+    name: dicr
+    type: string
+  discriminatorMap:
+    armor_part: ArmorPart
+    weapon_part: WeaponPart
+    rune: Rune
+  id:
+      id:
+          type: integer
+          generator:
+              strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 255
+    description:
+      type: text
+      nullable: true
+    bonuses:
+      type: array
+    costs:
+      type: array
+    points:
+      type: integer
+
+  manyToOne:
+      step:
+        targetEntity: Step
+        joinColumn:
+          name: step_id
+          referencedColumnName: id
+  oneToMany:
+      unlockeds:
+        targetEntity: UnlockedGameObject
+        mappedBy: object

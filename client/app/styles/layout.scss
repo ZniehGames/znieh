@@ -6,14 +6,5 @@
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap";
 @import "../vendor/bourbon/dist/bourbon";
 @import "fightpage/fight.scss";
-
-body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
-
-.business-header {
-    height: 300px;
-    background: url('http://placehold.it/1920x300') center center no-repeat scroll;
-    background-size: cover;
-}
+@import "_homepage.scss";
 

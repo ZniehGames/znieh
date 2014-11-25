@@ -1,7 +1,7 @@
 extends ../village_layout.jade
 
 block content
-    .row
+    .row(ng-controller="FightSearchCtrl")
         .col-sm-12
             .header
                 h1 Prêt à combattre ?
@@ -29,7 +29,7 @@ block content
                             .pull-left
                                 img(src="http://lorempicsum.com/simpsons/50/75/1").sprite
                             .details
-                                h2 Darkouu
+                                h2 Jack
                                 .separator
                                 .stat
                                     img(src="../images/icons/vie.png")
@@ -64,7 +64,7 @@ block content
                             .pull-left
                                 img(src="http://lorempicsum.com/simpsons/50/75/1").sprite
                             .details
-                                h2 Darkouu
+                                h2 Jack
                                 .separator
                                 .stat
                                     img(src="../images/icons/vie.png")
@@ -99,7 +99,7 @@ block content
                             .pull-left
                                 img(src="http://lorempicsum.com/simpsons/50/75/1").sprite
                             .details
-                                h2 Darkouu
+                                h2 Jack
                                 .separator
                                 .stat
                                     img(src="../images/icons/vie.png")
@@ -134,7 +134,7 @@ block content
                             .pull-left
                                 img(src="http://lorempicsum.com/simpsons/50/75/1").sprite
                             .details
-                                h2 Darkouu
+                                h2 Jack
                                 .separator
                                 .stat
                                     img(src="../images/icons/vie.png")
@@ -169,7 +169,7 @@ block content
                             .pull-left
                                 img(src="http://lorempicsum.com/simpsons/50/75/1").sprite
                             .details
-                                h2 Darkouu
+                                h2 Jack
                                 .separator
                                 .stat
                                     img(src="../images/icons/vie.png")
@@ -204,7 +204,7 @@ block content
                             .pull-left
                                 img(src="http://lorempicsum.com/simpsons/50/75/1").sprite
                             .details
-                                h2 Darkouu
+                                h2 Jack
                                 .separator
                                 .stat
                                     img(src="../images/icons/vie.png")
@@ -239,7 +239,7 @@ block content
                             .pull-left
                                 img(src="http://lorempicsum.com/simpsons/50/75/1").sprite
                             .details
-                                h2 Darkouu
+                                h2 Jack
                                 .separator
                                 .stat
                                     img(src="../images/icons/vie.png")
@@ -269,5 +269,5 @@ block content
                             button.btn.btn-default.btn-xs
                                 |Sélectionner
             .search
-                button.btn.btn-success.btn-lg
+                button.btn.btn-success.btn-lg(ng-click="searchFight")
                     |Je suis prêt !

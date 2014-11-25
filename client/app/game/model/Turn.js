@@ -1,6 +1,6 @@
 class Turn {
 
-  construct(number) {
+  constructor(number) {
     this.number = number;
     this.actions = [];
   }

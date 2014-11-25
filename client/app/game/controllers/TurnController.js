@@ -3,7 +3,7 @@ import Unit from '../model/Unit';
 
 class TurnController {
 
-    construct() {
+    constructor() {
         this.turn = new Turn(0);
         this.previousTurns = [];
 

@@ -1,7 +1,8 @@
 'use strict';
 
-import MapUtils from '../utils/MapUtils';
+import Unit from '../model/Unit';
 import Map from '../model/Map';
+import MapView from '../view/MapView';
 
 class Game {
 
@@ -10,6 +11,7 @@ class Game {
         this.selectedTile;
         this.map;
         this.tilemap;
+        this.mapView;
     }
 
     preload() {
@@ -42,6 +44,15 @@ class Game {
 
         // We add collision
         this.tilemap.setCollision(this.map.getBlockedTiles(), true);
+
+        // Finally we place units to random positions
+        var units = [];
+        units.push(new Unit());
+        units.push(new Unit());
+        this.map.randomUnitsPlacement(units);
+
+        this.mapView = new MapView(this.game);
+        this.mapView.render(this.map);
 
         this.layer.debug = true;
         this.game.physics.setBoundsToWorld(true, true, true, true, false);

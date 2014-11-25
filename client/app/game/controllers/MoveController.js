@@ -2,7 +2,7 @@ import TurnController from 'TurnController';
 
 class MoveController {
 
-    construct(turnController) {
+    constructor(turnController) {
         this.turnController = turnController;
     }
 

@@ -9,7 +9,7 @@ class Map {
       // maybe find a cleaner way...
       var tiles = [];
       this.tilemap.tiles.forEach(function(tile) {
-         tiles.push(new Tile(tile.x, tile.y));
+         tiles.push(new Tile(tile[0], tile[1]));
       });
       this.tiles = tiles;
     }
@@ -22,14 +22,12 @@ class Map {
         return arrayInt;
     }
 
+    // this should be deleted, only for test...
     randomUnitsPlacement(units) {
-
-      var i = 0;
-      // units.forEach(function(u){
-      //     this.tiles[i].addUnit(u);
-      //     i++;
-      // });
-
+      var tiles = this.tiles;
+      units.forEach(function(u){
+          tiles[Math.floor((Math.random() * 100) + 1)].addUnit(u);
+      });
     }
 
 }

@@ -8,11 +8,18 @@ class MapView {
   }
 
   render(map) {
-    var sprite;
-    sprite = this.game.add.sprite(25, 25, 'nigga');
-    sprite.enableBody = true;
-    this.game.physics.enable(sprite);
-    sprite.body.debug = true;
+
+    var game = this.game;
+
+    map.tiles.forEach(function(tile) {
+      if (tile.hasUnit()) {
+        var sprite;
+        sprite = game.add.sprite(tile.x, tile.y, 'nigga');
+        sprite.enableBody = true;
+        game.physics.enable(sprite);
+        sprite.body.debug = true;
+      }
+    });
   }
 
 }

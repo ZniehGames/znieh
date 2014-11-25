@@ -8,9 +8,13 @@ class Tile {
 
     addUnit(unit) {
       if (this.unit) {
-        throw 'unit déjà présente sur ' + tile;
+        throw 'unit déjà présente sur ' + this;
       }
       this.unit = unit;
+    }
+
+    hasUnit() {
+      return this.unit === undefined ? false : true;
     }
 
 }

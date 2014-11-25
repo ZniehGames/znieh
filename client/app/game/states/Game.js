@@ -45,8 +45,12 @@ class Game {
         // We add collision
         this.tilemap.setCollision(this.map.getBlockedTiles(), true);
 
-        // Finally we place units to random positions
+        // Finally we place units to random positions (to delete)
         var units = [];
+        units.push(new Unit());
+        units.push(new Unit());
+        units.push(new Unit());
+        units.push(new Unit());
         units.push(new Unit());
         units.push(new Unit());
         this.map.randomUnitsPlacement(units);

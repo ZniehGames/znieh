@@ -5,7 +5,8 @@
 var app = angular.module('znieh', [
   'ngRoute',
   'restangular',
-  'toastr'
+  'toastr',
+  'btford.socket-io'
 ]);
 
 app.config(function ($routeProvider, RestangularProvider) {

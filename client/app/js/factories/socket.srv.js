@@ -1,11 +1,13 @@
 'use strict';
 
-angular.factory('SocketService', function (socketFactory) {
-  var serverSocket = io.connect('localhost:1337');
+angular.module('znieh')
+    .factory('SocketService', function (socketFactory) {
 
-  mySocket = socketFactory({
-    ioSocket: serverSocket
-  });
+    var serverSocket = io.connect('localhost:1337');
 
-  return mySocket;
+    mySocket = socketFactory({
+        ioSocket: serverSocket
+    });
+
+    return mySocket;
 });

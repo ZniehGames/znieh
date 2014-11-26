@@ -16,7 +16,7 @@ class ContentLoader extends DataFixtureLoader implements OrderedFixtureInterface
     {
         return  [
             __DIR__ . '/../Fixtures/sizes.yml',
-            __DIR__ . '/../Fixtures/weights.yml',
+            __DIR__ . '/../Fixtures/physicals.yml',
             __DIR__ . '/../Fixtures/sprites.yml',
             __DIR__ . '/../Fixtures/buildings.yml',
             __DIR__ . '/../Fixtures/steps.yml',

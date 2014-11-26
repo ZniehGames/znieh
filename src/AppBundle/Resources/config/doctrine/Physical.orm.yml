@@ -1,6 +1,6 @@
-Znieh\Model\Weight:
+Znieh\Model\Physical:
     type:  entity
-    table: weight
+    table: physical
     id:
         id:
             type: integer

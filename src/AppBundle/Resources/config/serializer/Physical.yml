@@ -1,4 +1,4 @@
-Znieh\Model\Weight:
+Znieh\Model\Physical:
   exclusion_policy: ALL
   properties:
     name:

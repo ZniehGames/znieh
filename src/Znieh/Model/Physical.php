@@ -2,7 +2,7 @@
 
 namespace Znieh\Model;
 
-class Weight
+class Physical
 {
   use \Znieh\Traits\NamableEntity;
 

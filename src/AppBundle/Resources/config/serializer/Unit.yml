@@ -7,11 +7,17 @@ Znieh\Model\Unit:
       expose: true
     armor:
       expose: true
-    weight:
+    physical:
       expose: true
     size:
       expose: true
   virtual_properties:
     getPoints:
       serialized_name: points
+      type: integer
+    getMoves:
+      serialized_name: moves
+      type: integer
+    getWeight:
+      serialized_name: weight
       type: integer

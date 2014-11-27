@@ -29,6 +29,7 @@ paths.json = paths.app + 'json/**/*';
 paths.jade = [
     paths.app + 'index.jade',
     paths.app + 'partials/**/*.jade',
+    paths.app + 'partials/*.jade',
 ];
 
 paths.sass = [
@@ -36,6 +37,10 @@ paths.sass = [
 ];
 paths.css = [
     paths.app + 'vendor/angular-toastr/dist/angular-toastr.css',
+];
+paths.fonts = [
+    paths.app + 'fonts/**/*',
+    paths.app + 'vendor/bootstrap-sass-official/assets/fonts/*/*',
 ];
 paths.js = [
     paths.app + 'js/app.js',
@@ -48,10 +53,12 @@ paths.game = [
 
 paths.jsvendor = [
     paths.app + 'vendor/traceur-runtime/traceur-runtime.js',
+    paths.app + 'vendor/socket.io-client/socket.io.js',
     paths.app + 'vendor/jquery/dist/jquery.js',
     paths.app + 'vendor/angular/angular.js',
     paths.app + 'vendor/angular-route/angular-route.js',
     paths.app + 'vendor/angular-toastr/dist/angular-toastr.js',
+    paths.app + 'vendor/angular-socket-io/socket.js',
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',
     paths.app + 'vendor/phaser/build/phaser.js',

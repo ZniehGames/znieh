@@ -5,7 +5,8 @@
 var app = angular.module('znieh', [
   'ngRoute',
   'restangular',
-  'toastr'
+  'toastr',
+  'btford.socket-io'
 ]);
 
 app.config(function ($routeProvider, RestangularProvider) {
@@ -22,6 +23,9 @@ app.config(function ($routeProvider, RestangularProvider) {
       }).
       when('/fight', {
         templateUrl: 'partials/fightpage/index.html',
+      }).
+      when('/search', {
+        templateUrl: 'partials/fightsearch/index.html',
       }).
       otherwise({
         redirectTo: '/'

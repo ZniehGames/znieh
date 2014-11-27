@@ -39,5 +39,8 @@
     "request": "~2.37.0",
     "vinyl-source-stream": "~0.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.10.4",
+    "socket.io": "^1.2.1"
+  }
 }

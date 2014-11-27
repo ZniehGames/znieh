@@ -6,6 +6,6 @@ angular.module('znieh')
     $scope.pool = 1;
 
     $scope.searchFight = function () {
-        SocketService.emit('test');
+        SocketService.emit('connection');
     };
 });

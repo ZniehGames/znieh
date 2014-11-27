@@ -1,0 +1,14 @@
+{
+  "name": "Znieh",
+  "version": "0.0.0",
+  "description": "An awesome strategy game",
+  "scripts": {
+    "test": ""
+  },
+  "author": "spyl",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "^4.10.4",
+    "socket.io": "^1.2.1"
+  }
+}

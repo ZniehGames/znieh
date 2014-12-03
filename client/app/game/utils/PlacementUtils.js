@@ -42,6 +42,7 @@ class PlacementUtils {
   }
 
   goOnPlacement(){
+  	//we decrease the number of units to place
 	this.restToPlace -= 1;
 	if(this.restToPlace === 0)
 	{
@@ -53,6 +54,7 @@ class PlacementUtils {
 	    this.stateGame.debugUtils.print('le placement est fini !');
 	}
 	else{
+		// we check every unit of the team
 	    this.isPlaced[this.nbToPlace] = true;
 	    
 	    this.stateGame.debugUtils.print(this.isPlaced);

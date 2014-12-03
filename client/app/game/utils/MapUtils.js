@@ -47,7 +47,7 @@ class MapUtils {
                 //TODO: To send to server
 
                 //we decrease the number of units to place
-                this.stateGame.placementUtils.decreaseNumberOfUnitsToPlace();
+                this.stateGame.placementUtils.goOnPlacement();
             }
     	}
     	else {

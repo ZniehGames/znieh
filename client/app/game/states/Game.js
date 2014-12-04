@@ -53,6 +53,12 @@ class Game {
         // we add a listener to map, and used for placement
         this.mapUtils.addEventListenerToMapPlacement();
 
+        // first try with pathfinder
+        this.walkables = [30];
+
+        this.pathfinder = this.game.plugins.add(Phaser.Plugin.PathFinderPlugin);
+        this.pathfinder.setGrid(this.map.layers[0].data, this.walkables);
+
         if(this.debugUtils.isDebug()) {
             this.layer.debug = true;
         }

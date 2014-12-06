@@ -20,6 +20,36 @@ class MapUtils {
         return arrayInt;
     }
 
+    getWalkablesTiles(blockedTiles) {
+
+        var map = this.stateGame.game.cache.getTilemapData('map').data;
+
+        var result = Object.keys(map.layers[0].data);
+        var arrayInt = [];
+
+        function toInt(element) {
+          arrayInt.push(parseInt(element));
+        }
+        result.forEach(toInt);
+
+        var newarr = [];
+        var unique = {};
+
+        function pushBlockedTileToUnique(element) {
+            unique[element] = element;
+        }
+        blockedTiles.forEach(pushBlockedTileToUnique);
+
+        arrayInt.forEach(function(item) {
+            if (!unique[item]) {
+                newarr.push(item);
+                unique[item] = item;
+            }
+        });
+
+        return newarr;
+    }
+
     addEventListenerToMapPlacement(){
     	this.stateGame.game.input.onDown.add(this.stateGame.mapUtils.selectTilePlacement, this.stateGame.mapUtils, 0);
     }

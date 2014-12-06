@@ -4,6 +4,7 @@ import MapUtils from '../utils/MapUtils';
 import SpriteUtils from '../utils/SpriteUtils';
 import DebugUtils from '../utils/DebugUtils';
 import PlacementUtils from '../utils/PlacementUtils';
+import PathUtils from '../utils/PathUtils';
 
 class Game {
 
@@ -13,6 +14,7 @@ class Game {
         this.mapUtils = new MapUtils(this);
         this.spriteUtils = new SpriteUtils(this);
         this.placementUtils = new PlacementUtils(this);
+        this.pathUtils = new PathUtils(this);
         this.debugUtils = null;
         // reference to game
         this.game = null;
@@ -53,11 +55,8 @@ class Game {
         // we add a listener to map, and used for placement
         this.mapUtils.addEventListenerToMapPlacement();
 
-        // first try with pathfinder
-        this.walkables = [30];
-
-        this.pathfinder = this.game.plugins.add(Phaser.Plugin.PathFinderPlugin);
-        this.pathfinder.setGrid(this.map.layers[0].data, this.walkables);
+        //first try with pathfinding
+        this.pathUtils.init();
 
         if(this.debugUtils.isDebug()) {
             this.layer.debug = true;
@@ -72,8 +71,6 @@ class Game {
             }    
         }
     }
-
-
 }
 
 export default Game;

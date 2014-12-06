@@ -20,7 +20,7 @@ GameApp.start = function() {
     game.state.add('game', Game);
 
     game.state.states.game.parent = this;
-    game.state.states.game.options = {'side' : 'left', 'debug' : false};
+    game.state.states.game.options = {'side' : 'left', 'debug' : true};
 
     // we start by preloading the assets
     game.state.start('preload');

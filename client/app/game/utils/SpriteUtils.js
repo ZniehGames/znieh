@@ -25,8 +25,12 @@ class SpriteUtils {
 
   moveSelected(pointer) {
     if (this.stateGame.selectedSprite !== null) { 
-      this.stateGame.selectedSprite.x = pointer.x;
-      this.stateGame.selectedSprite.y = pointer.y;
+
+      this.stateGame.pathUtils.findPathTo(5,5);
+      this.stateGame.debugUtils.print(pointer);
+
+      //this.stateGame.selectedSprite.x = pointer.x;
+      //this.stateGame.selectedSprite.y = pointer.y;
       this.stateGame.selectedSprite = null;
       this.stateGame.mapUtils.removeEventListenerToMapPlacement();
       this.removeListenerSelectToAllUnits();

@@ -197,10 +197,10 @@ gulp.task('game', ['game-js-lint'], function() {
 gulp.task('js-vendor', function() {
     gulp.src(paths.jsvendor)
         .pipe(plumber())
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(concat('vendor.js'))
         .pipe(uglify({mangle:false, preserveComments: false}))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.dist + 'js/'))
 });
 

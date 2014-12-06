@@ -1,9 +1,12 @@
 extends ./navbar.jade
 
 block content
-  form.navbar-form.navbar-right(role="search" ng-controller="LoginCtrl" ng-submit="submit()")
-      .form-group
-        input.form-control(type="text" name="username" ng-model="credentials.username" placeholder="Username")
-      .form-group
-        input.form-control(type="text" name="password" ng-model="credentials.password" placeholder="Password")
-      button.btn.btn-default(type="submit") Sign In
+  .user(ng-controller="LoginCtrl")
+    form.login-form.navbar-form.navbar-right(role="search" ng-submit="submit()" ng-hide="hideLoginForm")
+        .form-group
+          input.form-control(type="text" name="username" ng-model="credentials.username" placeholder="Username")
+        .form-group
+          input.form-control(type="text" name="password" ng-model="credentials.password" placeholder="Password")
+        button.btn.btn-default(type="submit") Sign In
+    .user-content(ng-show="hideLoginForm")
+       p.navbar-right Bienvenue {{ username }} !

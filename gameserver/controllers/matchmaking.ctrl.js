@@ -1,22 +1,21 @@
 'use strict';
 
-var Game = require('./../model/game');
+var GameController = require('./game.ctrl.js');
 
 function MatchmakingCtrl() {
 
   var queue = [];
-  var games = [];
 
   this.add = function (socket) {
 
     var match = queue.shift();
-    if (match === undefined || match.connected === false) {
+    if (match === undefined || match.disconnected === true) {
       queue.push(socket);
       socket.emit('searching match');
       return;
     }
 
-    games.push(new Game(match, socket));
+    GameController.add(match, socket);
     socket.emit('match found');
     match.emit('match found');
   }

@@ -10,6 +10,7 @@ angular.module('znieh')
                     .success(function (data) {
                         $window.sessionStorage.token = data.token;
                         $window.sessionStorage.user = data.user.username;
+                        $window.sessionStorage.userId = data.user.id;
                         Restangular.setDefaultHeaders({Authorization:'Bearer ' + data.token});
                         $rootScope.$broadcast('event:auth-login-complete');
                     })
@@ -23,7 +24,8 @@ angular.module('znieh')
                 Restangular.setDefaultHeaders({});
                 $rootScope.$broadcast('event:auth-logout-complete');
             },
-            isLoggedIn: function() { return $window.sessionStorage.user !== 'undefined'; },
-            currentUser: function() { return $window.sessionStorage.user; }
+            isLoggedIn: function() { return $window.sessionStorage.user !== undefined; },
+            currentUser: function() { return $window.sessionStorage.user; },
+            currentUserId: function() { return $window.sessionStorage.userId; }
         };
 });

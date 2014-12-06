@@ -9,9 +9,8 @@ module.exports = function() {
 
     var SearchPage = require('./pages/search.page.js');
 
-    this.Given(/^I am on the search page$/, function(done) {
-        browser.get(env.baseUrl + SearchPage.url);
-        done();
+    this.Given(/^I go on the search page$/, function(done) {
+        element(by.css('.nav li:nth-child(3)')).click().then(done());
     });
 
     this.When(/^I want to play$/, function(done) {

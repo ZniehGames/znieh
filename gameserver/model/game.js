@@ -1,8 +1,8 @@
 'use strict';
 
-function Game(socketA, socketB) {
-    this.socketA = socketA;
-    this.socketB = socketB;
+function Game(playerA, playerB) {
+    this.playerA = playerA;
+    this.playerB = playerB;
 }
 
 module.exports = Game;

@@ -1,5 +1,11 @@
 Znieh\Model\User:
     user{1..10}:
         username: <username()>
-        password: <password()>
+        plainPassword: <password()>
         email: <email()>
+        enabled: true
+    user{test, spyl, greg, darkou, naixy}:
+      username: <current()>
+      plainPassword: <current()>
+      email: <current()>@gmail.com
+      enabled: true

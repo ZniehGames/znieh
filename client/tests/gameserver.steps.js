@@ -29,7 +29,8 @@ module.exports = function() {
     });
 
     this.After(function(done){
-
+        browser.executeScript('window.sessionStorage.clear();');
+        browser.executeScript('window.localStorage.clear();');
         if (this.server) {
           this.server.close();
           this.server.sockets.forEach(function(socket) {

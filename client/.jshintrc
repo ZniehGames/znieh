@@ -23,6 +23,7 @@
     "config": true,
     "toastr": true,
     "Phaser": true,
-    "System": true
+    "System": true,
+    "io": true
   }
 }

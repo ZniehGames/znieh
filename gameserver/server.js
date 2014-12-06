@@ -1,29 +1,38 @@
 /* Server */
+require('colors');
 var User = require('./model/user');
 var MatchMakingCtrl = require('./controllers/matchmaking.ctrl');
+var UserStorage = require('./storage/user.storage.js');
 
 var app = require('http').createServer();
 var io = require('socket.io')(app);
-var users = [];
 var sockets = [];
 
 io.on('connection', function(socket) {
   sockets.push(socket);
-  console.log('a user connected');
+  console.log('socket connected'.blue, socket.id);
 
-  socket.on('authenticate', function(pseudo) { // silly auth... should be replaced by jwt
-    console.log('authenticate as', pseudo);
-    var user = new User(pseudo, socket);
-    users.push(user);
+  socket.on('authenticate', function(name) { // silly auth... should be replaced by jwt
+    console.log(socket.id, 'authenticated as'.blue, name);
+
+    var user = UserStorage.findBySocket(socket);
+    if (user === null) {
+        // new user
+        console.log('new user in storage'.blue, name);
+        UserStorage.add(new User(name, socket));
+        return;
+    }
+    // update user informations
+    console.log('update user'.blue, name);
+    user.name = name;
+    user.socket = socket;
   });
 
   socket.on('disconnect', function() {
-      console.log('user disconnected');
+      console.log('socket disconnected'.blue, socket.id);
+      UserStorage.remove(UserStorage.findBySocket(socket));
+      sockets.splice(sockets.indexOf(socket), 1);
   });
-
-  socket.on('close', function() {
-    sockets.splice(sockets.indexOf(socket), 1);
-  })
 
   socket.on('search match', function() {
     MatchMakingCtrl.add(socket);
@@ -36,5 +45,5 @@ module.exports = app;
 
 if (!module.parent) { // lauch server if not required by another file
   app.listen(1337);
-  console.log("Server Started");
+  console.log("✔︎ Server listening on http://localhost:1337/".green);
 }

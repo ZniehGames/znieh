@@ -12,4 +12,4 @@ Feature: Game search
     And I am logged in as test
     And I go on the search page
     When I want to play
-    Then a match should be found
+    Then I should be abble to see the map

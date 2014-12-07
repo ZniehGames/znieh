@@ -23,10 +23,4 @@ module.exports = function() {
         .equal('Informations\nRecherche en cours')
         .and.notify(done);
     });
-
-    this.Then(/^a match should be found$/, function(done) {
-        expect(SearchPage.success()).to.eventually
-        .equal('Cool\nMatch trouvé')
-        .and.notify(done);
-    });
 };

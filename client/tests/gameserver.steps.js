@@ -22,7 +22,7 @@ module.exports = function() {
         'force new connection': true
       });
       socket.on('connect', function(){
-        socket.emit('authenticate', 'spyl');
+        socket.emit('authenticate', {"id":12,"username":"spyl","roles":["ROLE_USER"]});
         socket.emit('search match');
       });
       done();

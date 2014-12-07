@@ -2,6 +2,7 @@
 
 var Game = require('./../model/game');
 var UserStorage = require('./../storage/user.storage.js');
+var UserManager = require('./../services/user.manager.js');
 
 function GameCtrl() {
 
@@ -16,7 +17,11 @@ function GameCtrl() {
       return;
     }
 
-    games.push(new Game(playerA, playerB));
+    UserManager.reloadTeam(playerA);
+    UserManager.reloadTeam(playerB);
+
+    var game = new Game(playerA, playerB);
+    games.push(game);
   }
 
 }

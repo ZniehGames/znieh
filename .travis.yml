@@ -17,7 +17,7 @@ git:
   submodules: false
 
 env:
-  - BASE_URL="http://127.0.0.1/" API_BASE_URL="http://127.0.0.2/app_test.php"
+  - BASE_URL="http://127.0.0.1/" API_BASE_URL="http://127.0.0.2/app_test.php" NODE_ENV=travis NODE_CONFIG_DIR=./gameserver/config
 
 before_script:
 # Prepare Webserver

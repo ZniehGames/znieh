@@ -12,20 +12,16 @@ io.on('connection', function(socket) {
   sockets.push(socket);
   console.log('socket connected'.blue, socket.id);
 
-  socket.on('authenticate', function(name) { // silly auth... should be replaced by jwt
-    console.log(socket.id, 'authenticated as'.blue, name);
+  socket.on('authenticate', function(auth) { // silly auth... should be replaced by jwt
+    console.log(socket.id, 'authenticated as'.blue, auth.username);
 
     var user = UserStorage.findBySocket(socket);
     if (user === null) {
         // new user
-        console.log('new user in storage'.blue, name);
-        UserStorage.add(new User(name, socket));
+        console.log('new user in storage'.blue, auth);
+        UserStorage.add(new User(auth, socket));
         return;
     }
-    // update user informations
-    console.log('update user'.blue, name);
-    user.name = name;
-    user.socket = socket;
   });
 
   socket.on('disconnect', function() {

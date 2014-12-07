@@ -1,14 +1,7 @@
 'use strict';
 
 angular.module('znieh')
-    .controller('FightSearchCtrl', function ($scope, SocketService) {
-
-    $scope.pool = 1;
-
-    $scope.searchFight = function () {
-        SocketService.emit('test');
-
-    .controller('FightSearchCtrl', function ($scope, SocketService, toastr) {
+    .controller('FightSearchCtrl', function ($scope, SocketService, toastr, $location) {
 
     $scope.pool = 1;
 
@@ -17,7 +10,7 @@ angular.module('znieh')
     });
 
     SocketService.on('match found', function() {
-        toastr.success('Match trouvé', 'Cool');
+        $location.path('/fight');
     });
 
     $scope.searchFight = function () {

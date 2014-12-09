@@ -29,12 +29,10 @@ class SpriteUtils {
       var position = this.stateGame.mapUtils.getIndexesOfTileUnderPosition(pointer.x, pointer.y);
       if(position !== undefined){
         this.stateGame.debugUtils.print(position);
-        this.stateGame.debugUtils.print(pointer);
         this.stateGame.pathUtils.findPathTo(position.x,position.y);
 
         this.stateGame.selectedSprite = null;
-        this.stateGame.mapUtils.removeEventListenerToMapPlacement();
-        //this.removeListenerSelectToAllUnits();        
+        this.stateGame.mapUtils.removeEventListenerToMapPlacement();   
       }
       else{
         this.stateGame.debugUtils.print('Aucune tile n\'a été trouvée !');

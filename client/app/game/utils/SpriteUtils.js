@@ -26,30 +26,36 @@ class SpriteUtils {
   moveSelected(pointer) {
     if (this.stateGame.selectedSprite !== null) { 
 
-      this.stateGame.pathUtils.findPathTo(5,5);
-      this.stateGame.debugUtils.print(pointer);
+      var position = this.stateGame.mapUtils.getIndexesOfTileUnderPosition(pointer.x, pointer.y);
+      if(position !== undefined){
+        this.stateGame.debugUtils.print(position);
+        this.stateGame.debugUtils.print(pointer);
+        this.stateGame.pathUtils.findPathTo(position.x,position.y);
 
-      //this.stateGame.selectedSprite.x = pointer.x;
-      //this.stateGame.selectedSprite.y = pointer.y;
-      this.stateGame.selectedSprite = null;
-      this.stateGame.mapUtils.removeEventListenerToMapPlacement();
-      this.removeListenerSelectToAllUnits();
+        this.stateGame.selectedSprite = null;
+        this.stateGame.mapUtils.removeEventListenerToMapPlacement();
+        //this.removeListenerSelectToAllUnits();        
+      }
+      else{
+        this.stateGame.debugUtils.print('Aucune tile n\'a été trouvée !');
+      }
     }
   }
 
   // to add sprite from passing position in tile index
   addSprite(options) {
     var tile = this.stateGame.layer.getTiles(options.x,options.y,0,0);
-    var optionsPlacement = {'placement' : { 'x' : tile[0].worldX, 'y' : tile[0].worldY, 'unit' : null}};
+    var optionsPlacement = {'placement' : { 'x' : tile[0].x, 'y' : tile[0].y, 'worldX' : tile[0].worldX, 'worldY' : tile[0].worldY, 'unit' : null}};
     this.stateGame.spriteUtils.addSpriteWorld(optionsPlacement);
   }
 
   // to add sprite with position in world
   addSpriteWorld(options) {
-    var sprite = this.stateGame.game.add.sprite(options.placement.x, options.placement.y, 'sprite_default');
+    var sprite = this.stateGame.game.add.sprite(options.placement.worldX, options.placement.worldY, 'sprite_default');
     sprite.enableBody = true;
 
     sprite.content = options.placement.unit;
+    this.stateGame.spriteUtils.setPosition(sprite, options.placement.x, options.placement.y);
     sprite.name = sprite.content.name;
     this.stateGame.debugUtils.print(sprite.content);
     this.stateGame.debugUtils.print(sprite.name);
@@ -96,6 +102,14 @@ class SpriteUtils {
 
   removeListenerSelectToAllUnits() {
     this.stateGame.spriteLists.forEach(this.stateGame.spriteUtils.removeEventsListenerToSpriteSelect, this);
+  }
+
+  setPosition(sprite, x, y){
+    sprite.content.position = {'x' : x, 'y' : y};
+  }
+
+  setPositionSelected(x, y){
+    this.stateGame.selectedSprite.content.position = {'x' : x, 'y' : y};
   }
 }
 

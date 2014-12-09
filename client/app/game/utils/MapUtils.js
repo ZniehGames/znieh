@@ -24,30 +24,27 @@ class MapUtils {
 
         var map = this.stateGame.game.cache.getTilemapData('map').data;
 
-        var result = Object.keys(map.layers[0].data);
-        var arrayInt = [];
-
-        function toInt(element) {
-          arrayInt.push(parseInt(element));
-        }
-        result.forEach(toInt);
-
+        var result = map.layers[0].data;
         var newarr = [];
-        var unique = {};
-
-        function pushBlockedTileToUnique(element) {
-            unique[element] = element;
-        }
-        blockedTiles.forEach(pushBlockedTileToUnique);
-
-        arrayInt.forEach(function(item) {
-            if (!unique[item]) {
-                newarr.push(item);
-                unique[item] = item;
+                
+        for (var i = 0; i < result.length; i++) {
+            if(blockedTiles.indexOf(result[i]) === -1 && newarr.indexOf(result[i]) === -1){
+                newarr.push(result[i]);
             }
-        });
-
+        }
         return newarr;
+    }
+
+    getTileUnderPosition(x,y){
+        return this.stateGame.layer.getTiles(x,y,2,2)[0];
+    }
+
+    getIndexesOfTileUnderPosition(x,y){
+        var tile = this.stateGame.layer.getTiles(x,y,2,2)[0];
+        if(tile !== undefined){
+            return {'x' : tile.x, 'y' : tile.y};
+        }
+        return undefined;
     }
 
     addEventListenerToMapPlacement(){
@@ -65,12 +62,12 @@ class MapUtils {
     	var under = this.stateGame.game.physics.arcade.getObjectsUnderPointer(pointer, this.stateGame.spriteGroup);
     	if(under === undefined || under.length === 0) {
     		// We take the tile selected for ckeck collision and get his position  
-	    	var tile = this.stateGame.layer.getTiles(pointer.x,pointer.y,0,0)[0];           
+	    	var tile = this.stateGame.mapUtils.getTileUnderPosition(pointer.x, pointer.y);           
             if( tile.collides || (this.stateGame.placementUtils.side === 'left' && tile.x > this.stateGame.placementUtils.mapLimit)||(this.stateGame.placementUtils.side === 'right' && tile.x < this.stateGame.placementUtils.mapLimit)) {
                 this.stateGame.debugUtils.print('Vous ne pouvez pas le placer ici ;)');
             }
             else{
-                var optionsPlacement = {'placement' : { 'x' : tile.worldX, 'y' : tile.worldY, 'unit' : this.stateGame.placementUtils.getUnitToPlace()}};
+                var optionsPlacement = {'placement' : { 'x' : tile.x, 'y' : tile.y, 'worldX' : tile.worldX, 'worldY' : tile.worldY, 'unit' : this.stateGame.placementUtils.getUnitToPlace()}};
                 this.stateGame.spriteUtils.addSpriteWorld(optionsPlacement);
 	    	    
                 this.stateGame.debugUtils.print(tile.x + ' x and y ' + tile.y);  

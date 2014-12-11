@@ -21,6 +21,7 @@ class JWTResponseListener
 
       // $data['token'] contains the JWT
       $data['user'] = [
+        'id'       => $user->getId(),
         'username' => $user->getUsername(),
         'roles'    => $user->getRoles()
       ];

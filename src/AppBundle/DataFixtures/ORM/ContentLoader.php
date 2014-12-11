@@ -8,6 +8,7 @@ use Nelmio\Alice\Fixtures;
 
 class ContentLoader extends DataFixtureLoader implements OrderedFixtureInterface
 {
+
     /**
      * {@inheritDoc}
      */

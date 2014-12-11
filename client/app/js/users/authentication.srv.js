@@ -9,7 +9,7 @@ angular.module('znieh')
                     .post(config.api + '/login_check', credentials, { ignoreAuthModule: true })
                     .success(function (data) {
                         $window.sessionStorage.token = data.token;
-                        $window.sessionStorage.user = data.user.username;
+                        $window.sessionStorage.user = JSON.stringify(data.user);
                         Restangular.setDefaultHeaders({Authorization:'Bearer ' + data.token});
                         $rootScope.$broadcast('event:auth-login-complete');
                     })
@@ -23,7 +23,7 @@ angular.module('znieh')
                 Restangular.setDefaultHeaders({});
                 $rootScope.$broadcast('event:auth-logout-complete');
             },
-            isLoggedIn: function() { return $window.sessionStorage.user !== 'undefined'; },
-            currentUser: function() { return $window.sessionStorage.user; }
+            isLoggedIn: function() { return $window.sessionStorage.user !== undefined; },
+            currentUser: function() { return JSON.parse($window.sessionStorage.user || 'null'); },
         };
 });

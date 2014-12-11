@@ -1,7 +1,18 @@
 'use strict';
 
 angular.module('znieh')
-    .controller('LoginCtrl', function ($scope, AuthenticationService, $route) {
+    .controller('LoginCtrl', function ($scope, AuthenticationService, SocketService, $route) {
+
+        $scope.$watch(AuthenticationService.isLoggedIn, function(isLoggedIn) {
+            $scope.hideLoginForm = isLoggedIn;
+        });
+
+        $scope.$watch(AuthenticationService.currentUser, function(user) {
+            if (user) {
+                $scope.username = user.username;
+                SocketService.emit('authenticate', user);
+            }
+        }, true);
 
         $scope.credentials = {
             username: '',
@@ -19,4 +30,7 @@ angular.module('znieh')
             AuthenticationService.login($scope.credentials);
         };
 
+        $scope.logout = function () {
+            AuthenticationService.logout();
+        };
 });

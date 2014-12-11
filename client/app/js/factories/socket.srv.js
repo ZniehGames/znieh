@@ -3,11 +3,9 @@
 angular.module('znieh')
     .factory('SocketService', function (socketFactory) {
 
-    var serverSocket = io.connect('localhost:1337');
-
-    mySocket = socketFactory({
-        ioSocket: serverSocket
+    var SocketService = socketFactory({
+        ioSocket: io.connect(config.gameserver)
     });
 
-    return mySocket;
+    return SocketService;
 });

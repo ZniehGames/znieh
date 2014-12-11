@@ -1,3 +1,4 @@
 {
-  'api': 'http://api.znieh.dev'
+  'api': 'http://api.znieh.dev',
+  'gameserver': 'http://znieh.dev:1337'
 }

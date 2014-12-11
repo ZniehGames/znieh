@@ -14,8 +14,6 @@ exports.config = {
   // You can specify a file containing code to run by setting onPrepare to
   // the filename string.
   onPrepare: function() {
-    browser.manage().timeouts().pageLoadTimeout(40000);
-    browser.manage().timeouts().implicitlyWait(25000);
     console.log('Ready !');
   },
 
@@ -29,7 +27,10 @@ exports.config = {
     require: [
       'client/tests/hello.steps.js',
       'client/tests/home.steps.js',
-      'client/tests/fight.steps.js'
+      'client/tests/fight.steps.js',
+      'client/tests/search.steps.js',
+      'client/tests/login.steps.js',
+      'client/tests/gameserver.steps.js'
     ],
     format: 'pretty'
   }

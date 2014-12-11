@@ -10,12 +10,6 @@ module.exports = function() {
 
     var HomePage = require('./pages/home.page.js');
 
-    this.After(function(done){
-        //browser.executeScript('window.sessionStorage.clear();');
-        //browser.executeScript('window.localStorage.clear();');
-        done();
-    });
-
     this.Given(/^I am on the homepage$/, function(done) {
         browser.get(env.baseUrl + HomePage.url);
         done();

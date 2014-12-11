@@ -1,11 +1,8 @@
-body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
-
 .landscape {
     display: block;
     background: url('../images/landscape.jpg') center center no-repeat scroll;
     background-size: cover;
+    padding-top: 50px;
 }
 
 .logo {

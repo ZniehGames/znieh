@@ -222,6 +222,9 @@ gulp.task('copy-fonts', function() {
 
 gulp.task('copy', ['copy-images', 'copy-fonts','copy-json']);
 
+gulp.task('integration', ['jade-deploy', 'styles-deploy','js']);
+
+
 // Rerun the task when a file changes
 gulp.task('watch', function() {
     gulp.watch(paths.jade, ['jade-watch']);

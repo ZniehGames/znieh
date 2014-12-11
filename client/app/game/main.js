@@ -13,6 +13,7 @@ GameApp.start = function() {
     );
 
     //game.analytics = new Analytics('phaser-game');
+    game.io = null; // will be set by angular
 
     game.state.add('game', Game);
     game.state.states.game.parent = this;

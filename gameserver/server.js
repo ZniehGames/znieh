@@ -34,6 +34,10 @@ io.on('connection', function(socket) {
     MatchMakingCtrl.add(socket);
   });
 
+  socket.on('test', function() {
+    console.log('test'.red);
+  })
+
 });
 
 app.sockets = sockets; // we export sockets to avoid waiting timeout during tests

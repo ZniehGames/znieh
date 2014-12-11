@@ -1,9 +1,21 @@
 'use strict';
 
 angular.module('znieh')
-    .controller('FightSearchCtrl', function ($scope, SocketService, toastr, $location) {
+    .controller('FightSearchCtrl', function ($scope, SocketService, toastr, $location, AuthenticationService) {
 
     $scope.pool = 1;
+    $scope.user = AuthenticationService.currentUser();
+    $scope.teams = [
+        {
+            id: 1,
+        },
+        {
+            id: 2,
+        },
+        {
+            id: 3,
+        }
+    ];
 
     SocketService.on('searching match', function() {
         toastr.info('Recherche en cours', 'Informations');

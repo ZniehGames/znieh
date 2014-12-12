@@ -16,7 +16,13 @@ class PlacementUtils {
     // we get the side from options in Game.App
     this.side = options.side;
     // this correspond to the middle of the map
-    this.mapLimit = this.stateGame.map.width/2;
+    if(this.side === 'left'){
+    	this.mapLimit = this.stateGame.map.width/3;
+    }
+    else{
+    	this.mapLimit = this.stateGame.map.width - this.stateGame.map.width/3;	
+    }
+    this.stateGame.debugUtils.print(this.mapLimit);
     //we get the team from API
 	this.myTeamUnits = this.stateGame.game.cache.getJSON('team')[0].units;
 
@@ -31,6 +37,18 @@ class PlacementUtils {
 
 	// we put the first of my unit for placement
 	this.nbToPlace = 0;
+  }
+
+  canPlace(x, collides){
+  	if(this.side === 'left' && x < this.mapLimit && collides === false) {
+  		return true;
+  	}
+  	else if(this.side === 'right' && x > this.mapLimit && collides === false) {
+  		return true;
+  	}
+  	else {
+  		return false;
+  	}
   }
 
   setNbToPlace(num){

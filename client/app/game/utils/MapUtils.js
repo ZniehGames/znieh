@@ -63,18 +63,18 @@ class MapUtils {
     	if(under === undefined || under.length === 0) {
     		// We take the tile selected for ckeck collision and get his position  
 	    	var tile = this.stateGame.mapUtils.getTileUnderPosition(pointer.x, pointer.y);           
-            if( tile.collides || (this.stateGame.placementUtils.side === 'left' && tile.x > this.stateGame.placementUtils.mapLimit)||(this.stateGame.placementUtils.side === 'right' && tile.x < this.stateGame.placementUtils.mapLimit)) {
-                this.stateGame.debugUtils.print('Vous ne pouvez pas le placer ici ;)');
-            }
-            else{
+            if(this.stateGame.placementUtils.canPlace(tile.x, tile.collides)) {
                 var optionsPlacement = {'placement' : { 'x' : tile.x, 'y' : tile.y, 'worldX' : tile.worldX, 'worldY' : tile.worldY, 'unit' : this.stateGame.placementUtils.getUnitToPlace()}};
                 this.stateGame.spriteUtils.addSpriteWorld(optionsPlacement);
-	    	    
+                
                 this.stateGame.debugUtils.print(tile.x + ' x and y ' + tile.y);  
                 //TODO: To send to server
 
                 //we decrease the number of units to place
                 this.stateGame.placementUtils.goOnPlacement();
+            }
+            else{
+                this.stateGame.debugUtils.print('Vous ne pouvez pas le placer ici ;)');
             }
     	}
     	else {

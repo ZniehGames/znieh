@@ -152,7 +152,7 @@ abstract class DefaultContext extends RawMinkContext implements Context, KernelA
         $manager = $this->getService('h4cc_alice_fixtures.manager');
         $objects = $manager->loadFiles([
             __DIR__.'/../DataFixtures/Fixtures/sizes.yml',
-            __DIR__.'/../DataFixtures/Fixtures/weights.yml',
+            __DIR__.'/../DataFixtures/Fixtures/physicals.yml',
             __DIR__.'/../DataFixtures/Fixtures/sprites.yml',
             __DIR__.'/../DataFixtures/Fixtures/buildings.yml',
             __DIR__.'/../DataFixtures/Fixtures/steps.yml',

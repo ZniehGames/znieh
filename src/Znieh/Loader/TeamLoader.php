@@ -72,7 +72,7 @@ class TeamLoader
           ->setUser($user)
           ->setSprite($this->em->getRepository('AppBundle:Sprite')->findOneByName($unitData['sprite']))
           ->setSize($this->em->getRepository('AppBundle:Size')->findOneByName($unitData['size']))
-          ->setWeight($this->em->getRepository('AppBundle:Weight')->findOneByName($unitData['weight']))
+          ->setPhysical($this->em->getRepository('AppBundle:Physical')->findOneByName($unitData['physical']))
         ;
         $team->addUnit($unit);
       }

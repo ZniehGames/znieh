@@ -12,3 +12,7 @@ Znieh\Model\ArmorPartType:
             length: 255
         bonuses:
             type: array
+        weight:
+            type: integer
+        defense:
+            type: integer

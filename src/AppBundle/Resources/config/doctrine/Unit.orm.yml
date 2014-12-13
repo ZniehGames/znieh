@@ -31,10 +31,10 @@ Znieh\Model\Unit:
           joinColumn:
             name: size_id
             referencedColumnName: id
-        weight:
-          targetEntity: Weight
+        physical:
+          targetEntity: Physical
           joinColumn:
-            name: weight_id
+            name: physical_id
             referencedColumnName: id
         armor:
           targetEntity: Armor

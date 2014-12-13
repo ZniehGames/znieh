@@ -3,7 +3,7 @@ units:
    1:
       name: Jacky
       size: Normal
-      weight: Musclé
+      physical: Musclé
       sprite: perso_petit
       weapon:
         type: Épée
@@ -11,7 +11,7 @@ units:
       armor:
         pieces:
           helm:
-            part: Casque en cuir brut d'armure
+            part: Casque en cuir brut de vie
             rune: Rune du survivant majeur
           torso:
             part: Torse en cuir rêche de parade
@@ -28,7 +28,7 @@ units:
    2:
       name: Bobby
       size: Normal
-      weight: Musclé
+      physical: Musclé
       sprite: perso_casque
       weapon:
         type: Épée
@@ -36,7 +36,7 @@ units:
       armor:
         pieces:
           helm:
-            part: Casque en cuir brut d'armure
+            part: Casque en cuir brut de vie
             rune: Rune du survivant majeur
           torso:
             part: Torse en cuir rêche de parade
@@ -53,7 +53,7 @@ units:
    3:
       name: Neirda
       size: Normal
-      weight: Musclé
+      physical: Musclé
       sprite: perso_casque_argent
       weapon:
         type: Hache
@@ -61,7 +61,7 @@ units:
       armor:
         pieces:
           helm:
-            part: Casque en cuir brut d'armure
+            part: Casque en cuir brut de vie
             rune: Rune du survivant majeur
           torso:
             part: Torse en cuir rêche de parade
@@ -78,7 +78,7 @@ units:
    4:
       name: Sam Soul
       size: Normal
-      weight: Musclé
+      physical: Musclé
       sprite: perso_casque_Or
       weapon:
         type: Hache
@@ -86,7 +86,7 @@ units:
       armor:
         pieces:
           helm:
-            part: Casque en cuir brut d'armure
+            part: Casque en cuir brut de vie
             rune: Rune du survivant majeur
           torso:
             part: Torse en cuir rêche de parade

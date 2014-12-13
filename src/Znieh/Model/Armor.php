@@ -15,6 +15,16 @@ class Armor
   private $greaves;
   private $boots;
 
+  public function getWeight()
+  {
+      return $this->helm->getWeight()  +
+             $this->torso->getWeight() +
+             $this->gloves->getWeight() +
+             $this->greaves->getWeight() +
+             $this->boots->getWeight()
+          ;
+  }
+
   public function getPoints()
   {
       return $this->helm->getPoints()  +

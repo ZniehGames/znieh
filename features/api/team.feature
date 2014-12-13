@@ -10,10 +10,12 @@ Scenario: list user team
 [{"units":[
   {
     "points": @integer@,
+    "moves": @integer@,
+    "weight": @integer@,
     "size": {
       "name": @string@
     },
-    "weight": {
+    "physical": {
       "name": @string@
     },
     "weapon": {

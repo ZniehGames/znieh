@@ -11,7 +11,7 @@ class Unit
     private $id;
     private $sprite;
     private $size;
-    private $weight;
+    private $physical;
     private $weapon;
     private $armor;
     private $teams;
@@ -33,6 +33,17 @@ class Unit
             $this->weight->getPoints()
         ;
     }
+
+    public function getWeight()
+    {
+        return ($this->armor != null)  ? $this->armor->getWeight() : 0;
+    }
+
+    public function getMoves()
+    {
+        return round(7*2^(-$this->armor->getWeight()/20));
+    }
+
     /**
      * Get id
      *
@@ -116,27 +127,27 @@ class Unit
     }
 
     /**
-     * Set weight
+     * Set physical
      *
-     * @param \Znieh\Model\Weight $weight
+     * @param \Znieh\Model\Physical $physical
      *
      * @return Unit
      */
-    public function setWeight(\Znieh\Model\Weight $weight = null)
+    public function setPhysical(\Znieh\Model\Physical $physical = null)
     {
-        $this->weight = $weight;
+        $this->physical = $physical;
 
         return $this;
     }
 
     /**
-     * Get weight
+     * Get physical
      *
-     * @return \Znieh\Model\Weight
+     * @return \Znieh\Model\Physical
      */
-    public function getWeight()
+    public function getPhysical()
     {
-        return $this->weight;
+        return $this->physical;
     }
 
     /**

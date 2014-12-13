@@ -16,9 +16,14 @@ class ArmorPiece
       return $i;
   }
 
+  public function getWeight()
+  {
+      return $this->part != null ? $this->part->getWeight() : 0;
+  }
+
   public function getDefense()
   {
-      return $this->part->getDefense() != null ? $this->part->getDefense() : 0;
+      return $this->part != null ? $this->part->getDefense() : 0;
   }
 
   public function getBonuses()

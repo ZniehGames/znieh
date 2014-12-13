@@ -6,6 +6,8 @@ class ArmorPartType
 {
     use \Znieh\Traits\NamableEntity;
     use \Znieh\Traits\HasBonusesEntity;
+    use \Znieh\Traits\HasDefenseEntity;
+    use \Znieh\Traits\HasWeightEntity;
 
     private $id;
 

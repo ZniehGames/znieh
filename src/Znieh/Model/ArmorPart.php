@@ -4,8 +4,8 @@ namespace Znieh\Model;
 
 class ArmorPart extends GameObject
 {
+    use \Znieh\Traits\HasDefenseEntity;
     private $type;
-    private $defense;
 
     public function __construct()
     {
@@ -37,26 +37,13 @@ class ArmorPart extends GameObject
     }
 
     /**
-     * Gets the value of defense.
+     * Get Weight
      *
-     * @return mixed
+     * @return integer
      */
-    public function getDefense()
+    public function getWeight()
     {
-        return $this->defense;
+        return $this->type->getWeight();
     }
 
-    /**
-     * Sets the value of defense.
-     *
-     * @param mixed $defense the defense
-     *
-     * @return self
-     */
-    private function setDefense($defense)
-    {
-        $this->defense = $defense;
-
-        return $this;
-    }
 }

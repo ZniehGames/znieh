@@ -1,0 +1,29 @@
+extends ../village_layout.jade
+
+block content
+    .caserne(ng-controller="CaserneCtrl")
+        form(novalidate).row
+            .center-block.col-sm-6
+                accordion(close-others="true")
+                    accordion-group(ng-repeat="type in armorparttypes" ng-if="type.type === currentSlot")
+                        accordion-heading
+                            | {{ type.name }} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                        label(ng-repeat="object in type.objects")
+                            input(type="radio" ng-model="unit.armor[currentSlot].part" ng-value="object")
+                            | {{ object.name }}
+                    accordion-group(ng-repeat="type in runetypes")
+                        accordion-heading
+                            | {{ type.name }} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                        label(ng-repeat="object in type.objects")
+                            input(type="radio" ng-model="unit.armor[currentSlot].rune" ng-value="object")
+                            | {{ object.name }}
+            .col-sm-6
+                .col-sm-2
+                    .stuff-slot(ng-class="{'active':currentSlot === 'helm'}" ng-click="currentSlot = 'helm'")
+                    .stuff-slot(ng-class="{'active':currentSlot === 'torso'}" ng-click="currentSlot = 'torso'")
+                    .stuff-slot(ng-class="{'active':currentSlot === 'gloves'}" ng-click="currentSlot = 'gloves'")
+                    .stuff-slot(ng-class="{'active':currentSlot === 'greaves'}" ng-click="currentSlot = 'greaves'")
+                    .stuff-slot(ng-class="{'active':currentSlot === 'boots'}" ng-click="currentSlot = 'boots'")
+                .col-sm-10
+                    | {{ unit }}
+                    input(type="submit")

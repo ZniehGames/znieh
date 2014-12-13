@@ -6,6 +6,7 @@ class RuneType
 {
     use \Znieh\Traits\NamableEntity;
     use \Znieh\Traits\HasBuildingEntity;
+    use \Znieh\Traits\HasGameObjectsEntity;
 
     private $id;
 

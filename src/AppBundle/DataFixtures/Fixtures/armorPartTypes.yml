@@ -3,60 +3,74 @@ Znieh\Model\ArmorPartType:
     name: Casque lourd
     defense: 20
     weight: 5
+    type: helm
   torse_lourd:
     name: Torse lourd
     defense: 20
     weight: 5
+    type: torso
   jambes_lourd:
     name: Jambes lourdes
     defense: 20
     weight: 5
+    type: greaves
   bottes_lourd:
     name: Bottes lourdes
     defense: 20
     weight: 5
+    type: boots
   gants_lourd:
     name: Gants lourds
     defense: 20
     weight: 5
+    type: gloves
   casque_intermediaire:
     name: Casque intermédiaire
     defense: 10
     weight: 3
+    type: helm
   torse_intermediaire:
     name: Torse intermédiaire
     defense: 10
     weight: 3
+    type: torso
   jambes_intermediaire:
     name: Jambes intermédiaires
     defense: 10
     weight: 3
+    type: greaves
   bottes_intermerdiaire:
     name: Bottes intermédiaires
     defense: 10
     weight: 3
+    type: boots
   gants_intermediaire:
     name: Gants intermédiaires
     defense: 10
     weight: 3
+    type: gloves
   casque_leger:
     name: Casque léger
     defense: 5
     weight: 1
+    type: helm
   torse_leger:
     name: Torse léger
     defense: 5
     weight: 1
+    type: torso
   jambes_leger:
     name: Jambes légères
     defense: 5
     weight: 1
+    type: greaves
   bottes_leger:
     name: Bottes légères
     defense: 5
     weight: 1
+    type: boots
   gants_leger:
     name: Gants légers
     defense: 5
     weight: 1
-
+    type: gloves

@@ -10,6 +10,10 @@ teams:
     type:     rest
     resource: AppBundle\Controller\TeamsController
 
+gameobjecttypes:
+    type:     rest
+    resource: AppBundle\Controller\GameObjectTypesController
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

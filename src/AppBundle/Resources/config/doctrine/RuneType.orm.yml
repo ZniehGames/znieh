@@ -10,3 +10,8 @@ Znieh\Model\RuneType:
         name:
             type: string
             length: 255
+
+    oneToMany:
+        objects:
+            targetEntity: Rune
+            mappedBy: type

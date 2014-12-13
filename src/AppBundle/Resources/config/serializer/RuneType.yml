@@ -3,3 +3,5 @@ Znieh\Model\RuneType:
   properties:
     name:
       expose: true
+    objects:
+      expose: true

@@ -1,7 +1,7 @@
 Znieh\Model\RuneType:
   mineur:
-    name: Mineur
+    name: Runes Mineurs
   majeur:
-    name: Majeur
+    name: Runes Majeurs
   superieur:
-    name: Supérieur
+    name: Runes Supérieurs

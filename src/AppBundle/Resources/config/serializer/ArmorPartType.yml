@@ -3,3 +3,7 @@ Znieh\Model\ArmorPartType:
   properties:
     name:
       expose: true
+    objects:
+      expose: true
+    type:
+      expose: true

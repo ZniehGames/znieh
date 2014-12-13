@@ -58,6 +58,7 @@ paths.jsvendor = [
     paths.app + 'vendor/angular/angular.js',
     paths.app + 'vendor/angular-route/angular-route.js',
     paths.app + 'vendor/angular-toastr/dist/angular-toastr.js',
+    paths.app + 'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
     paths.app + 'vendor/angular-socket-io/socket.js',
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',

@@ -7,9 +7,7 @@ class MapUtils {
 	}
 
     getBlockedTiles() {
-
     	var map = this.stateGame.game.cache.getTilemapData('map').data;
-
         var result = Object.keys(map.tilesets[0].tileproperties);
         var arrayInt = [];
 
@@ -21,9 +19,7 @@ class MapUtils {
     }
 
     getWalkablesTiles(blockedTiles) {
-
         var map = this.stateGame.game.cache.getTilemapData('map').data;
-
         var result = map.layers[0].data;
         var newarr = [];
                 
@@ -33,18 +29,6 @@ class MapUtils {
             }
         }
         return newarr;
-    }
-
-    getTileUnderPosition(x,y){
-        return this.stateGame.layer.getTiles(x,y,2,2)[0];
-    }
-
-    getIndexesOfTileUnderPosition(x,y){
-        var tile = this.stateGame.layer.getTiles(x,y,2,2)[0];
-        if(tile !== undefined){
-            return {'x' : tile.x, 'y' : tile.y};
-        }
-        return undefined;
     }
 
     addEventListenerToMapPlacement(){
@@ -59,16 +43,19 @@ class MapUtils {
     selectTilePlacement(pointer)
     {
     	// We check if a sprite is not under the pointer
-    	var under = this.stateGame.game.physics.arcade.getObjectsUnderPointer(pointer, this.stateGame.spriteGroup);
-    	if(under === undefined || under.length === 0) {
+        // Seems to not works the same way..
+        if(this.stateGame.positionUtils.isUnitUnder(pointer).unitUnder) {
+            this.stateGame.debugUtils.print('there is a unit under this point...');
+        }
+        else {
     		// We take the tile selected for ckeck collision and get his position  
-	    	var tile = this.stateGame.mapUtils.getTileUnderPosition(pointer.x, pointer.y);           
+            var tile = this.stateGame.positionUtils.getTileUnderPosition(pointer.x, pointer.y);           
             if(this.stateGame.placementUtils.canPlace(tile.x, tile.collides)) {
                 var optionsPlacement = {'placement' : { 'x' : tile.x, 'y' : tile.y, 'worldX' : tile.worldX, 'worldY' : tile.worldY, 'unit' : this.stateGame.placementUtils.getUnitToPlace()}};
                 this.stateGame.spriteUtils.addSpriteWorld(optionsPlacement);
                 
                 this.stateGame.debugUtils.print(tile.x + ' x and y ' + tile.y);  
-                //TODO: To send to server
+                // TODO To send to server
 
                 //we decrease the number of units to place
                 this.stateGame.placementUtils.goOnPlacement();
@@ -76,10 +63,7 @@ class MapUtils {
             else{
                 this.stateGame.debugUtils.print('Vous ne pouvez pas le placer ici ;)');
             }
-    	}
-    	else {
-    		this.stateGame.debugUtils.print('under was not empty or undefined...');
-    	}
+        }
     }
 }
 

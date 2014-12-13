@@ -55,7 +55,7 @@ paths.jsvendor = [
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',
     paths.app + 'vendor/phaser/build/phaser.js',
-    paths.app + 'vendor/phaser_plugin_pathfinding/bin/phaser_pathfinding-0.2.0.js'
+    paths.app + 'vendor/phaser-plugin-easystar/bin/phaser_pathfinding-0.2.0.js'
 ];
 
 var options = {};

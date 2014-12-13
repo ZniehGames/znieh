@@ -15,14 +15,13 @@ class PlacementUtils {
 
     // we get the side from options in Game.App
     this.side = options.side;
-    // this correspond to the middle of the map
+    // this correspond to the limit of real side
     if(this.side === 'left'){
     	this.mapLimit = this.stateGame.map.width/3;
     }
     else{
     	this.mapLimit = this.stateGame.map.width - this.stateGame.map.width/3;	
     }
-    this.stateGame.debugUtils.print(this.mapLimit);
     //we get the team from API
 	this.myTeamUnits = this.stateGame.game.cache.getJSON('team')[0].units;
 

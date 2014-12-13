@@ -5,6 +5,7 @@ import SpriteUtils from '../utils/SpriteUtils';
 import DebugUtils from '../utils/DebugUtils';
 import PlacementUtils from '../utils/PlacementUtils';
 import PathUtils from '../utils/PathUtils';
+import PositionUtils from '../utils/PositionUtils';
 
 class Game {
 
@@ -15,6 +16,7 @@ class Game {
         this.spriteUtils = new SpriteUtils(this);
         this.placementUtils = new PlacementUtils(this);
         this.pathUtils = new PathUtils(this);
+        this.positionUtils = new PositionUtils(this);
         this.debugUtils = null;
         // reference to game
         this.game = null;
@@ -61,7 +63,6 @@ class Game {
         if(this.debugUtils.isDebug()) {
             this.layer.debug = true;
         }
-        this.debugUtils.print('Hello Game!');
     }
 
     render() {

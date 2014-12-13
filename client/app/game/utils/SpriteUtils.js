@@ -25,18 +25,21 @@ class SpriteUtils {
 
   moveSelected(pointer) {
     if (this.stateGame.selectedSprite !== null) { 
-
-      var position = this.stateGame.mapUtils.getIndexesOfTileUnderPosition(pointer.x, pointer.y);
-      if(position !== undefined){
-        this.stateGame.debugUtils.print(position);
-        this.stateGame.pathUtils.findPathTo(position.x,position.y);
-
-        this.stateGame.selectedSprite = null;
-        this.stateGame.mapUtils.removeEventListenerToMapPlacement();   
+      
+      // We check if a unit is under the pointer on this tile
+      var result = this.stateGame.positionUtils.isUnitUnder(pointer);
+      if(result.unitUnder){
+        this.stateGame.debugUtils.print('Destination impossible !');
       }
-      else{
-        this.stateGame.debugUtils.print('Aucune tile n\'a été trouvée !');
+      else
+      {
+        this.stateGame.debugUtils.print(result.position);
+        this.stateGame.pathUtils.findPathTo(result.position.x,result.position.y);
+        this.stateGame.debugUtils.print('Mouvement réalisé !');
       }
+      
+      this.stateGame.selectedSprite = null;
+      this.stateGame.mapUtils.removeEventListenerToMapPlacement();
     }
   }
 

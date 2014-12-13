@@ -12,20 +12,11 @@ class PathUtils {
         this.pathfinder.setGrid(this.stateGame.map.layers[0].data, this.walkables);
 	}
 
-    getPositionOfAllUnits(){
-        var allUnits = this.stateGame.spriteGroup.children;
-        var allPosition = [];
-        for (var i = 0; i < allUnits.length; i++) {
-            allPosition.push(allUnits[i].content.position);
-        }
-        return allPosition;
-    }
-
     findPathTo(tilex, tiley) {
         var stateGame = this.stateGame;
         var sizeOfTile = 32;
         var pathOfUnit = null;
-        var additionnalPoints = this.stateGame.pathUtils.getPositionOfAllUnits();
+        var additionnalPoints = this.stateGame.positionUtils.getPositionOfAllUnits();
 
         for (var i = 0; i < additionnalPoints.length; i++) {
             this.pathfinder._easyStar.avoidAdditionalPoint(additionnalPoints[i].x,additionnalPoints[i].y);
@@ -38,7 +29,7 @@ class PathUtils {
             for(var i = 0, ilen = path.length; i < ilen; i++) {
                 stateGame.selectedSprite.x = path[i].x*sizeOfTile;
                 stateGame.selectedSprite.y = path[i].y*sizeOfTile;
-           	}
+            }
             var blocked;
             blocked = false;
             pathOfUnit = path;

@@ -2,7 +2,7 @@
     padding: 0;
 
     .header {
-        padding: 15px 0 11px 0;
+        padding: 14px 0 10px 0;
         text-align: center;
         background-color: #BFBDBB;
         border-bottom: 4px solid #aaa9a7;
@@ -104,5 +104,65 @@
     .search {
         text-align: center;
         padding: 20px;
+    }
+}
+
+.teams {
+    padding: 15px;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+    h1 {
+        padding: 0;
+        margin: 0 0 5px 0;
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .team {
+        margin-bottom: 10px;
+        border: 1px solid #f5f5f5;
+        border-left: 3px solid #eee;
+        padding: 5px;
+
+        .title {
+            padding-top: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .points {
+            padding: 5px;
+            background-color: #AD979E;
+            margin: 2px 7px 2px 3px;
+            float: left;
+            color: white;
+        }
+
+        .stats {
+            float: right;
+            font-size: 16px;
+            margin: 6px 5px 0 0;
+
+            .red {
+                color: #AE0000;
+                font-weight: bold;
+                margin-left: 3px;
+            }
+
+            .green {
+                color: #009F05;
+                font-weight: bold;
+                margin-right: 3px;
+            }
+        }
+    }
+
+    .team.active {
+        background-color: #E5F5FF;
+        border: 1px solid #D8E7F0;
+        border-left: 3px solid #CDDBE3;
     }
 }

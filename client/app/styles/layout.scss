@@ -17,7 +17,7 @@
 @media (min-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 51px;
+    top: 0;
     bottom: 0;
     left: 0;
     z-index: 1000;
@@ -36,12 +36,16 @@
     li > a {
         padding: 8px 10px 6px 10px;
         text-align: center;
+    }
+
+    li:not(.active) > a {
         border-top: 1px solid #d2d2d2;
     }
 
     li:last-child > a {
       border-bottom: 1px solid #d2d2d2;
     }
+
     .active > a,
     .active > a:hover,
     .active > a:focus {

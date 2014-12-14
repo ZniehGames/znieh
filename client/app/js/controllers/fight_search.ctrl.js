@@ -5,13 +5,16 @@ angular.module('znieh')
 
     $scope.pool = 1;
     $scope.user = AuthenticationService.currentUser();
-    $scope.teams = Restangular
-                    .one('users', AuthenticationService.currentUser().id)
-                    .getList('teams')
-                    .then(function(teams) {
-                        $scope.teams = teams;
-                        $scope.selectedTeam = teams[0];
-                    });
+    $scope.teams = null;
+    $scope.selectedTeam = null;
+
+    Restangular
+        .one('users', AuthenticationService.currentUser().id)
+        .getList('teams')
+        .then(function(teams) {
+            $scope.teams = teams;
+            $scope.selectedTeam = teams[0];
+        });
 
     SocketService.on('searching match', function() {
         toastr.info('Recherche en cours', 'Informations');
@@ -27,5 +30,5 @@ angular.module('znieh')
 
     $scope.select = function (index) {
         $scope.selectedTeam = $scope.teams[index];
-    }
+    };
 });

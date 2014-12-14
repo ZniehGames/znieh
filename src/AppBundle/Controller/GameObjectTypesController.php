@@ -41,4 +41,19 @@ class GameObjectTypesController extends FOSRestController
         $types = $em->getRepository('AppBundle:RuneType')->findAll();
         return $types;
     }
+
+    /**
+     * @Rest\View()
+     *
+     * @param Request $request
+     * @return View view instance
+     *
+     */
+    public function getUserWeaponparttypesAction($user)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $types = $em->getRepository('AppBundle:WeaponPartType')->findAll();
+        return $types;
+    }
+
 }

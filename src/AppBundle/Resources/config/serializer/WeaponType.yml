@@ -1,4 +1,4 @@
-Znieh\Model\WeaponPart:
+Znieh\Model\WeaponType:
   exclusion_policy: ALL
   properties:
     name:

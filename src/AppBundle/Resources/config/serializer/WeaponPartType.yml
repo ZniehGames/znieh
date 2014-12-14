@@ -1,0 +1,9 @@
+Znieh\Model\WeaponPartType:
+  exclusion_policy: ALL
+  properties:
+    name:
+      expose: true
+    objects:
+      expose: true
+    types:
+      expose: true

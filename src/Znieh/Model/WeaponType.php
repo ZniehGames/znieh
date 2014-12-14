@@ -36,6 +36,7 @@ class WeaponType
      */
     public function addPart(\Znieh\Model\WeaponPartType $part)
     {
+        $part->addType($this);
         $this->parts[] = $part;
 
         return $this;
@@ -48,6 +49,7 @@ class WeaponType
      */
     public function removePart(\Znieh\Model\WeaponPartType $part)
     {
+        $part->removeType($this);
         $this->parts->removeElement($part);
     }
 

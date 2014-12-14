@@ -10,3 +10,12 @@ Znieh\Model\WeaponPartType:
         name:
             type: string
             length: 255
+
+    oneToMany:
+        objects:
+            targetEntity: WeaponPart
+            mappedBy: type
+
+    manyToMany:
+        types:
+          targetEntity: WeaponType

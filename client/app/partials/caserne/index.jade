@@ -11,19 +11,34 @@ block content
                         label(ng-repeat="object in type.objects")
                             input(type="radio" ng-model="unit.armor[currentSlot].part" ng-value="object")
                             | {{ object.name }}
-                    accordion-group(ng-repeat="type in runetypes")
+                    accordion-group(ng-repeat="type in runetypes" ng-if="isArmorSlot()")
                         accordion-heading
                             | {{ type.name }} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                         label(ng-repeat="object in type.objects")
                             input(type="radio" ng-model="unit.armor[currentSlot].rune" ng-value="object")
                             | {{ object.name }}
+                    accordion-group(ng-repeat="(key, type) in weaponparttypes" ng-if="type.name === currentSlot" is-open="open" ng-init="open = true")
+                        accordion-heading
+                            | {{ type.name }} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                        label(ng-repeat="object in type.objects")
+                            input(type="radio" ng-model="unit.weapon.parts[key]" ng-value="object")
+                            | {{ object.name }}
             .col-sm-6
                 .col-sm-2
-                    .stuff-slot(ng-class="{'active':currentSlot === 'helm'}" ng-click="currentSlot = 'helm'")
-                    .stuff-slot(ng-class="{'active':currentSlot === 'torso'}" ng-click="currentSlot = 'torso'")
-                    .stuff-slot(ng-class="{'active':currentSlot === 'gloves'}" ng-click="currentSlot = 'gloves'")
-                    .stuff-slot(ng-class="{'active':currentSlot === 'greaves'}" ng-click="currentSlot = 'greaves'")
-                    .stuff-slot(ng-class="{'active':currentSlot === 'boots'}" ng-click="currentSlot = 'boots'")
-                .col-sm-10
+                    h2 Armure
+                    .stuff-slot(ng-class="{'active': currentSlot === 'helm'}" ng-click="currentSlot = 'helm'")
+                    .stuff-slot(ng-class="{'active': currentSlot === 'torso'}" ng-click="currentSlot = 'torso'")
+                    .stuff-slot(ng-class="{'active': currentSlot === 'gloves'}" ng-click="currentSlot = 'gloves'")
+                    .stuff-slot(ng-class="{'active': currentSlot === 'greaves'}" ng-click="currentSlot = 'greaves'")
+                    .stuff-slot(ng-class="{'active': currentSlot === 'boots'}" ng-click="currentSlot = 'boots'")
+                .col-sm-3
+                    h2 Arme
+                    .weapon-choice-container
+                        .weapon-choice(ng-class="{'active': weaponChoice === 'axe'}" ng-click="weaponChoice = 'axe'")
+                        .weapon-choice(ng-class="{'active': weaponChoice === 'sword'}" ng-click="weaponChoice = 'sword'")
+                        .weapon-choice(ng-class="{'active': weaponChoice === 'hammer'}" ng-click="weaponChoice = 'hammer'")
+
+                    .stuff-slot(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part")
+                .col-sm-7
                     | {{ unit }}
                     input(type="submit")

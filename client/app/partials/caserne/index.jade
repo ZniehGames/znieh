@@ -2,7 +2,7 @@ extends ../village_layout.jade
 
 block content
     .caserne(ng-controller="CaserneCtrl")
-        form(novalidate).row
+        form(novalidate ng-submit="submit()").row
             .center-block.col-sm-6
                 accordion(close-others="true")
                     accordion-group(ng-repeat="type in armorparttypes" ng-if="type.type === currentSlot")
@@ -40,5 +40,12 @@ block content
 
                     .stuff-slot(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part")
                 .col-sm-7
+                    input(type="text" ng-model="unit.name" required)
+                    label(ng-repeat="size in sizes")
+                            input(type="radio" ng-model="unit.size" ng-value="size")
+                            | {{ size }}
+                    label(ng-repeat="physical in physicals")
+                            input(type="radio" ng-model="unit.physical" ng-value="physical")
+                            | {{ physical }}
                     | {{ unit }}
                     input(type="submit")

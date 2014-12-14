@@ -16,3 +16,31 @@ Scenario: list user armor part types
   @...@
 ]
 """
+
+Scenario: list user weapon part types
+    Given I send a GET request to "/users/1/weaponparttypes"
+    Then the JSON response should match:
+"""
+[
+  {
+    "types": @...@,
+    "name": @string@,
+    "objects": @...@
+  },
+  @...@
+]
+"""
+
+
+Scenario: list user rune types
+    Given I send a GET request to "/users/1/runetypes"
+    Then the JSON response should match:
+"""
+[
+  {
+    "name": @string@,
+    "objects": @...@
+  },
+  @...@
+]
+"""

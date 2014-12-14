@@ -10,6 +10,10 @@ teams:
     type:     rest
     resource: AppBundle\Controller\TeamsController
 
+units:
+    type:     rest
+    resource: AppBundle\Controller\UnitsController
+
 gameobjecttypes:
     type:     rest
     resource: AppBundle\Controller\GameObjectTypesController

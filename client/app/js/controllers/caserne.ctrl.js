@@ -13,6 +13,9 @@ angular.module('znieh')
       'hammer' : { 'types' : ['Pommeau', 'Tête de marteau'] }
     };
 
+    $scope.sizes = [ 1,2,3 ];
+    $scope.physicals = [ 1,2,3 ];
+
     Restangular
     .one('users', AuthenticationService.currentUser().id)
     .getList('armorparttypes')
@@ -41,6 +44,11 @@ angular.module('znieh')
              'boots' === $scope.currentSlot ||
              'gloves' === $scope.currentSlot
         ;
+    };
+
+    $scope.submit = function() {
+      console.log('submit', $scope.unit);
+      Restangular.all('units').post($scope.unit);
     };
 
 });

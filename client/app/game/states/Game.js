@@ -2,7 +2,7 @@
 
 import Map from '../utils/Map';
 import CreationSprite from '../utils/CreationSprite';
-import Debug from '../utils/Debug';
+import Debugger from '../utils/Debugger';
 import Placement from '../utils/Placement';
 import PathFinding from '../utils/PathFinding';
 import PositionChecker from '../utils/PositionChecker';
@@ -32,7 +32,7 @@ class Game {
     
     create() {
 
-        this.debugUtils = new Debug({'debug' : this.options.debug});
+        this.debugUtils = new Debugger({'debug' : this.options.debug});
 
         // instanciation bases of the game
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -57,7 +57,7 @@ class Game {
         this.mapUtils.addEventListenerToMapPlacement();
 
         this.placementUtils.init(this.options);
-        
+
         //first try with pathfinding
         this.pathUtils.init();
 

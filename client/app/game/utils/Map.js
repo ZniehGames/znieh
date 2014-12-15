@@ -1,6 +1,6 @@
 'use strict';
 
-class MapUtils {
+class Map {
 
 	constructor(stateGame) {
 		this.stateGame = stateGame;
@@ -67,4 +67,4 @@ class MapUtils {
     }
 }
 
-export default MapUtils;
+export default Map;

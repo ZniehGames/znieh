@@ -1,6 +1,6 @@
 'use strict';
 
-class PathUtils {
+class PathFinding {
 
 	constructor(stateGame) {
 		this.stateGame = stateGame;
@@ -50,4 +50,4 @@ class PathUtils {
 
 }
 
-export default PathUtils;
+export default PathFinding;

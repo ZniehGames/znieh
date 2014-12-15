@@ -1,6 +1,6 @@
 'use strict';
 
-class DebugUtils {
+class Debug {
 
 	constructor(options){
 		this.debug = options.debug;
@@ -32,4 +32,4 @@ class DebugUtils {
 
 }
 
-export default DebugUtils;
+export default Debug;

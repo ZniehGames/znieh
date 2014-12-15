@@ -1,6 +1,6 @@
 'use strict';
 
-class SpriteUtils {
+class CreationSprite {
 
   constructor(stateGame) {
     this.stateGame = stateGame;
@@ -114,4 +114,4 @@ class SpriteUtils {
   }
 }
 
-export default SpriteUtils;
+export default CreationSprite;

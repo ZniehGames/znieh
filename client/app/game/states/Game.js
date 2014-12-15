@@ -1,22 +1,22 @@
 'use strict';
 
-import MapUtils from '../utils/MapUtils';
-import SpriteUtils from '../utils/SpriteUtils';
-import DebugUtils from '../utils/DebugUtils';
-import PlacementUtils from '../utils/PlacementUtils';
-import PathUtils from '../utils/PathUtils';
-import PositionUtils from '../utils/PositionUtils';
+import Map from '../utils/Map';
+import CreationSprite from '../utils/CreationSprite';
+import Debug from '../utils/Debug';
+import Placement from '../utils/Placement';
+import PathFinding from '../utils/PathFinding';
+import PositionChecker from '../utils/PositionChecker';
 
 class Game {
 
     constructor() {
 
         // utils for Game
-        this.mapUtils = new MapUtils(this);
-        this.spriteUtils = new SpriteUtils(this);
-        this.placementUtils = new PlacementUtils(this);
-        this.pathUtils = new PathUtils(this);
-        this.positionUtils = new PositionUtils(this);
+        this.mapUtils = new Map(this);
+        this.spriteUtils = new CreationSprite(this);
+        this.placementUtils = new Placement(this);
+        this.pathUtils = new PathFinding(this);
+        this.positionUtils = new PositionChecker(this);
         this.debugUtils = null;
         // reference to game
         this.game = null;
@@ -32,7 +32,7 @@ class Game {
     
     create() {
 
-        this.debugUtils = new DebugUtils({'debug' : this.options.debug});
+        this.debugUtils = new Debug({'debug' : this.options.debug});
 
         // instanciation bases of the game
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -46,7 +46,6 @@ class Game {
         this.tileBlocked = this.mapUtils.getBlockedTiles();
         this.map.setCollision(this.tileBlocked, true);
 
-        this.placementUtils.init(this.options);
 
         // we init the collisions with bounds of the world
         this.game.physics.setBoundsToWorld(true, true, true, true, false);
@@ -57,6 +56,8 @@ class Game {
         // we add a listener to map, and used for placement
         this.mapUtils.addEventListenerToMapPlacement();
 
+        this.placementUtils.init(this.options);
+        
         //first try with pathfinding
         this.pathUtils.init();
 

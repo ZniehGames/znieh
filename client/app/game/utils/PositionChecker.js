@@ -1,6 +1,6 @@
 'use strict';
 
-class PositionUtils {
+class PositionChecker {
 
 	constructor(stateGame) {
 		this.stateGame = stateGame;
@@ -53,4 +53,4 @@ class PositionUtils {
 
 }
 
-export default PositionUtils;
+export default PositionChecker;

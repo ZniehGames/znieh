@@ -3,49 +3,38 @@ extends ../village_layout.jade
 block content
     .caserne(ng-controller="CaserneCtrl")
         form(novalidate ng-submit="submit()").row
-            .center-block.col-sm-6
-                accordion(close-others="true")
-                    accordion-group(ng-repeat="type in armorparttypes" ng-if="type.type === currentSlot")
-                        accordion-heading
-                            | {{ type.name }} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-                        label(ng-repeat="object in type.objects")
-                            input(type="radio" ng-model="unit.armor[currentSlot].part" ng-value="object")
-                            | {{ object.name }}
-                    accordion-group(ng-repeat="type in runetypes" ng-if="isArmorSlot()")
-                        accordion-heading
-                            | {{ type.name }} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-                        label(ng-repeat="object in type.objects")
-                            input(type="radio" ng-model="unit.armor[currentSlot].rune" ng-value="object")
-                            | {{ object.name }}
-                    accordion-group(ng-repeat="(key, type) in weaponparttypes" ng-if="type.name === currentSlot" is-open="open" ng-init="open = true")
-                        accordion-heading
-                            | {{ type.name }} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-                        label(ng-repeat="object in type.objects")
-                            input(type="radio" ng-model="unit.weapon.parts[key]" ng-value="object")
-                            | {{ object.name }}
-            .col-sm-6
-                .col-sm-2
-                    h2 Armure
-                    .stuff-slot(ng-class="{'active': currentSlot === 'helm'}" ng-click="currentSlot = 'helm'")
-                    .stuff-slot(ng-class="{'active': currentSlot === 'torso'}" ng-click="currentSlot = 'torso'")
-                    .stuff-slot(ng-class="{'active': currentSlot === 'gloves'}" ng-click="currentSlot = 'gloves'")
-                    .stuff-slot(ng-class="{'active': currentSlot === 'greaves'}" ng-click="currentSlot = 'greaves'")
-                    .stuff-slot(ng-class="{'active': currentSlot === 'boots'}" ng-click="currentSlot = 'boots'")
-                .col-sm-3
-                    h2 Arme
-                    .weapon-choice-container
-                        .weapon-choice(ng-class="{'active': weaponChoice === 'axe'}" ng-click="weaponChoice = 'axe'")
-                        .weapon-choice(ng-class="{'active': weaponChoice === 'sword'}" ng-click="weaponChoice = 'sword'")
-                        .weapon-choice(ng-class="{'active': weaponChoice === 'hammer'}" ng-click="weaponChoice = 'hammer'")
-
-                    .stuff-slot(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part")
-                .col-sm-7
-                    input(type="text" ng-model="unit.name" required)
-                    label(ng-repeat="size in sizes")
-                            input(type="radio" ng-model="unit.size" ng-value="size")
-                            | {{ size }}
-                    label(ng-repeat="physical in physicals")
-                            input(type="radio" ng-model="unit.physical" ng-value="physical")
-                            | {{ physical }}
-                    | {{ unit }}
-                    input(type="submit")
+            .col-sm-1
+                .stuff-slot.helm(ng-class="{'active': currentSlot === 'helm'}" ng-click="setCurrentSlot('helm')")
+                .stuff-slot.torso(ng-class="{'active': currentSlot === 'torso'}" ng-click="setCurrentSlot('torso')")
+                .stuff-slot.gloves(ng-class="{'active': currentSlot === 'gloves'}" ng-click="setCurrentSlot('gloves')")
+                .stuff-slot.greaves(ng-class="{'active': currentSlot === 'greaves'}" ng-click="setCurrentSlot('greaves')")
+                .stuff-slot.boots(ng-class="{'active': currentSlot === 'boots'}" ng-click="setCurrentSlot('boots')")
+            .center-block.col-sm-5
+                tabset.clearfix(ng-show="isArmorSlot()")
+                    tab(ng-repeat="tab in armorparttypes" ng-if="tab.type === currentSlot" heading="{{ tab.name }}" active="tab.active")
+                        objectinfo(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].part" active="{{ unit.armor[currentSlot].part === object.id }}")
+                tabset.clearfix(ng-show="isArmorSlot()")
+                    tab(ng-repeat="tab in runetypes" heading="{{ tab.name }}" active="tab.active")
+                        objectinfo(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].rune" active="{{ unit.armor[currentSlot].rune === object.id }}")
+                tabset.clearfix(ng-show="isWeaponSlot()")
+                    tab(ng-repeat="(key,tab) in weaponparttypes" ng-if="tab.name === currentSlot" heading="{{ tab.name }}" active="tab.active")
+                        objectinfo(ng-repeat="object in tab.objects" object="object" ng-model="unit.weapon.parts[key]" active="{{ unit.weapon.parts[key] === object.id }}")
+            .col-sm-2
+                .choice-container
+                    .weapon-choice.axe(ng-class="{'active': weaponChoice === 'axe'}" ng-click="weaponChoice = 'axe'")
+                    .weapon-choice.sword(ng-class="{'active': weaponChoice === 'sword'}" ng-click="weaponChoice = 'sword'")
+                    .weapon-choice.hammer(ng-class="{'active': weaponChoice === 'hammer'}" ng-click="weaponChoice = 'hammer'")
+                .stuff-slot.gear(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part")
+            .col-sm-4.text-center
+                input(type="text" ng-model="unit.name" required placeholder="Le ptit nom")
+                .choice-container
+                    .size-choice.size-1(ng-class="{'active': unit.size === 1}" ng-click="unit.size = 1")
+                    .size-choice.size-2(ng-class="{'active': unit.size === 2}" ng-click="unit.size = 2")
+                    .size-choice.size-3(ng-class="{'active': unit.size === 3}" ng-click="unit.size = 3")
+                .choice-container
+                    .physical-choice.physical-1(ng-class="{'active': unit.physical === 1}" ng-click="unit.physical = 1")
+                    .physical-choice.physical-2(ng-class="{'active': unit.physical === 2}" ng-click="unit.physical = 2")
+                    .physical-choice.physical-3(ng-class="{'active': unit.physical === 3}" ng-click="unit.physical = 3")
+                br
+                input(type="submit").btn.btn-primary
+                p {{ unit }}

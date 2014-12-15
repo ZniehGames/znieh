@@ -1,0 +1,26 @@
+.object-info-container {
+  display: block;
+  cursor: pointer;
+  height: 100px;
+  padding: 10px 10px 10px 0;
+}
+
+.object-info {
+  height: 100%;
+  widows: 100%;
+  display: block;
+  .name {
+    background: #777;
+    height: 60%;
+  }
+
+  .bonuses {
+    height: 40%;
+    width: 100%;
+    background: white;
+  }
+}
+
+.active > .object-info-container > .object-info {
+  box-shadow: 0 5px 35px rgba(64,153,209,1);
+}

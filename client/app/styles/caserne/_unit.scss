@@ -2,18 +2,88 @@
   display: block;
   width: 50px;
   height: 50px;
-  margin: 2rem auto;
-  background: #222;
+  margin: 0 auto 2rem;
+  background-size: cover;
   transition: .5s all ease-in-out;
   cursor: pointer;
 
   &.active {
     box-shadow: 0 5px 35px rgba(64,153,209,1);
   }
+  &.boots {
+    background-image: url('../images/armors/boots.png');
+  }
+  &.greaves {
+    background-image: url('../images/armors/greaves.png');
+  }
+  &.gloves {
+    background-image: url('../images/armors/gloves.png');
+  }
+  &.torso {
+    background-image: url('../images/armors/torso.png');
+  }
+  &.helm {
+    background-image: url('../images/armors/helm.png');
+  }
+  &.gear {
+    background-image: url('../images/weapons/gears.png');
+  }
 }
 
-.weapon-choice-container {
+.size-choice {
+  display: inline-block;
+  vertical-align:middle;
+  width: 25px;
+  height: 25px;
+  margin: 5px 5px;
+  background-size: cover;
+  transition: .5s background-size ease-in-out;
+  cursor: pointer;
+
+  &.active {
+    width: 40px;
+    height: 40px;
+  }
+  &.size-1 {
+    background-image: url('../images/body/strong.svg');
+  }
+  &.size-2 {
+    background-image: url('../images/body/muscle-up.svg');
+  }
+  &.size-3 {
+    background-image: url('../images/body/muscle-fat.svg');
+  }
+}
+
+.physical-choice {
+  display: inline-block;
+  vertical-align:middle;
+  width: 25px;
+  height: 25px;
+  margin: 5px 5px;
+  background-size: cover;
+  transition: .5s background-size ease-in-out;
+  cursor: pointer;
+
+  &.active {
+    width: 40px;
+    height: 40px;
+  }
+  &.physical-1 {
+    background-image: url('../images/body/strong.svg');
+  }
+  &.physical-2 {
+    background-image: url('../images/body/muscle-up.svg');
+  }
+  &.physical-3 {
+    background-image: url('../images/body/muscle-fat.svg');
+  }
+}
+
+.choice-container {
   height: 50px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .weapon-choice{
@@ -22,18 +92,21 @@
   width: 25px;
   height: 25px;
   margin: 5px 5px;
-  background: #222;
-  transition: .5s all ease-in-out;
+  background-size: cover;
+  transition: .5s background-size ease-in-out;
   cursor: pointer;
 
   &.active {
     width: 40px;
     height: 40px;
-    background: #000;
   }
-}
-
-
-.caserne label {
-  display: block;
+  &.sword {
+    background-image: url('../images/weapons/sword.png');
+  }
+  &.axe {
+    background-image: url('../images/weapons/axe.png');
+  }
+  &.hammer {
+    background-image: url('../images/weapons/hammer.png');
+  }
 }

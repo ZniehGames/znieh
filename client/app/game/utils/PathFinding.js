@@ -16,6 +16,8 @@ class PathFinding {
         var stateGame = this.stateGame;
         var sizeOfTile = 32;
         var pathOfUnit = null;
+        var tween = null;
+        var speed = 150;
         var additionnalPoints = this.stateGame.positionUtils.getPositionOfAllUnits();
 
         for (var i = 0; i < additionnalPoints.length; i++) {
@@ -26,9 +28,11 @@ class PathFinding {
             path = path || [];
             path.shift();
             stateGame.debugUtils.print(path);
+            tween = stateGame.game.add.tween(stateGame.selectedSprite);
             for(var i = 0, ilen = path.length; i < ilen; i++) {
-                stateGame.selectedSprite.x = path[i].x*sizeOfTile;
-                stateGame.selectedSprite.y = path[i].y*sizeOfTile;
+                //stateGame.selectedSprite.x = path[i].x*sizeOfTile;
+                //stateGame.selectedSprite.y = path[i].y*sizeOfTile;
+                tween.to({x: path[i].x*sizeOfTile, y: path[i].y*sizeOfTile}, speed, Phaser.Easing.Linear.None); // in this case we don't predefine the tween (but works the same way)
             }
             var blocked;
             blocked = false;
@@ -39,6 +43,7 @@ class PathFinding {
         this.pathfinder.calculatePath();
 
         if(pathOfUnit.length !== 0){
+            tween.start();
             this.stateGame.spriteUtils.setPositionSelected(tilex,tiley);
         }
         else{

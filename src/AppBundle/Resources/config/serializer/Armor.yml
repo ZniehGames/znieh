@@ -3,23 +3,33 @@ Znieh\Model\Armor:
   properties:
     name:
       expose: true
+      groups: [default, details]
     helm:
       expose: true
+      groups: [default, details]
     torso:
       expose: true
+      groups: [default, details]
     gloves:
       expose: true
+      groups: [default, details]
     greaves:
       expose: true
+      groups: [default, details]
     boots:
       expose: true
+      groups: [default, details]
   virtual_properties:
     getDefense:
       serialized_name: defense
       type: integer
+      groups: [default, details]
     getBonuses:
       serialized_name: bonuses
       type: array
+      groups: [default, details]
     getPoints:
       serialized_name: points
       type: integer
+      groups: [default, details]
+

@@ -18,7 +18,7 @@ use Znieh\Form\UnitForm;
 class UnitsController extends FOSRestController
 {
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"list"})
      *
      * @param Request $request
      * @return View view instance

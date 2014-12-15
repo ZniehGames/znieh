@@ -3,21 +3,28 @@ Znieh\Model\Weapon:
   properties:
     name:
       expose: true
+      groups: [default, details]
     parts:
       expose: true
+      groups: [default, details]
   virtual_properties:
     getMinDamage:
       serialized_name: min_damage
       type: integer
+      groups: [default, details]
     getMaxDamage:
       serialized_name: max_damage
       type: integer
+      groups: [default, details]
     getDamageType:
       serialized_name: damage_type
       type: string
+      groups: [default, details]
     getBonuses:
       serialized_name: bonuses
       type: array
+      groups: [default, details]
     getPoints:
       serialized_name: points
       type: integer
+      groups: [default, details]

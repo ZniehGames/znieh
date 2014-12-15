@@ -35,8 +35,7 @@ Scenario: list user team
        {
           "name": @string@,
           "bonuses": @...@,
-          "points": @integer@,
-          "dicr": "weapon_part"
+          "points": @integer@
         },
         @...@
       ]
@@ -59,8 +58,7 @@ Scenario: list user team
           "type": {
             "name": @string@
           },
-          "defense": @integer@,
-          "dicr": "armor_part"
+          "defense": @integer@
         },
         "rune": {
           "name": @string@,
@@ -68,8 +66,7 @@ Scenario: list user team
           "points": @integer@,
           "type": {
             "name": @string@
-          },
-          "dicr": "rune"
+          }
         }
       },
       "torso": {

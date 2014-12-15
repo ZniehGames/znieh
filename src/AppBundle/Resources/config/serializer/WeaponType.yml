@@ -3,3 +3,4 @@ Znieh\Model\WeaponType:
   properties:
     name:
       expose: true
+      groups: [default, details]

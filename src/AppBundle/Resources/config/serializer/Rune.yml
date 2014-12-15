@@ -3,3 +3,5 @@ Znieh\Model\Rune:
   properties:
     type:
       expose: true
+      groups: [default, details]
+

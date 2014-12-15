@@ -4,3 +4,5 @@ Znieh\Model\Team:
     units:
       expose: true
       type: ArrayCollection<Znieh\Model\Unit>
+      groups: [default, details]
+

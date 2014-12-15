@@ -5,21 +5,29 @@ Znieh\Model\Unit:
       expose: true
     name:
       expose: true
+      groups: [default, details]
     weapon:
       expose: true
+      groups: [default, details]
     armor:
       expose: true
+      groups: [default, details]
     physical:
       expose: true
+      groups: [default, details]
     size:
       expose: true
+      groups: [default, details]
   virtual_properties:
     getPoints:
       serialized_name: points
       type: integer
+      groups: [default, details]
     getMoves:
       serialized_name: moves
       type: integer
+      groups: [default, details]
     getWeight:
       serialized_name: weight
       type: integer
+      groups: [default, details]

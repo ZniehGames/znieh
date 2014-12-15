@@ -3,5 +3,7 @@ Znieh\Model\ArmorPart:
   properties:
     type:
       expose: true
+      groups: [default, details]
     defense:
       expose: true
+      groups: [default, details]

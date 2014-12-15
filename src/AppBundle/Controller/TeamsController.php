@@ -15,7 +15,7 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 class TeamsController extends FOSRestController
 {
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"default"})
      *
      * @param Request $request
      * @return View view instance
@@ -29,7 +29,7 @@ class TeamsController extends FOSRestController
     }
 
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"default"})
      *
      * @param Request $request
      * @return View view instance

@@ -1,9 +1,15 @@
 Znieh\Model\GameObject:
   exclusion_policy: ALL
   properties:
+    id:
+      expose: true
+      groups: [details]
     name:
       expose: true
+      groups: [default, details]
     bonuses:
       expose: true
+      groups: [default, details]
     points:
       expose: true
+      groups: [default, details]

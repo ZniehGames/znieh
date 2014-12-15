@@ -15,7 +15,7 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 class GameObjectTypesController extends FOSRestController
 {
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"default", "details"})
      *
      * @param Request $request
      * @return View view instance
@@ -29,7 +29,7 @@ class GameObjectTypesController extends FOSRestController
     }
 
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"default", "details"})
      *
      * @param Request $request
      * @return View view instance
@@ -43,7 +43,7 @@ class GameObjectTypesController extends FOSRestController
     }
 
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"default", "details"})
      *
      * @param Request $request
      * @return View view instance

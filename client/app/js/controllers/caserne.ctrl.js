@@ -38,17 +38,72 @@ angular.module('znieh')
     });
 
     $scope.isArmorSlot = function() {
-      return 'helm' === $scope.currentSlot ||
+      return 'helm'    === $scope.currentSlot ||
              'greaves' === $scope.currentSlot ||
-             'torso' === $scope.currentSlot ||
-             'boots' === $scope.currentSlot ||
-             'gloves' === $scope.currentSlot
+             'torso'   === $scope.currentSlot ||
+             'boots'   === $scope.currentSlot ||
+             'gloves'  === $scope.currentSlot
         ;
     };
 
     $scope.submit = function() {
-      console.log('submit', $scope.unit);
-      Restangular.all('units').post($scope.unit);
+      var weapons = [];
+
+      if ($scope.unit.weapon) {
+        for (var i in $scope.unit.weapon.parts) {
+          weapons.push($scope.unit.weapon.parts[i].id);        
+        }    
+      }
+
+      var unit = {
+        'name': $scope.unit.name || 'default name',
+        'size': $scope.unit.size,
+        'physical': $scope.unit.physical,
+        'weapon': { 
+          'parts': weapons 
+        },
+        'armor': {
+          'helm': {},
+          'torso': {},
+          'gloves': {},
+          'greaves': {},
+          'boots': {}
+        }
+      };
+
+      if ($scope.unit.armor) {
+        if ($scope.unit.armor.helm && $scope.unit.armor.helm.part) {
+          unit.armor.helm.part = $scope.unit.armor.helm.part.id;
+        }
+        if ($scope.unit.armor.helm && $scope.unit.armor.helm.rune) {
+          unit.armor.helm.rune = $scope.unit.armor.helm.rune.id;
+        }
+        if ($scope.unit.armor.torso && $scope.unit.armor.torso.part) {
+          unit.armor.torso.part = $scope.unit.armor.torso.part.id;
+        }
+        if ($scope.unit.armor.torso && $scope.unit.armor.torso.rune) {
+          unit.armor.torso.rune = $scope.unit.armor.torso.rune.id;
+        }
+        if ($scope.unit.armor.gloves && $scope.unit.armor.gloves.part) {
+          unit.armor.gloves.part = $scope.unit.armor.gloves.part.id;
+        }
+        if ($scope.unit.armor.gloves && $scope.unit.armor.gloves.rune) {
+          unit.armor.gloves.rune = $scope.unit.armor.gloves.rune.id;
+        }
+        if ($scope.unit.armor.greaves && $scope.unit.armor.greaves.part) {
+          unit.armor.greaves.part = $scope.unit.armor.greaves.part.id;
+        }
+        if ($scope.unit.armor.greaves && $scope.unit.armor.greaves.rune) {
+          unit.armor.greaves.rune = $scope.unit.armor.greaves.rune.id;
+        }
+        if ($scope.unit.armor.boots && $scope.unit.armor.boots.part) {
+          unit.armor.boots.part = $scope.unit.armor.boots.part.id;
+        }
+        if ($scope.unit.armor.boots && $scope.unit.armor.boots.rune) {
+          unit.armor.boots.rune = $scope.unit.armor.boots.rune.id;
+        }
+      }
+      Restangular.all('units').post(unit);
     };
 
 });

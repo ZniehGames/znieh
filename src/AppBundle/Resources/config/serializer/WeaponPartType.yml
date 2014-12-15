@@ -7,6 +7,6 @@ Znieh\Model\WeaponPartType:
     objects:
       expose: true
       groups: [details]
-    types:
-      expose: true
-      groups: [details]
+    # types:
+    #   expose: true
+    #   groups: [details]

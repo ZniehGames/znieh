@@ -11,7 +11,16 @@ Scenario: list user armor part types
   {
     "name": @string@,
     "type": @string@,
-    "objects": @...@
+    "objects": [
+      {
+        "id": @integer@,
+        "name": @string@,
+        "bonuses": @...@,
+        "points": @integer@,
+        "defense": @integer@ 
+      },
+     @...@
+    ]
   },
   @...@
 ]
@@ -23,9 +32,16 @@ Scenario: list user weapon part types
 """
 [
   {
-    "types": @...@,
     "name": @string@,
-    "objects": @...@
+    "objects": [
+      {
+        "id": @integer@,
+        "name": @string@,
+        "bonuses": @...@,
+        "points": @integer@
+      },
+      @...@
+    ]
   },
   @...@
 ]

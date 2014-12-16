@@ -14,13 +14,14 @@ GameApp.start = function() {
     );
 
     //game.analytics = new Analytics('phaser-game');
+    this.debug = true;
+    this.side = 'left';
 
     // we add states for constructing code
     game.state.add('preload', Preload);
     game.state.add('game', Game);
 
     game.state.states.game.parent = this;
-    game.state.states.game.options = {'side' : 'left', 'debug' : true};
 
     // we start by preloading the assets
     game.state.start('preload');

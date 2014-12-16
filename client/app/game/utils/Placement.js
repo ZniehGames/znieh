@@ -1,9 +1,18 @@
 'use strict';
 
+import Debugger from '../utils/Debugger';
+import PositionChecker from '../utils/PositionChecker';
+import CreationSprite from '../utils/CreationSprite';
+import Map from '../utils/Map';
+
 class Placement {
 
-  constructor(stateGame) {
-    this.stateGame = stateGame;
+  constructor(stateGame, debug) {
+    this.debugUtils = new Debugger({'debug' : debug});
+    this.positionUtils = new PositionChecker(debug);
+    this.mapUtils = new Map(stateGame, debug);
+    this.spriteUtils = new CreationSprite(stateGame, debug);
+        
 
     this.finish = false;
     this.restToPlace = null;
@@ -11,23 +20,23 @@ class Placement {
     this.isPlaced = null;
   }
 
-  init(options){
+  init(side, map, game, layer, spriteGroup, selectedSprite, spriteLists){
 
     // we get the side from options in Game.App
-    this.side = options.side;
+    this.side = side;
     // this correspond to the limit of real side
     if(this.side === 'left'){
-    	this.mapLimit = this.stateGame.map.width/3;
+    	this.mapLimit = map.width/3;
     }
     else{
-    	this.mapLimit = this.stateGame.map.width - this.stateGame.map.width/3;	
+    	this.mapLimit = map.width - map.width/3;	
     }
     //we get the team from API
-  	this.myTeamUnits = this.stateGame.game.cache.getJSON('team')[0].units;
+  	this.myTeamUnits = game.cache.getJSON('team')[0].units;
 
   	// init for placement
   	this.restToPlace = this.myTeamUnits.length;
-  	this.stateGame.debugUtils.print(this.myTeamUnits);
+  	this.debugUtils.print(this.myTeamUnits);
   	
   	this.isPlaced = new Array(this.myTeamUnits.length);
   	for(var cpt = 0; cpt < this.isPlaced.length; cpt++) {
@@ -37,7 +46,7 @@ class Placement {
   	// we put the first of my unit for placement
   	this.nbToPlace = 0;
 
-    this.randomizePlacement();
+    this.randomizePlacement(game,layer, spriteGroup, selectedSprite, spriteLists);
   }
 
   canPlace(x, collides){
@@ -60,59 +69,58 @@ class Placement {
   	return this.myTeamUnits[this.nbToPlace];
   }
 
-  goOnPlacement(){
+  goOnPlacement(game, layer, spriteGroup, selectedSprite, spriteLists){
   	//we decrease the number of units to place
   	this.restToPlace -= 1;
   	if(this.restToPlace === 0)
   	{
       this.finish = true;
-      this.stateGame.mapUtils.removeEventListenerToMapPlacement();
-      this.stateGame.spriteUtils.setListenerSelectToAllUnits();
+      this.mapUtils.removeEventListenerToMapPlacement(game);
+      this.spriteUtils.setListenerSelectToAllUnits(game, layer, spriteGroup, selectedSprite, spriteLists);
       this.isPlaced[this.nbToPlace] = true;	
   	    
-  	    this.stateGame.debugUtils.print('le placement est fini !');
+  	    this.debugUtils.print('le placement est fini !');
   	}
   	else{
   		// we check every unit of the team
       this.isPlaced[this.nbToPlace] = true;
 
-      this.stateGame.debugUtils.print(this.isPlaced);
+      this.debugUtils.print(this.isPlaced);
 
       for(var cpt = 0; cpt < this.isPlaced.length; cpt++) {
-      	this.stateGame.debugUtils.print(this.isPlaced[cpt]);
+      	this.debugUtils.print(this.isPlaced[cpt]);
       	if(this.isPlaced[cpt] === false){
       		this.nbToPlace = cpt;
-      		this.stateGame.debugUtils.print(this.nbToPlace);
+      		this.debugUtils.print(this.nbToPlace);
       		break;
       	}
       }
   	}
   }
 
-  randomizePlacement(){
+  randomizePlacement(game, layer, spriteGroup, selectedSprite, spriteLists){
 
     while(this.finish === false){
 
-      var x = this.stateGame.game.rnd.integerInRange(0, 780);
-      var y = this.stateGame.game.rnd.integerInRange(0, 440);
+      var x = game.rnd.integerInRange(0, 780);
+      var y = game.rnd.integerInRange(0, 440);
       var pointer = {'x' : x, 'y' : y};  
 
       // We check if a sprite is not under the pointer
       // Seems to not works the same way..
-      if(this.stateGame.positionUtils.isUnitUnder(pointer).unitUnder) {
-          this.stateGame.debugUtils.print('there is a unit under this point...');
+      if(this.positionUtils.isUnitUnder(game, layer, spriteGroup, pointer).unitUnder) {
+          this.debugUtils.print('there is a unit under this point...');
       }
       else {
       // We take the tile selected for ckeck collision and get his position  
-          var tile = this.stateGame.positionUtils.getTileUnderPosition(pointer.x, pointer.y);           
-          if(this.stateGame.placementUtils.canPlace(tile.x, tile.collides)) {
-              var optionsPlacement = {'placement' : { 'x' : tile.x, 'y' : tile.y, 'worldX' : tile.worldX, 'worldY' : tile.worldY, 'unit' : this.stateGame.placementUtils.getUnitToPlace()}};
-              this.stateGame.spriteUtils.addSpriteWorld(optionsPlacement);
+          var tile = this.positionUtils.getTileUnderPosition(layer, pointer.x, pointer.y);           
+          if(this.canPlace(tile.x, tile.collides)) {
+              this.spriteUtils.addSpriteWorld(game, tile.x, tile.y, tile.worldX, tile.worldY, this.getUnitToPlace());
               
-              this.stateGame.debugUtils.print(tile.x + ' x and y ' + tile.y);  
+              this.debugUtils.print(tile.x + ' x and y ' + tile.y);  
 
               //we decrease the number of units to place
-              this.stateGame.placementUtils.goOnPlacement();
+              this.goOnPlacement(game, layer, spriteGroup, selectedSprite, spriteLists);
           }
       }
     }

@@ -2,12 +2,8 @@
 
 class PositionChecker {
 
-	constructor(stateGame) {
-		this.stateGame = stateGame;
-	}
-
-	getPositionOfAllUnits(){
-        var allUnits = this.stateGame.spriteGroup.children;
+	getPositionOfAllUnits(spriteGroup){
+        var allUnits = spriteGroup.children;
         var allPosition = [];
         for (var i = 0; i < allUnits.length; i++) {
             allPosition.push(allUnits[i].content.position);
@@ -15,25 +11,25 @@ class PositionChecker {
         return allPosition;
     }
 
-    getTileUnderPosition(x,y){
-        return this.stateGame.layer.getTiles(x,y,2,2)[0];
+    getTileUnderPosition(layer,x,y){
+        return layer.getTiles(x,y,2,2)[0];
     }
 
-    getIndexesOfTileUnderPosition(x,y){
-        var tile = this.stateGame.layer.getTiles(x,y,2,2)[0];
+    getIndexesOfTileUnderPosition(layer,x,y){
+        var tile = layer.getTiles(x,y,2,2)[0];
         if(tile !== undefined){
             return {'x' : tile.x, 'y' : tile.y};
         }
         return undefined;
     }
 
-    isUnitUnder(pointer){
-        var listSprite = this.stateGame.game.physics.arcade.getObjectsUnderPointer(pointer, this.stateGame.spriteGroup);
+    isUnitUnder(game, layer, spriteGroup, pointer){
+        var listSprite = game.physics.arcade.getObjectsUnderPointer(pointer, spriteGroup);
         
         if(listSprite === undefined || listSprite.length === 0){
-        	var position = this.stateGame.positionUtils.getIndexesOfTileUnderPosition(pointer.x,pointer.y);
+        	var position = this.getIndexesOfTileUnderPosition(layer,pointer.x,pointer.y);
             if(position !== undefined){
-            	var units = this.stateGame.positionUtils.getPositionOfAllUnits();
+            	var units = this.getPositionOfAllUnits(spriteGroup);
             	for (var i = 0; i < units.length; i++) {
             		if(units[i].x === position.x && units[i].y === position.y){
             			return {'unitUnder' : true, 'position' : null};

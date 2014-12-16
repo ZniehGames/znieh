@@ -1,13 +1,18 @@
 'use strict';
 
+import Debugger from '../utils/Debugger';
+import PositionChecker from '../utils/PositionChecker';
+
 class Map {
 
-	constructor(stateGame) {
+	constructor(stateGame, debug) {
 		this.stateGame = stateGame;
+        this.debugUtils = new Debugger({'debug' : debug});
+        this.positionUtils = new PositionChecker(debug);
 	}
 
-    getBlockedTiles() {
-    	var map = this.stateGame.game.cache.getTilemapData('map').data;
+    getBlockedTiles(game) {
+    	var map = game.cache.getTilemapData('map').data;
         var result = Object.keys(map.tilesets[0].tileproperties);
         var arrayInt = [];
 
@@ -18,8 +23,8 @@ class Map {
         return arrayInt;
     }
 
-    getWalkablesTiles(blockedTiles) {
-        var map = this.stateGame.game.cache.getTilemapData('map').data;
+    getWalkablesTiles(blockedTiles, game) {
+        var map = game.cache.getTilemapData('map').data;
         var result = map.layers[0].data;
         var newarr = [];
                 
@@ -31,37 +36,33 @@ class Map {
         return newarr;
     }
 
-    addEventListenerToMapPlacement(){
-    	this.stateGame.game.input.onDown.add(this.stateGame.mapUtils.selectTilePlacement, this.stateGame.mapUtils, 0);
+    addEventListenerToMapPlacement(game, layer, spriteGroup){
+    	game.input.onDown.add(this.selectTilePlacement, {'this' : this, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup}, 0);
     }
 
-    removeEventListenerToMapPlacement(){
-    	this.stateGame.game.input.onDown.remove(this.stateGame.mapUtils.selectTilePlacement, this.stateGame.mapUtils);
+    removeEventListenerToMapPlacement(game){
+        game.input.onDown.removeAll();
     }
 
     // select tile and place unit to it position if possible
-    selectTilePlacement(pointer)
+    selectTilePlacement(pointer, layer, game, spriteGroup, selectedSprite)
     {
     	// We check if a sprite is not under the pointer
         // Seems to not works the same way..
-        if(this.stateGame.positionUtils.isUnitUnder(pointer).unitUnder) {
+        if(this.positionUtils.isUnitUnder(game, layer, spriteGroup, pointer).unitUnder) {
             this.stateGame.debugUtils.print('there is a unit under this point...');
         }
         else {
     		// We take the tile selected for ckeck collision and get his position  
-            var tile = this.stateGame.positionUtils.getTileUnderPosition(pointer.x, pointer.y);           
+            var tile = this.positionUtils.getTileUnderPosition(layer, pointer.x, pointer.y);           
             if(this.stateGame.placementUtils.canPlace(tile.x, tile.collides)) {
-                var optionsPlacement = {'placement' : { 'x' : tile.x, 'y' : tile.y, 'worldX' : tile.worldX, 'worldY' : tile.worldY, 'unit' : this.stateGame.placementUtils.getUnitToPlace()}};
-                this.stateGame.spriteUtils.addSpriteWorld(optionsPlacement);
-                
-                this.stateGame.debugUtils.print(tile.x + ' x and y ' + tile.y);  
-                // TODO To send to server
-
+                this.stateGame.spriteUtils.addSpriteWorld(game, tile.x, tile.y, tile.worldX, tile.worldY, this.stateGame.placementUtils.getUnitToPlace());
+                this.debugUtils.print(tile.x + ' x and y ' + tile.y);  
                 //we decrease the number of units to place
-                this.stateGame.placementUtils.goOnPlacement();
+                this.stateGame.placementUtils.goOnPlacement(game, layer, spriteGroup, selectedSprite);
             }
             else{
-                this.stateGame.debugUtils.print('Vous ne pouvez pas le placer ici ;)');
+                this.debugUtils.print('Vous ne pouvez pas le placer ici ;)');
             }
         }
     }

@@ -11,12 +11,11 @@ class Game {
 
     constructor() {
 
-        // utils for Game
-        this.mapUtils = new Map(this);
-        this.spriteUtils = new CreationSprite(this);
-        this.placementUtils = new Placement(this);
-        this.pathUtils = new PathFinding(this);
-        this.positionUtils = new PositionChecker(this);
+        this.mapUtils = null;
+        this.spriteUtils = null;
+        this.placementUtils = null;
+        this.pathUtils = null;
+        this.positionUtils = null;
         this.debugUtils = null;
         // reference to game
         this.game = null;
@@ -32,7 +31,15 @@ class Game {
     
     create() {
 
-        this.debugUtils = new Debugger({'debug' : this.options.debug});
+        var debug = this.parent.debug;
+
+        // utils for Game
+        this.mapUtils = new Map(this, debug);
+        this.spriteUtils = new CreationSprite(this, debug);
+        this.placementUtils = new Placement(this, debug);
+        this.pathUtils = new PathFinding(this, debug);
+        this.positionUtils = new PositionChecker(this, debug);
+        this.debugUtils = new Debugger({'debug' : debug});
 
         // instanciation bases of the game
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -43,9 +50,8 @@ class Game {
         this.layer.resizeWorld();
 
         // creation of collision layer
-        this.tileBlocked = this.mapUtils.getBlockedTiles();
+        this.tileBlocked = this.mapUtils.getBlockedTiles(this.game);
         this.map.setCollision(this.tileBlocked, true);
-
 
         // we init the collisions with bounds of the world
         this.game.physics.setBoundsToWorld(true, true, true, true, false);
@@ -54,12 +60,12 @@ class Game {
         this.spriteGroup = this.game.add.group();
 
         // we add a listener to map, and used for placement
-        this.mapUtils.addEventListenerToMapPlacement();
+        this.mapUtils.addEventListenerToMapPlacement(this.game);
 
-        this.placementUtils.init(this.options);
+        this.placementUtils.init(this.parent.side, this.map, this.game, this.layer, this.spriteGroup, this.selectedSprite, this.spriteLists);
 
         //first try with pathfinding
-        this.pathUtils.init();
+        this.pathUtils.init(this.game, this.map, this.tileBlocked);
 
         if(this.debugUtils.isDebug()) {
             this.layer.debug = true;

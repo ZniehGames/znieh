@@ -1,65 +1,96 @@
 'use strict';
 
+import Debugger from '../utils/Debugger';
+import PositionChecker from '../utils/PositionChecker';
+
 class CreationSprite {
 
-  constructor(stateGame) {
+  constructor(stateGame, debug) {
     this.stateGame = stateGame;
+    this.debugUtils = new Debugger({'debug' : debug});
+    this.positionUtils = new PositionChecker(debug);
   }
 
   // utils for 
-  selectSpriteByName(name) {
-    this.stateGame.debugUtils.print(name);
+  selectSpriteByName(spriteGroup,name) {
+    this.debugUtils.print(name);
     // we need to look inside the list of units
-    this.selectSprite();
+    var allUnits = spriteGroup.children;
+    for (var i = 0; i < allUnits.length; i++) {
+      if(allUnits[i].name === name){
+        this.selectSprite(allUnits[i]);
+      }
+    }
   }  
 
   // listener for selection of a sprite
-  selectSprite(sprite) {
-    this.stateGame.selectedSprite = sprite;
-    
+  selectSprite(sprite, game, layer,spriteGroup, selectedSprite) {
+    var that;
+
+    // We get this object from context send with listener
+    if(this.parent !== undefined){
+      that = this.parent;
+      game = this.game;
+      layer = this.layer;
+      spriteGroup = this.spriteGroup;
+      selectedSprite = this.selectedSprite;
+    }
+    else{
+      that = this;
+    }
+
+    selectedSprite = sprite;
+
     // we need to put the right listener for the exact moment or phase
-    if(this.stateGame.placementUtils.finish) {
-      this.stateGame.game.input.onDown.add(this.stateGame.spriteUtils.moveSelected, this.stateGame.spriteUtils, 0);
+    if(that.stateGame.placementUtils.finish) {
+      game.input.onDown.add(that.moveSelected, {'parent' : that, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite}, 0);
     }
   }
 
   moveSelected(pointer) {
-    if (this.stateGame.selectedSprite !== null) { 
+
+    var that = this.parent;
+
+    var game = this.game;
+    var layer = this.layer;
+    var spriteGroup = this.spriteGroup;
+    var selectedSprite = this.selectedSprite;
+
+    if (selectedSprite !== null) {
       
       // We check if a unit is under the pointer on this tile
-      var result = this.stateGame.positionUtils.isUnitUnder(pointer);
+      var result = that.stateGame.positionUtils.isUnitUnder(game, layer, spriteGroup, pointer);
       if(result.unitUnder){
-        this.stateGame.debugUtils.print('Destination impossible !');
+        that.debugUtils.print('Destination impossible !');
       }
       else
       {
-        this.stateGame.debugUtils.print(result.position);
-        this.stateGame.pathUtils.findPathTo(result.position.x,result.position.y);
-        this.stateGame.debugUtils.print('Mouvement réalisé !');
+        that.debugUtils.print(result.position);
+        that.stateGame.pathUtils.findPathTo(spriteGroup, selectedSprite, result.position.x,result.position.y);
+        that.debugUtils.print('Mouvement réalisé !');
       }
       
-      this.stateGame.selectedSprite = null;
-      this.stateGame.mapUtils.removeEventListenerToMapPlacement();
+      that.stateGame.selectedSprite = null;
+      that.stateGame.mapUtils.removeEventListenerToMapPlacement(game);
     }
   }
 
   // to add sprite from passing position in tile index
   addSprite(options) {
-    var tile = this.stateGame.layer.getTiles(options.x,options.y,0,0);
-    var optionsPlacement = {'placement' : { 'x' : tile[0].x, 'y' : tile[0].y, 'worldX' : tile[0].worldX, 'worldY' : tile[0].worldY, 'unit' : null}};
-    this.stateGame.spriteUtils.addSpriteWorld(optionsPlacement);
+    var tile = options.layer.getTiles(options.x,options.y,0,0);
+    this.stateGame.spriteUtils.addSpriteWorld(options.game,tile[0].x, tile[0].y, tile[0].worldX, tile[0].worldY, null);
   }
 
   // to add sprite with position in world
-  addSpriteWorld(options) {
-    var sprite = this.stateGame.game.add.sprite(options.placement.worldX, options.placement.worldY, 'sprite_default');
+  addSpriteWorld(game, x, y, worldX, worldY, unit) {
+    var sprite = game.add.sprite(worldX, worldY, 'sprite_default');
     sprite.enableBody = true;
 
-    sprite.content = options.placement.unit;
-    this.stateGame.spriteUtils.setPosition(sprite, options.placement.x, options.placement.y);
+    sprite.content = unit;
+    this.stateGame.spriteUtils.setPosition(sprite, x, y);
     sprite.name = sprite.content.name;
-    this.stateGame.debugUtils.print(sprite.content);
-    this.stateGame.debugUtils.print(sprite.name);
+    this.debugUtils.print(sprite.content);
+    this.debugUtils.print(sprite.name);
 
     this.stateGame.game.physics.enable(sprite);
 
@@ -89,28 +120,29 @@ class CreationSprite {
     this.stateGame.spriteGroup.add(sprite);
   }
 
-  addEventsListenerToSpriteSelect(sprite) {
-    sprite.events.onInputDown.add(this.stateGame.spriteUtils.selectSprite, this.stateGame.spriteUtils);
+  addEventsListenerToSpriteSelect(sprite, game, layer, spriteGroup, selectedSprite) {
+    sprite.events.onInputDown.add(this.selectSprite, {'parent' : this, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite});
   }
 
-  removeEventsListenerToSpriteSelect(sprite) {
-    sprite.events.onInputDown.remove(this.stateGame.spriteUtils.selectSprite, this.stateGame.spriteUtils);
+  removeEventsListenerToSpriteSelect(sprite, game, layer, spriteGroup, selectedSprite) {
+    sprite.events.onInputDown.remove(this.selectSprite, {'parent' : this, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite});
   }
 
-  setListenerSelectToAllUnits() {
-    this.stateGame.spriteLists.forEach(this.stateGame.spriteUtils.addEventsListenerToSpriteSelect, this);
+  setListenerSelectToAllUnits(game, layer, spriteGroup, selectedSprite) {
+    for (var i = 0; i < spriteGroup.children.length; i++) {
+      this.addEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, spriteGroup, selectedSprite);
+    }
   }
 
-  removeListenerSelectToAllUnits() {
-    this.stateGame.spriteLists.forEach(this.stateGame.spriteUtils.removeEventsListenerToSpriteSelect, this);
+  removeListenerSelectToAllUnits(game, layer, spriteGroup, selectedSprite) {
+    for (var i = 0; i < spriteGroup.children.length; i++) {
+      this.removeEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, spriteGroup, selectedSprite);
+    }  
   }
 
+  //OK
   setPosition(sprite, x, y){
     sprite.content.position = {'x' : x, 'y' : y};
-  }
-
-  setPositionSelected(x, y){
-    this.stateGame.selectedSprite.content.position = {'x' : x, 'y' : y};
   }
 }
 

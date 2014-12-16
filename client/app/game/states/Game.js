@@ -13,6 +13,8 @@ class Game {
 
         var mapUtils = new MapUtils();
 
+        this.game.io.emit('test');
+
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.game.stage.backgroundColor = '#ffffff';
         this.map = this.game.add.tilemap('map');

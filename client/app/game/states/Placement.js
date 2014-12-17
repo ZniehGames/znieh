@@ -50,6 +50,7 @@ class Placement {
 
         // User can't make custom placement yet... :'(
         if (this.ready === false) {
+            this.ready = true;
             var positions = [];
 
             for (var i = this.units.length - 1; i >= 0; i--) {
@@ -61,7 +62,6 @@ class Placement {
             }
 
             this.game.io.emit('placement done', positions);
-            this.ready = true;
         }
 
     }

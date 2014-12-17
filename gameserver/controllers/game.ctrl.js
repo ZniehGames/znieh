@@ -2,6 +2,7 @@
 
 var Game = require('./../model/game');
 var UserStorage = require('./../storage/user.storage.js');
+var GameStorage = require('./../storage/game.storage.js');
 var UserManager = require('./../services/user.manager.js');
 
 function GameCtrl() {
@@ -19,9 +20,22 @@ function GameCtrl() {
 
     UserManager.reloadTeam(playerA);
     UserManager.reloadTeam(playerB);
+    GameStorage.add(new Game(playerA, playerB));
+  }
 
-    var game = new Game(playerA, playerB);
-    games.push(game);
+  this.placementDone = function(socket) {
+    var game = GameStorage.findBySocket(socket);
+    var player = UserStorage.findBySocket(socket);
+
+    if (!game.ready.indexOf(player)) {
+        game.ready.push(player);
+    }
+
+    if (game.ready.length === 2) {
+        game.playerA.socket.emit('match ready');
+        game.playerB.socket.emit('match ready');
+    }
+
   }
 
 }

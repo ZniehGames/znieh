@@ -1,5 +1,6 @@
 'use strict';
 
+import Preload from 'states/Preload';
 import Placement from 'states/Placement';
 import Game from 'states/Game';
 
@@ -17,10 +18,10 @@ GameApp.start = function() {
 
     //game.analytics = new Analytics('phaser-game');
 
+    game.state.add('preload', Preload);
     game.state.add('game', Game);
     game.state.add('placement', Placement);
-    game.state.states.game.parent = this;
-    game.state.start('placement');
+    game.state.start('preload');
 
     return game;
 };

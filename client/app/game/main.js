@@ -15,12 +15,14 @@ GameApp.start = function() {
     );
 
     game.io = null;
+    game.side = null;
 
     //game.analytics = new Analytics('phaser-game');
 
     game.state.add('preload', Preload);
-    game.state.add('game', Game);
     game.state.add('placement', Placement);
+    game.state.add('game', Game);
+
     game.state.start('preload');
 
     return game;

@@ -12,6 +12,7 @@ Scenario: list user team
     "points": @integer@,
     "moves": @integer@,
     "weight": @integer@,
+    "id": @integer@,
     "size": {
       "name": @string@
     },

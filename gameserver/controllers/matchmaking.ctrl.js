@@ -16,8 +16,8 @@ function MatchmakingCtrl() {
     }
 
     GameController.add(match, socket);
-    socket.emit('match found');
-    match.emit('match found');
+    socket.emit('match found', 'left');
+    match.emit('match found', 'right');
   }
 
 }

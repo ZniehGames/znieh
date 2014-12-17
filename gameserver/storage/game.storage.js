@@ -8,6 +8,7 @@ function GameStorage() {
 
   this.add = function(game) {
      this.games.push(game);
+     return game;
   };
 
   this.remove = function(game) {
@@ -16,7 +17,7 @@ function GameStorage() {
 
   this.findBySocket = function(socket) {
     for (var i = 0; i < this.games.length; i++) {
-      if (this.games[i].socket === socket) {
+      if (this.games[i].playerA.socket === socket || this.games[i].playerB.socket === socket) {
         return this.games[i];
       }
     }

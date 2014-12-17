@@ -1,6 +1,6 @@
 'use strict';
 
-import UnitManager from '../services/UnitManager';
+import UnitsManager from '../services/UnitsManager';
 import Map from '../model/Map';
 
 class Placement {
@@ -10,7 +10,8 @@ class Placement {
         this.side = null;
         this.tilemap = null;
         this.units = []; // Array<Unit>
-        this.unitManager = new UnitManager();
+        this.unitsManager = new UnitsManager();
+        this.ready = false;
     }
 
     create() {
@@ -26,27 +27,42 @@ class Placement {
         this.tilemap.setCollision(this.map.getBlockedTiles(), true);
 
         // Add units
-        this.units = this.unitManager.createFromTeam(this.team, this.game);
+        this.units = this.unitsManager.createFromTeam(this.team, this.game);
 
         // Then, we create layers to add display
         this.layer = this.tilemap.createLayer('Map');
         this.layer.resizeWorld();
-
         this.layer.debug = true;
-        this.game.physics.setBoundsToWorld(true, true, true, true, false);
-        console.log('Hello Placement!');
 
-        this.game.io.on('match ready', function () {
-            that.game.state.states.game.units = that.units;
+        this.game.physics.setBoundsToWorld(true, true, true, true, false);
+
+        this.game.io.on('match ready', function (data) {
+            console.log('Match ready!', data);
+            that.game.state.states.game.units = data;
             that.game.state.states.game.side = that.side;
             that.game.state.start('game');
         });
 
-        // User can't make custom placement yet... :(
-        this.game.io.emit('placement done', this.units);
+        console.log('Hello Placement!');
     }
 
     update() {
+
+        // User can't make custom placement yet... :'(
+        if (this.ready === false) {
+            var positions = [];
+
+            for (var i = this.units.length - 1; i >= 0; i--) {
+                positions.push({
+                    'id': this.units[i].id,
+                    'x': this.units[i].x,
+                    'y': this.units[i].y
+                });
+            }
+
+            this.game.io.emit('placement done', positions);
+            this.ready = true;
+        }
 
     }
 }

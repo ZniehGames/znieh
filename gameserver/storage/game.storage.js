@@ -24,6 +24,15 @@ function GameStorage() {
     return null;
   };
 
+  this.findByUsername = function(username) {
+    for (var i = 0; i < this.games.length; i++) {
+      if (this.games[i].playerA.username === username || this.games[i].playerB.username === username) {
+        return this.games[i];
+      }
+    }
+    return null;
+  };
+
 }
 
 module.exports = new GameStorage();

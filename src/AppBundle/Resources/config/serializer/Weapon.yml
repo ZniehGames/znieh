@@ -7,6 +7,9 @@ Znieh\Model\Weapon:
     parts:
       expose: true
       groups: [default, details]
+    type:
+      expose: true
+      groups: [default, details]
   virtual_properties:
     getMinDamage:
       serialized_name: min_damage

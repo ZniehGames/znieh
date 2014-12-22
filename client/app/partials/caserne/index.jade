@@ -12,29 +12,29 @@ block content
             .center-block.col-sm-5
                 tabset.clearfix(ng-show="isArmorSlot()")
                     tab(ng-repeat="tab in armorparttypes" ng-if="tab.type === currentSlot" heading="{{ tab.name }}" active="tab.active")
-                        objectinfo(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].part" active="{{ unit.armor[currentSlot].part === object.id }}")
+                        object-info(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].part" ng-change="change()" active="{{ unit.armor[currentSlot].part === object.id }}")
                 tabset.clearfix(ng-show="isArmorSlot()")
                     tab(ng-repeat="tab in runetypes" heading="{{ tab.name }}" active="tab.active")
-                        objectinfo(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].rune" active="{{ unit.armor[currentSlot].rune === object.id }}")
+                        object-info(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].rune" ng-change="change()" active="{{ unit.armor[currentSlot].rune === object.id }}")
                 tabset.clearfix(ng-show="isWeaponSlot()")
                     tab(ng-repeat="(key,tab) in weaponparttypes" ng-if="tab.name === currentSlot" heading="{{ tab.name }}" active="tab.active")
-                        objectinfo(ng-repeat="object in tab.objects" object="object" ng-model="unit.weapon.parts[key]" active="{{ unit.weapon.parts[key] === object.id }}")
+                        object-info(ng-repeat="object in tab.objects" object="object" ng-model="unit.weapon.parts[key]" ng-change="change()" active="{{ unit.weapon.parts[key] === object.id }}")
             .col-sm-2
                 .choice-container
                     .weapon-choice.axe(ng-class="{'active': weaponChoice === 'axe'}" ng-click="weaponChoice = 'axe'")
                     .weapon-choice.sword(ng-class="{'active': weaponChoice === 'sword'}" ng-click="weaponChoice = 'sword'")
                     .weapon-choice.hammer(ng-class="{'active': weaponChoice === 'hammer'}" ng-click="weaponChoice = 'hammer'")
-                .stuff-slot.gear(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part")
+                .stuff-slot.gear(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part; change()")
             .col-sm-4.text-center
                 input(type="text" ng-model="unit.name" required placeholder="Le ptit nom")
                 .choice-container
-                    .size-choice.size-1(ng-class="{'active': unit.size === 1}" ng-click="unit.size = 1")
-                    .size-choice.size-2(ng-class="{'active': unit.size === 2}" ng-click="unit.size = 2")
-                    .size-choice.size-3(ng-class="{'active': unit.size === 3}" ng-click="unit.size = 3")
+                    .size-choice.size-1(ng-class="{'active': unit.size === 1}" ng-click="unit.size = 1; change()")
+                    .size-choice.size-2(ng-class="{'active': unit.size === 2}" ng-click="unit.size = 2; change()")
+                    .size-choice.size-3(ng-class="{'active': unit.size === 3}" ng-click="unit.size = 3; change()")
                 .choice-container
-                    .physical-choice.physical-1(ng-class="{'active': unit.physical === 1}" ng-click="unit.physical = 1")
-                    .physical-choice.physical-2(ng-class="{'active': unit.physical === 2}" ng-click="unit.physical = 2")
-                    .physical-choice.physical-3(ng-class="{'active': unit.physical === 3}" ng-click="unit.physical = 3")
+                    .physical-choice.physical-1(ng-class="{'active': unit.physical === 1}" ng-click="unit.physical = 1; change()")
+                    .physical-choice.physical-2(ng-class="{'active': unit.physical === 2}" ng-click="unit.physical = 2; change()")
+                    .physical-choice.physical-3(ng-class="{'active': unit.physical === 3}" ng-click="unit.physical = 3; change()")
                 br
                 input(type="submit").btn.btn-primary
-                p {{ unit }}
+                unit-preview(unit="preview")

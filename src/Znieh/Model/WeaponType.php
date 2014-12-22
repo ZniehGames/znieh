@@ -6,6 +6,8 @@ class WeaponType
 {
     use \Znieh\Traits\NamableEntity;
     use \Znieh\Traits\HasBuildingEntity;
+    use \Znieh\Traits\HasImageEntity;
+
 
     private $id;
     private $parts;

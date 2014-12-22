@@ -1,12 +1,16 @@
 'use strict';
 
 angular.module('znieh')
-    .controller('CaserneCtrl', function ($scope, Restangular, AuthenticationService) {
+    .controller('CaserneCtrl', function ($scope, Restangular, AuthenticationService, UnitsService) {
 
     $scope.currentSlot = 'helm';
     $scope.weaponChoice = 'sword';
 
-    $scope.unit = { 'size': 2, 'physical': 2};
+    $scope.unit = {
+      'size': 2,
+      'physical': 2
+    };
+
     $scope.weapons = {
       'axe' : { 'types' : ['Pommeau', 'Tête de hache'] },
       'sword' : { 'types' : ['Pommeau', 'Lame', 'Manche', 'Garde'] },
@@ -59,64 +63,14 @@ angular.module('znieh')
         ;
     };
 
+    $scope.change = function() {
+      Restangular.all('units').all('previews').post(UnitsService.format($scope.unit)).then(function(preview) {
+        $scope.preview = JSON.parse(preview, true);
+      });
+    };
+
     $scope.submit = function() {
-      var weapons = [];
-
-      if ($scope.unit.weapon) {
-        for (var i in $scope.unit.weapon.parts) {
-          weapons.push($scope.unit.weapon.parts[i].id);
-        }
-      }
-
-      var unit = {
-        'name': $scope.unit.name || 'default name',
-        'size': $scope.unit.size,
-        'physical': $scope.unit.physical,
-        'weapon': {
-          'parts': weapons
-        },
-        'armor': {
-          'helm': {},
-          'torso': {},
-          'gloves': {},
-          'greaves': {},
-          'boots': {}
-        }
-      };
-
-      if ($scope.unit.armor) {
-        if ($scope.unit.armor.helm && $scope.unit.armor.helm.part) {
-          unit.armor.helm.part = $scope.unit.armor.helm.part;
-        }
-        if ($scope.unit.armor.helm && $scope.unit.armor.helm.rune) {
-          unit.armor.helm.rune = $scope.unit.armor.helm.rune;
-        }
-        if ($scope.unit.armor.torso && $scope.unit.armor.torso.part) {
-          unit.armor.torso.part = $scope.unit.armor.torso.part;
-        }
-        if ($scope.unit.armor.torso && $scope.unit.armor.torso.rune) {
-          unit.armor.torso.rune = $scope.unit.armor.torso.rune;
-        }
-        if ($scope.unit.armor.gloves && $scope.unit.armor.gloves.part) {
-          unit.armor.gloves.part = $scope.unit.armor.gloves.part;
-        }
-        if ($scope.unit.armor.gloves && $scope.unit.armor.gloves.rune) {
-          unit.armor.gloves.rune = $scope.unit.armor.gloves.rune;
-        }
-        if ($scope.unit.armor.greaves && $scope.unit.armor.greaves.part) {
-          unit.armor.greaves.part = $scope.unit.armor.greaves.part;
-        }
-        if ($scope.unit.armor.greaves && $scope.unit.armor.greaves.rune) {
-          unit.armor.greaves.rune = $scope.unit.armor.greaves.rune;
-        }
-        if ($scope.unit.armor.boots && $scope.unit.armor.boots.part) {
-          unit.armor.boots.part = $scope.unit.armor.boots.part;
-        }
-        if ($scope.unit.armor.boots && $scope.unit.armor.boots.rune) {
-          unit.armor.boots.rune = $scope.unit.armor.boots.rune;
-        }
-      }
-      Restangular.all('units').post(unit);
+      Restangular.all('units').post(UnitsService.format($scope.unit));
     };
 
 });

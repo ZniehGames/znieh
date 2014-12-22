@@ -31,3 +31,11 @@ Znieh\Model\Unit:
       serialized_name: weight
       type: integer
       groups: [default, details]
+    getLife:
+      serialized_name: life
+      type: integer
+      groups: [default, details]
+    getStats:
+      serialized_name: stats
+      type: array
+      groups: [default, details]

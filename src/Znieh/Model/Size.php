@@ -5,6 +5,7 @@ namespace Znieh\Model;
 class Size
 {
   use \Znieh\Traits\NamableEntity;
+  use \Znieh\Traits\HasPointsEntity;
 
   private $id;
 

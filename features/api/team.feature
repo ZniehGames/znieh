@@ -13,6 +13,15 @@ Scenario: list user team
     "moves": @integer@,
     "weight": @integer@,
     "id": @integer@,
+    "life": @integer@,
+    "stats": {
+      "Life": @integer@,
+      "Parade": @integer@,
+      "Precision": @integer@,
+      "Esquive": @integer@,
+      "Penetration": @integer@,
+      "Power": @integer@
+    },
     "size": {
       "name": @string@
     },
@@ -38,7 +47,11 @@ Scenario: list user team
           "points": @integer@
         },
         @...@
-      ]
+      ],
+      "type": {
+        "name": @string@,
+        "image": @string@
+      }
     },
     "armor": {
       "defense": @integer@,

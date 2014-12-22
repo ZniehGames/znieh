@@ -1,0 +1,37 @@
+.unit
+  .informations.clearfix
+    .pull-left
+      img.sprite(src="http://lorempicsum.com/simpsons/50/75/1")
+    .details
+      h2 {{ unit.name }} {{ unit.points }}
+        img(src="../images/icons/doubled.png")
+      .separator
+      | {{ unit.physical.name }} {{ unit.size.name }}
+      .separator
+      .stat
+        img(src="../images/icons/vie.png")
+        | {{ unit.life }}
+      .stat
+        img(src="../images/icons/defense.png")
+        | {{ unit.armor.defense }}
+      .stat
+        img(src="../images/icons/esquive.png")
+        | {{ unit.moves }}
+        img(src="../images/weapons/min/{{ unit.weapon.type.image }}.png")
+        | {{ unit.weapon.min_damage }}-{{ unit.weapon.max_damage }}
+      .separator
+      .stat
+        img(src="../images/icons/armure.png")
+        | {{ unit.weight }}
+      .stat
+        img(src="../images/icons/penetration.png")
+        | {{ unit.stats.Penetration }}
+      .stat
+        img(src="../images/icons/parade.png")
+        | {{ unit.stats.Parade }}
+      .stat
+        img(src="../images/icons/precision.png")
+        | {{ unit.stats.Precision }}
+      .stat
+        img(src="../images/icons/esquive.png")
+        | {{ unit.stats.Esquive }}

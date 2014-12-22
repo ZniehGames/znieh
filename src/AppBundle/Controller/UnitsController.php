@@ -11,6 +11,7 @@ use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use JMS\Serializer\SerializationContext;
 
 use Znieh\Model\Unit;
 use Znieh\Form\UnitForm;
@@ -38,5 +39,24 @@ class UnitsController extends FOSRestController
         }
 
         return $form;
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function postUnitsPreviewAction(Request $request)
+    {
+        $serializer = $this->get('jms_serializer');
+        $unit = new Unit();
+        $form = $this->createForm(new UnitForm(), $unit);
+        $form->handleRequest($request);
+
+        return new JsonResponse(
+            $serializer->serialize(
+                $unit,
+                'json',
+                SerializationContext::create()->setGroups(['default'])
+            )
+        , 200);
     }
 }

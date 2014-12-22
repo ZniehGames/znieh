@@ -3,6 +3,7 @@ require('colors');
 var User = require('./model/user');
 var MatchMakingCtrl = require('./controllers/matchmaking.ctrl');
 var UserStorage = require('./storage/user.storage.js');
+var GameController = require('./controllers/game.ctrl.js');
 
 var app = require('http').createServer();
 var io = require('socket.io')(app);
@@ -32,6 +33,10 @@ io.on('connection', function(socket) {
 
   socket.on('search match', function() {
     MatchMakingCtrl.add(socket);
+  });
+
+  socket.on('placement done', function(positions) {
+    GameController.placementDone(socket, positions);
   });
 
 });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('znieh')
-    .controller('FightSearchCtrl', function ($scope, SocketService, toastr, $location, AuthenticationService, Restangular) {
+    .controller('FightSearchCtrl', function ($scope, SocketService, toastr, $location, AuthenticationService, Restangular,  $window) {
 
     $scope.pool = 1;
     $scope.user = AuthenticationService.currentUser();
@@ -20,7 +20,8 @@ angular.module('znieh')
         toastr.info('Recherche en cours', 'Informations');
     });
 
-    SocketService.on('match found', function() {
+    SocketService.on('match found', function(side) {
+        $window.sessionStorage.side = side;
         $location.path('/fight');
     });
 

@@ -15,11 +15,8 @@ class Preload {
         var that = this;
 
         this.game.io.on('load user team', function (team) {
-            var side = 'left';
-
             // We need to start the placement state
             that.game.state.states.placement.team = team;
-            that.game.state.states.placement.side = side;
             that.game.state.start('placement');
         });
 

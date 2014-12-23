@@ -5,6 +5,7 @@ function Game(playerA, playerB) {
     this.playerB = playerB;
     this.ready = [];
     this.units = [];
+    this.map = null;
 }
 
 module.exports = Game;

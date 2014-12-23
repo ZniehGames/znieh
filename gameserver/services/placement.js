@@ -1,7 +1,6 @@
 'use strict';
 
 var _ = require('lodash');
-var User = require('./../model/user');
 
 function Placement() {
 
@@ -11,6 +10,10 @@ function Placement() {
       unit.x = positions[i].x;
       unit.y = positions[i].y;
     };
+  };
+
+  this.isAvailable = function (game, position) {
+
   };
 
 }

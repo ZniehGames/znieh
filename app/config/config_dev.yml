@@ -37,3 +37,6 @@ assetic:
 
 h4cc_alice_fixtures:
     locale: en_US
+
+hip_mandrill:
+    disable_delivery: true

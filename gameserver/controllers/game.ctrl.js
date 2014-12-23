@@ -42,7 +42,14 @@ function GameCtrl() {
         game.playerA.socket.emit('match ready', game.units);
         game.playerB.socket.emit('match ready', game.units);
     }
+  }
 
+  this.remove = function (game) {
+    var gameIndex = GameStorage.games.indexOf(game);
+
+    if (GameStorage.games[gameIndex] !== undefined) {
+      GameStorage.games.splice(gameIndex, 1);
+    }
   }
 
 }

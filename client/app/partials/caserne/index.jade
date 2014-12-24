@@ -12,13 +12,25 @@ block content
             .center-block.col-sm-5
                 tabset.clearfix(ng-show="isArmorSlot()")
                     tab(ng-repeat="tab in armorparttypes" ng-if="tab.type === currentSlot" heading="{{ tab.name }}" active="tab.active")
-                        object-info(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].part" ng-change="change()" active="{{ unit.armor[currentSlot].part === object.id }}")
+                        .step(ng-repeat="step in tab.objects|pluck:'step'|uniq:'name'")
+                            h4 {{ step.name }} {{ step.points }}
+                            object-info(
+                                ng-repeat="object in tab.objects" ng-if="object.step.name === step.name"
+                                object="object" ng-model="unit.armor[currentSlot].part"
+                                ng-change="change()" active="{{ unit.armor[currentSlot].part === object.id }}"
+                            )
                 tabset.clearfix(ng-show="isArmorSlot()")
                     tab(ng-repeat="tab in runetypes" heading="{{ tab.name }}" active="tab.active")
                         object-info(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].rune" ng-change="change()" active="{{ unit.armor[currentSlot].rune === object.id }}")
                 tabset.clearfix(ng-show="isWeaponSlot()")
                     tab(ng-repeat="(key,tab) in weaponparttypes" ng-if="tab.name === currentSlot" heading="{{ tab.name }}" active="tab.active")
-                        object-info(ng-repeat="object in tab.objects" object="object" ng-model="unit.weapon.parts[key]" ng-change="change()" active="{{ unit.weapon.parts[key] === object.id }}")
+                        .step(ng-repeat="step in tab.objects|pluck:'step'|uniq:'name'")
+                            h4 {{ step.name }} {{ step.points }}
+                            object-info(
+                                ng-repeat="object in tab.objects" ng-if="object.step.name === step.name"
+                                object="object" ng-model="unit.weapon.parts[key]"
+                                ng-change="change()" active="{{ unit.weapon.parts[key] === object.id }}"
+                            )
             .col-sm-2
                 .choice-container
                     .weapon-choice.axe(ng-class="{'active': weaponChoice === 'axe'}" ng-click="weaponChoice = 'axe'")

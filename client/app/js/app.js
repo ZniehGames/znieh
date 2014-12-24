@@ -7,7 +7,8 @@ var app = angular.module('znieh', [
   'restangular',
   'toastr',
   'btford.socket-io',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angular-lodash'
 ]);
 
 app.config(function ($routeProvider, RestangularProvider) {

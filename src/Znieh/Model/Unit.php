@@ -53,6 +53,7 @@ class Unit
     {
         $stats = [
             'Life' => 0,
+            'Force' => 0,
             'Parade' => 0,
             'Precision' => 0,
             'Esquive' => 0,

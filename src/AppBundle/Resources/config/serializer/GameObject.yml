@@ -4,6 +4,9 @@ Znieh\Model\GameObject:
     id:
       expose: true
       groups: [details]
+    step:
+      expose: true
+      groups: [details]
     name:
       expose: true
       groups: [default, details]

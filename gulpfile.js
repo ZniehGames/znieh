@@ -62,6 +62,7 @@ paths.jsvendor = [
     paths.app + 'vendor/angular-socket-io/socket.js',
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',
+    paths.app + 'vendor/angular-lodash/angular-lodash.js',
     paths.app + 'vendor/phaser/build/phaser.js',
 ];
 

@@ -7,20 +7,31 @@
 
 .object-info {
   height: 100%;
-  widows: 100%;
+  width: 100%;
   display: block;
+  border-radius: 20px;
+  overflow: hidden;
+
   .name {
     background: #777;
     height: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
   }
 
   .bonuses {
+    background: #777;
     height: 40%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
     width: 100%;
-    background: white;
   }
 }
 
 .object-info-container.active > .object-info {
-  box-shadow: 0 5px 35px rgba(64,153,209,1);
+  box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  transition: .5s background-size ease-in-out;
 }

@@ -2,7 +2,7 @@ extends ../village_layout.jade
 
 block content
     .caserne(ng-controller="CaserneCtrl")
-        form(novalidate ng-submit="submit()").row
+        form(novalidate).row
             .col-sm-1
                 .stuff-slot.helm(ng-class="{'active': currentSlot === 'helm'}" ng-click="setCurrentSlot('helm')")
                 .stuff-slot.torso(ng-class="{'active': currentSlot === 'torso'}" ng-click="setCurrentSlot('torso')")
@@ -13,7 +13,10 @@ block content
                 tabset.clearfix(ng-show="isArmorSlot()")
                     tab(ng-repeat="tab in armorparttypes" ng-if="tab.type === currentSlot" heading="{{ tab.name }}" active="tab.active")
                         .step(ng-repeat="step in tab.objects|pluck:'step'|uniq:'name'")
-                            h4 {{ step.name }} {{ step.points }}
+                            h4
+                                | {{ step.name }}
+                                | {{ step.points }}
+                                img(src="../images/icons/doubled.png")
                             object-info(
                                 ng-repeat="object in tab.objects" ng-if="object.step.name === step.name"
                                 object="object" ng-model="unit.armor[currentSlot].part"
@@ -25,7 +28,10 @@ block content
                 tabset.clearfix(ng-show="isWeaponSlot()")
                     tab(ng-repeat="(key,tab) in weaponparttypes" ng-if="tab.name === currentSlot" heading="{{ tab.name }}" active="tab.active")
                         .step(ng-repeat="step in tab.objects|pluck:'step'|uniq:'name'")
-                            h4 {{ step.name }} {{ step.points }}
+                            h4
+                                | {{ step.name }}
+                                | {{ step.points }}
+                                img(src="../images/icons/doubled.png")
                             object-info(
                                 ng-repeat="object in tab.objects" ng-if="object.step.name === step.name"
                                 object="object" ng-model="unit.weapon.parts[key]"
@@ -48,5 +54,5 @@ block content
                     .physical-choice.physical-2(ng-class="{'active': unit.physical === 2}" ng-click="unit.physical = 2; change()")
                     .physical-choice.physical-3(ng-class="{'active': unit.physical === 3}" ng-click="unit.physical = 3; change()")
                 br
-                input(type="submit").btn.btn-primary
+                button.btn.btn-success.btn-lg(ng-click="submit()") Engager !
                 unit-preview(unit="preview")

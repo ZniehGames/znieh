@@ -26,12 +26,12 @@ class Unit
 
     public function getPoints()
     {
-        return
-            ($this->armor != null)  ? $this->armor->getPoints() : 0  +
-            ($this->weapon != null) ? $this->weapon->getPoints() : 0 +
-            ($this->size != null) ? $this->size->getPoints() : 0 +
-            ($this->physical != null) ? $this->physical->getPoints() : 0
-        ;
+        $i = 0;
+        $i += ($this->armor != null)  ? $this->armor->getPoints() : 0;
+        $i += ($this->weapon != null) ? $this->weapon->getPoints() : 0;
+        $i += ($this->size != null) ? $this->size->getPoints() : 0;
+        $i += ($this->physical != null) ? $this->physical->getPoints() : 0;
+        return $i;
     }
 
     public function getWeight()
@@ -41,7 +41,7 @@ class Unit
 
     public function getMoves()
     {
-        return round(7*2^(-$this->armor->getWeight()/20));
+        return intval(abs(round(7*2^(-$this->getWeight()/20))));
     }
 
     public function getLife()

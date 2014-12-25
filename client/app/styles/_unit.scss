@@ -1,0 +1,43 @@
+.unit {
+            @include box-shadow(rgba(0, 0, 0, 0.175) 0 1px 6px );
+
+            .informations {
+                padding: 7px;
+                text-align: center;
+
+                .sprite {
+                    margin-right: 5px;
+                }
+
+                h2 {
+                    margin: 0;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                .stat {
+                    img {
+                        margin-right: 3px;
+                    }
+
+                    font-size: 12px;
+                    font-weight: bold;
+                    display: inline-block;
+                    margin: 0 5px 0 0;
+                }
+
+                .separator {
+                    background-color: rgba(0, 0, 0, 0.175);
+                    height:1px;
+                    margin: 3px 0 1px 57px;
+                }
+            }
+
+            .actions {
+                text-align: center;
+                margin: 0 0 20px 0;
+                padding: 7px 0 7px 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.07);
+            }
+        }

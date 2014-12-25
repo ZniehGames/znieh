@@ -26,7 +26,6 @@ class Weapon
       return $points;
   }
 
-
   public function getMinDamage()
   {
       if ($this->parts) foreach ($this->parts as $part) {

@@ -14,10 +14,14 @@ Scenario: list user armor part types
     "objects": [
       {
         "id": @integer@,
+        "step": {
+          "name": @string@,
+          "points": @integer@
+        },
         "name": @string@,
         "bonuses": @...@,
         "points": @integer@,
-        "defense": @integer@ 
+        "defense": @integer@
       },
      @...@
     ]
@@ -36,6 +40,10 @@ Scenario: list user weapon part types
     "objects": [
       {
         "id": @integer@,
+        "step": {
+          "name": @string@,
+          "points": @integer@
+        },
         "name": @string@,
         "bonuses": @...@,
         "points": @integer@
@@ -55,7 +63,19 @@ Scenario: list user rune types
 [
   {
     "name": @string@,
-    "objects": @...@
+    "objects": [
+      {
+        "id": @integer@,
+        "step": {
+          "name": @string@,
+          "points": @integer@
+        },
+        "name": @string@,
+        "bonuses": @...@,
+        "points": @integer@
+      },
+      @...@
+    ]
   },
   @...@
 ]

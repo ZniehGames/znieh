@@ -16,6 +16,8 @@ Scenario: list user team
     "life": @integer@,
     "stats": {
       "Life": @integer@,
+      "Force": @integer@,
+      "Intelligence": @integer@,
       "Parade": @integer@,
       "Precision": @integer@,
       "Esquive": @integer@,

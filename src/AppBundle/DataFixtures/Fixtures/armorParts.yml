@@ -7,7 +7,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   casque_en_cuivre_de_penetration:
     name: Casque en cuivre de pénétration
@@ -15,7 +15,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
+        - { attribute: "penetration",  modifier: 30 }
     points: 1
   casque_en_cuivre_d_esquive:
     name: Casque en cuivre d'esquive
@@ -23,7 +23,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   casque_en_cuivre_de_parade:
     name: Casque en cuivre de parade
@@ -31,7 +31,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   casque_en_cuivre_de_defense:
     name: Casque en cuivre de défense
@@ -45,7 +45,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   casque_en_cuivre_d_agilite:
     name: Casque en cuivre d'agilité
@@ -53,8 +53,8 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 15 }
-        - { attribute: "Parade",   modifier: 15 }
+        - { attribute: "esquive",  modifier: 15 }
+        - { attribute: "parade",   modifier: 15 }
     points: 1
   casque_en_cuivre_d_intelligence:
     name: Casque en cuivre d'intelligence
@@ -62,7 +62,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   casque_en_bronze_de_vie:
@@ -71,7 +71,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_bronze
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 45 }
+        - { attribute: "life",  modifier: 45 }
     points: 2
   casque_en_bronze_de_penetration:
     name: Casque en bronze de pénétration
@@ -79,7 +79,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_bronze
     defense: @casque_lourd->defense * 2
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 2
   casque_en_bronze_d_esquive:
     name: Casque en bronze d'esquive
@@ -87,7 +87,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_bronze
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 45 }
+        - { attribute: "esquive",  modifier: 45 }
     points: 2
   casque_en_bronze_de_parade:
     name: Casque en bronze de parade
@@ -95,7 +95,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_bronze
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 45 }
+        - { attribute: "parade",  modifier: 45 }
     points: 2
   casque_en_bronze_de_defense:
     name: Casque en bronze de défense
@@ -109,7 +109,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_bronze
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Force",  modifier: 45 }
+        - { attribute: "force",  modifier: 45 }
     points: 2
   casque_en_bronze_d_agilite:
     name: Casque en bronze d'agilité
@@ -117,8 +117,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_bronze
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 2
   casque_en_bronze_d_intelligence:
     name: Casque en bronze d'intelligence
@@ -126,7 +125,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_bronze
     defense: @casque_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 45 }
+        - { attribute: "intelligence",  modifier: 45 }
     points: 2
   #__________________________________________
   #intérmédiaire
@@ -136,7 +135,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   casque_en_reche_de_penetration:
     name: Casque en cuir rêche de pénétration
@@ -144,7 +143,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
+        - { attribute: "penetration",  modifier: 30 }
     points: 1
   casque_en_reche_d_esquive:
     name: Casque en cuir rêche d'esquive
@@ -152,7 +151,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   casque_en_reche_de_parade:
     name: Casque en cuir rêche de parade
@@ -160,7 +159,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   casque_en_reche_de_defense:
     name: Casque en cuir rêche de défense
@@ -174,7 +173,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   casque_en_reche_d_agilite:
     name: Casque en cuir rêche d'agilité
@@ -182,8 +181,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   casque_en_reche_d_intelligence:
     name: Casque en cuir rêche d'intelligence
@@ -191,7 +189,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   casque_en_brut_de_vie:
@@ -200,7 +198,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_brut
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   casque_en_brut_de_penetration:
     name: Casque en cuir brut de pénétration
@@ -208,7 +206,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_brut
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   casque_en_brut_de_precision:
     name: Casque en cuir brut de précision
@@ -216,7 +214,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_brut
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   casque_en_brut_d_esquive:
     name: Casque en cuir brut d'esquive
@@ -224,7 +222,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_brut
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   casque_en_brut_de_parade:
     name: Casque en cuir brut de parade
@@ -232,7 +230,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_brut
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   casque_en_brut_de_defense:
     name: Casque en cuir brut de défense
@@ -246,7 +244,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_brut
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   casque_en_brut_d_agilite:
     name: Casque en cuir brut d'agilité
@@ -254,8 +252,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_brut
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   casque_en_brut_d_intelligence:
     name: Casque en cuir brut d'intelligence
@@ -263,7 +260,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_cuir_brut
     defense: @casque_intermediaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #léger
@@ -273,7 +270,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   casque_en_etmineure_de_penetration:
     name: Casque en Etoffe mineure de pénétration
@@ -281,7 +278,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   casque_en_etmineure_de_precision:
     name: Casque en Etoffe mineure de précision
@@ -289,7 +286,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   casque_en_etmineure_d_esquive:
     name: Casque en Etoffe mineure d'esquive
@@ -297,7 +294,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   casque_en_etmineure_de_parade:
     name: Casque en Etoffe mineure de parade
@@ -305,7 +302,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   casque_en_etmineure_de_defense:
     name: Casque en Etoffe mineure de défense
@@ -319,7 +316,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   casque_en_etmineure_d_agilite:
     name: Casque en Etoffe mineure d'agilité
@@ -327,8 +324,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   casque_en_etmineure_d_intelligence:
     name: Casque en Etoffe mineure d'intelligence
@@ -336,7 +332,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   casque_en_etstandart_de_vie:
@@ -345,7 +341,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   casque_en_etstandart_de_penetration:
     name: Casque en Etoffe standart de pénétration
@@ -353,7 +349,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   casque_en_etstandart_de_precision:
     name: Casque en Etoffe standart de précision
@@ -361,7 +357,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   casque_en_etstandart_d_esquive:
     name: Casque en Etoffe standart d'esquive
@@ -369,7 +365,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   casque_en_etstandart_de_parade:
     name: Casque en Etoffe standart de parade
@@ -377,7 +373,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   casque_en_etstandart_de_defense:
     name: Casque en Etoffe standart de défense
@@ -391,7 +387,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   casque_en_etstandart_d_agilite:
     name: Casque en Etoffe standart d'agilité
@@ -399,8 +395,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   casque_en_etstandart_d_intelligence:
     name: Casque en Etoffe standart d'intelligence
@@ -408,7 +403,7 @@ Znieh\Model\ArmorPart:
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #_______________________________________________
   #_______________________________________________
@@ -420,7 +415,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   torse_en_cuivre_de_penetration:
     name: Torse en cuivre de pénétration
@@ -428,7 +423,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   torse_en_cuivre_de_precision:
     name: Torse en cuivre de précision
@@ -436,7 +431,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   torse_en_cuivre_d_esquive:
     name: Torse en cuivre d'esquive
@@ -444,7 +439,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   torse_en_cuivre_de_parade:
     name: Torse en cuivre de parade
@@ -452,7 +447,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   torse_en_cuivre_de_defense:
     name: Torse en cuivre de défense
@@ -466,7 +461,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   torse_en_cuivre_d_agilite:
     name: Torse en cuivre d'agilité
@@ -474,8 +469,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   torse_en_cuivre_d_intelligence:
     name: Torse en cuivre d'intelligence
@@ -483,7 +477,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   torse_en_bronze_de_vie:
@@ -492,7 +486,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_bronze
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   torse_en_bronze_de_penetration:
     name: Torse en bronze de pénétration
@@ -500,7 +494,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_bronze
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   torse_en_bronze_de_precision:
     name: Torse en bronze de précision
@@ -508,7 +502,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_bronze
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   torse_en_bronze_d_esquive:
     name: Torse en bronze d'esquive
@@ -516,7 +510,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_bronze
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   torse_en_bronze_de_parade:
     name: Torse en bronze de parade
@@ -524,7 +518,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_bronze
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   torse_en_bronze_de_defense:
     name: Torse en bronze de défense
@@ -538,7 +532,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_bronze
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   torse_en_bronze_d_agilite:
     name: Torse en bronze d'agilité
@@ -546,8 +540,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_bronze
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   torse_en_bronze_d_intelligence:
     name: Torse en bronze d'intelligence
@@ -555,7 +548,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_bronze
     defense: @torse_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #intérmédiaire
@@ -565,7 +558,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   torse_en_reche_de_penetration:
     name: Torse en cuir rêche de pénétration
@@ -573,7 +566,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   torse_en_reche_de_precision:
     name: Torse en cuir rêche de précision
@@ -581,7 +574,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   torse_en_reche_d_esquive:
     name: Torse en cuir rêche d'esquive
@@ -589,7 +582,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   torse_en_reche_de_parade:
     name: Torse en cuir rêche de parade
@@ -597,7 +590,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   torse_en_reche_de_defense:
     name: Torse en cuir rêche de défense
@@ -611,7 +604,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   torse_en_reche_d_agilite:
     name: Torse en cuir rêche d'agilité
@@ -619,8 +612,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   torse_en_reche_d_intelligence:
     name: Torse en cuir rêche d'intelligence
@@ -628,7 +620,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   torse_en_brut_de_vie:
@@ -637,7 +629,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   torse_en_brut_de_penetration:
     name: Torse en cuir brut de pénétration
@@ -645,7 +637,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   torse_en_brut_de_precision:
     name: Torse en cuir brut de précision
@@ -653,7 +645,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   torse_en_brut_d_esquive:
     name: Torse en cuir brut d'esquive
@@ -661,7 +653,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   torse_en_brut_de_parade:
     name: Torse en cuir brut de parade
@@ -669,7 +661,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   torse_en_brut_de_defense:
     name: Torse en cuir brut de défense
@@ -683,7 +675,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   torse_en_brut_d_agilite:
     name: Torse en cuir brut d'agilité
@@ -691,8 +683,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   torse_en_brut_d_intelligence:
     name: Torse en cuir brut d'intelligence
@@ -700,7 +691,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #léger
@@ -710,7 +701,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   torse_en_etmineure_de_penetration:
     name: Torse en Etoffe mineure de pénétration
@@ -718,7 +709,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   torse_en_etmineure_de_precision:
     name: Torse en Etoffe mineure de précision
@@ -726,7 +717,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   torse_en_etmineure_d_esquive:
     name: Torse en Etoffe mineure d'esquive
@@ -734,7 +725,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   torse_en_etmineure_de_parade:
     name: Torse en Etoffe mineure de parade
@@ -742,7 +733,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   torse_en_etmineure_de_defense:
     name: Torse en Etoffe mineure de défense
@@ -756,7 +747,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   torse_en_etmineure_d_agilite:
     name: Torse en Etoffe mineure d'agilité
@@ -764,8 +755,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   torse_en_etmineure_d_intelligence:
     name: Torse en Etoffe mineure d'intelligence
@@ -773,7 +763,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   torse_en_etstandart_de_vie:
@@ -782,7 +772,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   torse_en_etstandart_de_penetration:
     name: Torse en Etoffe standart de pénétration
@@ -790,7 +780,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   torse_en_etstandart_de_precision:
     name: Torse en Etoffe standart de précision
@@ -798,7 +788,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   torse_en_etstandart_d_esquive:
     name: Torse en Etoffe standart d'esquive
@@ -806,7 +796,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   torse_en_etstandart_de_parade:
     name: Torse en Etoffe standart de parade
@@ -814,7 +804,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   torse_en_etstandart_de_defense:
     name: Torse en Etoffe standart de défense
@@ -828,7 +818,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   torse_en_etstandart_d_agilite:
     name: Torse en Etoffe standart d'agilité
@@ -836,8 +826,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   torse_en_etstandart_d_intelligence:
     name: Torse en Etoffe standart d'intelligence
@@ -845,7 +834,7 @@ Znieh\Model\ArmorPart:
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #_______________________________________________
   #_______________________________________________
@@ -857,7 +846,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   jambes_en_cuivre_de_penetration:
     name: Jambes en cuivre de pénétration
@@ -865,7 +854,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   jambes_en_cuivre_de_precision:
     name: Jambes en cuivre de précision
@@ -873,7 +862,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   jambes_en_cuivre_d_esquive:
     name: Jambes en cuivre d'esquive
@@ -881,7 +870,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   jambes_en_cuivre_de_parade:
     name: Jambes en cuivre de parade
@@ -889,7 +878,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   jambes_en_cuivre_de_defense:
     name: Jambes en cuivre de défense
@@ -903,7 +892,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   jambes_en_cuivre_d_agilite:
     name: Jambes en cuivre d'agilité
@@ -911,8 +900,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   jambes_en_cuivre_d_intelligence:
     name: Jambes en cuivre d'intelligence
@@ -920,7 +908,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   jambes_en_bronze_de_vie:
@@ -929,7 +917,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   jambes_en_bronze_de_penetration:
     name: Jambes en bronze de pénétration
@@ -937,7 +925,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   jambes_en_bronze_de_precision:
     name: Jambes en bronze de précision
@@ -945,7 +933,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   jambes_en_bronze_d_esquive:
     name: Jambes en bronze d'esquive
@@ -953,7 +941,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   jambes_en_bronze_de_parade:
     name: Jambes en bronze de parade
@@ -961,7 +949,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   jambes_en_bronze_de_defense:
     name: Jambes en bronze de défense
@@ -975,7 +963,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   jambes_en_bronze_d_agilite:
     name: Jambes en bronze d'agilité
@@ -983,8 +971,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   jambes_en_bronze_d_intelligence:
     name: Jambes en bronze d'intelligence
@@ -992,7 +979,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #intérmédiaire
@@ -1002,7 +989,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   jambes_en_reche_de_penetration:
     name: Jambes en cuir rêche de pénétration
@@ -1010,7 +997,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   jambes_en_reche_de_precision:
     name: Jambes en cuir rêche de précision
@@ -1018,7 +1005,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   jambes_en_reche_d_esquive:
     name: Jambes en cuir rêche d'esquive
@@ -1026,7 +1013,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   jambes_en_reche_de_parade:
     name: Jambes en cuir rêche de parade
@@ -1034,7 +1021,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   jambes_en_reche_de_defense:
     name: Jambes en cuir rêche de défense
@@ -1048,7 +1035,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   jambes_en_reche_d_agilite:
     name: Jambes en cuir rêche d'agilité
@@ -1056,8 +1043,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   jambes_en_reche_d_intelligence:
     name: Jambes en cuir rêche d'intelligence
@@ -1065,7 +1051,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   jambes_en_brut_de_vie:
@@ -1074,7 +1060,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   jambes_en_brut_de_penetration:
     name: Jambes en cuir brut de pénétration
@@ -1082,7 +1068,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   jambes_en_brut_de_precision:
     name: Jambes en cuir brut de précision
@@ -1090,7 +1076,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   jambes_en_brut_d_esquive:
     name: Jambes en cuir brut d'esquive
@@ -1098,7 +1084,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   jambes_en_brut_de_parade:
     name: Jambes en cuir brut de parade
@@ -1106,7 +1092,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   jambes_en_brut_de_defense:
     name: Jambes en cuir brut de défense
@@ -1120,7 +1106,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   jambes_en_brut_d_agilite:
     name: Jambes en cuir brut d'agilité
@@ -1128,8 +1114,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   jambes_en_brut_d_intelligence:
     name: Jambes en cuir brut d'intelligence
@@ -1137,7 +1122,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #léger
@@ -1147,7 +1132,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   jambes_en_etmineure_de_penetration:
     name: Jambes en Etoffe mineure de pénétration
@@ -1155,7 +1140,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   jambes_en_etmineure_de_precision:
     name: Jambes en Etoffe mineure de précision
@@ -1163,7 +1148,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   jambes_en_etmineure_d_esquive:
     name: Jambes en Etoffe mineure d'esquive
@@ -1171,7 +1156,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   jambes_en_etmineure_de_parade:
     name: Jambes en Etoffe mineure de parade
@@ -1179,7 +1164,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   jambes_en_etmineure_de_defense:
     name: Jambes en Etoffe mineure de défense
@@ -1193,7 +1178,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   jambes_en_etmineure_d_agilite:
     name: Jambes en Etoffe mineure d'agilité
@@ -1201,8 +1186,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   jambes_en_etmineure_d_intelligence:
     name: Jambes en Etoffe mineure d'intelligence
@@ -1210,7 +1194,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   jambes_en_etstandart_de_vie:
@@ -1219,7 +1203,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   jambes_en_etstandart_de_penetration:
     name: Jambes en Etoffe standart de pénétration
@@ -1227,7 +1211,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   jambes_en_etstandart_de_precision:
     name: Jambes en Etoffe standart de précision
@@ -1235,7 +1219,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   jambes_en_etstandart_d_esquive:
     name: Jambes en Etoffe standart d'esquive
@@ -1243,7 +1227,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   jambes_en_etstandart_de_parade:
     name: Jambes en Etoffe standart de parade
@@ -1251,7 +1235,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   jambes_en_etstandart_de_defense:
     name: Jambes en Etoffe standart de défense
@@ -1265,7 +1249,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   jambes_en_etstandart_d_agilite:
     name: Jambes en Etoffe standart d'agilité
@@ -1273,8 +1257,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   jambes_en_etstandart_d_intelligence:
     name: Jambes en Etoffe standart d'intelligence
@@ -1282,7 +1265,7 @@ Znieh\Model\ArmorPart:
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #_______________________________________________
   #_______________________________________________
@@ -1294,7 +1277,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_cuivre_de_penetration:
     name: Bottes en cuivre de pénétration
@@ -1302,7 +1285,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   bottes_en_cuivre_de_precision:
     name: Bottes en cuivre de précision
@@ -1310,7 +1293,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   bottes_en_cuivre_d_esquive:
     name: Bottes en cuivre d'esquive
@@ -1318,7 +1301,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   bottes_en_cuivre_de_parade:
     name: Bottes en cuivre de parade
@@ -1326,7 +1309,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   bottes_en_cuivre_de_defense:
     name: Bottes en cuivre de défense
@@ -1340,7 +1323,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_cuivre_d_agilite:
     name: Bottes en cuivre d'agilité
@@ -1348,8 +1331,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   bottes_en_cuivre_d_intelligence:
     name: Bottes en cuivre d'intelligence
@@ -1357,7 +1339,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   bottes_en_bronze_de_vie:
@@ -1366,7 +1348,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_bronze_de_penetration:
     name: Bottes en bronze de pénétration
@@ -1374,7 +1356,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   bottes_en_bronze_de_precision:
     name: Bottes en bronze de précision
@@ -1382,7 +1364,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   bottes_en_bronze_d_esquive:
     name: Bottes en bronze d'esquive
@@ -1390,7 +1372,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   bottes_en_bronze_de_parade:
     name: Bottes en bronze de parade
@@ -1398,7 +1380,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   bottes_en_bronze_de_defense:
     name: Bottes en bronze de défense
@@ -1412,7 +1394,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_bronze_d_agilite:
     name: Bottes en bronze d'agilité
@@ -1420,8 +1402,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   bottes_en_bronze_d_intelligence:
     name: Bottes en bronze d'intelligence
@@ -1429,7 +1410,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #intérmédiaire
@@ -1439,7 +1420,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_reche_de_penetration:
     name: Bottes en cuir rêche de pénétration
@@ -1447,7 +1428,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   bottes_en_reche_de_precision:
     name: Bottes en cuir rêche de précision
@@ -1455,7 +1436,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   bottes_en_reche_d_esquive:
     name: Bottes en cuir rêche d'esquive
@@ -1463,7 +1444,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   bottes_en_reche_de_parade:
     name: Bottes en cuir rêche de parade
@@ -1471,7 +1452,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   bottes_en_reche_de_defense:
     name: Bottes en cuir rêche de défense
@@ -1485,7 +1466,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_reche_d_agilite:
     name: Bottes en cuir rêche d'agilité
@@ -1493,8 +1474,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   bottes_en_reche_d_intelligence:
     name: Bottes en cuir rêche d'intelligence
@@ -1502,7 +1482,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   bottes_en_brut_de_vie:
@@ -1511,7 +1491,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_brut_de_penetration:
     name: Bottes en cuir brut de pénétration
@@ -1519,7 +1499,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   bottes_en_brut_de_precision:
     name: Bottes en cuir brut de précision
@@ -1527,7 +1507,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   bottes_en_brut_d_esquive:
     name: Bottes en cuir brut d'esquive
@@ -1535,7 +1515,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   bottes_en_brut_de_parade:
     name: Bottes en cuir brut de parade
@@ -1543,7 +1523,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   bottes_en_brut_de_defense:
     name: Bottes en cuir brut de défense
@@ -1557,7 +1537,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_brut_d_agilite:
     name: Bottes en cuir brut d'agilité
@@ -1565,8 +1545,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   bottes_en_brut_d_intelligence:
     name: Bottes en cuir brut d'intelligence
@@ -1574,7 +1553,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #léger
@@ -1584,7 +1563,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_etmineure_de_penetration:
     name: Bottes en Etoffe mineure de pénétration
@@ -1592,7 +1571,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   bottes_en_etmineure_de_precision:
     name: Bottes en Etoffe mineure de précision
@@ -1600,7 +1579,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   bottes_en_etmineure_d_esquive:
     name: Bottes en Etoffe mineure d'esquive
@@ -1608,7 +1587,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   bottes_en_etmineure_de_parade:
     name: Bottes en Etoffe mineure de parade
@@ -1616,7 +1595,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   bottes_en_etmineure_de_defense:
     name: Bottes en Etoffe mineure de défense
@@ -1630,7 +1609,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_etmineure_d_agilite:
     name: Bottes en Etoffe mineure d'agilité
@@ -1638,8 +1617,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   bottes_en_etmineure_d_intelligence:
     name: Bottes en Etoffe mineure d'intelligence
@@ -1647,7 +1625,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   bottes_en_etstandart_de_vie:
@@ -1656,7 +1634,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_etstandart_de_penetration:
     name: Bottes en Etoffe standart de pénétration
@@ -1664,7 +1642,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   bottes_en_etstandart_de_precision:
     name: Bottes en Etoffe standart de précision
@@ -1672,7 +1650,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   bottes_en_etstandart_d_esquive:
     name: Bottes en Etoffe standart d'esquive
@@ -1680,7 +1658,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   bottes_en_etstandart_de_parade:
     name: Bottes en Etoffe standart de parade
@@ -1688,7 +1666,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   bottes_en_etstandart_de_defense:
     name: Bottes en Etoffe standart de défense
@@ -1702,7 +1680,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   bottes_en_etstandart_d_agilite:
     name: Bottes en Etoffe standart d'agilité
@@ -1710,8 +1688,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   bottes_en_etstandart_d_intelligence:
     name: Bottes en Etoffe standart d'intelligence
@@ -1719,7 +1696,7 @@ Znieh\Model\ArmorPart:
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #_______________________________________________
   #_______________________________________________
@@ -1731,7 +1708,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_cuivre_de_penetration:
     name: Gants en cuivre de pénétration
@@ -1739,7 +1716,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   gants_en_cuivre_de_precision:
     name: Gants en cuivre de précision
@@ -1747,7 +1724,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   gants_en_cuivre_d_esquive:
     name: Gants en cuivre d'esquive
@@ -1755,7 +1732,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   gants_en_cuivre_de_parade:
     name: Gants en cuivre de parade
@@ -1763,7 +1740,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   gants_en_cuivre_de_defense:
     name: Gants en cuivre de défense
@@ -1777,7 +1754,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_cuivre_d_agilite:
     name: Gants en cuivre d'agilité
@@ -1785,8 +1762,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   gants_en_cuivre_d_intelligence:
     name: Gants en cuivre d'intelligence
@@ -1794,7 +1770,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   gants_en_bronze_de_vie:
@@ -1803,7 +1779,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_bronze
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_bronze_de_penetration:
     name: Gants en bronze de pénétration
@@ -1811,7 +1787,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_bronze
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   gants_en_bronze_de_precision:
     name: Gants en bronze de précision
@@ -1819,7 +1795,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_bronze
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   gants_en_bronze_d_esquive:
     name: Gants en bronze d'esquive
@@ -1827,7 +1803,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_bronze
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   gants_en_bronze_de_parade:
     name: Gants en bronze de parade
@@ -1835,7 +1811,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_bronze
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   gants_en_bronze_de_defense:
     name: Gants en bronze de défense
@@ -1849,7 +1825,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_bronze
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_bronze_d_agilite:
     name: Gants en bronze d'agilité
@@ -1857,8 +1833,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_bronze
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   gants_en_bronze_d_intelligence:
     name: Gants en bronze d'intelligence
@@ -1866,7 +1841,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_bronze
     defense: @gants_lourd->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #intérmédiaire
@@ -1876,7 +1851,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_reche_de_penetration:
     name: Gants en cuir rêche de pénétration
@@ -1884,7 +1859,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   gants_en_reche_de_precision:
     name: Gants en cuir rêche de précision
@@ -1892,7 +1867,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   gants_en_reche_d_esquive:
     name: Gants en cuir rêche d'esquive
@@ -1900,7 +1875,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   gants_en_reche_de_parade:
     name: Gants en cuir rêche de parade
@@ -1908,7 +1883,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   gants_en_reche_de_defense:
     name: Gants en cuir rêche de défense
@@ -1922,7 +1897,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_reche_d_agilite:
     name: Gants en cuir rêche d'agilité
@@ -1930,8 +1905,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   gants_en_reche_d_intelligence:
     name: Gants en cuir rêche d'intelligence
@@ -1939,7 +1913,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   gants_en_brut_de_vie:
@@ -1948,7 +1922,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_brut_de_penetration:
     name: Gants en cuir brut de pénétration
@@ -1956,7 +1930,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   gants_en_brut_de_precision:
     name: Gants en cuir brut de précision
@@ -1964,7 +1938,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   gants_en_brut_d_esquive:
     name: Gants en cuir brut d'esquive
@@ -1972,7 +1946,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   gants_en_brut_de_parade:
     name: Gants en cuir brut de parade
@@ -1980,7 +1954,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   gants_en_brut_de_defense:
     name: Gants en cuir brut de défense
@@ -1994,7 +1968,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_brut_d_agilite:
     name: Gants en cuir brut d'agilité
@@ -2002,8 +1976,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   gants_en_brut_d_intelligence:
     name: Gants en cuir brut d'intelligence
@@ -2011,7 +1984,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   #léger
@@ -2021,7 +1994,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_etmineure_de_penetration:
     name: Gants en Etoffe mineure de pénétration
@@ -2029,7 +2002,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   gants_en_etmineure_de_precision:
     name: Gants en Etoffe mineure de précision
@@ -2037,7 +2010,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   gants_en_etmineure_d_esquive:
     name: Gants en Etoffe mineure d'esquive
@@ -2045,7 +2018,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   gants_en_etmineure_de_parade:
     name: Gants en Etoffe mineure de parade
@@ -2053,7 +2026,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   gants_en_etmineure_de_defense:
     name: Gants en Etoffe mineure de défense
@@ -2067,7 +2040,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_etmineure_d_agilite:
     name: Gants en Etoffe mineure d'agilité
@@ -2075,8 +2048,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   gants_en_etmineure_d_intelligence:
     name: Gants en Etoffe mineure d'intelligence
@@ -2084,7 +2056,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #__________________________________________
   gants_en_etstandart_de_vie:
@@ -2093,7 +2065,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_etstandart_de_penetration:
     name: Gants en Etoffe standart de pénétration
@@ -2101,7 +2073,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
+        - { attribute: "penetration",  modifier: 45 }
     points: 1
   gants_en_etstandart_de_precision:
     name: Gants en Etoffe standart de précision
@@ -2109,7 +2081,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   gants_en_etstandart_d_esquive:
     name: Gants en Etoffe standart d'esquive
@@ -2117,7 +2089,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   gants_en_etstandart_de_parade:
     name: Gants en Etoffe standart de parade
@@ -2125,7 +2097,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   gants_en_etstandart_de_defense:
     name: Gants en Etoffe standart de défense
@@ -2139,7 +2111,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   gants_en_etstandart_d_agilite:
     name: Gants en Etoffe standart d'agilité
@@ -2147,8 +2119,7 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   gants_en_etstandart_d_intelligence:
     name: Gants en Etoffe standart d'intelligence
@@ -2156,6 +2127,6 @@ Znieh\Model\ArmorPart:
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
 

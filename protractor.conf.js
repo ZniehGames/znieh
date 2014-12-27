@@ -30,6 +30,7 @@ exports.config = {
       'client/tests/fight.steps.js',
       'client/tests/search.steps.js',
       'client/tests/login.steps.js',
+      'client/tests/caserne.steps.js',
       'client/tests/gameserver.steps.js'
     ],
     format: 'pretty'

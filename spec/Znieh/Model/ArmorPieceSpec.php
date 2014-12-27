@@ -15,19 +15,37 @@ class ArmorPieceSpec extends ObjectBehavior
         $this->shouldHaveType('Znieh\Model\ArmorPiece');
     }
 
-    function it_return_points()
+    function it_return_points(ArmorPart $part, Rune $rune)
     {
         $this->getPoints()->shouldReturn(0);
+
+        $part->getPoints()->willReturn(1);
+        $rune->getPoints()->willReturn(1);
+
+        $this->setPart($part);
+        $this->setRune($rune);
+
+        $this->getPoints()->shouldReturn(2);
     }
 
-    function it_return_weight()
+    function it_return_weight(ArmorPart $part)
     {
         $this->getWeight()->shouldReturn(0);
+
+        $part->getWeight()->willReturn(1);
+        $this->setPart($part);
+
+        $this->getWeight()->shouldReturn(1);
     }
 
-    function it_return_defense()
+    function it_return_defense(ArmorPart $part)
     {
         $this->getDefense()->shouldReturn(0);
+
+        $part->getDefense()->willReturn(1);
+        $this->setPart($part);
+
+        $this->getDefense()->shouldReturn(1);
     }
 
     function it_return_bonuses(ArmorPart $part, Rune $rune)

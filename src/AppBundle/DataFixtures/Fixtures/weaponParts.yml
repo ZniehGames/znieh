@@ -165,7 +165,7 @@ Znieh\Model\WeaponPart:
     type: @garde
     step: @garde_en_bronze
     bonuses:
-- { attribute: "agilite",  modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 2
   garde_en_bronze_arrondie:
     name: Garde arrondie en bronze

@@ -3,6 +3,7 @@ Znieh\Model\Unit:
   properties:
     id:
       expose: true
+      groups: [default, details]
     name:
       expose: true
       groups: [default, details]

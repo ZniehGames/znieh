@@ -7,7 +7,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   lame_courbe_en_cuivre:
     name: Lame courbe en cuivre
@@ -16,7 +16,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   lame_katana_en_cuivre:
     name: Lame de katana en cuivre
@@ -25,7 +25,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
+        - { attribute: "penetration",  modifier: 30 }
     points: 1
   lame_rapiere_en_cuivre:
     name: Lame de rapière en cuivre
@@ -34,7 +34,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   lame_dague_en_cuivre:
     name: Lame de dague en cuivre
@@ -43,7 +43,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   lame_espadon_en_cuivre:
     name: Lame d'espadon en cuivre
@@ -52,7 +52,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   lame_glaive_en_cuivre:
     name: Lame de glaive en cuivre
@@ -61,8 +61,8 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
+        - { attribute: "force", modifier: 30 }
     points: 1
   #_________________________________________________
   lame_longue_en_bronze:
@@ -72,7 +72,7 @@ Znieh\Model\WeaponPart:
     minDamage: 15
     maxDamage: 25
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 2
   lame_courbe_en_bronze:
     name: Lame courbe en bronze
@@ -81,7 +81,7 @@ Znieh\Model\WeaponPart:
     minDamage: 15
     maxDamage: 25
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 2
   lame_katana_en_bronze:
     name: Lame de katana en bronze
@@ -90,7 +90,7 @@ Znieh\Model\WeaponPart:
     minDamage: 15
     maxDamage: 25
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
+        - { attribute: "penetration",  modifier: 30 }
     points: 2
   lame_rapiere_en_bronze:
     name: Lame de rapière en bronze
@@ -99,7 +99,7 @@ Znieh\Model\WeaponPart:
     minDamage: 15
     maxDamage: 25
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 2
   lame_dague_en_bronze:
     name: Lame de dague en bronze
@@ -108,7 +108,7 @@ Znieh\Model\WeaponPart:
     minDamage: 15
     maxDamage: 25
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 2
   lame_espadon_en_bronze:
     name: Lame d'espadon en bronze
@@ -117,8 +117,8 @@ Znieh\Model\WeaponPart:
     minDamage: 15
     maxDamage: 25
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
+        - { attribute: "force", modifier: 30 }
     points: 2
   lame_glaive_en_bronze:
     name: Lame de glaive en bronze
@@ -127,7 +127,7 @@ Znieh\Model\WeaponPart:
     minDamage: 15
     maxDamage: 25
     bonuses:
-        - { attribute: "Defense",  modifier: 30 }
+        - { attribute: "defense",  modifier: 30 }
     points: 1
   #_________________________________________________
   # Gardes d'épée
@@ -136,22 +136,21 @@ Znieh\Model\WeaponPart:
     type: @garde
     step: @garde_en_cuivre
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   garde_en_cuivre_ciselee:
     name: Garde ciselée en cuivre
     type: @garde
     step: @garde_en_cuivre
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   garde_en_cuivre_arrondie:
     name: Garde arrondie en cuivre
     type: @garde
     step: @garde_en_cuivre
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #_________________________________________________
   garde_en_bronze_en_panier:
@@ -159,22 +158,21 @@ Znieh\Model\WeaponPart:
     type: @garde
     step: @garde_en_bronze
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 2
   garde_en_bronze_ciselee:
     name: Garde ciselée en bronze
     type: @garde
     step: @garde_en_bronze
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+- { attribute: "agilite",  modifier: 30 }
     points: 2
   garde_en_bronze_arrondie:
     name: Garde arrondie en bronze
     type: @garde
     step: @garde_en_bronze
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 2
   #_________________________________________________
   # Manches d'épée
@@ -183,64 +181,63 @@ Znieh\Model\WeaponPart:
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   manche_en_cedre_de_penetration:
     name: Manche en cèdre de pénétration
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
+        - { attribute: "penetration",  modifier: 30 }
     points: 1
   manche_en_cedre_de_precision:
     name: Manche en cèdre de précision
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   manche_en_cedre_d_esquive:
     name: Manche en cèdre d'esquive
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   manche_en_cedre_de_parade:
     name: Manche en cèdre de parade
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   manche_en_cedre_defense:
     name: Manche en cèdre de défense
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Defense",  modifier: 30 }
+        - { attribute: "defense",  modifier: 30 }
     points: 1
   manche_en_cedre_de_force:
     name: Manche en cèdre de force
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   manche_en_cedre_d_agilite:
     name: Manche en cèdre d'agilité
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+- { attribute: "agilite",  modifier: 30 }
     points: 1
   manche_en_cedre_d_intelligence:
     name: Manche en cèdre d'intelligence
     type: @manche
     step: @manche_en_cedre
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   #_________________________________________________
   manche_en_chene_de_vie:
@@ -248,64 +245,63 @@ Znieh\Model\WeaponPart:
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 2
   manche_en_chene_de_penetration:
     name: Manche en chêne de pénétration
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
+        - { attribute: "penetration",  modifier: 30 }
     points: 2
   manche_en_chene_de_precision:
     name: Manche en chêne de précision
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 2
   manche_en_chene_d_esquive:
     name: Manche en chêne d'esquive
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 2
   manche_en_chene_de_parade:
     name: Manche en chêne de parade
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 2
   manche_en_chene_defense:
     name: Manche en chêne de défense
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Defense",  modifier: 30 }
+        - { attribute: "defense",  modifier: 30 }
     points: 2
   manche_en_chene_de_force:
     name: Manche en chêne de force
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 2
   manche_en_chene_d_agilite:
     name: Manche en chêne d'agilité
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+- { attribute: "agilite",  modifier: 30 }
     points: 2
   manche_en_chene_d_intelligence:
     name: Manche en chêne d'intelligence
     type: @manche
     step: @manche_en_chene
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 2
   #_________________________________________________
   # Pommeaux d'épée
@@ -314,73 +310,70 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_de_penetration:
     name: Pommeau en cuivre de pénétration
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
+        - { attribute: "penetration",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_de_precision:
     name: Pommeau en cuivre de précision
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_d_esquive:
     name: Pommeau en cuivre d'esquive
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
+        - { attribute: "esquive",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_de_parade:
     name: Pommeau en cuivre de parade
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_de_defense:
     name: Pommeau en cuivre de défense
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Defense",  modifier: 30 }
+        - { attribute: "defense",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_de_force:
     name: Pommeau en cuivre de force
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_d_agilite:
     name: Pommeau en cuivre d'agilité
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_d_intelligence:
     name: Pommeau en cuivre d'intelligence
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     points: 1
   pommeau_en_cuivre_d_armure:
     name: Pommeau en cuivre d'armure
     type: @pommeau
     step: @pommeau_en_cuivre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
-    # effects: { armure: 20 }
+        - { attribute: "defense",  modifier: 30 }
     points: 1
   #_________________________________________________
   pommeau_en_bronze_de_vie:
@@ -388,8 +381,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     # effects: { vie: 30 }
     points: 1
   pommeau_en_bronze_de_penetration:
@@ -397,8 +389,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "penetration",  modifier: 40 }
     # effects: { penetration: 40 }
     points: 1
   pommeau_en_bronze_de_precision:
@@ -406,8 +397,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "precision",  modifier: 40 }
     # effects: { precision: 40 }
     points: 1
   pommeau_en_bronze_d_esquive:
@@ -415,8 +405,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "esquive",  modifier: 40 }
     # effects: { esquive: 40 }
     points: 1
   pommeau_en_bronze_de_parade:
@@ -424,8 +413,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 40 }
     # effects: { vie: 40 }
     points: 1
   pommeau_en_bronze_de_defense:
@@ -433,8 +421,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "defense",  modifier: 30 }
     # effects: { defense: 30 }
     points: 1
   pommeau_en_bronze_de_force:
@@ -442,8 +429,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "force",  modifier: 30 }
     # effects: { force: 30 }
     points: 1
   pommeau_en_bronze_d_agilite:
@@ -451,8 +437,8 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
+        - { attribute: "force", modifier: 30 }
     # effects: { agilite: 30 }
     points: 1
   pommeau_en_bronze_d_intelligence:
@@ -460,8 +446,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "intelligence",  modifier: 30 }
     # effects: { intelligence: 30 }
     points: 1
   pommeau_en_bronze_d_armure:
@@ -469,8 +454,7 @@ Znieh\Model\WeaponPart:
     type: @pommeau
     step: @pommeau_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "armure",  modifier: 30 }
     # effects: { armure: 30 }
     points: 1
   #_________________________________________________
@@ -480,21 +464,19 @@ Znieh\Model\WeaponPart:
     type: @tete_hache
     step: @tete_de_hache_cuivre
     minDamage: 10
-    maxDamage: 20
+    maxDamage: 40
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "defense", modifier: 10 }
     # effects: { damage: 40, defense: 10 }
     points: 1
   tete_hache_cuivre_Francisque:
     name: Tête de Francisque en cuivre
     type: @tete_hache
     step: @tete_de_hache_cuivre
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 15
+    maxDamage: 45
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "parade",  modifier: 10 }
     # effects: { damage: 45, parade: 10 }
     points: 1
   tete_hache_cuivre_hallebarde:
@@ -502,21 +484,19 @@ Znieh\Model\WeaponPart:
     type: @tete_hache
     step: @tete_de_hache_cuivre
     minDamage: 10
-    maxDamage: 20
+    maxDamage: 40
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "penetration",  modifier: 10 }
     # effects: { damage: 40, penetration: 10 }
     points: 1
   tete_hache_cuivre_labrys:
     name: Tête de Labrys en cuivre
     type: @tete_hache
     step: @tete_de_hache_cuivre
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 20
+    maxDamage: 50
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 15 }
     # effects: { damage: 50, vie: 15 }
     points: 1
   tete_ hache_cuivre_lochaber:
@@ -524,10 +504,9 @@ Znieh\Model\WeaponPart:
     type: @tete_hache
     step: @tete_de_hache_cuivre
     minDamage: 10
-    maxDamage: 20
+    maxDamage: 40
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "parade",  modifier: 15 }
     # effects: { damage: 40, parade: 15 }
     points: 1
   #_________________________________________________
@@ -535,44 +514,40 @@ Znieh\Model\WeaponPart:
     name: Tête de bardiche en bronze
     type: @tete_hache
     step: @tete_de_hache_bronze
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 20
+    maxDamage: 60
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "defense",  modifier: 15 }
     # effects: { damage: 60, defense: 15 }
     points: 1
   tete_hache_bronze_Francisque:
     name: Tête de Francisque en bronze
     type: @tete_hache
     step: @tete_de_hache_bronze
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 25
+    maxDamage: 70
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "parade",  modifier: 15 }
     # effects: { damage: 70, parade: 15 }
     points: 1
   tete_hache_bronze_hallebarde:
     name: Tête de hallebarde en bronze
     type: @tete_hache
     step: @tete_de_hache_bronze
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 20
+    maxDamage: 60
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "penetration",  modifier: 20 }
     # effects: { damage: 60, penetration: 20 }
     points: 1
   tete_hache_bronze_labrys:
     name: Tête de Labrys en bronze
     type: @tete_hache
     step: @tete_de_hache_bronze
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 25
+    maxDamage: 75
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 25 }
     # effects: { damage: 75, vie: 25 }
     points: 1
   tete_ hache_bronze_lochaber:
@@ -582,8 +557,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "parade",  modifier: 25 }
     # effects: { damage: 60, parade: 25 }
     points: 1
   #_________________________________________________
@@ -592,44 +566,40 @@ Znieh\Model\WeaponPart:
     name: Tête de marteau de guerre en cuivre
     type: @tete_marteau
     step: @tete_de_marteau_cuivre
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 20
+    maxDamage: 30
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     # effects: { damage: 30, vie: 30 }
     points: 1
   tete_marteau_cuivre_geant:
     name: Tête de marteau géant en cuivre
     type: @tete_marteau
     step: @tete_de_marteau_cuivre
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 20
+    maxDamage: 30
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "parade",  modifier: 2O }
     # effects: { damage: 30, parade: 20 }
     points: 1
   tete_marteau_cuivre_gourdin:
     name: Tête de gourdin en cuivre
     type: @tete_marteau
     step: @tete_de_marteau_cuivre
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 15
+    maxDamage: 25
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "defense",  modifier: 20 }
     # effects: { damage: 25, defense: 20 }
     points: 1
   tete_marteau_cuivre_armes:
     name: Tête de marteau d'armes en cuivre
     type: @tete_marteau
     step: @tete_de_marteau_cuivre
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 20
+    maxDamage: 35
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "precision",  modifier: 30 }
     # effects: { damage: 35, precision: 30 }
     points: 1
   tete_marteau_cuivre_morgenstern:
@@ -639,8 +609,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "penetration",  modifier: 25 }
     # effects: { damage: 35, penetration: 25 }
     points: 1
   #_________________________________________________
@@ -648,44 +617,40 @@ Znieh\Model\WeaponPart:
     name: Tête de marteau de guerre en bronze
     type: @tete_marteau
     step: @tete_de_marteau_bronze
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 30
+    maxDamage: 40
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 40 }
     # effects: { damage: 40, vie: 40 }
     points: 1
   tete_marteau_bronze_geant:
     name: Tête de marteau géant en bronze
     type: @tete_marteau
     step: @tete_de_marteau_bronze
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 30
+    maxDamage: 40
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "parade",  modifier: 30 }
     # effects: { damage: 40, parade: 30 }
     points: 1
   tete_marteau_bronze_gourdin:
     name: Tête de gourdin en bronze
     type: @tete_marteau
     step: @tete_de_marteau_bronze
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 25
+    maxDamage: 35
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "defense",  modifier: 30 }
     # effects: { damage: 35, defense: 30 }
     points: 1
   tete_marteau_bronze_armes:
     name: Tête de marteau d'armes en bronze
     type: @tete_marteau
     step: @tete_de_marteau_bronze
-    minDamage: 10
-    maxDamage: 20
+    minDamage: 35
+    maxDamage: 45
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "precision",  modifier: 40 }
     # effects: { damage: 45, precision: 40 }
     points: 1
   tete_marteau_bronze_morgenstern:
@@ -695,8 +660,7 @@ Znieh\Model\WeaponPart:
     minDamage: 10
     maxDamage: 20
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "penetration",  modifier: 35 }
     # effects: { damage: 45, penetration: 35 }
     points: 1
   #_________________________________________________
@@ -706,8 +670,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 20 }
     # effects: { vie: 20 }
     points: 1
   hampe_cedre_de_penetration:
@@ -715,8 +678,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "penetration",  modifier: 20 }
     # effects: { penetration: 20 }
     points: 1
   hampe_cedre_de_precision:
@@ -724,8 +686,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "precision",  modifier: 20 }
     # effects: { precision: 20 }
     points: 1
   hampe_cedre_d_esquive:
@@ -733,8 +694,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "esquive",  modifier: 20 }
     # effects: { esquive: 20 }
     points: 1
   hampe_cedre_de_parade:
@@ -742,8 +702,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "parade",  modifier: 20 }
     # effects: { parade: 20 }
     points: 1
   hampe_cedre_de_defense:
@@ -751,8 +710,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "defense",  modifier: 20 }
     # effects: { defense: 20 }
     points: 1
   hampe_cedre_de_force:
@@ -760,8 +718,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "force",  modifier: 20 }
     # effects: { force: 20 }
     points: 1
   hampe_cedre_d_agilite:
@@ -769,8 +726,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "agilite",  modifier: 20 }
     # effects: {agilitee: 20 }
     points: 1
   hampe_cedre_d_intelligence:
@@ -778,8 +734,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "intelligence",  modifier: 20 }
     # effects: { intelligence: 20 }
     points: 1
   hampe_cedre_d_armure:
@@ -787,8 +742,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_cedre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "armure",  modifier: 20 }
     # effects: { armure: 20 }
     points: 1
   #________________________________________________
@@ -797,8 +751,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "life",  modifier: 30 }
     # effects: { vie: 30 }
     points: 1
   hampe_chene_de_penetration:
@@ -806,8 +759,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "penetration",  modifier: 40 }
     # effects: { penetration: 40 }
     points: 1
   hampe_chene_de_precision:
@@ -815,8 +767,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "precision",  modifier: 40 }
     # effects: { precision: 40 }
     points: 1
   hampe_chene_d_esquive:
@@ -824,8 +775,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "esquive",  modifier: 40 }
     # effects: { esquive: 40 }
     points: 1
   hampe_chene_de_parade:
@@ -833,8 +783,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "parade",  modifier: 40 }
     # effects: { parade: 40 }
     points: 1
   hampe_chene_de_defense:
@@ -842,8 +791,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "defense",  modifier: 30 }
     # effects: { defense: 30 }
     points: 1
   hampe_chene_de_force:
@@ -851,8 +799,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "force", modifier: 30 }
     # effects: { force: 30 }
     points: 1
   hampe_chene_d_agilite:
@@ -860,8 +807,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     # effects: {agilitee: 30 }
     points: 1
   hampe_chene_d_intelligence:
@@ -869,8 +815,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "intelligence", modifier: 30 }
     # effects: { intelligence: 30 }
     points: 1
   hampe_chene_d_armure:
@@ -878,8 +823,7 @@ Znieh\Model\WeaponPart:
     type: @hampe
     step: @hampe_en_chene
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "armure", modifier: 30 }
     # effects: { armure: 30 }
     points: 1
   #_________________________________________________
@@ -889,8 +833,7 @@ Znieh\Model\WeaponPart:
     type: @poignee
     step: @poignee_en_cuivre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "force", modifier: 30 }
     # effects: { force: 30 }
     points: 1
   poignee_en_cuivre_ciselee:
@@ -898,8 +841,7 @@ Znieh\Model\WeaponPart:
     type: @poignee
     step: @poignee_en_cuivre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "agilite", modifier: 30 }
     # effects: { agilite: 30 }
     points: 1
   poignee_en_cuivre_arrondie:
@@ -907,8 +849,7 @@ Znieh\Model\WeaponPart:
     type: @poignee
     step: @poignee_en_cuivre
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "intelligence", modifier: 30 }
     # effects: { intelligence: 30 }
     points: 1
   #_________________________________________________
@@ -917,8 +858,7 @@ Znieh\Model\WeaponPart:
     type: @poignee
     step: @poignee_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "force", modifier: 45 }
     # effects: { force: 45 }
     points: 1
   poignee_en_bronze_ciselee:
@@ -926,8 +866,7 @@ Znieh\Model\WeaponPart:
     type: @poignee
     step: @poignee_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "agilite", modifier: 45 }
     # effects: { agilite: 45 }
     points: 1
   poignee_en_bronze_arrondie:
@@ -935,7 +874,6 @@ Znieh\Model\WeaponPart:
     type: @poignee
     step: @poignee_en_bronze
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-        - { attribute: "Power", modifier: 30 }
+        - { attribute: "intelligence", modifier: 45 }
     # effects: { intelligence: 45 }
     points: 1

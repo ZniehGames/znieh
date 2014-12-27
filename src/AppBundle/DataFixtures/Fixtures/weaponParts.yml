@@ -230,7 +230,7 @@ Znieh\Model\WeaponPart:
     type: @manche
     step: @manche_en_cedre
     bonuses:
-- { attribute: "agilite",  modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 1
   manche_en_cedre_d_intelligence:
     name: Manche en cèdre d'intelligence
@@ -294,7 +294,7 @@ Znieh\Model\WeaponPart:
     type: @manche
     step: @manche_en_chene
     bonuses:
-- { attribute: "agilite",  modifier: 30 }
+        - { attribute: "agilite",  modifier: 30 }
     points: 2
   manche_en_chene_d_intelligence:
     name: Manche en chêne d'intelligence

@@ -73,10 +73,13 @@ MVP :
 | Esquive            |  augmente le pourcentage d'éviter totalement un coup cac			|
 | Parade             |  augmente le pourcentage de réduire les dommages d'un coup cac  	|
 | Penetration        |  diminue la réduction de dommages des points de défense      	|
-| PenetrationHeavy   |  diminue la réduction de dommages des points de défense lourd    |
-| PenetrationMedium  |  diminue la réduction de dommages des points de défense medium   |
-| PenetrationLight   |  diminue la réduction de dommages des points de défense light    |
-| Force				 |  augmente le pourcentage de dommages bruts via un algo  			|
+| MVP++PenetrationHeavy   |  diminue la réduction de dommages des points de défense lourd    |
+| MVP++PenetrationMedium  |  diminue la réduction de dommages des points de défense medium   |
+| MVP++PenetrationLight   |  diminue la réduction de dommages des points de défense light    |
+| Force				 |  Influence la Pénétration et la Parade  			|
+| Agilité      | Influence la Precision et l'Esquive          |
+
+L'attribut principal du personnage est pris en compte lors du calcul des dégats?
 
 ## Size
 

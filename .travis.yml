@@ -69,12 +69,16 @@ before_script:
  - sudo chmod +x bin/prepare-rabbit.sh
  - sudo ./bin/prepare-rabbit.sh
 
+# Karma
+ - export CHROME_BIN=chromium-browser
+
 script:
     - gulp
     - php app/console doctrine:fixtures:load -n --env=test
     - php app/console security:check
     - php bin/phpspec run
     - php bin/behat
+    - karma start karma.conf.js --single-run
     - protractor protractor.conf.js
 
 after_success:

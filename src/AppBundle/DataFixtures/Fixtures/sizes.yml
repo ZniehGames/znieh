@@ -1,7 +1,10 @@
 Znieh\Model\Size:
   petit:
     name: Petit
+    points: 1
   normal:
     name: Normal
+    points: 1
   grand:
     name: Grand
+    points: 1

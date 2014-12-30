@@ -73,7 +73,7 @@ class Armor
    *
    * @return Armor
    */
-  public function setHelm(\Znieh\Model\ArmorPiece $helm = null)
+  public function setHelm(\Znieh\Model\ArmorPiece $helm)
   {
       $this->helm = $helm;
       return $this;
@@ -96,7 +96,7 @@ class Armor
    *
    * @return Armor
    */
-  public function setTorso(\Znieh\Model\ArmorPiece $torso = null)
+  public function setTorso(\Znieh\Model\ArmorPiece $torso)
   {
       $this->torso = $torso;
       return $this;
@@ -119,7 +119,7 @@ class Armor
    *
    * @return Armor
    */
-  public function setGloves(\Znieh\Model\ArmorPiece $gloves = null)
+  public function setGloves(\Znieh\Model\ArmorPiece $gloves)
   {
       $this->gloves = $gloves;
       return $this;
@@ -142,7 +142,7 @@ class Armor
    *
    * @return Armor
    */
-  public function setGreaves(\Znieh\Model\ArmorPiece $greaves = null)
+  public function setGreaves(\Znieh\Model\ArmorPiece $greaves)
   {
       $this->greaves = $greaves;
       return $this;
@@ -165,7 +165,7 @@ class Armor
    *
    * @return Armor
    */
-  public function setBoots(\Znieh\Model\ArmorPiece $boots = null)
+  public function setBoots(\Znieh\Model\ArmorPiece $boots)
   {
       $this->boots = $boots;
       return $this;

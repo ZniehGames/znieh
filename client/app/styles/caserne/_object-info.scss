@@ -1,0 +1,37 @@
+.object-info-container {
+  display: block;
+  cursor: pointer;
+  height: 100px;
+  padding: 10px 10px 10px 0;
+}
+
+.object-info {
+  height: 100%;
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+
+  .name {
+    background: #777;
+    height: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .bonuses {
+    background: #777;
+    height: 40%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+  }
+}
+
+.object-info-container.active > .object-info {
+  box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  transition: .5s background-size ease-in-out;
+}

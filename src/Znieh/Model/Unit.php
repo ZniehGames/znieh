@@ -26,12 +26,12 @@ class Unit
 
     public function getPoints()
     {
-        return
-            ($this->armor != null)  ? $this->armor->getPoints() : 0  +
-            ($this->weapon != null) ? $this->weapon->getPoints() : 0 +
-            $this->size->getPoints() +
-            $this->weight->getPoints()
-        ;
+        $i = 0;
+        $i += ($this->armor != null)  ? $this->armor->getPoints() : 0;
+        $i += ($this->weapon != null) ? $this->weapon->getPoints() : 0;
+        $i += ($this->size != null) ? $this->size->getPoints() : 0;
+        $i += ($this->physical != null) ? $this->physical->getPoints() : 0;
+        return $i;
     }
 
     public function getWeight()
@@ -41,7 +41,34 @@ class Unit
 
     public function getMoves()
     {
-        return round(7*2^(-$this->armor->getWeight()/20));
+        return intval(abs(round(7*2^(-$this->getWeight()/20))));
+    }
+
+    public function getLife()
+    {
+        return 100 + $this->getStats()['Life'];
+    }
+
+    public function getStats()
+    {
+        $stats = [
+            'Life' => 0,
+            'Force' => 0,
+            'Intelligence' => 0,
+            'Parade' => 0,
+            'Precision' => 0,
+            'Esquive' => 0,
+            'Penetration' => 0,
+            'Power' => 0,
+        ];
+
+        if($this->armor != null) foreach ($this->armor->getBonuses() as $bonus) {
+            $stats[$bonus['attribute']] += $bonus['modifier'];
+        }
+        if($this->weapon != null) foreach ($this->weapon->getBonuses() as $bonus) {
+            $stats[$bonus['attribute']] += $bonus['modifier'];
+        }
+        return $stats;
     }
 
     /**

@@ -8,6 +8,8 @@ class ArmorPartType
     use \Znieh\Traits\HasBonusesEntity;
     use \Znieh\Traits\HasDefenseEntity;
     use \Znieh\Traits\HasWeightEntity;
+    use \Znieh\Traits\HasTypeEntity;
+    use \Znieh\Traits\HasGameObjectsEntity;
 
     private $id;
 

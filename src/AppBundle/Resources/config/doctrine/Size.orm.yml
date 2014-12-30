@@ -10,3 +10,5 @@ Znieh\Model\Size:
       name:
         type: string
         length: 255
+      points:
+        type: integer

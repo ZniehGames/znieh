@@ -1,7 +1,10 @@
 Znieh\Model\Physical:
   fin:
     name: Fin
+    points: 1
   moyen:
     name: Moyen
+    points: 1
   muscle:
     name: Musclé
+    points: 1

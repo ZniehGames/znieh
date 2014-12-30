@@ -10,3 +10,5 @@ Znieh\Model\Physical:
       name:
         type: string
         length: 255
+      points:
+        type: integer

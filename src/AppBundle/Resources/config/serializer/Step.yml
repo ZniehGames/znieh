@@ -1,0 +1,9 @@
+Znieh\Model\Step:
+  exclusion_policy: ALL
+  properties:
+    name:
+      expose: true
+      groups: [default, details]
+    points:
+      expose: true
+      groups: [default, details]

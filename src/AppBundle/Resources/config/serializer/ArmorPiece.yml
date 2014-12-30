@@ -3,5 +3,7 @@ Znieh\Model\ArmorPiece:
   properties:
     part:
       expose: true
+      groups: [default, details]
     rune:
       expose: true
+      groups: [default, details]

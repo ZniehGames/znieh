@@ -54,6 +54,22 @@ class WebApiContext extends DefaultContext
     }
 
     /**
+     * Sends HTTP request to specific URL with field values from Table.
+     *
+     * @param string    $method request method
+     * @param string    $url    relative url
+     * @param TableNode $values   table of values
+     *
+     * @When /^(?:I )?send a ([A-Z]+) request to "([^"]+)" with json:$/
+     */
+    public function iSendARequestWithJson($method, $url, PyStringNode $string)
+    {
+        $request = $this->client->createRequest($method, 'app_test.php'.$url, ['body' => $string->getRaw(), 'exceptions' => false]);
+        $this->response = $this->client->send($request);
+        var_dump((string) $this->response->getBody());
+    }
+
+    /**
      * Checks that response has specific status code.
      *
      * @param string $code status code

@@ -45,40 +45,7 @@ block content
                 .col-md-9.col-md-pull-3
                     .units.row
                         .col-xs-6.col-sm-6.col-md-4.col-lg-3(ng-repeat="unit in selectedTeam.units")
-                            .unit
-                                .informations.clearfix
-                                    .pull-left
-                                        img(src="http://lorempicsum.com/simpsons/50/75/1").sprite
-                                    .details
-                                        h2 {{ unit.name }}
-                                        .separator
-                                        .stat
-                                            img(src="../images/icons/vie.png")
-                                            |32
-                                        .stat
-                                            img(src="../images/icons/force.png")
-                                            |32
-                                        .stat
-                                            img(src="../images/icons/intelligence.png")
-                                            |32
-                                        .stat
-                                            img(src="../images/icons/precision.png")
-                                            |32
-                                        .stat
-                                            img(src="../images/icons/defense.png")
-                                            |32
-                                        .stat
-                                            img(src="../images/icons/parade.png")
-                                            |32
-                                        .stat
-                                            img(src="../images/icons/agilite.png")
-                                            |32
-                                        .separator
-                                .actions
-                                    button.btn.btn-info.btn-xs
-                                        |24 points
-                                    button.btn.btn-default.btn-xs
-                                        |Sélectionner
+                         unit-preview(unit="unit")
             .search
                 button.btn.btn-success.btn-lg(ng-click="searchFight()")
                     |Je suis prêt !

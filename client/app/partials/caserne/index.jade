@@ -1,0 +1,58 @@
+extends ../village_layout.jade
+
+block content
+    .caserne(ng-controller="CaserneCtrl")
+        form(novalidate).row
+            .col-sm-1
+                .stuff-slot.helm(ng-class="{'active': currentSlot === 'helm'}" ng-click="setCurrentSlot('helm')")
+                .stuff-slot.torso(ng-class="{'active': currentSlot === 'torso'}" ng-click="setCurrentSlot('torso')")
+                .stuff-slot.gloves(ng-class="{'active': currentSlot === 'gloves'}" ng-click="setCurrentSlot('gloves')")
+                .stuff-slot.greaves(ng-class="{'active': currentSlot === 'greaves'}" ng-click="setCurrentSlot('greaves')")
+                .stuff-slot.boots(ng-class="{'active': currentSlot === 'boots'}" ng-click="setCurrentSlot('boots')")
+            .center-block.col-sm-5
+                tabset.clearfix(ng-if="isArmorSlot()")
+                    tab(ng-repeat="tab in armorparttypes" ng-if="tab.type === currentSlot" heading="{{ tab.name }}" active="tab.active")
+                        .step(ng-repeat="step in tab.objects|pluck:'step'|uniq:'name'")
+                            h4
+                                | {{ step.name }}
+                                | {{ step.points }}
+                                img(src="../images/icons/doubled.png")
+                            object-info(
+                                ng-repeat="object in tab.objects" ng-if="object.step.name === step.name"
+                                object="object" ng-model="unit.armor[currentSlot].part"
+                                ng-change="change()" active="{{ unit.armor[currentSlot].part === object.id }}"
+                            )
+                tabset.clearfix(ng-if="isArmorSlot()")
+                    tab(ng-repeat="tab in runetypes" heading="{{ tab.name }}" active="tab.active")
+                        object-info(ng-repeat="object in tab.objects" object="object" ng-model="unit.armor[currentSlot].rune" ng-change="change()" active="{{ unit.armor[currentSlot].rune === object.id }}")
+                tabset.clearfix(ng-if="isWeaponSlot()")
+                    tab(ng-repeat="(key,tab) in weaponparttypes" ng-if="tab.name === currentSlot" heading="{{ tab.name }}" active="tab.active")
+                        .step(ng-repeat="step in tab.objects|pluck:'step'|uniq:'name'")
+                            h4
+                                | {{ step.name }}
+                                | {{ step.points }}
+                                img(src="../images/icons/doubled.png")
+                            object-info(
+                                ng-repeat="object in tab.objects" ng-if="object.step.name === step.name"
+                                object="object" ng-model="unit.weapon.parts[key]"
+                                ng-change="change()" active="{{ unit.weapon.parts[key] === object.id }}"
+                            )
+            .col-sm-2
+                .choice-container
+                    .weapon-choice.axe(ng-class="{'active': weaponChoice === 'axe'}" ng-click="weaponChoice = 'axe'")
+                    .weapon-choice.sword(ng-class="{'active': weaponChoice === 'sword'}" ng-click="weaponChoice = 'sword'")
+                    .weapon-choice.hammer(ng-class="{'active': weaponChoice === 'hammer'}" ng-click="weaponChoice = 'hammer'")
+                .stuff-slot.gear(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part; change()")
+            .col-sm-4.text-center
+                input(type="text" ng-model="unit.name" required placeholder="Le ptit nom" ng-change="change()")
+                .choice-container
+                    .size-choice.size-1(ng-class="{'active': unit.size === 1}" ng-click="unit.size = 1; change()")
+                    .size-choice.size-2(ng-class="{'active': unit.size === 2}" ng-click="unit.size = 2; change()")
+                    .size-choice.size-3(ng-class="{'active': unit.size === 3}" ng-click="unit.size = 3; change()")
+                .choice-container
+                    .physical-choice.physical-1(ng-class="{'active': unit.physical === 1}" ng-click="unit.physical = 1; change()")
+                    .physical-choice.physical-2(ng-class="{'active': unit.physical === 2}" ng-click="unit.physical = 2; change()")
+                    .physical-choice.physical-3(ng-class="{'active': unit.physical === 3}" ng-click="unit.physical = 3; change()")
+                br
+                button.btn.btn-success.btn-lg(ng-click="submit()") Engager !
+                unit-preview(unit="preview")

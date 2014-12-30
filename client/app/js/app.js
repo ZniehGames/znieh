@@ -6,7 +6,9 @@ var app = angular.module('znieh', [
   'ngRoute',
   'restangular',
   'toastr',
-  'btford.socket-io'
+  'btford.socket-io',
+  'ui.bootstrap',
+  'angular-lodash'
 ]);
 
 app.config(function ($routeProvider, RestangularProvider) {
@@ -16,6 +18,10 @@ app.config(function ($routeProvider, RestangularProvider) {
     $routeProvider.
       when('/', {
         templateUrl: 'partials/homepage/index.html',
+      }).
+      when('/caserne', {
+        templateUrl: 'partials/caserne/index.html',
+        controller: 'CaserneCtrl'
       }).
       when('/hello', {
         templateUrl: 'partials/hello.html',

@@ -20,16 +20,15 @@ class Weapon
   public function getPoints()
   {
       $points = 0;
-      foreach ($this->parts as $part) {
+      if ($this->parts) foreach ($this->parts as $part) {
         $points += $part->getPoints();
       }
       return $points;
   }
 
-
   public function getMinDamage()
   {
-      foreach ($this->parts as $part) {
+      if ($this->parts) foreach ($this->parts as $part) {
         if ($part->getMinDamage() != null) {
             return $part->getMinDamage();
         }
@@ -39,7 +38,7 @@ class Weapon
 
   public function getMaxDamage()
   {
-    foreach ($this->parts as $part) {
+    if ($this->parts) foreach ($this->parts as $part) {
       if ($part->getMaxDamage() != null) {
           return $part->getMaxDamage();
       }
@@ -50,7 +49,7 @@ class Weapon
   public function getBonuses()
   {
       $bonuses = [];
-      foreach ($this->parts as $part) {
+      if ($this->parts) foreach ($this->parts as $part) {
         $bonuses = array_merge($bonuses, $part->getBonuses());
       }
       return $bonuses;

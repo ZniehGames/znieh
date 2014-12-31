@@ -56,8 +56,8 @@ class Placement {
             for (var i = this.units.length - 1; i >= 0; i--) {
                 positions.push({
                     'id': this.units[i].id,
-                    'x': this.units[i].x,
-                    'y': this.units[i].y
+                    'x': this.units[i].x / 32,
+                    'y': this.units[i].y / 32
                 });
             }
 

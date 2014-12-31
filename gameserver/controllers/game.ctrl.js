@@ -40,11 +40,13 @@ function GameCtrl() {
     }
 
     game.ready.push(player);
-    Placement.update(game, positions);
+    if (Placement.update(game, positions) === -1) {
+      console.log('placement on inaccessible tile'.red);
+    }
 
     if (game.ready.length === 2) {
-        game.playerA.socket.emit('match ready', game.units);
-        game.playerB.socket.emit('match ready', game.units);
+      game.playerA.socket.emit('match ready', game.units);
+      game.playerB.socket.emit('match ready', game.units);
     }
   }
 

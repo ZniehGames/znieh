@@ -1,11 +1,14 @@
 'use strict';
 
 var Game = require('./../model/game');
+var Map = require('./../model/map');
 var UserStorage = require('./../storage/user.storage.js');
 var GameStorage = require('./../storage/game.storage.js');
 var UserManager = require('./../services/user.manager.js');
 var GameManager = require('./../services/game.manager.js');
+var MapManager = require('./../services/map.manager.js');
 var Placement = require('./../services/placement.js');
+var MapData = require('./../../client/app/json/map.json');
 
 
 function GameCtrl() {
@@ -23,7 +26,8 @@ function GameCtrl() {
 
     UserManager.reloadTeam(playerA);
     UserManager.reloadTeam(playerB);
-    GameStorage.add(new Game(playerA, playerB));
+
+    GameStorage.add(new Game(playerA, playerB, MapManager.create(MapData)));
   }
 
   this.placementDone = function(socket, positions) {

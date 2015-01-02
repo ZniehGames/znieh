@@ -23,10 +23,6 @@ app.config(function ($routeProvider, RestangularProvider) {
         templateUrl: 'partials/caserne/index.html',
         controller: 'CaserneCtrl'
       }).
-      when('/hello', {
-        templateUrl: 'partials/hello.html',
-        controller: 'HelloCtrl'
-      }).
       when('/fight', {
         templateUrl: 'partials/fightpage/index.html',
       }).

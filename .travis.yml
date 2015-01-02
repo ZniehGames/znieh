@@ -12,6 +12,7 @@ services:
 cache:
     directories:
         - ~/.composer/cache
+        - node_modules
 
 git:
   submodules: false

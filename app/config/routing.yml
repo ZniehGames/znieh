@@ -14,6 +14,10 @@ units:
     type:     rest
     resource: AppBundle\Controller\UnitsController
 
+unlock:
+    type:     rest
+    resource: AppBundle\Controller\UnlockController
+
 gameobjecttypes:
     type:     rest
     resource: AppBundle\Controller\GameObjectTypesController

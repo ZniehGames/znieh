@@ -4,352 +4,297 @@ Znieh\Model\Step:
     name: Lames en cuivre
     building: @forge
     points: 1
-    costs: { po: 25, cuivre: 10 }
+    costs:
+        - { currency: "wood", value: 50 }
+        - { currency: "gold", value: 50 }
   lame_en_bronze:
     name: Lames en bronze
     building: @forge
     parent: @lame_en_cuivre
     points: 2
-    costs: { po: 60, cuivre: 20 }
+    costs:
+        - { currency: "wood", value: 50 }
+        - { currency: "gold", value: 50 }
   lame_en_fer:
     name: Lames en fer
     building: @forge
     parent: @lame_en_bronze
     points: 3
-    costs: { po: 100, fer: 10 }
   lame_en_or:
     name: Lames en or
     building: @forge
     parent: @lame_en_fer
     points: 4
-    costs: { po: 140, or: 10 }
   garde_en_cuivre:
     name: Gardes en cuivre
     building: @forge
     points: 1
-    costs: { po: 20, cuivre: 7 }
   garde_en_bronze:
     name: Gardes en bronze
     building: @forge
     parent: @garde_en_cuivre
     points: 2
-    costs: { po: 50, cuivre: 14 }
   garde_en_laiton:
     name: Gardes en laiton
     building: @forge
     parent: @garde_en_bronze
     points: 3
-    costs: { po: 90, laiton: 7 }
   garde_en_or:
     name: Gardes en or
     building: @forge
     parent: @garde_en_laiton
     points: 4
-    costs: { po: 125, or: 7 }
   manche_en_cedre:
     name: Manches en cèdre
     building: @forge
     points: 1
-    costs: { po: 20, cedre: 7 }
   manche_en_chene:
     name: Manches en chêne
     building: @forge
     parent: @manche_en_cedre
     points: 2
-    costs: { po: 50, chene: 7 }
   pommeau_en_cuivre:
     name: Pommeaux en cuivre
     building: @forge
     points: 1
-    costs: { po: 20, cuivre: 7 }
   pommeau_en_bronze:
     name: Pommeaux en bronze
     building: @forge
     parent: @pommeau_en_cuivre
     points: 2
-    costs: { po: 50, cuivre: 14 }
   #___________________________________
   # Hacherie
   tete_de_hache_cuivre:
     name: Têtes de hache en cuivre
     building: @forge
     points: 1
-    costs: { po: 25, cuivre: 10 }
   tete_de_hache_bronze:
     name: Têtes de hache en bronze
     building: @forge
     parent: @tete_de_hache_cuivre
     points: 2
-    costs: { po: 60, cuivre: 20 }
   tete_de_marteau_cuivre:
     name: Têtes de marteau en cuivre
     building: @forge
     points: 1
-    costs: { po: 25, cuivre: 10 }
   tete_de_marteau_bronze:
     name: Têtes de marteau en bronze
     building: @forge
     parent: @tete_de_marteau_cuivre
     points: 2
-    costs: { po: 60, cuivre: 20 }
   hampe_en_cedre:
     name: Hampes en cèdre
     building: @forge
     points: 1
-    costs: { po: 20, cedre: 7 }
   hampe_en_chene:
     name: Hampes en chêne
     building: @forge
     parent: @hampe_en_cedre
     points: 2
-    costs: { po: 50, chene: 7 }
   poignee_en_cuivre:
     name: Poignées en cuivre
     building: @forge
     points: 1
-    costs: { po: 20, cuivre: 7 }
   poignee_en_bronze:
     name: Poignées en bronze
     building: @forge
     parent: @poignee_en_cuivre
     points: 2
-    costs: { po: 50, cuivre: 14 }
   # #___________________________________
   # #Archerie
   # corde_en_reche:
   #   name: Cordes en cuir rêche
   #   building: @archerie
   #   points: 1
-  #   costs: { po: 20, reche: 7 }
   # corde_en_brut:
   #   name: Cordes en cuir brut
   #   building: @archerie
   #   parent: @corde_en_reche
   #   points: 2
-  #   costs: { po: 50, brut: 7 }
   # arc_en_cedre:
   #   name: Arcs en cèdre
   #   building: @archerie
   #   points: 1
-  #   costs: { po: 20, cedre: 7 }
   # arc_en_chene:
   #   name: Arcs en chêne
   #   building: @archerie
   #   parent: @arc_en_cedre
   #   points: 2
-  #   costs: { po: 50, chene: 7 }
   # poignee_arc_en_cuivre:
   #   name: Poignées d'arc en cuivre
   #   building: @archerie
   #   points: 1
-  #   costs: { po: 20, cuivre: 7 }
   # poignee_arc_en_bronze:
   #   name: Poignées d'arc en bronze
   #   building: @archerie
   #   parent: @poignee_arc_en_cuivre
   #   points: 2
-  #   costs: { po: 50, cuivre: 14 }
   # fleche_cuivre:
   #   name: Flèches en cuivre
   #   building: @archerie
   #   points: 1
-  #   costs: { po: 25, cuivre: 10 }
   # fleche_bronze:
   #   name: Flèches en bronze
   #   building: @archerie
   #   parent: @fleche_cuivre
   #   points: 2
-  #   costs: { po: 60, cuivre: 20 }
   #___________________________________
   #Armurerie
   casques_en_cuivre:
     name: Casques en cuivre
     building: @armurerie
     points: 3
-    costs: { po: 20, cuivre: 7 }
   casques_en_bronze:
     name: Casques en bronze
     building: @armurerie
     parent: @casques_en_cuivre
     points: 4
-    costs: { po: 50, cuivre: 14 }
   torses_en_cuivre:
     name: Torses en cuivre
     building: @armurerie
     points: 3
-    costs: { po: 20, cuivre: 7 }
   torses_en_bronze:
     name: Torses en bronze
     building: @armurerie
     parent: @torses_en_cuivre
     points: 4
-    costs: { po: 50, cuivre: 14 }
   jambes_en_cuivre:
     name: Jambes en cuivre
     building: @armurerie
     points: 3
-    costs: { po: 20, cuivre: 7 }
   jambes_en_bronze:
     name: Jambes en bronze
     building: @armurerie
     parent: @jambes_en_cuivre
     points: 4
-    costs: { po: 50, cuivre: 14 }
   bottes_en_cuivre:
     name: Bottes en cuivre
     building: @armurerie
     points: 3
-    costs: { po: 20, cuivre: 7 }
   bottes_en_bronze:
     name: Bottes en bronze
     building: @armurerie
     parent: @bottes_en_cuivre
     points: 4
-    costs: { po: 50, cuivre: 14 }
   gants_en_cuivre:
     name: Gants en cuivre
     building: @armurerie
     points: 3
-    costs: { po: 20, cuivre: 7 }
   gants_en_bronze:
     name: Gants en bronze
     building: @armurerie
     parent: @gants_en_cuivre
     points: 4
-    costs: { po: 50, cuivre: 14 }
   #___________________________________
   #Tannerie
   casques_en_cuir_reche:
     name: Casques en cuir rêche
     building: @armurerie
     points: 2
-    costs: { po: 20, reche: 7 }
   casques_en_cuir_brut:
     name: Casques en cuir brut
     building: @armurerie
     parent: @casques_en_cuir_reche
     points: 3
-    costs: { po: 50, brut: 7 }
   torses_en_cuir_reche:
     name: Torses en cuir rêche
     building: @armurerie
     points: 2
-    costs: { po: 20, reche: 7 }
   torses_en_cuir_brut:
     name: Torses en cuir brut
     building: @armurerie
     parent: @torses_en_cuir_reche
     points: 3
-    costs: { po: 50, brut: 7 }
   jambes_en_cuir_reche:
     name: Jambes en cuir rêche
     building: @armurerie
     points: 2
-    costs: { po: 20, reche: 7 }
   jambes_en_cuir_brut:
     name: Jambes en cuir brut
     building: @armurerie
     parent: @jambes_en_cuir_reche
     points: 3
-    costs: { po: 50, brut: 7 }
   bottes_en_cuir_reche:
     name: Bottes en cuir rêche
     building: @armurerie
     points: 2
-    costs: { po: 20, reche: 7 }
   bottes_en_cuir_brut:
     name: Bottes en cuir brut
     building: @armurerie
     parent: @bottes_en_cuir_reche
     points: 3
-    costs: { po: 50, brut: 7 }
   gants_en_cuir_reche:
     name: Gants en cuir rêche
     building: @armurerie
     points: 2
-    costs: { po: 20, reche: 7 }
   gants_en_cuir_brut:
     name: Gants en cuir brut
     building: @armurerie
     parent: @gants_en_cuir_reche
     points: 3
-    costs: { po: 50, brut: 7 }
   #___________________________________
   #Tisserie
   casques_en_etoffe_mineure:
     name: Casques en étoffe mineure
     building: @armurerie
     points: 1
-    costs: { po: 20, minorCloth: 7 }
   casques_en_etoffe_standart:
     name: Casques en étoffe standart
     building: @armurerie
     parent: @casques_en_etoffe_mineure
     points: 2
-    costs: { po: 50, standardCloth: 7 }
   torses_en_etoffe_mineure:
     name: Torses en étoffe mineure
     building: @armurerie
     points: 1
-    costs: { po: 20, minorCloth: 7 }
   torses_en_etoffe_standart:
     name: Torses en étoffe standart
     building: @armurerie
     parent: @torses_en_etoffe_mineure
     points: 2
-    costs: { po: 50, standardCloth: 7 }
   jambes_en_etoffe_mineure:
     name: Jambes en étoffe mineure
     building: @armurerie
     points: 1
-    costs: { po: 20, minorCloth: 7 }
   jambes_en_etoffe_standart:
     name: Jambes en étoffe standart
     building: @armurerie
     parent: @jambes_en_etoffe_mineure
     points: 2
-    costs: { po: 50, standardCloth: 7 }
   bottes_en_etoffe_mineure:
     name: Bottes en étoffe mineure
     building: @armurerie
     points: 1
-    costs: { po: 20, minorCloth: 7 }
   bottes_en_etoffe_standart:
     name: Bottes en étoffe standart
     building: @armurerie
     parent: @bottes_en_etoffe_mineure
     points: 2
-    costs: { po: 50, standardCloth: 7 }
   gants_en_etoffe_mineure:
     name: Gants en étoffe mineure
     building: @armurerie
     points: 1
-    costs: { po: 20, minorCloth: 7 }
   gants_en_etoffe_standart:
     name: Gants en étoffe standart
     building: @armurerie
     parent: @gants_en_etoffe_mineure
     points: 2
-    costs: { po: 50, standardCloth: 7 }
   #___________________________________
   #Runes
   rune_mineur:
     name: Runes Mineurs
     building: @bibliotheque
     points: 1
-    costs: { po: 150 }
   rune_majeur:
     name: Runes Majeurs
     building: @bibliotheque
     parent: @rune_mineur
     points: 2
-    costs: { po: 300 }
   rune_superieur:
     name: Runes Supérieurs
     building: @bibliotheque
     parent: @rune_majeur
     points: 3
-    costs: { po: 500 }
 
   #___________________________________
   #Insignes
@@ -357,19 +302,16 @@ Znieh\Model\Step:
     name: Insignes Classiques
     building: @bibliotheque
     points: 1
-    costs: { po: 500 }
   insigne_exo:
     name: Insignes Exotiques
     building: @bibliotheque
     parent: @insigne_classique
     points: 2
-    costs: { po: 500 }
   insigne_rare:
     name: Insignes Rares
     building: @bibliotheque
     parent: @insigne_exo
     points: 3
-    costs: { po: 500 }
 
   #___________________________________
   #SORTS
@@ -377,43 +319,35 @@ Znieh\Model\Step:
     name: Maléfices I
     building: @bibliotheque
     points: 2
-    costs: { po: 120 }
   malefice_II:
     name: Maléfices II
     building: @bibliotheque
     parent: @malefice_I
     points: 2
-    costs: { po: 160 }
   degats_I:
     name: Dégâts magiques I
     building: @bibliotheque
     points: 2
-    costs: { po: 120 }
   degats_II:
     name: Dégâts magiques II
     building: @bibliotheque
     parent: @degats_I
     points: 2
-    costs: { po: 160 }
   controles_I:
     name: Contrôles I
     building: @bibliotheque
     points: 2
-    costs: { po: 120 }
   controles_II:
     name: Contrôles II
     building: @bibliotheque
     parent: @controles_I
     points: 2
-    costs: { po: 160 }
   support_I:
     name: Support I
     building: @bibliotheque
     points: 2
-    costs: { po: 120 }
   support_II:
     name: Support II
     building: @bibliotheque
     parent: @support_I
     points: 2
-    costs: { po: 160 }

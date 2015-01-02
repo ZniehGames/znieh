@@ -66,18 +66,18 @@ MVP :
 | Attributes         | Effects                                                          |
 |:------------------:|:----------------------------------------------------------------:|
 | Life               |  la vie du personnage                                 			|
-| Defense            |  réduit les dégats infligés au personnage via un algo 			|
+| Defense;            |  réduit les dégats infligés au personnage via un algo 			|
 | Intelligence       |  augmente la puissance des sorts                      			|
 | Focus    |  augmente les dégats infligés par les conditions (%)  			|
 | Precision          |  augmente le pourcentage de couts critiques de l'arme (%) 		|
-| Esquive            |  augmente le pourcentage d'éviter totalement un coup cac			|
-| Parade             |  augmente le pourcentage de réduire les dommages d'un coup cac  	|
+| Dodge            |  augmente le pourcentage d'éviter totalement un coup cac			|
+| Parry           |  augmente le pourcentage de réduire les dommages d'un coup cac  	|
 | Penetration        |  diminue la réduction de dommages des points de défense      	|
-| PenetrationHeavy   |  diminue la réduction de dommages des points de défense lourd    |
-| PenetrationMedium  |  diminue la réduction de dommages des points de défense medium   |
-| PenetrationLight   |  diminue la réduction de dommages des points de défense light    |
-| Force				 |  augmente le pourcentage de dommages bruts via un algo  			|
-
+| mvp+PenetrationHeavy   |  diminue la réduction de dommages des points de défense lourd    |
+| mvp+PenetrationMedium  |  diminue la réduction de dommages des points de défense medium   |
+| mvp+PenetrationLight   |  diminue la réduction de dommages des points de défense light    |
+| Strength				 |  Influence parry et penetration			|
+| Agility | influence preciSion et dodge |
 ## Size
 
 | Attributes         | Grand | Normal | Petit |

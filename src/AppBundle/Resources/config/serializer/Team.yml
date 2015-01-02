@@ -1,6 +1,12 @@
 Znieh\Model\Team:
   exclusion_policy: all
   properties:
+    id:
+      expose: true
+      groups: [default, details]
+    name:
+      expose: true
+      groups: [default, details]
     units:
       expose: true
       type: ArrayCollection<Znieh\Model\Unit>

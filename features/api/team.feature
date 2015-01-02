@@ -1,3 +1,4 @@
+@dev
 Feature: team
 
 Background:
@@ -7,7 +8,9 @@ Scenario: list user team
     Given I send a GET request to "/users/1/team"
     Then the JSON response should match:
 """
-[{"units":[
+[{
+  "id": @integer@,
+  "units":[
   {
     "points": @integer@,
     "moves": @integer@,
@@ -104,5 +107,48 @@ Scenario: list user team
     "name": @string@
   },
   @...@
-]}]
+  ],
+  "name": @string@
+}]
 """
+
+Scenario: add user team
+    When I send a POST request to "/users/1/teams" with json:
+"""
+{
+  "name": "Ma super team",
+  "units": [1,2,3,4]
+}
+"""
+    Then the response status code should be 201
+
+Scenario: list user teams
+    Given I send a POST request to "/users/1/teams" with json:
+"""
+{
+  "name": "Ma super team",
+  "units": [1,2,3,4]
+}
+"""
+    And I send a GET request to "/users/1/teams"
+    Then the JSON response should match:
+"""
+[
+  {
+    "id": @integer@,
+    "units": @...@,
+    "name": @string@
+  },
+  @...@
+]
+"""
+
+Scenario: update user team
+    When I send a PUT request to "/users/1/teams/1" with json:
+"""
+{
+  "name": "Nouveau nom",
+  "units": [1,2]
+}
+"""
+    Then the response status code should be 204

@@ -1,3 +1,0 @@
-Znieh\Model\Unit:
-    units{1..10}:
-        name: <name()>

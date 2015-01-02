@@ -25,8 +25,6 @@ class Loader extends DataFixtureLoader implements OrderedFixtureInterface
     {
         return  [
             __DIR__ . '/../Fixtures/users.yml',
-            __DIR__ . '/../Fixtures/units.yml',
-            __DIR__ . '/../Fixtures/teams.yml',
         ];
     }
 

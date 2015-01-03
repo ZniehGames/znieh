@@ -38,15 +38,18 @@ class UnlockController extends FOSRestController
         $unlock->setUser($user);
 
         if ($form->isValid()) {
-            try {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($unlock);
-                $em->flush();
-                return new JsonResponse(['message' => 'Unlock created.'], 201);
-            } catch(\Doctrine\DBAL\DBALException $e)
-            {
-                return new JsonResponse(['message' => 'Already unlocked'], 400);
+            if ($this->get('currency_manager')->unlock($unlock->getUser(), $unlock->getObject())) {
+                try {
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($unlock);
+                    $em->flush();
+                    return new JsonResponse(['message' => 'Unlock created.'], 201);
+                } catch(\Doctrine\DBAL\DBALException $e)
+                {
+                    return new JsonResponse(['message' => 'Already unlocked mais on t\'as quand même retiré les sous !'], 400);
+                }
             }
+            return new JsonResponse(['message' => 'No money !'], 400);
         }
 
         return $form;

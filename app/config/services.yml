@@ -21,3 +21,5 @@ services:
   email_registration.processor:
     class: AppBundle\Processor\EmailRegistrationProcessor
     arguments: [@global_mailer]
+  currency_manager:
+    class: Znieh\Currency\CurrencyManager

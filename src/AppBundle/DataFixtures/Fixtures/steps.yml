@@ -144,6 +144,9 @@ Znieh\Model\Step:
     name: Casques en cuivre
     building: @armurerie
     points: 3
+    costs:
+        - { currency: "wood", value: 50 }
+        - { currency: "gold", value: 50 }
   casques_en_bronze:
     name: Casques en bronze
     building: @armurerie

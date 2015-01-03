@@ -45,4 +45,16 @@ class UserContext extends WebApiContext
       $em->persist($unlock);
       $em->flush();
     }
+
+
+    /**
+     * @Given /^"([^"]+)" has no money$/
+     */
+    public function userHasNoMoney($username)
+    {
+      $em = $this->getService('doctrine')->getManager();
+      $user = $em->getRepository('AppBundle:User')->findOneBy(['username' => $username]);
+      $user->setCurrencies(['gold' => 0, 'wood' => 0]);
+      $em->flush();
+    }
 }

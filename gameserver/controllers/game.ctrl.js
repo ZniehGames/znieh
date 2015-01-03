@@ -39,9 +39,11 @@ function GameCtrl() {
       GameManager.init(game);
     }
 
-    game.ready.push(player);
     if (Placement.update(game, positions) === -1) {
       console.log('placement on inaccessible tile'.red);
+      player.socket.emit('placement failed');
+    } else {
+      game.ready.push(player);
     }
 
     if (game.ready.length === 2) {

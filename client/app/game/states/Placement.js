@@ -43,6 +43,10 @@ class Placement {
             that.game.state.start('game');
         });
 
+        this.game.io.on('placement failed', function () {
+            this.ready = false;
+        });
+
         console.log('Hello Placement!');
     }
 

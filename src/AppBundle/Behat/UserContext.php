@@ -6,6 +6,7 @@ use Behat\Gherkin\Node\TableNode;
 use Doctrine\Common\DataFixtures\Loader;
 
 use Znieh\Model\UnlockedGameObject;
+use Znieh\Model\Team;
 
 class UserContext extends WebApiContext
 {
@@ -57,4 +58,19 @@ class UserContext extends WebApiContext
       $user->setCurrencies(['gold' => 0, 'wood' => 0]);
       $em->flush();
     }
+
+    /**
+     * @Given /^User "([^"]+)" has many teams$/
+     */
+    public function userHasManyTeams($id)
+    {
+      $em = $this->getService('doctrine')->getManager();
+      $user = $em->getRepository('AppBundle:User')->find($id);
+      $team = new Team();
+      $team->setName('Team de ouf');
+      $team->setUser($user);
+      $em->persist($team);
+      $em->flush();
+    }
+
 }

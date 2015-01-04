@@ -4,7 +4,7 @@ Feature: team
 Background:
   Given the database contains fixtures
 
-Scenario: list user team
+Scenario: API client wants to get the selected team of a user
     Given I send a GET request to "/users/1/team"
     Then the JSON response should match:
 """
@@ -112,8 +112,9 @@ Scenario: list user team
 }]
 """
 
-Scenario: add user team
-    When I send a POST request to "/users/1/teams" with json:
+Scenario: A user wants to add a team
+    Given I am logged in as "test"
+    When I send a POST request to "/teams" with json:
 """
 {
   "name": "Ma super team",
@@ -122,14 +123,8 @@ Scenario: add user team
 """
     Then the response status code should be 201
 
-Scenario: list user teams
-    Given I send a POST request to "/users/1/teams" with json:
-"""
-{
-  "name": "Ma super team",
-  "units": [1,2,3,4]
-}
-"""
+Scenario: API client wants to get the list of teams of a user
+    Given User "1" has many teams
     And I send a GET request to "/users/1/teams"
     Then the JSON response should match:
 """
@@ -143,12 +138,33 @@ Scenario: list user teams
 ]
 """
 
-Scenario: update user team
-    When I send a PUT request to "/users/1/teams/1" with json:
+Scenario: A user wants to update someone else team name
+    Given I am logged in as "test"
+    When I send a PUT request to "/teams/1" with json:
+"""
+{
+  "name": "Nouveau nom"
+}
+"""
+    Then the response status code should be 400
+
+Scenario: A user wants to update his team name and list of units
+    Given I am logged in as "test"
+    When I send a PUT request to "/teams/11" with json:
 """
 {
   "name": "Nouveau nom",
   "units": [1,2]
+}
+"""
+    Then the response status code should be 204
+
+Scenario: A user wants to select a team
+    Given I am logged in as "test"
+    When I send a PUT request to "/teams/11" with json:
+"""
+{
+  "selected": true
 }
 """
     Then the response status code should be 204

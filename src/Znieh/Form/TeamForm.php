@@ -18,6 +18,7 @@ class TeamForm extends AbstractType
                 'multiple' => true,
                 'property' => 'name'
             ])
+            ->add('selected', null, ['required' => false])
         ;
     }
 

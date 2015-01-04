@@ -11,7 +11,10 @@ export CHROME_BIN=chromium-browser
 export DISPLAY=:99
 
 gulp
+# Unit testing
 php bin/phpspec run
-php bin/behat
 karma start karma.conf.js --single-run
+jasmine-node gameserver
+# Functional testing
+php bin/behat
 protractor protractor.conf.js

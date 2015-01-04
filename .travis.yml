@@ -52,7 +52,7 @@ before_script:
 
 # Assets dependencies
  - npm install
- - npm install -g bower protractor cucumber karma-cli
+ - npm install -g bower protractor cucumber karma-cli jasmine-node
  - bower install
 
 # JS specific
@@ -78,8 +78,9 @@ script:
     - php app/console doctrine:fixtures:load -n --env=test
     - php app/console security:check
     - php bin/phpspec run
-    - php bin/behat
     - karma start karma.conf.js --single-run
+    - jasmine-node gameserver
+    - php bin/behat
     - protractor protractor.conf.js
 
 after_success:

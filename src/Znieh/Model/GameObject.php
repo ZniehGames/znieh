@@ -11,7 +11,6 @@ class GameObject
 
     protected $id;
     protected $unlockeds;
-    protected $costs;
     protected $step;
 
     public function __construct()
@@ -27,6 +26,16 @@ class GameObject
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get costs
+     *
+     * @return array
+     */
+    public function getCosts()
+    {
+        return $this->step->getCosts();
     }
 
     /**

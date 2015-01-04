@@ -4,8 +4,10 @@ Znieh\Model\User:
         plainPassword: <password()>
         email: <email()>
         enabled: true
+        currencies: { gold: 200, wood: 200}
     user{test, spyl, greg, darkou, naixy}:
       username: <current()>
       plainPassword: <current()>
       email: <current()>@gmail.com
       enabled: true
+      currencies: { gold: 200, wood: 200}

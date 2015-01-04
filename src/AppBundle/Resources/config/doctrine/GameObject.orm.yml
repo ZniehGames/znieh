@@ -23,8 +23,6 @@ Znieh\Model\GameObject:
       nullable: true
     bonuses:
       type: array
-    costs:
-      type: array
     points:
       type: integer
 

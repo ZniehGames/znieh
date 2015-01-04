@@ -6,3 +6,6 @@ Znieh\Model\User:
             type: integer
             generator:
                 strategy: AUTO
+    fields:
+      currencies:
+        type: array

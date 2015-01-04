@@ -10,6 +10,7 @@ use Behat\Testwork\Hook\Scope\BeforeScenarioScope;
 class WebApiContext extends DefaultContext
 {
     public $client;
+    public $token;
     public $response;
 
     public function __construct()
@@ -23,7 +24,43 @@ class WebApiContext extends DefaultContext
     public function createClient()
     {
         $this->client = new Client(['base_url' => $this->getParameter('base_url')]);
+        $this->token = null;
     }
+
+    /**
+     * @When /^I am logged in as "([^"]+)"$/
+     */
+    public function iAmLoggedIn($username)
+    {
+        $this->createAuthenticatedClient($username, $username);
+    }
+
+
+    /**
+     * Create a client with a default Authorization header.
+     *
+     * @param string $username
+     * @param string $password
+     *
+     * @return \Symfony\Bundle\FrameworkBundle\Client
+     */
+    protected function createAuthenticatedClient($username = 'test', $password = 'test')
+    {
+        $request = $this->client->createRequest(
+            'POST',
+            'app_test.php/login_check',
+            [
+                'body' => [
+                    'username' => $username,
+                    'password' => $password
+                ]
+             ]
+        );
+
+        $response = $this->client->send($request);
+        $this->token = $response->json()['token'];
+    }
+
     /**
      * Sends HTTP request to specific relative URL.
      *
@@ -34,7 +71,9 @@ class WebApiContext extends DefaultContext
      */
     public function iSendARequest($method, $url)
     {
-        $request = $this->client->createRequest($method, 'app_test.php'.$url);
+        $request = $this->client->createRequest($method, 'app_test.php'.$url, [
+            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)]
+        ]);
         $this->response = $this->client->send($request);
     }
 
@@ -49,7 +88,11 @@ class WebApiContext extends DefaultContext
      */
     public function iSendARequestWithValues($method, $url, TableNode $table)
     {
-        $request = $this->client->createRequest($method, 'app_test.php'.$url, ['body' => $table->getHash(), 'exceptions' => false]);
+        $request = $this->client->createRequest($method, 'app_test.php'.$url, [
+            'body' => $table->getHash(),
+            'exceptions' => false,
+            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)]
+        ]);
         $this->response = $this->client->send($request);
     }
 
@@ -64,7 +107,11 @@ class WebApiContext extends DefaultContext
      */
     public function iSendARequestWithJson($method, $url, PyStringNode $string)
     {
-        $request = $this->client->createRequest($method, 'app_test.php'.$url, ['body' => $string->getRaw(), 'exceptions' => false]);
+        $request = $this->client->createRequest($method, 'app_test.php'.$url, [
+            'body' => $string->getRaw(),
+            'exceptions' => false,
+            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)]
+        ]);
         $this->response = $this->client->send($request);
         var_dump((string) $this->response->getBody());
     }

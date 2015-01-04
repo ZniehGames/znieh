@@ -18,13 +18,15 @@ class TeamUpdateListener
 
   public function onTeamUpdate(TeamUpdateEvent $event)
   {
-      $team = $event->getTeam();
+      $updatedTeam = $event->getTeam();
 
-      if ($team->getSelected()) {
-        $user = $team->getUser();
+      if ($updatedTeam->getSelected()) {
+        $user = $updatedTeam->getUser();
         $teams = $this->em->getRepository('AppBundle:Team')->findBy(['user' => $user]);
         foreach ($teams as $team) {
-          $team->setselected(false);
+          if ($team->getId() != $updatedTeam->getId()) {
+            $team->setselected(false);
+          }
         }
       }
 

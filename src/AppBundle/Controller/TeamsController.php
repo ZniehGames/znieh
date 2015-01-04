@@ -87,7 +87,8 @@ class TeamsController extends FOSRestController
     public function putTeamsAction(Request $request, Team $team)
     {
         $form = $this->createForm(new TeamForm(), $team, ['method' => 'PUT']);
-        $form->handleRequest($request);
+        // we need to avoid that fields that aren't included in the submitted data, will be set to null.
+        $form->submit($request->request->all(), false);
 
         $user = $this->getUser();
         if (!$user) {

@@ -73,4 +73,17 @@ class UserContext extends WebApiContext
       $em->flush();
     }
 
+    /**
+     * @Then /^team "([^"]+)" should be the only user "([^"]+)" selected team$/
+     */
+    public function onlyOneTeamSelected($teamId, $userId)
+    {
+      $em = $this->getService('doctrine')->getManager();
+      $user = $em->getRepository('AppBundle:User')->find($userId);
+      $teams = $em->getRepository('AppBundle:Team')->findBy(['user' => $user, 'selected' => true]);
+
+      \PHPUnit_Framework_Assert::assertCount(1, $teams);
+      \PHPUnit_Framework_Assert::assertEquals($teamId, $teams[0]->getId());
+    }
+
 }

@@ -13,12 +13,12 @@ class TeamForm extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('selected')
             ->add('units', 'entity', [
                 'class' => 'AppBundle:Unit',
                 'multiple' => true,
                 'property' => 'name'
             ])
-            ->add('selected', null, ['required' => false])
         ;
     }
 

@@ -4,10 +4,9 @@ var EasyStarLib = require('easystar');
 
 function Pathfinding() {
 
-  var easystar = null;
+  var easystar = new EasyStar.js();
 
   this.prepare = function (map, acceptableTiles) {
-    easystar = new EasyStar.js();
     easystar.setGrid(map);
     easystar.setAcceptableTiles(acceptableTiles);
   };

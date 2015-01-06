@@ -64,6 +64,9 @@ paths.jsvendor = [
     paths.app + 'vendor/restangular/dist/restangular.js',
     paths.app + 'vendor/angular-lodash/angular-lodash.js',
     paths.app + 'vendor/phaser/build/phaser.js',
+    paths.app + 'vendor/easystarjs/bin/easystar-0.1.13.js',
+    paths.app + 'plugins/phaser-tiled.js',
+
 ];
 
 var options = {};

@@ -19,6 +19,7 @@
   "trailing": true,
   "smarttabs": true,
   "globals": {
+    "EasyStar": true,
     "angular": true,
     "config": true,
     "toastr": true,

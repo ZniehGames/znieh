@@ -5,16 +5,12 @@ import PlacementHelper from '../services/PlacementHelper';
 
 class UnitsManager {
 
-    constructor() {
-      this.placementHelper = new PlacementHelper();
-    }
-
     createFromTeam(team, game) {
       var units = [];
-      var positions = this.placementHelper.random(team.units, game.side);
+      var positions = PlacementHelper.random(team.units, game.side);
 
       for (var i = 0; i < team.units.length; i++) {
-          units.push(new Unit(game, positions[i].x, positions[i].y, team.units[i]));
+          units.push(new Unit(game, positions[i].x * 32, positions[i].y * 32, team.units[i]));
       }
       return units;
     }

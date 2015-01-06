@@ -1,6 +1,7 @@
 'use strict';
 
 import UnitsManager from '../services/UnitsManager';
+import MapService from '../services/MapService';
 import Map from '../model/Map';
 
 class Game {
@@ -13,25 +14,21 @@ class Game {
     }
 
     create() {
-        console.log('Game.js');
-
         // We start the game
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         // Add Map
-        this.tilemap = this.game.add.tilemap('map');
-        this.tilemap.addTilesetImage('tiles', 'map_tiles');
+        this.tilemap = this.game.add.tiledmap('map');
         this.map = new Map(this.tilemap);
-        this.tilemap.setCollision(this.map.getBlockedTiles(), true);
+        // game.physics.p2.convertTiledCollisionObjects(map, 'objectlayer-name');
 
+        MapService.init(this.map);
         this.unitsManager.create(this.units, this.game);
 
-        // Then, we create layers to add display
-        this.layer = this.tilemap.createLayer('Map');
-        this.layer.resizeWorld();
-
-        this.layer.debug = true;
         this.game.physics.setBoundsToWorld(true, true, true, true, false);
+
+       // this.game.input.onDown.add(this.inputService.onDown, this);
+
         console.log('Hello Game!');
     }
 

@@ -21,18 +21,13 @@ class Placement {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         // Add Map
-        this.tilemap = this.game.add.tilemap('map');
-        this.tilemap.addTilesetImage('tiles', 'map_tiles');
+        this.tilemap = this.game.add.tiledmap('map');
+
         this.map = new Map(this.tilemap);
-        this.tilemap.setCollision(this.map.getBlockedTiles(), true);
+        //this.tilemap.setCollision(this.map.getBlockedTiles(), true);
 
         // Add units
         this.units = this.unitsManager.createFromTeam(this.team, this.game);
-
-        // Then, we create layers to add display
-        this.layer = this.tilemap.createLayer('Map');
-        this.layer.resizeWorld();
-        this.layer.debug = true;
 
         this.game.physics.setBoundsToWorld(true, true, true, true, false);
 

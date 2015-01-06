@@ -12,6 +12,7 @@ class Placement {
         this.units = []; // Array<Unit>
         this.unitsManager = new UnitsManager();
         this.ready = false;
+        this.unitsGroup = null;
     }
 
     create() {
@@ -25,14 +26,18 @@ class Placement {
         this.tilemap.addTilesetImage('tiles', 'map_tiles');
         this.map = new Map(this.tilemap);
         this.tilemap.setCollision(this.map.getBlockedTiles(), true);
+        
+        // this a group for matching collisions and others
+        this.spriteGroup = this.game.add.group();
 
         // Add units
-        this.units = this.unitsManager.createFromTeam(this.team, this.game);
+        this.units = this.unitsManager.createFromTeam(this.team, this.game, this.spriteGroup);
 
         // Then, we create layers to add display
         this.layer = this.tilemap.createLayer('Map');
         this.layer.resizeWorld();
         this.layer.debug = true;
+
 
         this.game.physics.setBoundsToWorld(true, true, true, true, false);
 
@@ -44,7 +49,9 @@ class Placement {
         });
 
         this.game.io.on('placement failed', function () {
-            this.ready = false;
+            console.log('placement failed');
+            that.unitsManager.changePositionsUnits(that.units, that.game);
+            that.ready = false;
         });
 
         console.log('Hello Placement!');
@@ -60,9 +67,10 @@ class Placement {
             for (var i = this.units.length - 1; i >= 0; i--) {
                 positions.push({
                     'id': this.units[i].id,
-                    'x': this.units[i].x / 32,
-                    'y': this.units[i].y / 32
+                    'x': this.units[i].mapPosition.x,
+                    'y': this.units[i].mapPosition.y
                 });
+                console.log(this.units[i].x, this.units[i].y);
             }
 
             this.game.io.emit('placement done', positions);

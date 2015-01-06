@@ -17,3 +17,6 @@ then
    php app/console doctrine:schema:update --force
    php app/console doctrine:fixtures:load -n
 fi
+
+php app/console c:c --env=dev
+php app/console c:c --env=test

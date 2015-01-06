@@ -7,11 +7,10 @@ class PlacementHelper {
       var x, y;
       units.forEach(function() {
         do {
-          // CA CEST DU GRAND PROFFESSIONNALISME !!! BRAVO !!
-          x = 32 * Math.floor((Math.random() * 5));
-          y = 32 * Math.floor((Math.random() * 10) +2);
+          x = Math.floor((Math.random() * 5));
+          y = Math.floor((Math.random() * 10) +2);
           if (side === 'right') {
-            x += 640;
+            x += 21; //20
           }
          } while(!positions.indexOf({'x': x, 'y': y}));
         positions.push({'x': x, 'y': y});
@@ -61,6 +60,15 @@ class PlacementHelper {
       for (var i = 0; i < spriteGroup.children.length; i++) {
         this.removeEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, spriteGroup, selectedSprite);
       }  
+    }
+
+    setPosition(sprite, x, y){
+      sprite.x = x*32;
+      sprite.y = y*32;
+    }
+
+    setMapPosition(sprite, x, y){
+      sprite.mapPosition = {'x' : x, 'y' : y};
     }
 }
 

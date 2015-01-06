@@ -7,6 +7,7 @@ class PlacementHelper {
       var x, y;
       units.forEach(function() {
         do {
+          // CA CEST DU GRAND PROFFESSIONNALISME !!! BRAVO !!
           x = 32 * Math.floor((Math.random() * 5));
           y = 32 * Math.floor((Math.random() * 10) +2);
           if (side === 'right') {

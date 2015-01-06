@@ -17,6 +17,50 @@ class PlacementHelper {
       });
       return positions;
     }
+
+    // listener for selection of a sprite
+    selectSprite(sprite, game, layer,spriteGroup, selectedSprite) {
+      var that;
+
+      // We get this object from context send with listener
+      if(this.parent !== undefined){
+        that = this.parent;
+        game = this.game;
+        layer = this.layer;
+        spriteGroup = this.spriteGroup;
+        selectedSprite = this.selectedSprite;
+      }
+      else{
+        that = this;
+      }
+
+      selectedSprite = sprite;
+
+      // we need to put the right listener for the exact moment or phase
+      if(that.stateGame.placementUtils.finish) {
+        game.input.onDown.add(that.moveSelected, {'parent' : that, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite}, 0);
+      }
+    }
+
+    addEventsListenerToSpriteSelect(sprite, game, layer, spriteGroup, selectedSprite) {
+      sprite.events.onInputDown.add(this.selectSprite, {'parent' : this, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite});
+    }
+
+    removeEventsListenerToSpriteSelect(sprite, game, layer, spriteGroup, selectedSprite) {
+      sprite.events.onInputDown.remove(this.selectSprite, {'parent' : this, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite});
+    }
+
+    setListenerSelectToAllUnits(game, layer, spriteGroup, selectedSprite) {
+      for (var i = 0; i < spriteGroup.children.length; i++) {
+        this.addEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, spriteGroup, selectedSprite);
+      }
+    }
+
+    removeListenerSelectToAllUnits(game, layer, spriteGroup, selectedSprite) {
+      for (var i = 0; i < spriteGroup.children.length; i++) {
+        this.removeEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, spriteGroup, selectedSprite);
+      }  
+    }
 }
 
 export default PlacementHelper;

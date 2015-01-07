@@ -14,14 +14,13 @@ class MapService {
     }
 
     highlightUnitPossibleMoves(unit) {
-      var that = this;
-      this.map.resetTint();
-
-      var arounds = this.map.getTilesAround(unit.position, unit.moves);
+      this.map.resetHighlight();
+      unit.tile = this.map.getTile(unit.x /32, unit.y /32);
+      var arounds = this.map.getTilesAround(unit.tile, unit.moves);
 
       arounds.forEach(function(tile){
         var start = {'x': unit.x /32, 'y': unit.y /32};
-        var end = that.map.getTileXY(tile);
+        var end = tile.indexes;
 
         Pathfinder.findPathTo(start.x, start.y, end.x, end.y, function(path) {
           if (path === null) {

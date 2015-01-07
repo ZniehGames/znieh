@@ -24,7 +24,6 @@ class Placement {
         this.tilemap = this.game.add.tiledmap('map');
 
         this.map = new Map(this.tilemap);
-        //this.tilemap.setCollision(this.map.getBlockedTiles(), true);
 
         // Add units
         this.units = this.unitsManager.createFromTeam(this.team, this.game);

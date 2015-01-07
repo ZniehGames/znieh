@@ -3,13 +3,29 @@
 class Map {
 
   constructor(tiledmap) {
-      this.tiledmap = tiledmap;
+    this.tiledmap = tiledmap;
+    var tiles = this.tiledmap.layers[0].tiles;
+    var i, j, k = 0;
+    for (i in tiles) {
+        for (j in tiles[i]) {
+          tiles[i][j].index = k;
+          tiles[i][j].indexes = {'x': parseInt(j), 'y': parseInt(i) };
+          k++;
+        }
+    }
   }
 
+  getTile(x, y) {
+    var tiles = this.tiledmap.layers[0].tiles;
+    return tiles[y][x];
+  }
+
+  // return array of index
   getBlockedTiles() {
       return [];
   }
 
+  // return array of index
   getWalkablesTiles() {
     var tiles = this.tiledmap.layers[0].tiles;
     var i, j, k = 0;
@@ -23,33 +39,21 @@ class Map {
     return walkables;
   }
 
+  // return grid of index
   getGrid() {
     var tiles = this.tiledmap.layers[0].tiles;
-    var i, j, k = 0;
+    var i, j;
     var grid = [];
     for (i in tiles) {
       grid[i] = [];
         for (j in tiles[i]) {
-          grid[i][j] = k;
-          k += 1;
+          grid[i][j] = tiles[i][j].index;
         }
     }
     return grid;
   }
 
-  getTileXY(tile) {
-    var tiles = this.tiledmap.layers[0].tiles;
-    var i, j;
-    for (i in tiles) {
-        for (j in tiles[i]) {
-          if (tiles[i][j] === tile) {
-            return {'x': parseInt(j), 'y': parseInt(i) };
-          }
-        }
-    }
-  }
-
-  resetTint() {
+  resetHighlight() {
     var tiles = this.tiledmap.layers[0].tiles;
     var i, j;
     for (i in tiles) {
@@ -59,13 +63,13 @@ class Map {
     }
   }
 
-  getTilesAroundTile(tile, range) {
+  getTilesAround(tile, range) {
     if (range < 0) {
       return [];
     }
     var tiles = this.tiledmap.layers[0].tiles;
     var i, j;
-    var ref = this.getTileXY(tile);
+    var ref = tile.indexes;
     var arounds = [];
     for (i in tiles) {
         for (j in tiles[i]) {
@@ -79,18 +83,6 @@ class Map {
         }
     }
     return arounds;
-  }
-
-  getTilesAround(position, range) {
-    var tiles = this.tiledmap.layers[0].tiles;
-    var i, j;
-    for (i in tiles) {
-        for (j in tiles[i]) {
-          if (tiles[i][j].containsPoint(position.x, position.y)) {
-            return this.getTilesAroundTile(tiles[i][j], range);
-          }
-        }
-    }
   }
 
 }

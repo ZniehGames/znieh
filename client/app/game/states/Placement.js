@@ -11,8 +11,9 @@ class Placement {
         this.tilemap = null;
         this.units = []; // Array<Unit>
         this.unitsManager = new UnitsManager();
-        this.ready = false;
+        this.ready = true;
         this.unitsGroup = null;
+        this.selectedSprite = null;
     }
 
     create() {
@@ -30,14 +31,13 @@ class Placement {
         // this a group for matching collisions and others
         this.spriteGroup = this.game.add.group();
 
-        // Add units
-        this.units = this.unitsManager.createFromTeam(this.team, this.game, this.spriteGroup);
-
         // Then, we create layers to add display
         this.layer = this.tilemap.createLayer('Map');
         this.layer.resizeWorld();
         this.layer.debug = true;
-
+        
+        // Add units
+        this.units = this.unitsManager.createFromTeam(this.team, this.game, this.spriteGroup, this.layer, this.selectedSprite);
 
         this.game.physics.setBoundsToWorld(true, true, true, true, false);
 

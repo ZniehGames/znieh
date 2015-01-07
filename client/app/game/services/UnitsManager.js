@@ -9,9 +9,9 @@ class UnitsManager {
       this.placementHelper = new PlacementHelper();
     }
 
-    createFromTeam(team, game, spriteGroup) {
+    createFromTeam(team, game, spriteGroup, layer, selectedSprite) {
       var units = [];
-      var positions = this.placementHelper.random(team.units, game.side);
+      var positions = this.placementHelper.random(team.units, game.side, layer);
       var unit = null;
 
       for (var i = 0; i < team.units.length; i++) {
@@ -20,6 +20,8 @@ class UnitsManager {
           units.push(unit);
           spriteGroup.add(unit);
       }
+
+      this.placementHelper.setListenerSelectToAllUnits(game, layer, spriteGroup, selectedSprite);
       return units;
     }
 

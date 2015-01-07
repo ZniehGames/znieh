@@ -1,10 +1,18 @@
 'use strict';
 
-var _ = require('lodash');
+import CheckerHelper from '../services/CheckerHelper';
+import PathHelper from '../services/PathHelper';
 
 class PlacementHelper {
 
-    random(units, side) {
+    constructor(){
+      console.log();
+      this.checkerHelper = new CheckerHelper();
+      this.pathHelper = new PathHelper();
+    }
+
+    random(units, side, layer) {
+      layer = layer.layer.data;
       var positions = [];
       var x, y;
       units.forEach(function() {
@@ -14,7 +22,7 @@ class PlacementHelper {
           if (side === 'right') {
             x += 20;
           }
-         } while(!positions.indexOf({'x': x, 'y': y}));
+        } while(!positions.indexOf({'x': x, 'y': y}) || layer[y][x].collides);
         positions.push({'x': x, 'y': y});
       });
       return positions;
@@ -26,11 +34,11 @@ class PlacementHelper {
 
       // We get this object from context send with listener
       if(this.parent !== undefined){
-        that = this.parent;
         game = this.game;
         layer = this.layer;
         spriteGroup = this.spriteGroup;
         selectedSprite = this.selectedSprite;
+        that = this.parent;
       }
       else{
         that = this;
@@ -38,9 +46,34 @@ class PlacementHelper {
 
       selectedSprite = sprite;
 
-      // we need to put the right listener for the exact moment or phase
-      if(that.stateGame.placementUtils.finish) {
-        game.input.onDown.add(that.moveSelected, {'parent' : that, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite}, 0);
+      game.input.onDown.add(that.moveSelected, {'parent' : that, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite}, 0);
+    }
+
+    moveSelected(pointer) {
+
+      var that = this.parent;
+
+      var game = this.game;
+      var layer = this.layer;
+      var spriteGroup = this.spriteGroup;
+      var selectedSprite = this.selectedSprite;
+
+      if (selectedSprite !== null) {
+        
+        // We check if a unit is under the pointer on this tile
+        var result = that.checkerHelper.isUnitUnder(game, layer, spriteGroup, pointer);
+        if(result.unitUnder){
+          console.log('Destination impossible !');
+        }
+        else
+        {
+          console.log(result.position);
+          that.pathUtils.findPathTo(spriteGroup, selectedSprite, result.position.x,result.position.y);
+          console.log('Mouvement réalisé !');
+        }
+        
+        that.selectedSprite = null;
+        that.mapUtils.removeEventListenerToMapPlacement(game);
       }
     }
 

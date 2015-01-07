@@ -14,11 +14,14 @@ function Placement() {
       unit.x = positions[i].x;
       unit.y = positions[i].y;
     };
+
+    return true;
   };
 
   this.isAllowed = function (map, position) {
+    console.log(position);
     if (_.contains(map.blockedTiles, map.tiles[position.y][position.x])) {
-      console.log('placement position not allowed'.red, position);
+      console.log('placement position not allowed'.red, position.x, position.y);
       return false;
     }
 

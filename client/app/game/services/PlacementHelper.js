@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('lodash');
+
 class PlacementHelper {
 
     random(units, side) {
@@ -10,7 +12,7 @@ class PlacementHelper {
           x = Math.floor((Math.random() * 5));
           y = Math.floor((Math.random() * 10) +2);
           if (side === 'right') {
-            x += 21; //20
+            x += 20;
           }
          } while(!positions.indexOf({'x': x, 'y': y}));
         positions.push({'x': x, 'y': y});

@@ -13,7 +13,8 @@ function Placement() {
       var unit = _.find(game.units, { 'id': positions[i].id });
       unit.x = positions[i].x;
       unit.y = positions[i].y;
-    };
+    }
+    return true;
   };
 
   this.isAllowed = function (map, position) {

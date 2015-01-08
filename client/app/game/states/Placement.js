@@ -26,7 +26,8 @@ class Placement {
         this.tilemap = this.game.add.tilemap('map');
         this.tilemap.addTilesetImage('tiles', 'map_tiles');
         this.map = new Map(this.tilemap);
-        this.tilemap.setCollision(this.map.getBlockedTiles(), true);
+        this.tileBlocked = this.map.getBlockedTiles();
+        this.tilemap.setCollision(this.tileBlocked, true);
         
         // this a group for matching collisions and others
         this.spriteGroup = this.game.add.group();
@@ -37,7 +38,7 @@ class Placement {
         this.layer.debug = true;
         
         // Add units
-        this.units = this.unitsManager.createFromTeam(this.team, this.game, this.spriteGroup, this.layer, this.selectedSprite);
+        this.units = this.unitsManager.createFromTeam(this.team, this.game, this.spriteGroup, this.layer, this.tilemap, this.selectedSprite, this.tileBlocked);
 
         this.game.physics.setBoundsToWorld(true, true, true, true, false);
 

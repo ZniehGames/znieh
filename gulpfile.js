@@ -62,6 +62,7 @@ paths.jsvendor = [
     paths.app + 'vendor/lodash/dist/lodash.js',
     paths.app + 'vendor/restangular/dist/restangular.js',
     paths.app + 'vendor/phaser/build/phaser.js',
+    paths.app + 'vendor/phaser-plugin-easystar/bin/phaser_pathfinding-0.2.0.js',
 ];
 
 var options = {};
@@ -69,7 +70,7 @@ options.sass = {
     errLogToConsole: true,
     sourceComments: 'none',
     sourceMap: 'scss',
-}
+};
 
 // Layout
 gulp.task('jade-deploy', function() {
@@ -77,7 +78,7 @@ gulp.task('jade-deploy', function() {
       .pipe(plumber())
       .pipe(cache('jade'))
       .pipe(jade({pretty: false}))
-      .pipe(gulp.dest(paths.dist + 'partials/'))
+      .pipe(gulp.dest(paths.dist + 'partials/'));
 });
 
 gulp.task('jade-watch', function() {
@@ -86,21 +87,21 @@ gulp.task('jade-watch', function() {
         .pipe(cache('jade'))
         //.pipe(jadeInheritance({basedir: './client/app'}))
         .pipe(jade({pretty: true}))
-        .pipe(gulp.dest(paths.dist + 'partials/'))
+        .pipe(gulp.dest(paths.dist + 'partials/'));
 });
 
 gulp.task('templates', function() {
     gulp.src(paths.app + 'index.jade')
         .pipe(plumber())
         .pipe(jade({pretty: true, locals:{v:(new Date()).getTime()}}))
-        .pipe(gulp.dest(paths.dist))
+        .pipe(gulp.dest(paths.dist));
 });
 
 // CSS related tasks
 gulp.task('sass-lint', function() {
     gulp.src(paths.sass)
         .pipe(cache('sasslint'))
-        .pipe(scsslint({config: './client/scsslint.yml'}))
+        .pipe(scsslint({config: './client/scsslint.yml'}));
 });
 
 gulp.task('sass', function() {
@@ -109,19 +110,19 @@ gulp.task('sass', function() {
         .pipe(concat('all.scss'))
         .pipe(sass(options.sass))
         .pipe(rename('app.css'))
-        .pipe(gulp.dest(paths.tmp))
+        .pipe(gulp.dest(paths.tmp));
 });
 
 gulp.task('css-vendor', function() {
     return gulp.src(paths.css)
         .pipe(concat('vendor.css'))
-        .pipe(gulp.dest(paths.tmp))
+        .pipe(gulp.dest(paths.tmp));
 });
 
 gulp.task('css-lint-app', ['sass'], function() {
     gulp.src(paths.tmp + 'app.css')
         .pipe(csslint('./client/csslintrc.json'))
-        .pipe(csslint.reporter())
+        .pipe(csslint.reporter());
 });
 
 gulp.task('styles-watch', ['sass', 'css-vendor', 'css-lint-app'], function() {
@@ -130,7 +131,7 @@ gulp.task('styles-watch', ['sass', 'css-vendor', 'css-lint-app'], function() {
             paths.tmp + 'app.css'
         ])
         .pipe(concat('layout.css'))
-        .pipe(gulp.dest(paths.dist + 'styles/'))
+        .pipe(gulp.dest(paths.dist + 'styles/'));
 });
 
 gulp.task('styles-deploy', ['sass', 'css-vendor'], function() {
@@ -140,7 +141,7 @@ gulp.task('styles-deploy', ['sass', 'css-vendor'], function() {
         ])
         .pipe(concat('layout.css'))
         .pipe(minifyCSS())
-        .pipe(gulp.dest(paths.dist + 'styles/'))
+        .pipe(gulp.dest(paths.dist + 'styles/'));
 });
 
 // JS Related tasks
@@ -172,7 +173,7 @@ gulp.task('js', ['js-config', 'js-build'], function() {
     _paths = [paths.tmp + 'conf.js', paths.tmp + 'app.js'];
     gulp.src(_paths)
         .pipe(concat('app.js'))
-        .pipe(gulp.dest(paths.dist + 'js/'))
+        .pipe(gulp.dest(paths.dist + 'js/'));
 });
 
 gulp.task('game-js-lint', function() {
@@ -201,23 +202,23 @@ gulp.task('js-vendor', function() {
         .pipe(concat('vendor.js'))
         .pipe(uglify({mangle:false, preserveComments: false}))
         //.pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.dist + 'js/'))
+        .pipe(gulp.dest(paths.dist + 'js/'));
 });
 
 gulp.task('copy-json', function() {
     gulp.src(paths.json)
-        .pipe(gulp.dest(paths.dist +'/json/'))
+        .pipe(gulp.dest(paths.dist +'/json/'));
 });
 
 // Common tasks
 gulp.task('copy-images', function() {
     gulp.src(paths.images)
-        .pipe(gulp.dest(paths.dist +'/images/'))
+        .pipe(gulp.dest(paths.dist +'/images/'));
 });
 
 gulp.task('copy-fonts', function() {
     gulp.src(paths.fonts)
-        .pipe(gulp.dest(paths.dist +'/fonts/'))
+        .pipe(gulp.dest(paths.dist +'/fonts/'));
 });
 
 gulp.task('copy', ['copy-images', 'copy-fonts','copy-json']);

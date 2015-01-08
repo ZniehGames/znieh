@@ -13,6 +13,7 @@ class PlacementHelper {
 
     random(units, side, layer) {
       layer = layer.layer.data;
+
       var positions = [];
       var x, y;
       units.forEach(function() {
@@ -22,14 +23,14 @@ class PlacementHelper {
           if (side === 'right') {
             x += 20;
           }
-        } while(!positions.indexOf({'x': x, 'y': y}) || layer[y][x].collides);
+        } while(!positions.indexOf({'x': x, 'y': y}) && layer[y][x].collides);
         positions.push({'x': x, 'y': y});
       });
       return positions;
     }
 
     // listener for selection of a sprite
-    selectSprite(sprite, game, layer,spriteGroup, selectedSprite) {
+    selectSprite(sprite, game, layer, tilemap, spriteGroup, selectedSprite, tileBlocked) {
       var that;
 
       // We get this object from context send with listener
@@ -38,15 +39,21 @@ class PlacementHelper {
         layer = this.layer;
         spriteGroup = this.spriteGroup;
         selectedSprite = this.selectedSprite;
+        tileBlocked = this.tileBlocked;
+        tilemap = this.tilemap;
         that = this.parent;
       }
       else{
         that = this;
       }
 
+      if(!that.pathHelper.initialized){
+        that.pathHelper.init(game, layer, tileBlocked);
+      }
+
       selectedSprite = sprite;
 
-      game.input.onDown.add(that.moveSelected, {'parent' : that, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite}, 0);
+      game.input.onDown.add(that.moveSelected, {'parent' : that, 'game': game, 'layer' : layer, 'tilemap' : tilemap, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite, 'tileBlocked' : tileBlocked}, 0);
     }
 
     moveSelected(pointer) {
@@ -54,21 +61,22 @@ class PlacementHelper {
       var that = this.parent;
 
       var game = this.game;
-      var layer = this.layer;
+      //var layer = this.layer;
       var spriteGroup = this.spriteGroup;
       var selectedSprite = this.selectedSprite;
+      var tilemap = this.tilemap;
 
       if (selectedSprite !== null) {
         
         // We check if a unit is under the pointer on this tile
-        var result = that.checkerHelper.isUnitUnder(game, layer, spriteGroup, pointer);
+        var result = that.checkerHelper.isUnitUnder(game, tilemap, spriteGroup, pointer);
         if(result.unitUnder){
           console.log('Destination impossible !');
         }
         else
         {
           console.log(result.position);
-          that.pathUtils.findPathTo(spriteGroup, selectedSprite, result.position.x,result.position.y);
+          that.pathHelper.findPathTo(game, spriteGroup, selectedSprite, result.position.x,result.position.y);
           console.log('Mouvement réalisé !');
         }
         
@@ -77,33 +85,25 @@ class PlacementHelper {
       }
     }
 
-    addEventsListenerToSpriteSelect(sprite, game, layer, spriteGroup, selectedSprite) {
-      sprite.events.onInputDown.add(this.selectSprite, {'parent' : this, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite});
+    addEventsListenerToSpriteSelect(sprite, game, layer, tilemap, spriteGroup, selectedSprite, tileBlocked) {
+      sprite.events.onInputDown.add(this.selectSprite, {'parent' : this, 'game': game, 'layer' : layer, 'tilemap' : tilemap, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite, 'tileBlocked' : tileBlocked});
     }
 
-    removeEventsListenerToSpriteSelect(sprite, game, layer, spriteGroup, selectedSprite) {
-      sprite.events.onInputDown.remove(this.selectSprite, {'parent' : this, 'game': game, 'layer' : layer, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite});
+    removeEventsListenerToSpriteSelect(sprite, game, layer, tilemap, spriteGroup, selectedSprite, tileBlocked) {
+      sprite.events.onInputDown.remove(this.selectSprite, {'parent' : this, 'game': game, 'layer' : layer, 'tilemap' : tilemap, 'spriteGroup' : spriteGroup, 'selectedSprite' : selectedSprite, 'tileBlocked' : tileBlocked});
     }
 
-    setListenerSelectToAllUnits(game, layer, spriteGroup, selectedSprite) {
+    setListenerSelectToAllUnits(game, layer, tilemap, spriteGroup, selectedSprite, tileBlocked
+      ) {
       for (var i = 0; i < spriteGroup.children.length; i++) {
-        this.addEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, spriteGroup, selectedSprite);
+        this.addEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, tilemap, spriteGroup, selectedSprite, tileBlocked);
       }
     }
 
-    removeListenerSelectToAllUnits(game, layer, spriteGroup, selectedSprite) {
+    removeListenerSelectToAllUnits(game, layer, tilemap, spriteGroup, selectedSprite, tileBlocked) {
       for (var i = 0; i < spriteGroup.children.length; i++) {
-        this.removeEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, spriteGroup, selectedSprite);
+        this.removeEventsListenerToSpriteSelect(spriteGroup.children[i], game, layer, tilemap, spriteGroup, selectedSprite, tileBlocked);
       }  
-    }
-
-    setPosition(sprite, x, y){
-      sprite.x = x*32;
-      sprite.y = y*32;
-    }
-
-    setMapPosition(sprite, x, y){
-      sprite.mapPosition = {'x' : x, 'y' : y};
     }
 }
 

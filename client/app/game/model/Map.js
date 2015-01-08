@@ -14,6 +14,19 @@ class Map {
       return blockeds;
   }
 
+  getWalkablesTiles(blockedTiles, game) {
+        var map = game.cache.getTilemapData('map').data;
+        var result = map.layers[0].data;
+        var newarr = [];
+                
+        for (var i = 0; i < result.length; i++) {
+            if(blockedTiles.indexOf(result[i]) === -1 && newarr.indexOf(result[i]) === -1){
+                newarr.push(result[i]);
+            }
+        }
+        return newarr;
+    }
+
 }
 
 export default Map;

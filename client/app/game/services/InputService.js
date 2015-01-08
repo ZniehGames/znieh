@@ -1,18 +1,20 @@
 'use strict';
 
 import MapService from './MapService';
+import GameController from '../controllers/GameController';
 
 class InputService {
 
-    constructor() {
-      this.selectedUnit = null;
+    onUnitDown(unit) {
+      GameController.selectedUnit = unit;
+      MapService.highlightUnitPossibleMoves(unit);
     }
 
-    onUnitDown(unit) {
-      if (unit !== this.selectedUnit) {
-        this.selectedUnit = unit;
-      }
-      MapService.highlightUnitPossibleMoves(unit);
+    onFieldDown(tile) {
+    	if (GameController.selectedUnit !== null && tile.tint !== 0xFFFFFF) {
+    		MapService.move(GameController.selectedUnit, tile);
+    		MapService.clean();
+    	}
     }
 
 

@@ -9,27 +9,23 @@ class Game {
     constructor() {
         this.team = null;
         this.side = null;
-        this.tilemap = null;
         this.unitsManager = new UnitsManager();
     }
 
     create() {
         // We start the game
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        this.game.physics.startSystem(Phaser.Physics.P2JS);
+        this.game.physics.p2.setBoundsToWorld(true, true, true, true, false);
 
-        // Add Map
-        this.tilemap = this.game.add.tiledmap('map');
-        this.map = new Map(this.tilemap);
-        // game.physics.p2.convertTiledCollisionObjects(map, 'objectlayer-name');
+        // Create the map with collisions
+        var tiledmap = this.game.add.tiledmap('map');
+        var map = new Map(tiledmap);
+        this.game.physics.p2.convertTiledmap(tiledmap, 'Map');
 
-        MapService.init(this.map);
+        // Init game services
+        MapService.init(map);
         this.unitsManager.create(this.units, this.game);
 
-        this.game.physics.setBoundsToWorld(true, true, true, true, false);
-
-       // this.game.input.onDown.add(this.inputService.onDown, this);
-
-        console.log('Hello Game!');
     }
 
 }

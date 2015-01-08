@@ -1,7 +1,7 @@
 'use strict';
 
 import UnitsManager from '../services/UnitsManager';
-import Map from '../model/Map';
+//import Map from '../model/Map';
 
 class Placement {
 
@@ -18,17 +18,16 @@ class Placement {
         var that = this;
 
         // We start the game
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        this.game.physics.startSystem(Phaser.Physics.P2JS);
+        this.game.physics.p2.setBoundsToWorld(true, true, true, true, false);
 
-        // Add Map
-        this.tilemap = this.game.add.tiledmap('map');
-
-        this.map = new Map(this.tilemap);
+        // Create the map with collisions
+        var tiledmap = this.game.add.tiledmap('map');
+        //var map = new Map(tiledmap);
+        this.game.physics.p2.convertTiledmap(tiledmap, 'Map');
 
         // Add units
         this.units = this.unitsManager.createFromTeam(this.team, this.game);
-
-        this.game.physics.setBoundsToWorld(true, true, true, true, false);
 
         this.game.io.on('match ready', function (data) {
             console.log('Match ready!', data);

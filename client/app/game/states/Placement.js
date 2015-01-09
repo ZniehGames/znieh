@@ -36,7 +36,7 @@ class Placement {
         this.layer = this.tilemap.createLayer('Map');
         this.layer.resizeWorld();
         this.layer.debug = true;
-        
+
         // Add units
         this.units = this.unitsManager.createFromTeam(this.team, this.game, this.spriteGroup, this.layer, this.tilemap, this.selectedSprite, this.tileBlocked);
 

@@ -6,14 +6,12 @@ import PathHelper from '../services/PathHelper';
 class PlacementHelper {
 
     constructor(){
-      console.log();
       this.checkerHelper = new CheckerHelper();
       this.pathHelper = new PathHelper();
     }
 
     random(units, side, layer) {
       layer = layer.layer.data;
-
       var positions = [];
       var x, y;
       units.forEach(function() {
@@ -23,7 +21,7 @@ class PlacementHelper {
           if (side === 'right') {
             x += 20;
           }
-        } while(!positions.indexOf({'x': x, 'y': y}) && layer[y][x].collides);
+        } while(!positions.indexOf({'x': x, 'y': y}) && !layer[y][x].collides);
         positions.push({'x': x, 'y': y});
       });
       return positions;
@@ -48,7 +46,7 @@ class PlacementHelper {
       }
 
       if(!that.pathHelper.initialized){
-        that.pathHelper.init(game, layer, tileBlocked);
+        that.pathHelper.init(game, tilemap, tileBlocked);
       }
 
       selectedSprite = sprite;
@@ -59,29 +57,37 @@ class PlacementHelper {
     moveSelected(pointer) {
 
       var that = this.parent;
-
       var game = this.game;
-      //var layer = this.layer;
+      var side = game.side;
+      var layer = this.layer;
       var spriteGroup = this.spriteGroup;
       var selectedSprite = this.selectedSprite;
-      var tilemap = this.tilemap;
 
       if (selectedSprite !== null) {
         
         // We check if a unit is under the pointer on this tile
-        var result = that.checkerHelper.isUnitUnder(game, tilemap, spriteGroup, pointer);
+        var result = that.checkerHelper.isUnitUnder(game, layer, spriteGroup, pointer);
         if(result.unitUnder){
           console.log('Destination impossible !');
         }
         else
         {
-          console.log(result.position);
-          that.pathHelper.findPathTo(game, spriteGroup, selectedSprite, result.position.x,result.position.y);
-          console.log('Mouvement réalisé !');
+          var position = result.position;
+          console.log(position);
+          if (side === 'left' && position.x <= 4) {
+            that.pathHelper.findPathTo(game, spriteGroup, selectedSprite, result.position.x,result.position.y);
+            console.log('Mouvement réalisé !');
+          }
+          else if(side === 'right' && position.x >= 20){
+            that.pathHelper.findPathTo(game, spriteGroup, selectedSprite, result.position.x,result.position.y);
+            console.log('Mouvement réalisé !');
+          }
+          else{
+            console.log('Destination impossible !');  
+          } 
         }
-        
+        game.input.onDown.removeAll();
         that.selectedSprite = null;
-        that.mapUtils.removeEventListenerToMapPlacement(game);
       }
     }
 

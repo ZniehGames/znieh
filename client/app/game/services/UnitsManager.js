@@ -45,7 +45,6 @@ class UnitsManager {
         this.positionSeter.setMapPosition(units[i], positions[i].x, positions[i].y);
         this.positionSeter.setPosition(units[i], positions[i].x, positions[i].y);
       }
-      console.log(positions);
     }
 
 }

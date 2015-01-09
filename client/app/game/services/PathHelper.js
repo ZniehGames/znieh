@@ -18,10 +18,6 @@ class PathHelper {
 		this.walkables = this.mapUtils.getWalkablesTiles(tileBlocked, game);
         this.pathfinder = game.plugins.add(Phaser.Plugin.PathFinderPlugin);
 
-        console.log(this.walkables);
-        console.log('tilemap',tilemap);
-        console.log('tilemap data',tilemap.layers[0].data);
-
         this.pathfinder.setGrid(tilemap.layers[0].data, this.walkables);
         this.initialized = true;
     }
@@ -32,8 +28,6 @@ class PathHelper {
         var tween = null;
         var speed = 150;
         var additionnalPoints = this.checkerHelper.getPositionOfAllUnits(spriteGroup);
-
-        console.log(additionnalPoints);
 
         for (var i = 0; i < additionnalPoints.length; i++) {
             this.pathfinder._easyStar.avoidAdditionalPoint(additionnalPoints[i].x,additionnalPoints[i].y);
@@ -51,18 +45,12 @@ class PathHelper {
             pathOfUnit = path;
         });
 
-        console.log(spriteGroup);
-        console.log(selectedSprite);
-        console.log(selectedSprite.mapPosition);
-        console.log([tilex,tiley]);
-        console.log([selectedSprite.mapPosition.x,selectedSprite.mapPosition.y]);        
-
         this.pathfinder.preparePathCalculation([selectedSprite.mapPosition.x,selectedSprite.mapPosition.y], [tilex,tiley]);
         this.pathfinder.calculatePath();
 
         if(pathOfUnit.length !== 0){
             tween.start();
-            this.positionSeter.setPosition(selectedSprite,tilex,tiley);
+            this.positionSeter.setMapPosition(selectedSprite,tilex,tiley);
         }
         else{
             console.log('chemin vide, impossible d\'y aller');

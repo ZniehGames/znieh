@@ -21,7 +21,7 @@ class PlacementHelper {
           if (side === 'right') {
             x += 20;
           }
-        } while(!positions.indexOf({'x': x, 'y': y}) && !layer[y][x].collides);
+        } while(layer[y][x].collides || !positions.indexOf({'x': x, 'y': y}) );
         positions.push({'x': x, 'y': y});
       });
       return positions;

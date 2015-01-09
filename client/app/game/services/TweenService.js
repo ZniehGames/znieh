@@ -16,10 +16,10 @@ class TweenService {
           tween.to({
             x: path[i].x * 32,
             y: path[i].y * 32
-          }, 150, Phaser.Easing.Linear.None); // in this case we don't predefine the tween (but works the same way)
+          }, 150, Phaser.Easing.Linear.None);
       }
+      tween._lastChild.onComplete.add(cb);
       tween.start();
-      tween.onComplete(cb);
     }
 
 }

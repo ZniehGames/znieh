@@ -25,7 +25,6 @@ class MapService {
 
     highlightUnitPossibleMoves(unit) {
       this.map.resetHighlight();
-      unit.tile = this.map.getTile(unit.x /32, unit.y /32); // to be removed
 
       // We find tiles around the unit
       var arounds = this.map.getTilesAround(unit.tile, unit.moves);
@@ -33,8 +32,8 @@ class MapService {
       // We need to add additional tile to avoid (eg: a unit)
       var unitsIndex = [];
       GameController.units.forEach(function(u) {
-        if (unit !== u) {
-          unitsIndex.push({'x': u.x /32, 'y': u.y /32}); // unit.tile.indexes
+        if (u !== unit) {
+          unitsIndex.push(u.tile.indexes);
         }
       });
 
@@ -43,10 +42,7 @@ class MapService {
 
       // We try to find a path for each
       arounds.forEach(function(tile){
-        var start = {'x': unit.x /32, 'y': unit.y /32}; // unit.tile.indexes
-        var end = tile.indexes;
-
-        Pathfinder.findPathTo(start.x, start.y, end.x, end.y, function(path) {
+        Pathfinder.findPathTo(unit.tile.indexes, tile.indexes, function(path) {
           if (path === null) {
             return;
           }
@@ -60,16 +56,15 @@ class MapService {
     }
 
     move(unit, tile) {
-        // remplace this by server sending path
-        var start = {'x': unit.x /32, 'y': unit.y /32};
-        var end = tile.indexes;
         this.clean();
-        Pathfinder.findPathTo(start.x, start.y, end.x, end.y, function(path) {
+
+        // TODO: remplace this by server sending path
+        Pathfinder.findPathTo(unit.tile.indexes, tile.indexes, function(path) {
           if (path === null) {
             return;
           }
           path.shift();
-          TweenService.move(unit, path, function(){
+          TweenService.move(unit, path, function() {
             unit.tile = tile;
             unit.x = tile.position.x;
             unit.y = tile.position.y;

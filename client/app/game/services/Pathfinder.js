@@ -24,11 +24,11 @@ class Pathfinder {
     }
 
     stopAvoidingAllAdditionalPoints() {
-        this.easyStar.stopAvoidingAllAdditionalPoints();      
+        this.easyStar.stopAvoidingAllAdditionalPoints();
     }
 
-    findPathTo(startX, startY, endX, endY, callback) {
-        this.easyStar.findPath(startX, startY, endX, endY, callback);
+    findPathTo(start, end, callback) {
+        this.easyStar.findPath(start.x, start.y, end.x, end.y, callback);
         this.easyStar.calculate();
     }
 

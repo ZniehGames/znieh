@@ -2,6 +2,7 @@
 
 import UnitsManager from '../services/UnitsManager';
 import MapService from '../services/MapService';
+import TweenService from '../services/TweenService';
 import Map from '../model/Map';
 
 class Game {
@@ -23,6 +24,7 @@ class Game {
 
         // Init game services
         MapService.init(map);
+        TweenService.init(this.game);
         UnitsManager.create(this.units, this.game);
     }
 

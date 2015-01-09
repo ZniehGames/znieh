@@ -1,6 +1,7 @@
 'use strict';
 
 import Pathfinder from './Pathfinder';
+import TweenService from './TweenService';
 import GameController from '../controllers/GameController';
 
 class MapService {
@@ -62,15 +63,17 @@ class MapService {
         // remplace this by server sending path
         var start = {'x': unit.x /32, 'y': unit.y /32};
         var end = tile.indexes;
+        this.clean();
         Pathfinder.findPathTo(start.x, start.y, end.x, end.y, function(path) {
           if (path === null) {
             return;
           }
           path.shift();
-          // then
-          unit.tile = tile;
-          unit.x = tile.position.x;
-          unit.y = tile.position.y;
+          TweenService.move(unit, path, function(){
+            unit.tile = tile;
+            unit.x = tile.position.x;
+            unit.y = tile.position.y;
+          });
         });
     }
 

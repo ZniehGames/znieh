@@ -1,27 +1,35 @@
 describe("Map Tests", function() {
 
-  var map;
-  var tile = {};
-  var tileCenter = {};
+  var InputService = {
+    'onUnitDown': function() {}
+  };
+  var Tile = function(collides) {
+    this.events = {
+      'onInputDown': {
+        'add': function() {}
+      }
+    }
+    this.properties = {
+      'collides': collides || false
+    }
+  };
 
+  var map;
+  var tile = new Tile();
+  var tileCenter = new Tile();
 
   beforeEach(function(){
-    var Map = new System.get('model/Map').default;
-    var tiledmap = {};
-    tiledmap.tilesets = [];
-    tiledmap.layers = [];
-    tiledmap.tilesets[0] = {};
-    tiledmap.layers[0] = {};
-    // tiledmap.tilesets[0].tileproperties = {
-    //   "85":{"collides":false,"flippedX":0,"flippedY":0,"flippedAD":0},
-    //   "270":{"blocked":true,"__tiledparsed":true},
-    //   "292":{"blocked":true,"__tiledparsed":true,"flippedX":0,"flippedY":0,"flippedAD":0}
-    // };
-
-    tiledmap.layers[0].tiles = {
-      '0': {'0': {},   '1': {},         '2': {}},
-      '1': {'0': tile, '1': tileCenter, '2': {}},
-      '2': {'0': {},   '1': {},         '2': {}},
+    var Map = System.get('model/Map').default;
+    var tiledmap = {
+      'layers': [
+        {
+          'tiles': {
+            '0': {'0': new Tile(),   '1': new Tile(),         '2': new Tile()},
+            '1': {'0': tile,         '1': tileCenter,         '2': new Tile()},
+            '2': {'0': new Tile(),   '1': new Tile(),         '2': new Tile()},
+          }
+        }
+      ]
     };
     map = new Map(tiledmap);
   });

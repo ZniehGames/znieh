@@ -1,7 +1,8 @@
 'use strict';
 
 import UnitsManager from '../services/UnitsManager';
-//import Map from '../model/Map';
+import MapService from '../services/MapService';
+import Map from '../model/Map';
 
 class Placement {
 
@@ -10,7 +11,6 @@ class Placement {
         this.side = null;
         this.tilemap = null;
         this.units = []; // Array<Unit>
-        this.unitsManager = new UnitsManager();
         this.ready = false;
     }
 
@@ -23,20 +23,35 @@ class Placement {
 
         // Create the map with collisions
         var tiledmap = this.game.add.tiledmap('map');
-        //var map = new Map(tiledmap);
         this.game.physics.p2.convertTiledmap(tiledmap, 'Map');
+        var map = new Map(tiledmap);
+
+        MapService.init(map);
 
         // Add units
-        this.units = this.unitsManager.createFromTeam(this.team, this.game);
+        this.units = UnitsManager.createFromTeam(this.team, this.game);
 
         this.game.io.on('match ready', function (data) {
-            console.log('Match ready!', data);
-            that.game.state.states.game.units = data;
+            var units = [];
+            for (var j = 0; j < data.length; j++) {
+                if (data[j].user === that.game.user) {
+                    for (var i = 0; i < that.units.length; i++) {
+                        if (that.units[i].id === data[j].id) {
+                            units[j] = that.units[i];
+                            units[j].x = data[j].x;
+                            units[j].y = data[j].y;
+                            units[j].isOwned = true;
+                        }
+                    }
+                } else {
+                    units[j] = data[j];
+                    units[j].isOwned = false;
+                }
+            }
+            that.game.state.states.game.units = units;
             that.game.state.states.game.side = that.side;
             that.game.state.start('game');
         });
-
-        console.log('Hello Placement!');
     }
 
     update() {
@@ -49,8 +64,8 @@ class Placement {
             for (var i = this.units.length - 1; i >= 0; i--) {
                 positions.push({
                     'id': this.units[i].id,
-                    'x': this.units[i].x,
-                    'y': this.units[i].y
+                    'x': this.units[i].tile.indexes.x,
+                    'y': this.units[i].tile.indexes.y
                 });
             }
 

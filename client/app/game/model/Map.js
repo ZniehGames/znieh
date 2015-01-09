@@ -92,7 +92,7 @@ class Map {
         for (j in tiles[i]) {
           if (
               i > ref.y - range && i < ref.y + range &&
-              j > ref.x - range && j < ref.x + range && 
+              j > ref.x - range && j < ref.x + range &&
               tiles[i][j] !== tile ) {
               arounds.push(tiles[i][j]);
           }

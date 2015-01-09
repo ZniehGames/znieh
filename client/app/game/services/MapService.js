@@ -18,8 +18,11 @@ class MapService {
       this.map.resetHighlight();
     }
 
+    getTile(x, y) {
+      return this.map.getTile(x, y);
+    }
+
     highlightUnitPossibleMoves(unit) {
-      var that = this;
       this.map.resetHighlight();
       unit.tile = this.map.getTile(unit.x /32, unit.y /32); // to be removed
 
@@ -34,7 +37,7 @@ class MapService {
         }
       });
 
-      Pathfinder.stopAvoidingAllAdditionalPoints();        
+      Pathfinder.stopAvoidingAllAdditionalPoints();
       Pathfinder.addAdditionalPoints(unitsIndex);
 
       // We try to find a path for each

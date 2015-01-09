@@ -9,7 +9,6 @@ class Game {
     constructor() {
         this.team = null;
         this.side = null;
-        this.unitsManager = new UnitsManager();
     }
 
     create() {
@@ -24,8 +23,7 @@ class Game {
 
         // Init game services
         MapService.init(map);
-        this.unitsManager.create(this.units, this.game);
-
+        UnitsManager.create(this.units, this.game);
     }
 
 }

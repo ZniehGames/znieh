@@ -6,8 +6,10 @@ import GameController from '../controllers/GameController';
 class InputService {
 
     onUnitDown(unit) {
-      GameController.selectedUnit = unit;
-      MapService.highlightUnitPossibleMoves(unit);
+      if (unit.isOwned) {
+        GameController.selectedUnit = unit;
+        MapService.highlightUnitPossibleMoves(unit);
+      }
     }
 
     onFieldDown(tile) {

@@ -46,6 +46,10 @@ io.on('connection', function(socket) {
     GameController.placementDone(socket, positions);
   });
 
+  socket.on('move unit', function(data) {
+    GameController.moveUnit(socket, data.unit, data.to);
+  });
+
 });
 
 app.sockets = sockets; // we export sockets to avoid waiting timeout during tests

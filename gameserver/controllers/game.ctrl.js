@@ -6,10 +6,16 @@ var GameStorage = require('./../storage/game.storage.js');
 var UserManager = require('./../services/user.manager.js');
 var GameManager = require('./../services/game.manager.js');
 var Placement = require('./../services/placement.js');
+var Pathfinder = require('./../services/pathfinder.js');
 
+var Map = require('./../model/map');
+var MapManager = require('./../services/map.manager.js');
+var MapData = require('./../../client/app/json/map.json');
 
 function GameCtrl() {
 
+  var map = MapManager.create(MapData);
+  Pathfinder.init(map);
   var games = [];
 
   this.add = function (socketA, socketB) {
@@ -18,12 +24,13 @@ function GameCtrl() {
 
     if (playerA == null || playerB == null) {
       console.log('impossible de créer la partie'.red);
-      return;
+      return false;
     }
 
     UserManager.reloadTeam(playerA);
     UserManager.reloadTeam(playerB);
-    GameStorage.add(new Game(playerA, playerB));
+    GameStorage.add(new Game(playerA, playerB, map));
+    return true;
   }
 
   this.placementDone = function(socket, positions) {
@@ -42,6 +49,19 @@ function GameCtrl() {
         game.playerA.socket.emit('match ready', game.units);
         game.playerB.socket.emit('match ready', game.units);
     }
+  }
+
+  this.moveUnit = function(socket, unitId, to) {
+    var game = GameStorage.findBySocket(socket);
+    var player = UserStorage.findBySocket(socket);
+    console.log('move unit'.blue, player.username);
+
+    var unit = game.findUnitById(unitId);
+
+    Pathfinder.findPathTo({'x': unit.x, 'y': unit.y }, to, function(path) {
+        console.log('path'.green, path);
+        player.socket.emit('move unit', path);
+    });
   }
 
   this.remove = function (game) {

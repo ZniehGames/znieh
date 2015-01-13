@@ -43,6 +43,10 @@ class Placement {
             that.game.state.start('game');
         });
 
+        this.game.io.on('placement failed', function () {
+            this.ready = false;
+        });
+
         console.log('Hello Placement!');
     }
 
@@ -56,8 +60,8 @@ class Placement {
             for (var i = this.units.length - 1; i >= 0; i--) {
                 positions.push({
                     'id': this.units[i].id,
-                    'x': this.units[i].x,
-                    'y': this.units[i].y
+                    'x': this.units[i].x / 32,
+                    'y': this.units[i].y / 32
                 });
             }
 

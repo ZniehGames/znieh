@@ -14,7 +14,7 @@ Game.prototype.findUnitById = function(id) {
       return this.units[i];
     }
   }
-  console.log('unable to find unit'.red);
+  console.log('unable to find id'.red, id, 'in'.red, this.units);
 };
 
 module.exports = Game;

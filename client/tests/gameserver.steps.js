@@ -30,12 +30,26 @@ module.exports = function() {
       done();
     });
 
+    this.Then(/^Game is ready$/, function(done) {
+        socket.emit('placement done', [
+          {'id': 58, 'x': 4, 'y': 4},
+          {'id': 57, 'x': 5, 'y': 4},
+          {'id': 56, 'x': 5, 'y': 5},
+          {'id': 55, 'x': 4, 'y': 5}
+        ]);
+        browser.sleep(500);
+        done();
+    })
+
     this.When(/^I want to move a unit$/, function(done) {
         socket.emit('move unit', {
-          "unit": 45,
+          "unit": 58,
           "to": {"x": 0, "y": 0}
         });
-      done();
+        socket.on('unit moved', function(data) {
+          console.log(data);
+          done();
+        });
     });
 
     this.After(function(done){

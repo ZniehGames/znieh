@@ -60,7 +60,16 @@ function GameCtrl() {
 
     Pathfinder.findPathTo({'x': unit.x, 'y': unit.y }, to, function(path) {
         console.log('path'.green, path);
-        player.socket.emit('move unit', path);
+        if (path.length < unit.moves) {
+          var data = {
+            'unit': unit.id,
+            'path': path
+          }
+          game.playerA.socket.emit('unit moved', data);
+          game.playerB.socket.emit('unit moved', data);
+          return;
+        }
+        console.log('move impossible'.red)
     });
   }
 

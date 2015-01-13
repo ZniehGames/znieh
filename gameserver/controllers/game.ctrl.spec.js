@@ -53,14 +53,14 @@ describe("Game controller tests", function() {
   it('can move a unit', function () {
     spyOn(GameStorage, "findBySocket").andReturn(game);
     spyOn(UserStorage, "findBySocket").andReturn(playerA);
-    spyOn(game, "findUnitById").andReturn({'x': 2, 'y': 2});
+    spyOn(game, "findUnitById").andReturn({'x': 2, 'y': 2, 'id': 1, 'moves': 3});
     GameCtrl.moveUnit(socketA, 1, {'x': 0, 'y': 0});
   });
 
   it('can move a unit', function () {
     spyOn(GameStorage, "findBySocket").andReturn(game);
     spyOn(UserStorage, "findBySocket").andReturn(playerA);
-    spyOn(game, "findUnitById").andReturn({'x': 14, 'y': 2});
+    spyOn(game, "findUnitById").andReturn({'x': 14, 'y': 2, 'id': 1, 'moves': 3});
     GameCtrl.moveUnit(socketA, 1, {'x': 0, 'y': 0});
   });
 

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('znieh')
-	.controller('FightCtrl', function ($scope, SocketService, $window) {
+	.controller('FightCtrl', function ($scope, SocketService, $window, AuthenticationService) {
 
   SocketService.on('load user team', function(team) {
       $scope.team = team;
@@ -11,4 +11,6 @@ angular.module('znieh')
 	this.fightPhaser = System.get('main')['default'].start();
   this.fightPhaser.io = SocketService;
   this.fightPhaser.side = $window.sessionStorage.side;
+  this.fightPhaser.user = AuthenticationService.currentUser().username;
+
 });

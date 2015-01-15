@@ -16,6 +16,7 @@ GameApp.start = function() {
 
     game.io = null;
     game.side = null;
+    game.user = null;
 
     //game.analytics = new Analytics('phaser-game');
 

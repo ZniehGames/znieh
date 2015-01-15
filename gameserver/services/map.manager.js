@@ -18,7 +18,7 @@ function MapManager() {
     var blockedTiles = [];
     var tileProperties = data.tilesets[0].tileproperties;
     for(var index in tileProperties) {
-        if (tileProperties[index].collides === true) {
+        if (tileProperties[index].collides === 'true' && index != '389') { // no idea why this one doesn't work...
           blockedTiles.push(parseInt(index));
         }
     }

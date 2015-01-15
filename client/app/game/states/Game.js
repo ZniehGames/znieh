@@ -3,6 +3,7 @@
 import UnitsManager from '../services/UnitsManager';
 import MapService from '../services/MapService';
 import TweenService from '../services/TweenService';
+import IoService from '../services/IoService';
 import Map from '../model/Map';
 
 class Game {
@@ -16,6 +17,7 @@ class Game {
         // We start the game
         this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.physics.p2.setBoundsToWorld(true, true, true, true, false);
+        this.game.stage.disableVisibilityChange = true;
 
         // Create the map with collisions
         var tiledmap = this.game.add.tiledmap('map');
@@ -23,7 +25,8 @@ class Game {
         this.game.physics.p2.convertTiledmap(tiledmap, 'Map');
 
         // Init game services
-        MapService.init(map);
+        IoService.init(this.game.io);
+        MapService.init(map, this.game.io);
         TweenService.init(this.game);
         UnitsManager.create(this.units, this.game);
     }

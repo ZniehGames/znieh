@@ -9,7 +9,7 @@ var game, GameApp = {};
 GameApp.start = function() {
 
     game = new Phaser.Game(
-        800, 480,
+        864, 480,
         Phaser.AUTO,
         'game-app'
     );

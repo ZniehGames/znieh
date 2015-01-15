@@ -3,7 +3,17 @@ Feature: Unit
   Background:
     Given the database contains fixtures
 
-  Scenario: Add new unit
+  Scenario: Anonymous wants to add a new unit
+    When I send a POST request to "/units" with json:
+"""
+{
+   "name": "pro hacker"
+}
+"""
+    Then the response status code should be 400
+
+  Scenario: Logged in user wants to add a new unit
+    Given I am logged in as "test"
     When I send a POST request to "/units" with json:
 """
 {

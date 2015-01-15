@@ -31,6 +31,12 @@ class UnitsController extends FOSRestController
         $form = $this->createForm(new UnitForm(), $unit);
         $form->handleRequest($request);
 
+        $user = $this->getUser();
+        if (!$user) {
+            return new JsonResponse(['message' => 'You must be logged in'], 400);
+        }
+        $unit->setUser($user);
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($unit);

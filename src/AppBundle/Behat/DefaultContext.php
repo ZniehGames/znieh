@@ -168,8 +168,6 @@ abstract class DefaultContext extends RawMinkContext implements Context, KernelA
         $manager->persist($objects, true);
         $objects = $manager->loadFiles([
             __DIR__.'/../DataFixtures/Fixtures/users.yml',
-            __DIR__.'/../DataFixtures/Fixtures/units.yml',
-            __DIR__.'/../DataFixtures/Fixtures/teams.yml',
         ], 'yaml');
         $manager->persist($objects, false);
     }

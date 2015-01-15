@@ -1,6 +1,0 @@
-Znieh\Model\Team:
-    team_default{1..2}:
-        name: "Test"
-        user: @user<current()>
-        units: [@units1, @units2]
-        selected: false

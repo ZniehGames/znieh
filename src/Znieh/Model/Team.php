@@ -10,7 +10,7 @@ class Team
 
     private $id;
     private $units;
-    private $selected;
+    private $selected = false;
 
     /**
      * Constructor

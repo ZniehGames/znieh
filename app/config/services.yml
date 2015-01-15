@@ -23,3 +23,8 @@ services:
     arguments: [@global_mailer]
   currency_manager:
     class: Znieh\Currency\CurrencyManager
+  team_update_listener:
+    class: AppBundle\EventListener\TeamUpdateListener
+    arguments: [@doctrine.orm.entity_manager]
+    tags:
+      - { name: kernel.event_listener, event: team.update, method: onTeamUpdate }

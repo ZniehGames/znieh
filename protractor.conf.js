@@ -25,7 +25,6 @@ exports.config = {
 
   cucumberOpts: {
     require: [
-      'client/tests/hello.steps.js',
       'client/tests/home.steps.js',
       'client/tests/fight.steps.js',
       'client/tests/search.steps.js',

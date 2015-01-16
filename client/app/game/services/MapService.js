@@ -8,11 +8,16 @@ class MapService {
 
     constructor() {
       this.map = null;
+      this.io = null;
     }
 
-    init(map) {
+    init(map, io) {
       this.map = map;
+      console.log('map', this.map);
       Pathfinder.init(map);
+      if (io) { // only for Game state
+        this.io = io;
+      }
     }
 
     clean() {
@@ -57,19 +62,26 @@ class MapService {
 
     move(unit, tile) {
         this.clean();
-
-        // TODO: remplace this by server sending path
-        Pathfinder.findPathTo(unit.tile.indexes, tile.indexes, function(path) {
-          if (path === null) {
-            return;
-          }
-          path.shift();
-          TweenService.move(unit, path, function() {
-            unit.tile = tile;
-            unit.x = tile.position.x;
-            unit.y = tile.position.y;
-          });
+        this.io.emit('move unit', {
+          'unit': unit.id,
+          'to': tile.indexes
         });
+    }
+
+    moved(data) {
+      if (!data) {
+        console.log('moved empty');
+        return;
+      }
+      var unit = GameController.findUnitById(data.unit);
+      var end  = data.path[data.path.length -1];
+      var tile = this.map.getTile(end.x, end.y);
+      TweenService.move(unit, data.path, function() {
+        console.log(tile);
+        unit.tile = tile;
+        unit.x = tile.position.x;
+        unit.y = tile.position.y;
+      });
     }
 
 }

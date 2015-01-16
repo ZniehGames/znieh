@@ -9,3 +9,9 @@ Feature: Game play
   Scenario: I should see my team loaded
     Then I should be abble to see the map
     And I should be able to see my team
+
+  Scenario: I can move a unit
+    Then I should be abble to see the map
+    And I should be able to see my team
+    And Game is ready
+    When I want to move a unit

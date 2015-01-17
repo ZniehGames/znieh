@@ -10,4 +10,3 @@ Znieh\Model\ArmorPartType:
     type:
       expose: true
       groups: [details]
-

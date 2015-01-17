@@ -6,128 +6,144 @@ Znieh\Model\ArmorPart:
     type: @casque_lourd
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @casques_en_cuivre->points
   casque_en_cuivre_de_penetration:
     name: Casque en cuivre de pénétration
     type: @casque_lourd
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
-    points: 1
+        - { attribute: "penetration",  modifier: 30 }
+    points: @casques_en_cuivre->points
   casque_en_cuivre_d_esquive:
     name: Casque en cuivre d'esquive
     type: @casque_lourd
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @casques_en_cuivre->points
   casque_en_cuivre_de_parade:
     name: Casque en cuivre de parade
     type: @casque_lourd
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @casques_en_cuivre->points
   casque_en_cuivre_de_defense:
     name: Casque en cuivre de défense
     type: @casque_lourd
     step: @casques_en_cuivre
-    defense: @casque_lourd->defense + 5
-    points: 1
+    defense: <numberBetween(@casque_lourd->defense + 5, @casque_lourd->defense + 5)>
+    weight: @casque_lourd->weight
+    points: @casques_en_cuivre->points
   casque_en_cuivre_de_force:
     name: Casque en cuivre de force
     type: @casque_lourd
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @casques_en_cuivre->points
   casque_en_cuivre_d_agilite:
     name: Casque en cuivre d'agilité
     type: @casque_lourd
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 15 }
-        - { attribute: "Parade",   modifier: 15 }
-    points: 1
+        - { attribute: "dodge",  modifier: 15 }
+        - { attribute: "parade",   modifier: 15 }
+    points: @casques_en_cuivre->points
   casque_en_cuivre_d_intelligence:
     name: Casque en cuivre d'intelligence
     type: @casque_lourd
     step: @casques_en_cuivre
     defense: @casque_lourd->defense
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @casques_en_cuivre->points
   #__________________________________________
   casque_en_bronze_de_vie:
     name: Casque en bronze de vie
     type: @casque_lourd
     step: @casques_en_bronze
-    defense: @casque_lourd->defense
+    defense: <numberBetween(@casque_lourd->defense * 2, @casque_lourd->defense * 2)>
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 45 }
-    points: 2
+        - { attribute: "life",  modifier: 45 }
+    points: @casques_en_bronze->points
   casque_en_bronze_de_penetration:
     name: Casque en bronze de pénétration
     type: @casque_lourd
     step: @casques_en_bronze
-    defense: @casque_lourd->defense * 2
+    defense: <numberBetween(@casque_lourd->defense * 2, @casque_lourd->defense * 2)>
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 2
+        - { attribute: "penetration",  modifier: 45 }
+    points: @casques_en_bronze->points
   casque_en_bronze_d_esquive:
     name: Casque en bronze d'esquive
     type: @casque_lourd
     step: @casques_en_bronze
-    defense: @casque_lourd->defense
+    defense: <numberBetween(@casque_lourd->defense * 2, @casque_lourd->defense * 2)>
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 45 }
-    points: 2
+        - { attribute: "dodge",  modifier: 45 }
+    points: @casques_en_bronze->points
   casque_en_bronze_de_parade:
     name: Casque en bronze de parade
     type: @casque_lourd
     step: @casques_en_bronze
-    defense: @casque_lourd->defense
+    defense: <numberBetween(@casque_lourd->defense * 2, @casque_lourd->defense * 2)>
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 45 }
-    points: 2
+        - { attribute: "parade",  modifier: 45 }
+    points: @casques_en_bronze->points
   casque_en_bronze_de_defense:
     name: Casque en bronze de défense
     type: @casque_lourd
     step: @casques_en_bronze
-    defense: @casque_lourd->defense * 2 + 5
-    points: 2
+    defense: <numberBetween(@casque_lourd->defense * 2 + 5, @casque_lourd->defense * 2 + 5)>
+    weight: @casque_lourd->weight
+    points: @casques_en_bronze->points
   casque_en_bronze_de_force:
     name: Casque en bronze de force
     type: @casque_lourd
     step: @casques_en_bronze
-    defense: @casque_lourd->defense
+    defense: <numberBetween(@casque_lourd->defense * 2, @casque_lourd->defense * 2)>
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Force",  modifier: 45 }
-    points: 2
+        - { attribute: "strength",  modifier: 45 }
+    points: @casques_en_bronze->points
   casque_en_bronze_d_agilite:
     name: Casque en bronze d'agilité
     type: @casque_lourd
     step: @casques_en_bronze
-    defense: @casque_lourd->defense
+    defense: <numberBetween(@casque_lourd->defense * 2, @casque_lourd->defense * 2)>
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 2
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @casques_en_bronze->points
   casque_en_bronze_d_intelligence:
     name: Casque en bronze d'intelligence
     type: @casque_lourd
     step: @casques_en_bronze
-    defense: @casque_lourd->defense
+    defense: <numberBetween(@casque_lourd->defense * 2, @casque_lourd->defense * 2)>
+    weight: @casque_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 45 }
-    points: 2
+        - { attribute: "intelligence",  modifier: 45 }
+    points: @casques_en_bronze->points
   #__________________________________________
   #intérmédiaire
   casque_en_reche_de_vie:
@@ -135,136 +151,151 @@ Znieh\Model\ArmorPart:
     type: @casque_intermediaire
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @casques_en_cuir_reche->points
   casque_en_reche_de_penetration:
     name: Casque en cuir rêche de pénétration
     type: @casque_intermediaire
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 30 }
-    points: 1
+        - { attribute: "penetration",  modifier: 30 }
+    points: @casques_en_cuir_reche->points
   casque_en_reche_d_esquive:
     name: Casque en cuir rêche d'esquive
     type: @casque_intermediaire
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @casques_en_cuir_reche->points
   casque_en_reche_de_parade:
     name: Casque en cuir rêche de parade
     type: @casque_intermediaire
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @casques_en_cuir_reche->points
   casque_en_reche_de_defense:
     name: Casque en cuir rêche de défense
     type: @casque_intermediaire
     step: @casques_en_cuir_reche
-    defense: @casque_intermediaire->defense + 5
-    points: 1
+    defense: <numberBetween(@casque_intermediaire->defense + 5, @casque_intermediaire->defense + 5)>
+    points: @casques_en_cuir_reche->points
   casque_en_reche_de_force:
     name: Casque en cuir rêche de force
     type: @casque_intermediaire
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @casques_en_cuir_reche->points
   casque_en_reche_d_agilite:
     name: Casque en cuir rêche d'agilité
     type: @casque_intermediaire
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @casques_en_cuir_reche->points
   casque_en_reche_d_intelligence:
     name: Casque en cuir rêche d'intelligence
     type: @casque_intermediaire
     step: @casques_en_cuir_reche
     defense: @casque_intermediaire->defense
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @casques_en_cuir_reche->points
   #__________________________________________
   casque_en_brut_de_vie:
     name: Casque en cuir brut de vie
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
+    defense: <numberBetween(@casque_intermediaire->defense * 2, @casque_intermediaire->defense * 2)>
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @casques_en_cuir_brut->points
   casque_en_brut_de_penetration:
     name: Casque en cuir brut de pénétration
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
+    defense: <numberBetween(@casque_intermediaire->defense * 2, @casque_intermediaire->defense * 2)>
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @casques_en_cuir_brut->points
   casque_en_brut_de_precision:
     name: Casque en cuir brut de précision
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
+    defense: <numberBetween(@casque_intermediaire->defense * 2, @casque_intermediaire->defense * 2)>
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @casques_en_cuir_brut->points
   casque_en_brut_d_esquive:
     name: Casque en cuir brut d'esquive
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
+    defense: <numberBetween(@casque_intermediaire->defense * 2, @casque_intermediaire->defense * 2)>
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @casques_en_cuir_brut->points
   casque_en_brut_de_parade:
     name: Casque en cuir brut de parade
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
+    defense: <numberBetween(@casque_intermediaire->defense * 2, @casque_intermediaire->defense * 2)>
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @casques_en_cuir_brut->points
   casque_en_brut_de_defense:
     name: Casque en cuir brut de défense
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
-    points: 1
+    defense: <numberBetween(@casque_intermediaire->defense * 2 + 5, @casque_intermediaire->defense * 2 + 5)>
+    points: @casques_en_cuir_brut->points
   casque_en_brut_de_force:
     name: Casque en cuir brut de force
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
+    defense: <numberBetween(@casque_intermediaire->defense * 2, @casque_intermediaire->defense * 2)>
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @casques_en_cuir_brut->points
   casque_en_brut_d_agilite:
     name: Casque en cuir brut d'agilité
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
+    defense: <numberBetween(@casque_intermediaire->defense * 2, @casque_intermediaire->defense * 2)>
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @casques_en_cuir_brut->points
   casque_en_brut_d_intelligence:
     name: Casque en cuir brut d'intelligence
     type: @casque_intermediaire
     step: @casques_en_cuir_brut
-    defense: @casque_intermediaire->defense
+    defense: <numberBetween(@casque_intermediaire->defense * 2, @casque_intermediaire->defense * 2)>
+    weight: @casque_intermediaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @casques_en_cuir_brut->points
   #__________________________________________
   #léger
   casque_en_etmineure_de_vie:
@@ -272,144 +303,162 @@ Znieh\Model\ArmorPart:
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @casques_en_etoffe_mineure->points
   casque_en_etmineure_de_penetration:
     name: Casque en Etoffe mineure de pénétration
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @casques_en_etoffe_mineure->points
   casque_en_etmineure_de_precision:
     name: Casque en Etoffe mineure de précision
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @casques_en_etoffe_mineure->points
   casque_en_etmineure_d_esquive:
     name: Casque en Etoffe mineure d'esquive
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @casques_en_etoffe_mineure->points
   casque_en_etmineure_de_parade:
     name: Casque en Etoffe mineure de parade
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @casques_en_etoffe_mineure->points
   casque_en_etmineure_de_defense:
     name: Casque en Etoffe mineure de défense
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
-    points: 1
+    weight: @casque_leger->weight
+    points: @casques_en_etoffe_mineure->points
   casque_en_etmineure_de_force:
     name: Casque en Etoffe mineure de force
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @casques_en_etoffe_mineure->points
   casque_en_etmineure_d_agilite:
     name: Casque en Etoffe mineure d'agilité
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @casques_en_etoffe_mineure->points
   casque_en_etmineure_d_intelligence:
     name: Casque en Etoffe mineure d'intelligence
     type: @casque_leger
     step: @casques_en_etoffe_mineure
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @casques_en_etoffe_mineure->points
   #__________________________________________
   casque_en_etstandart_de_vie:
     name: Casque en Etoffe standart de vie
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @casques_en_etoffe_standart->points
   casque_en_etstandart_de_penetration:
     name: Casque en Etoffe standart de pénétration
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @casques_en_etoffe_standart->points
   casque_en_etstandart_de_precision:
     name: Casque en Etoffe standart de précision
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @casques_en_etoffe_standart->points
   casque_en_etstandart_d_esquive:
     name: Casque en Etoffe standart d'esquive
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @casques_en_etoffe_standart->points
   casque_en_etstandart_de_parade:
     name: Casque en Etoffe standart de parade
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @casques_en_etoffe_standart->points
   casque_en_etstandart_de_defense:
     name: Casque en Etoffe standart de défense
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
-    points: 1
+    weight: @casque_leger->weight
+    points: @casques_en_etoffe_standart->points
   casque_en_etstandart_de_force:
     name: Casque en Etoffe standart de force
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @casques_en_etoffe_standart->points
   casque_en_etstandart_d_agilite:
     name: Casque en Etoffe standart d'agilité
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @casques_en_etoffe_standart->points
   casque_en_etstandart_d_intelligence:
     name: Casque en Etoffe standart d'intelligence
     type: @casque_leger
     step: @casques_en_etoffe_standart
     defense: @casque_leger->defense
+    weight: @casque_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @casques_en_etoffe_standart->points
   #_______________________________________________
   #_______________________________________________
   #Torse
@@ -419,144 +468,162 @@ Znieh\Model\ArmorPart:
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @torses_en_cuivre->points
   torse_en_cuivre_de_penetration:
     name: Torse en cuivre de pénétration
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @torses_en_cuivre->points
   torse_en_cuivre_de_precision:
     name: Torse en cuivre de précision
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @torses_en_cuivre->points
   torse_en_cuivre_d_esquive:
     name: Torse en cuivre d'esquive
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @torses_en_cuivre->points
   torse_en_cuivre_de_parade:
     name: Torse en cuivre de parade
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @torses_en_cuivre->points
   torse_en_cuivre_de_defense:
     name: Torse en cuivre de défense
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
-    points: 1
+    weight: @torse_lourd->weight
+    points: @torses_en_cuivre->points
   torse_en_cuivre_de_force:
     name: Torse en cuivre de force
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @torses_en_cuivre->points
   torse_en_cuivre_d_agilite:
     name: Torse en cuivre d'agilité
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @torses_en_cuivre->points
   torse_en_cuivre_d_intelligence:
     name: Torse en cuivre d'intelligence
     type: @torse_lourd
     step: @torses_en_cuivre
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @torses_en_cuivre->points
   #__________________________________________
   torse_en_bronze_de_vie:
     name: Torse en bronze de vie
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @torses_en_bronze->points
   torse_en_bronze_de_penetration:
     name: Torse en bronze de pénétration
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @torses_en_bronze->points
   torse_en_bronze_de_precision:
     name: Torse en bronze de précision
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @torses_en_bronze->points
   torse_en_bronze_d_esquive:
     name: Torse en bronze d'esquive
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @torses_en_bronze->points
   torse_en_bronze_de_parade:
     name: Torse en bronze de parade
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @torses_en_bronze->points
   torse_en_bronze_de_defense:
     name: Torse en bronze de défense
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
-    points: 1
+    weight: @torse_lourd->weight
+    points: @torses_en_bronze->points
   torse_en_bronze_de_force:
     name: Torse en bronze de force
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @torses_en_bronze->points
   torse_en_bronze_d_agilite:
     name: Torse en bronze d'agilité
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @torses_en_bronze->points
   torse_en_bronze_d_intelligence:
     name: Torse en bronze d'intelligence
     type: @torse_lourd
     step: @torses_en_bronze
     defense: @torse_lourd->defense
+    weight: @torse_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @torses_en_bronze->points
   #__________________________________________
   #intérmédiaire
   torse_en_reche_de_vie:
@@ -564,144 +631,162 @@ Znieh\Model\ArmorPart:
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @torses_en_cuir_reche->points
   torse_en_reche_de_penetration:
     name: Torse en cuir rêche de pénétration
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @torses_en_cuir_reche->points
   torse_en_reche_de_precision:
     name: Torse en cuir rêche de précision
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @torses_en_cuir_reche->points
   torse_en_reche_d_esquive:
     name: Torse en cuir rêche d'esquive
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @torses_en_cuir_reche->points
   torse_en_reche_de_parade:
     name: Torse en cuir rêche de parade
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @torses_en_cuir_reche->points
   torse_en_reche_de_defense:
     name: Torse en cuir rêche de défense
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
-    points: 1
+    weight: @torse_intermediaire->weight
+    points: @torses_en_cuir_reche->points
   torse_en_reche_de_force:
     name: Torse en cuir rêche de force
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @torses_en_cuir_reche->points
   torse_en_reche_d_agilite:
     name: Torse en cuir rêche d'agilité
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @torses_en_cuir_reche->points
   torse_en_reche_d_intelligence:
     name: Torse en cuir rêche d'intelligence
     type: @torse_intermediaire
     step: @torses_en_cuir_reche
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @torses_en_cuir_reche->points
   #__________________________________________
   torse_en_brut_de_vie:
     name: Torse en cuir brut de vie
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @torses_en_cuir_brut->points
   torse_en_brut_de_penetration:
     name: Torse en cuir brut de pénétration
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @torses_en_cuir_brut->points
   torse_en_brut_de_precision:
     name: Torse en cuir brut de précision
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @torses_en_cuir_brut->points
   torse_en_brut_d_esquive:
     name: Torse en cuir brut d'esquive
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @torses_en_cuir_brut->points
   torse_en_brut_de_parade:
     name: Torse en cuir brut de parade
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @torses_en_cuir_brut->points
   torse_en_brut_de_defense:
     name: Torse en cuir brut de défense
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
-    points: 1
+    weight: @torse_intermediaire->weight
+    points: @torses_en_cuir_brut->points
   torse_en_brut_de_force:
     name: Torse en cuir brut de force
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @torses_en_cuir_brut->points
   torse_en_brut_d_agilite:
     name: Torse en cuir brut d'agilité
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @torses_en_cuir_brut->points
   torse_en_brut_d_intelligence:
     name: Torse en cuir brut d'intelligence
     type: @torse_intermediaire
     step: @torses_en_cuir_brut
     defense: @torse_intermediaire->defense
+    weight: @torse_intermediaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @torses_en_cuir_brut->points
   #__________________________________________
   #léger
   torse_en_etmineure_de_vie:
@@ -709,144 +794,162 @@ Znieh\Model\ArmorPart:
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @torses_en_etoffe_mineure->points
   torse_en_etmineure_de_penetration:
     name: Torse en Etoffe mineure de pénétration
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @torses_en_etoffe_mineure->points
   torse_en_etmineure_de_precision:
     name: Torse en Etoffe mineure de précision
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @torses_en_etoffe_mineure->points
   torse_en_etmineure_d_esquive:
     name: Torse en Etoffe mineure d'esquive
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @torses_en_etoffe_mineure->points
   torse_en_etmineure_de_parade:
     name: Torse en Etoffe mineure de parade
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @torses_en_etoffe_mineure->points
   torse_en_etmineure_de_defense:
     name: Torse en Etoffe mineure de défense
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
-    points: 1
+    weight: @torse_leger->weight
+    points: @torses_en_etoffe_mineure->points
   torse_en_etmineure_de_force:
     name: Torse en Etoffe mineure de force
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @torses_en_etoffe_mineure->points
   torse_en_etmineure_d_agilite:
     name: Torse en Etoffe mineure d'agilité
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @torses_en_etoffe_mineure->points
   torse_en_etmineure_d_intelligence:
     name: Torse en Etoffe mineure d'intelligence
     type: @torse_leger
     step: @torses_en_etoffe_mineure
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @torses_en_etoffe_mineure->points
   #__________________________________________
   torse_en_etstandart_de_vie:
     name: Torse en Etoffe standart de vie
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @torses_en_etoffe_standart->points
   torse_en_etstandart_de_penetration:
     name: Torse en Etoffe standart de pénétration
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @torses_en_etoffe_standart->points
   torse_en_etstandart_de_precision:
     name: Torse en Etoffe standart de précision
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @torses_en_etoffe_standart->points
   torse_en_etstandart_d_esquive:
     name: Torse en Etoffe standart d'esquive
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @torses_en_etoffe_standart->points
   torse_en_etstandart_de_parade:
     name: Torse en Etoffe standart de parade
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @torses_en_etoffe_standart->points
   torse_en_etstandart_de_defense:
     name: Torse en Etoffe standart de défense
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
-    points: 1
+    weight: @torse_leger->weight
+    points: @torses_en_etoffe_standart->points
   torse_en_etstandart_de_force:
     name: Torse en Etoffe standart de force
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @torses_en_etoffe_standart->points
   torse_en_etstandart_d_agilite:
     name: Torse en Etoffe standart d'agilité
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @torses_en_etoffe_standart->points
   torse_en_etstandart_d_intelligence:
     name: Torse en Etoffe standart d'intelligence
     type: @torse_leger
     step: @torses_en_etoffe_standart
     defense: @torse_leger->defense
+    weight: @torse_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @torses_en_etoffe_standart->points
   #_______________________________________________
   #_______________________________________________
   #Jambes
@@ -856,144 +959,162 @@ Znieh\Model\ArmorPart:
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @jambes_en_cuivre->points
   jambes_en_cuivre_de_penetration:
     name: Jambes en cuivre de pénétration
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @jambes_en_cuivre->points
   jambes_en_cuivre_de_precision:
     name: Jambes en cuivre de précision
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @jambes_en_cuivre->points
   jambes_en_cuivre_d_esquive:
     name: Jambes en cuivre d'esquive
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @jambes_en_cuivre->points
   jambes_en_cuivre_de_parade:
     name: Jambes en cuivre de parade
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @jambes_en_cuivre->points
   jambes_en_cuivre_de_defense:
     name: Jambes en cuivre de défense
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
-    points: 1
+    weight: @jambes_lourd->weight
+    points: @jambes_en_cuivre->points
   jambes_en_cuivre_de_force:
     name: Jambes en cuivre de force
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @jambes_en_cuivre->points
   jambes_en_cuivre_d_agilite:
     name: Jambes en cuivre d'agilité
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @jambes_en_cuivre->points
   jambes_en_cuivre_d_intelligence:
     name: Jambes en cuivre d'intelligence
     type: @jambes_lourd
     step: @jambes_en_cuivre
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @jambes_en_cuivre->points
   #__________________________________________
   jambes_en_bronze_de_vie:
     name: Jambes en bronze de vie
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @jambes_en_bronze->points
   jambes_en_bronze_de_penetration:
     name: Jambes en bronze de pénétration
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @jambes_en_bronze->points
   jambes_en_bronze_de_precision:
     name: Jambes en bronze de précision
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @jambes_en_bronze->points
   jambes_en_bronze_d_esquive:
     name: Jambes en bronze d'esquive
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @jambes_en_bronze->points
   jambes_en_bronze_de_parade:
     name: Jambes en bronze de parade
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @jambes_en_bronze->points
   jambes_en_bronze_de_defense:
     name: Jambes en bronze de défense
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
-    points: 1
+    weight: @jambes_lourd->weight
+    points: @jambes_en_bronze->points
   jambes_en_bronze_de_force:
     name: Jambes en bronze de force
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @jambes_en_bronze->points
   jambes_en_bronze_d_agilite:
     name: Jambes en bronze d'agilité
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @jambes_en_bronze->points
   jambes_en_bronze_d_intelligence:
     name: Jambes en bronze d'intelligence
     type: @jambes_lourd
     step: @jambes_en_bronze
     defense: @jambes_lourd->defense
+    weight: @jambes_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @jambes_en_bronze->points
   #__________________________________________
   #intérmédiaire
   jambes_en_reche_de_vie:
@@ -1001,144 +1122,162 @@ Znieh\Model\ArmorPart:
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @jambes_en_cuir_reche->points
   jambes_en_reche_de_penetration:
     name: Jambes en cuir rêche de pénétration
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @jambes_en_cuir_reche->points
   jambes_en_reche_de_precision:
     name: Jambes en cuir rêche de précision
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @jambes_en_cuir_reche->points
   jambes_en_reche_d_esquive:
     name: Jambes en cuir rêche d'esquive
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @jambes_en_cuir_reche->points
   jambes_en_reche_de_parade:
     name: Jambes en cuir rêche de parade
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @jambes_en_cuir_reche->points
   jambes_en_reche_de_defense:
     name: Jambes en cuir rêche de défense
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
-    points: 1
+    weight: @jambes_intermediaire->weight
+    points: @jambes_en_cuir_reche->points
   jambes_en_reche_de_force:
     name: Jambes en cuir rêche de force
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @jambes_en_cuir_reche->points
   jambes_en_reche_d_agilite:
     name: Jambes en cuir rêche d'agilité
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @jambes_en_cuir_reche->points
   jambes_en_reche_d_intelligence:
     name: Jambes en cuir rêche d'intelligence
     type: @jambes_intermediaire
     step: @jambes_en_cuir_reche
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @jambes_en_cuir_reche->points
   #__________________________________________
   jambes_en_brut_de_vie:
     name: Jambes en cuir brut de vie
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @jambes_en_cuir_brut->points
   jambes_en_brut_de_penetration:
     name: Jambes en cuir brut de pénétration
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @jambes_en_cuir_brut->points
   jambes_en_brut_de_precision:
     name: Jambes en cuir brut de précision
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @jambes_en_cuir_brut->points
   jambes_en_brut_d_esquive:
     name: Jambes en cuir brut d'esquive
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @jambes_en_cuir_brut->points
   jambes_en_brut_de_parade:
     name: Jambes en cuir brut de parade
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @jambes_en_cuir_brut->points
   jambes_en_brut_de_defense:
     name: Jambes en cuir brut de défense
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
-    points: 1
+    weight: @jambes_intermediaire->weight
+    points: @jambes_en_cuir_brut->points
   jambes_en_brut_de_force:
     name: Jambes en cuir brut de force
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @jambes_en_cuir_brut->points
   jambes_en_brut_d_agilite:
     name: Jambes en cuir brut d'agilité
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @jambes_en_cuir_brut->points
   jambes_en_brut_d_intelligence:
     name: Jambes en cuir brut d'intelligence
     type: @jambes_intermediaire
     step: @jambes_en_cuir_brut
     defense: @jambes_intermediaire->defense
+    weight: @jambes_intermediaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @jambes_en_cuir_brut->points
   #__________________________________________
   #léger
   jambes_en_etmineure_de_vie:
@@ -1146,144 +1285,162 @@ Znieh\Model\ArmorPart:
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @jambes_en_etoffe_mineure->points
   jambes_en_etmineure_de_penetration:
     name: Jambes en Etoffe mineure de pénétration
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @jambes_en_etoffe_mineure->points
   jambes_en_etmineure_de_precision:
     name: Jambes en Etoffe mineure de précision
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @jambes_en_etoffe_mineure->points
   jambes_en_etmineure_d_esquive:
     name: Jambes en Etoffe mineure d'esquive
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @jambes_en_etoffe_mineure->points
   jambes_en_etmineure_de_parade:
     name: Jambes en Etoffe mineure de parade
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @jambes_en_etoffe_mineure->points
   jambes_en_etmineure_de_defense:
     name: Jambes en Etoffe mineure de défense
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
-    points: 1
+    weight: @jambes_leger->weight
+    points: @jambes_en_etoffe_mineure->points
   jambes_en_etmineure_de_force:
     name: Jambes en Etoffe mineure de force
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @jambes_en_etoffe_mineure->points
   jambes_en_etmineure_d_agilite:
     name: Jambes en Etoffe mineure d'agilité
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @jambes_en_etoffe_mineure->points
   jambes_en_etmineure_d_intelligence:
     name: Jambes en Etoffe mineure d'intelligence
     type: @jambes_leger
     step: @jambes_en_etoffe_mineure
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @jambes_en_etoffe_mineure->points
   #__________________________________________
   jambes_en_etstandart_de_vie:
     name: Jambes en Etoffe standart de vie
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @jambes_en_etoffe_standart->points
   jambes_en_etstandart_de_penetration:
     name: Jambes en Etoffe standart de pénétration
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @jambes_en_etoffe_standart->points
   jambes_en_etstandart_de_precision:
     name: Jambes en Etoffe standart de précision
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @jambes_en_etoffe_standart->points
   jambes_en_etstandart_d_esquive:
     name: Jambes en Etoffe standart d'esquive
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @jambes_en_etoffe_standart->points
   jambes_en_etstandart_de_parade:
     name: Jambes en Etoffe standart de parade
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @jambes_en_etoffe_standart->points
   jambes_en_etstandart_de_defense:
     name: Jambes en Etoffe standart de défense
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
-    points: 1
+    weight: @jambes_leger->weight
+    points: @jambes_en_etoffe_standart->points
   jambes_en_etstandart_de_force:
     name: Jambes en Etoffe standart de force
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Force",  modifier: 30 }
-    points: 1
+        - { attribute: "strength",  modifier: 30 }
+    points: @jambes_en_etoffe_standart->points
   jambes_en_etstandart_d_agilite:
     name: Jambes en Etoffe standart d'agilité
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @jambes_en_etoffe_standart->points
   jambes_en_etstandart_d_intelligence:
     name: Jambes en Etoffe standart d'intelligence
     type: @jambes_leger
     step: @jambes_en_etoffe_standart
     defense: @jambes_leger->defense
+    weight: @jambes_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @jambes_en_etoffe_standart->points
   #_______________________________________________
   #_______________________________________________
   #Bottes
@@ -1293,144 +1450,162 @@ Znieh\Model\ArmorPart:
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_cuivre->points
   bottes_en_cuivre_de_penetration:
     name: Bottes en cuivre de pénétration
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @bottes_en_cuivre->points
   bottes_en_cuivre_de_precision:
     name: Bottes en cuivre de précision
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @bottes_en_cuivre->points
   bottes_en_cuivre_d_esquive:
     name: Bottes en cuivre d'esquive
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @bottes_en_cuivre->points
   bottes_en_cuivre_de_parade:
     name: Bottes en cuivre de parade
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @bottes_en_cuivre->points
   bottes_en_cuivre_de_defense:
     name: Bottes en cuivre de défense
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
-    points: 1
+    weight: @bottes_lourd->weight
+    points: @bottes_en_cuivre->points
   bottes_en_cuivre_de_force:
     name: Bottes en cuivre de force
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_cuivre->points
   bottes_en_cuivre_d_agilite:
     name: Bottes en cuivre d'agilité
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @bottes_en_cuivre->points
   bottes_en_cuivre_d_intelligence:
     name: Bottes en cuivre d'intelligence
     type: @bottes_lourd
     step: @bottes_en_cuivre
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @bottes_en_cuivre->points
   #__________________________________________
   bottes_en_bronze_de_vie:
     name: Bottes en bronze de vie
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_bronze->points
   bottes_en_bronze_de_penetration:
     name: Bottes en bronze de pénétration
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @bottes_en_bronze->points
   bottes_en_bronze_de_precision:
     name: Bottes en bronze de précision
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @bottes_en_bronze->points
   bottes_en_bronze_d_esquive:
     name: Bottes en bronze d'esquive
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @bottes_en_bronze->points
   bottes_en_bronze_de_parade:
     name: Bottes en bronze de parade
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @bottes_en_bronze->points
   bottes_en_bronze_de_defense:
     name: Bottes en bronze de défense
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
-    points: 1
+    weight: @bottes_lourd->weight
+    points: @bottes_en_bronze->points
   bottes_en_bronze_de_force:
     name: Bottes en bronze de force
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_bronze->points
   bottes_en_bronze_d_agilite:
     name: Bottes en bronze d'agilité
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @bottes_en_bronze->points
   bottes_en_bronze_d_intelligence:
     name: Bottes en bronze d'intelligence
     type: @bottes_lourd
     step: @bottes_en_bronze
     defense: @bottes_lourd->defense
+    weight: @bottes_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @bottes_en_bronze->points
   #__________________________________________
   #intérmédiaire
   bottes_en_reche_de_vie:
@@ -1438,144 +1613,162 @@ Znieh\Model\ArmorPart:
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_cuir_reche->points
   bottes_en_reche_de_penetration:
     name: Bottes en cuir rêche de pénétration
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @bottes_en_cuir_reche->points
   bottes_en_reche_de_precision:
     name: Bottes en cuir rêche de précision
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @bottes_en_cuir_reche->points
   bottes_en_reche_d_esquive:
     name: Bottes en cuir rêche d'esquive
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @bottes_en_cuir_reche->points
   bottes_en_reche_de_parade:
     name: Bottes en cuir rêche de parade
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @bottes_en_cuir_reche->points
   bottes_en_reche_de_defense:
     name: Bottes en cuir rêche de défense
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
-    points: 1
+    weight: @bottes_intermerdiaire->weight
+    points: @bottes_en_cuir_reche->points
   bottes_en_reche_de_force:
     name: Bottes en cuir rêche de force
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_cuir_reche->points
   bottes_en_reche_d_agilite:
     name: Bottes en cuir rêche d'agilité
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @bottes_en_cuir_reche->points
   bottes_en_reche_d_intelligence:
     name: Bottes en cuir rêche d'intelligence
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_reche
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @bottes_en_cuir_reche->points
   #__________________________________________
   bottes_en_brut_de_vie:
     name: Bottes en cuir brut de vie
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_cuir_brut->points
   bottes_en_brut_de_penetration:
     name: Bottes en cuir brut de pénétration
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @bottes_en_cuir_brut->points
   bottes_en_brut_de_precision:
     name: Bottes en cuir brut de précision
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @bottes_en_cuir_brut->points
   bottes_en_brut_d_esquive:
     name: Bottes en cuir brut d'esquive
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @bottes_en_cuir_brut->points
   bottes_en_brut_de_parade:
     name: Bottes en cuir brut de parade
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @bottes_en_cuir_brut->points
   bottes_en_brut_de_defense:
     name: Bottes en cuir brut de défense
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
-    points: 1
+    weight: @bottes_intermerdiaire->weight
+    points: @bottes_en_cuir_brut->points
   bottes_en_brut_de_force:
     name: Bottes en cuir brut de force
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_cuir_brut->points
   bottes_en_brut_d_agilite:
     name: Bottes en cuir brut d'agilité
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @bottes_en_cuir_brut->points
   bottes_en_brut_d_intelligence:
     name: Bottes en cuir brut d'intelligence
     type: @bottes_intermerdiaire
     step: @bottes_en_cuir_brut
     defense: @bottes_intermerdiaire->defense
+    weight: @bottes_intermerdiaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @bottes_en_cuir_brut->points
   #__________________________________________
   #léger
   bottes_en_etmineure_de_vie:
@@ -1583,144 +1776,162 @@ Znieh\Model\ArmorPart:
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_etoffe_mineure->points
   bottes_en_etmineure_de_penetration:
     name: Bottes en Etoffe mineure de pénétration
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @bottes_en_etoffe_mineure->points
   bottes_en_etmineure_de_precision:
     name: Bottes en Etoffe mineure de précision
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @bottes_en_etoffe_mineure->points
   bottes_en_etmineure_d_esquive:
     name: Bottes en Etoffe mineure d'esquive
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @bottes_en_etoffe_mineure->points
   bottes_en_etmineure_de_parade:
     name: Bottes en Etoffe mineure de parade
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @bottes_en_etoffe_mineure->points
   bottes_en_etmineure_de_defense:
     name: Bottes en Etoffe mineure de défense
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
-    points: 1
+    weight: @bottes_leger->weight
+    points: @bottes_en_etoffe_mineure->points
   bottes_en_etmineure_de_force:
     name: Bottes en Etoffe mineure de force
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_etoffe_mineure->points
   bottes_en_etmineure_d_agilite:
     name: Bottes en Etoffe mineure d'agilité
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @bottes_en_etoffe_mineure->points
   bottes_en_etmineure_d_intelligence:
     name: Bottes en Etoffe mineure d'intelligence
     type: @bottes_leger
     step: @bottes_en_etoffe_mineure
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @bottes_en_etoffe_mineure->points
   #__________________________________________
   bottes_en_etstandart_de_vie:
     name: Bottes en Etoffe standart de vie
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_etoffe_standart->points
   bottes_en_etstandart_de_penetration:
     name: Bottes en Etoffe standart de pénétration
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @bottes_en_etoffe_standart->points
   bottes_en_etstandart_de_precision:
     name: Bottes en Etoffe standart de précision
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @bottes_en_etoffe_standart->points
   bottes_en_etstandart_d_esquive:
     name: Bottes en Etoffe standart d'esquive
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @bottes_en_etoffe_standart->points
   bottes_en_etstandart_de_parade:
     name: Bottes en Etoffe standart de parade
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @bottes_en_etoffe_standart->points
   bottes_en_etstandart_de_defense:
     name: Bottes en Etoffe standart de défense
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
-    points: 1
+    weight: @bottes_leger->weight
+    points: @bottes_en_etoffe_standart->points
   bottes_en_etstandart_de_force:
     name: Bottes en Etoffe standart de force
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @bottes_en_etoffe_standart->points
   bottes_en_etstandart_d_agilite:
     name: Bottes en Etoffe standart d'agilité
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @bottes_en_etoffe_standart->points
   bottes_en_etstandart_d_intelligence:
     name: Bottes en Etoffe standart d'intelligence
     type: @bottes_leger
     step: @bottes_en_etoffe_standart
     defense: @bottes_leger->defense
+    weight: @bottes_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @bottes_en_etoffe_standart->points
   #_______________________________________________
   #_______________________________________________
   #Bottes
@@ -1730,144 +1941,162 @@ Znieh\Model\ArmorPart:
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_cuivre->points
   gants_en_cuivre_de_penetration:
     name: Gants en cuivre de pénétration
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @gants_en_cuivre->points
   gants_en_cuivre_de_precision:
     name: Gants en cuivre de précision
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @gants_en_cuivre->points
   gants_en_cuivre_d_esquive:
     name: Gants en cuivre d'esquive
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @gants_en_cuivre->points
   gants_en_cuivre_de_parade:
     name: Gants en cuivre de parade
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @gants_en_cuivre->points
   gants_en_cuivre_de_defense:
     name: Gants en cuivre de défense
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
-    points: 1
+    weight: @gants_lourd->weight
+    points: @gants_en_cuivre->points
   gants_en_cuivre_de_force:
     name: Gants en cuivre de force
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_cuivre->points
   gants_en_cuivre_d_agilite:
     name: Gants en cuivre d'agilité
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @gants_en_cuivre->points
   gants_en_cuivre_d_intelligence:
     name: Gants en cuivre d'intelligence
     type: @gants_lourd
     step: @gants_en_cuivre
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @gants_en_cuivre->points
   #__________________________________________
   gants_en_bronze_de_vie:
     name: Gants en bronze de vie
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_bronze->points
   gants_en_bronze_de_penetration:
     name: Gants en bronze de pénétration
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @gants_en_bronze->points
   gants_en_bronze_de_precision:
     name: Gants en bronze de précision
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @gants_en_bronze->points
   gants_en_bronze_d_esquive:
     name: Gants en bronze d'esquive
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @gants_en_bronze->points
   gants_en_bronze_de_parade:
     name: Gants en bronze de parade
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @gants_en_bronze->points
   gants_en_bronze_de_defense:
     name: Gants en bronze de défense
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
-    points: 1
+    weight: @gants_lourd->weight
+    points: @gants_en_bronze->points
   gants_en_bronze_de_force:
     name: Gants en bronze de force
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_bronze->points
   gants_en_bronze_d_agilite:
     name: Gants en bronze d'agilité
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @gants_en_bronze->points
   gants_en_bronze_d_intelligence:
     name: Gants en bronze d'intelligence
     type: @gants_lourd
     step: @gants_en_bronze
     defense: @gants_lourd->defense
+    weight: @gants_lourd->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @gants_en_bronze->points
   #__________________________________________
   #intérmédiaire
   gants_en_reche_de_vie:
@@ -1875,144 +2104,162 @@ Znieh\Model\ArmorPart:
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_cuir_reche->points
   gants_en_reche_de_penetration:
     name: Gants en cuir rêche de pénétration
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @gants_en_cuir_reche->points
   gants_en_reche_de_precision:
     name: Gants en cuir rêche de précision
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @gants_en_cuir_reche->points
   gants_en_reche_d_esquive:
     name: Gants en cuir rêche d'esquive
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @gants_en_cuir_reche->points
   gants_en_reche_de_parade:
     name: Gants en cuir rêche de parade
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @gants_en_cuir_reche->points
   gants_en_reche_de_defense:
     name: Gants en cuir rêche de défense
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
-    points: 1
+    weight: @gants_intermediaire->weight
+    points: @gants_en_cuir_reche->points
   gants_en_reche_de_force:
     name: Gants en cuir rêche de force
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_cuir_reche->points
   gants_en_reche_d_agilite:
     name: Gants en cuir rêche d'agilité
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @gants_en_cuir_reche->points
   gants_en_reche_d_intelligence:
     name: Gants en cuir rêche d'intelligence
     type: @gants_intermediaire
     step: @gants_en_cuir_reche
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @gants_en_cuir_reche->points
   #__________________________________________
   gants_en_brut_de_vie:
     name: Gants en cuir brut de vie
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_cuir_brut->points
   gants_en_brut_de_penetration:
     name: Gants en cuir brut de pénétration
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @gants_en_cuir_brut->points
   gants_en_brut_de_precision:
     name: Gants en cuir brut de précision
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @gants_en_cuir_brut->points
   gants_en_brut_d_esquive:
     name: Gants en cuir brut d'esquive
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @gants_en_cuir_brut->points
   gants_en_brut_de_parade:
     name: Gants en cuir brut de parade
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @gants_en_cuir_brut->points
   gants_en_brut_de_defense:
     name: Gants en cuir brut de défense
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
-    points: 1
+    weight: @gants_intermediaire->weight
+    points: @gants_en_cuir_brut->points
   gants_en_brut_de_force:
     name: Gants en cuir brut de force
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_cuir_brut->points
   gants_en_brut_d_agilite:
     name: Gants en cuir brut d'agilité
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @gants_en_cuir_brut->points
   gants_en_brut_d_intelligence:
     name: Gants en cuir brut d'intelligence
     type: @gants_intermediaire
     step: @gants_en_cuir_brut
     defense: @gants_intermediaire->defense
+    weight: @gants_intermediaire->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @gants_en_cuir_brut->points
   #__________________________________________
   #léger
   gants_en_etmineure_de_vie:
@@ -2020,142 +2267,160 @@ Znieh\Model\ArmorPart:
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: gants_en_etoffe_mineure->points
   gants_en_etmineure_de_penetration:
     name: Gants en Etoffe mineure de pénétration
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: gants_en_etoffe_mineure->points
   gants_en_etmineure_de_precision:
     name: Gants en Etoffe mineure de précision
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: gants_en_etoffe_mineure->points
   gants_en_etmineure_d_esquive:
     name: Gants en Etoffe mineure d'esquive
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: gants_en_etoffe_mineure->points
   gants_en_etmineure_de_parade:
     name: Gants en Etoffe mineure de parade
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: gants_en_etoffe_mineure->points
   gants_en_etmineure_de_defense:
     name: Gants en Etoffe mineure de défense
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
-    points: 1
+    weight: @gants_leger->weight
+    points: gants_en_etoffe_mineure->points
   gants_en_etmineure_de_force:
     name: Gants en Etoffe mineure de force
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: gants_en_etoffe_mineure->points
   gants_en_etmineure_d_agilite:
     name: Gants en Etoffe mineure d'agilité
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: gants_en_etoffe_mineure->points
   gants_en_etmineure_d_intelligence:
     name: Gants en Etoffe mineure d'intelligence
     type: @gants_leger
     step: @gants_en_etoffe_mineure
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: gants_en_etoffe_mineure->points
   #__________________________________________
   gants_en_etstandart_de_vie:
     name: Gants en Etoffe standart de vie
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_etoffe_standart->points
   gants_en_etstandart_de_penetration:
     name: Gants en Etoffe standart de pénétration
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Penetration",  modifier: 45 }
-    points: 1
+        - { attribute: "penetration",  modifier: 45 }
+    points: @gants_en_etoffe_standart->points
   gants_en_etstandart_de_precision:
     name: Gants en Etoffe standart de précision
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Precision",  modifier: 30 }
-    points: 1
+        - { attribute: "precision",  modifier: 30 }
+    points: @gants_en_etoffe_standart->points
   gants_en_etstandart_d_esquive:
     name: Gants en Etoffe standart d'esquive
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+    points: @gants_en_etoffe_standart->points
   gants_en_etstandart_de_parade:
     name: Gants en Etoffe standart de parade
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Parade",  modifier: 30 }
-    points: 1
+        - { attribute: "parade",  modifier: 30 }
+    points: @gants_en_etoffe_standart->points
   gants_en_etstandart_de_defense:
     name: Gants en Etoffe standart de défense
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
-    points: 1
+    weight: @gants_leger->weight
+    points: @gants_en_etoffe_standart->points
   gants_en_etstandart_de_force:
     name: Gants en Etoffe standart de force
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Life",  modifier: 30 }
-    points: 1
+        - { attribute: "life",  modifier: 30 }
+    points: @gants_en_etoffe_standart->points
   gants_en_etstandart_d_agilite:
     name: Gants en Etoffe standart d'agilité
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Esquive",  modifier: 30 }
-        - { attribute: "Parade", modifier: 30 }
-    points: 1
+        - { attribute: "dodge",  modifier: 30 }
+        - { attribute: "parade", modifier: 30 }
+    points: @gants_en_etoffe_standart->points
   gants_en_etstandart_d_intelligence:
     name: Gants en Etoffe standart d'intelligence
     type: @gants_leger
     step: @gants_en_etoffe_standart
     defense: @gants_leger->defense
+    weight: @gants_leger->weight
     bonuses:
-        - { attribute: "Intelligence",  modifier: 30 }
-    points: 1
+        - { attribute: "intelligence",  modifier: 30 }
+    points: @gants_en_etoffe_standart->points
 

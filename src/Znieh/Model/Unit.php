@@ -46,20 +46,19 @@ class Unit
 
     public function getLife()
     {
-        return 100 + $this->getStats()['Life'];
+        return 100 + $this->getStats()['life'];
     }
 
     public function getStats()
     {
         $stats = [
-            'Life' => 0,
-            'Force' => 0,
-            'Intelligence' => 0,
-            'Parade' => 0,
-            'Precision' => 0,
-            'Esquive' => 0,
-            'Penetration' => 0,
-            'Power' => 0,
+            'life' => 0,
+            'strength' => 0,
+            'intelligence' => 0,
+            'parade' => 0,
+            'precision' => 0,
+            'dodge' => 0,
+            'penetration' => 0,
         ];
 
         if($this->armor != null) foreach ($this->armor->getBonuses() as $bonus) {

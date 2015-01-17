@@ -7,3 +7,6 @@ Znieh\Model\ArmorPart:
     defense:
       expose: true
       groups: [default, details]
+    weight:
+      expose: true
+      groups: [default, details]

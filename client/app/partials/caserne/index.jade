@@ -39,9 +39,9 @@ block content
                             )
             .col-sm-2
                 .choice-container
-                    .weapon-choice.axe(ng-class="{'active': weaponChoice === 'axe'}" ng-click="weaponChoice = 'axe'")
-                    .weapon-choice.sword(ng-class="{'active': weaponChoice === 'sword'}" ng-click="weaponChoice = 'sword'")
-                    .weapon-choice.hammer(ng-class="{'active': weaponChoice === 'hammer'}" ng-click="weaponChoice = 'hammer'")
+                    .weapon-choice.axe(ng-class="{'active': weaponChoice === 'axe'}" ng-click="setWeaponChoice('axe')")
+                    .weapon-choice.sword(ng-class="{'active': weaponChoice === 'sword'}" ng-click="setWeaponChoice('sword')")
+                    .weapon-choice.hammer(ng-class="{'active': weaponChoice === 'hammer'}" ng-click="setWeaponChoice('hammer')")
                 .stuff-slot.gear(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part; change()")
             .col-sm-4.text-center
                 input(type="text" ng-model="unit.name" required placeholder="Le ptit nom" ng-change="change()")

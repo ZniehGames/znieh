@@ -2,6 +2,8 @@
 
 namespace Znieh\Model;
 
+use Symfony\Component\Validator\ExecutionContextInterface;
+
 class Weapon
 {
   use \Znieh\Traits\NamableEntity;
@@ -11,6 +13,41 @@ class Weapon
   private $id;
   private $parts;
   private $type;
+
+  public function __construct()
+  {
+      $this->parts = new \Doctrine\Common\Collections\ArrayCollection();
+  }
+
+   public function guessWeaponType(ExecutionContextInterface $context)
+   {
+      if (count($this->parts) < 3) {
+        $context->addViolationAt('parts', 'Weapon not valid');
+        return;
+      }
+      $availablesTypes = $this->parts->first()->getType()->getTypes();
+
+      foreach ($this->parts as $key => $part) {
+          foreach ($availablesTypes as $availableType) {
+            $found = false;
+            foreach ($part->getType()->getTypes() as $type) {
+                if ($type->getName() == $availableType->getName()) {
+                    $found = true;
+                }
+            }
+            if (!$found) {
+                $availablesTypes->removeElement($availableType);
+            }
+          }
+      }
+      $type = $availablesTypes->first();
+      if (count($availablesTypes) != 1 || count($type->getParts()) != count($this->parts)) {
+        $context->addViolationAt('parts', 'Weapon not valid');
+        return;
+      }
+      $this->setType($type);
+      return true;
+  }
 
   public function getDamageType()
   {
@@ -89,26 +126,27 @@ class Weapon
   }
 
   /**
-   * Add parts
+   * Add part
    *
-   * @param \Znieh\Model\WeaponPart $parts
+   * @param \Znieh\Model\WeaponPart $part
    *
    * @return Weapon
    */
-  public function addPart(\Znieh\Model\WeaponPart $parts)
+  public function addPart(\Znieh\Model\WeaponPart $part)
   {
-      $this->parts[] = $parts;
+      $this->parts[] = $part;
       return $this;
   }
 
   /**
-   * Remove parts
+   * Remove part
    *
-   * @param \Znieh\Model\WeaponPart $parts
+   * @param \Znieh\Model\WeaponPart $part
    */
-  public function removePart(\Znieh\Model\WeaponPart $parts)
+  public function removePart(\Znieh\Model\WeaponPart $part)
   {
-      $this->parts->removeElement($parts);
+      $this->parts->removeElement($part);
+      return $this;
   }
 
   /**

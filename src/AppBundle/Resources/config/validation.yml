@@ -38,3 +38,7 @@ Znieh\Model\User:
           min: 2
           max: 4096
           minMessage: fos_user.password.short
+
+Znieh\Model\Weapon:
+  constraints:
+    - Callback: [guessWeaponType]

@@ -1,3 +1,4 @@
+@dev
 Feature: Unit
 
   Background:
@@ -12,6 +13,30 @@ Feature: Unit
 """
     Then the response status code should be 400
 
+  Scenario: Logged in user wants to add too few parts in weapon
+    Given I am logged in as "test"
+    When I send a POST request to "/units" with json:
+"""
+{
+  "weapon": {
+    "parts": [268,281]
+  }
+}
+"""
+    Then the response status code should be 400
+
+  Scenario: Logged in user wants to a mix of sword and hammer
+    Given I am logged in as "test"
+    When I send a POST request to "/units" with json:
+"""
+{
+  "weapon": {
+    "parts": [268,322,342]
+  }
+}
+"""
+    Then the response status code should be 400
+
   Scenario: Logged in user wants to add a new unit
     Given I am logged in as "test"
     When I send a POST request to "/units" with json:
@@ -21,7 +46,7 @@ Feature: Unit
   "size": 1,
   "physical": 1,
   "weapon": {
-    "parts": [331,310,289,283]
+    "parts": [268,281,287,303]
   },
   "armor": {
     "helm": {

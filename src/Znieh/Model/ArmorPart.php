@@ -5,6 +5,7 @@ namespace Znieh\Model;
 class ArmorPart extends GameObject
 {
     use \Znieh\Traits\HasDefenseEntity;
+    use \Znieh\Traits\HasWeightEntity;
     private $type;
 
     public function __construct()
@@ -43,7 +44,7 @@ class ArmorPart extends GameObject
      */
     public function getWeight()
     {
-        return $this->type->getWeight();
+        return $this->weight;
     }
 
 }

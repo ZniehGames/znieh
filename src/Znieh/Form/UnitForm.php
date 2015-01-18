@@ -32,6 +32,7 @@ class UnitForm extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults([
+            'cascade_validation' => true,
             'data_class' => 'Znieh\Model\Unit',
             'csrf_protection' => false
         ]);

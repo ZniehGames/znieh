@@ -15,24 +15,30 @@
         img(src="../images/icons/defense.png")
         | {{ unit.armor.defense }}
       .stat
-        img(src="../images/icons/esquive.png")
+        img(src="../images/stats/moves.png")
         | {{ unit.moves }}
       .stat
         img(src="../images/weapons/min/{{ unit.weapon.type.image }}.png")
         | {{ unit.weapon.min_damage }}-{{ unit.weapon.max_damage }}
       .separator
-      .stat
-        img(src="../images/icons/armure.png")
+      .stat(ng-if="unit.weight > 0")
+        img(src="../images/stats/weight.png")
         | {{ unit.weight }}
-      .stat
-        img(src="../images/icons/penetration.png")
-        | {{ unit.stats.Penetration }}
-      .stat
-        img(src="../images/icons/parade.png")
-        | {{ unit.stats.Parade }}
-      .stat
-        img(src="../images/icons/precision.png")
-        | {{ unit.stats.Precision }}
-      .stat
-        img(src="../images/icons/esquive.png")
-        | {{ unit.stats.Esquive }}
+      .stat(ng-if="unit.stats.penetration > 0")
+        img(src="../images/stats/penetration.png")
+        | {{ unit.stats.penetration }}
+      .stat(ng-if="unit.stats.parade > 0")
+        img(src="../images/stats/parade.png")
+        | {{ unit.stats.parade }}
+      .stat(ng-if="unit.stats.precision > 0")
+        img(src="../images/stats/precision.png")
+        | {{ unit.stats.precision }}
+      .stat(ng-if="unit.stats.dodge > 0")
+        img(src="../images/stats/dodge.png")
+        | {{ unit.stats.dodge }}
+      .stat(ng-if="unit.stats.focus > 0")
+        img(src="../images/stats/focus.png")
+        | {{ unit.stats.focus }}
+      .stat(ng-if="unit.stats.intelligence > 0")
+        img(src="../images/stats/intelligence.png")
+        | {{ unit.stats.intelligence }}

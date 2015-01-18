@@ -42,6 +42,22 @@ angular.module('znieh')
         $scope.weaponparttypes = weaponparttypes;
     });
 
+    $scope.setWeaponChoice = function(weapon) {
+      $scope.weaponChoice = weapon;
+      if ($scope.unit.weapon) { // reset previous choices
+        $scope.unit.weapon.parts = [];
+      }
+      if (weapon === 'axe') {
+        $scope.currentSlot = 'Tête de hache';
+      }
+      if (weapon === 'hammer') {
+        $scope.currentSlot = 'Tête de marteau';
+      }
+      if (weapon === 'sword') {
+        $scope.currentSlot = 'Lame';
+      }
+    };
+
     $scope.setCurrentSlot = function(slot) {
       $scope.currentSlot = slot;
     };

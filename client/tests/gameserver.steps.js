@@ -44,7 +44,7 @@ module.exports = function() {
     this.When(/^I want to move a unit$/, function(done) {
         socket.emit('move unit', {
           "unit": 48,
-          "to": {"x": 0, "y": 0}
+          "to": {"x": 4, "y": 2}
         });
         socket.on('unit moved', function(data) {
           console.log(data);

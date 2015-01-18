@@ -1,4 +1,3 @@
-@dev
 Feature: team
 
 Background:
@@ -18,14 +17,13 @@ Scenario: API client wants to get the selected team of a user
     "id": @integer@,
     "life": @integer@,
     "stats": {
-      "Life": @integer@,
-      "Force": @integer@,
-      "Intelligence": @integer@,
-      "Parade": @integer@,
-      "Precision": @integer@,
-      "Esquive": @integer@,
-      "Penetration": @integer@,
-      "Power": @integer@
+      "life": @integer@,
+      "strength": @integer@,
+      "intelligence": @integer@,
+      "parade": @integer@,
+      "precision": @integer@,
+      "dodge": @integer@,
+      "penetration": @integer@
     },
     "size": {
       "name": @string@
@@ -76,7 +74,8 @@ Scenario: API client wants to get the selected team of a user
           "type": {
             "name": @string@
           },
-          "defense": @integer@
+          "defense": @integer@,
+          "weight": @integer@
         },
         "rune": {
           "name": @string@,

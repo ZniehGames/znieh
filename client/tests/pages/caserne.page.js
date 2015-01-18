@@ -31,13 +31,13 @@ var CasernePage = function () {
   }
 
   this.previewArmorStat = function() {
-    return element.all(by.css('.stat')).get(1).getText().then(function(text) {
+    return element(by.css('.unit')).all(by.css('.stat')).get(1).getText().then(function(text) {
       return text;
     });
   }
 
   this.previewWeaponStat = function() {
-    return element.all(by.css('.stat')).get(3).getText().then(function(text) {
+    return element(by.css('.unit')).all(by.css('.stat')).get(3).getText().then(function(text) {
       return text;
     });
   }

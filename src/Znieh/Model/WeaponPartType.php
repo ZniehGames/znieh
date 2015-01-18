@@ -10,6 +10,11 @@ class WeaponPartType
     private $id;
     protected $types;
 
+    public function __construct()
+    {
+        $this->types = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *

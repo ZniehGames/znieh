@@ -4,6 +4,8 @@ Znieh\Model\ArmorPart:
     fields:
       defense:
         type: integer
+      weight:
+        type: integer
 
     manyToOne:
         type:

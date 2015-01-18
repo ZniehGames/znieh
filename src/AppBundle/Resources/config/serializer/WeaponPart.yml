@@ -4,4 +4,9 @@ Znieh\Model\WeaponPart:
     name:
       expose: true
       groups: [default, details]
-
+    minDamage:
+      expose: true
+      groups: [default, details]
+    maxDamage:
+      expose: true
+      groups: [default, details]

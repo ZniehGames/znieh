@@ -9,6 +9,8 @@ var gulp       = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     to5        = require('gulp-6to5'),
     cache      = require('gulp-cached'),
+    newer      = require('gulp-newer'), 
+    changed    = require('gulp-changed'), 
     scsslint   = require('gulp-scss-lint'),
     jade       = require('gulp-jade'),
     plumber    = require('gulp-plumber'),
@@ -158,6 +160,7 @@ gulp.task('js-config', function() {
 
 gulp.task('js-lint', function() {
     return gulp.src(paths.js)
+        .pipe(cache('jslint'))
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
@@ -174,27 +177,32 @@ gulp.task('js-build', ['js-lint'], function(cb) {
 });
 
 gulp.task('js', ['js-config', 'js-build'], function() {
-    _paths = [paths.tmp + 'conf.js', paths.tmp + 'app.js'];
-    gulp.src(_paths)
+    gulp.src([
+            paths.tmp + 'conf.js',
+            paths.tmp + 'app.js'
+        ])
+        .pipe(newer(paths.dist + 'js/' + 'app.js'))
         .pipe(concat('app.js'))
         .pipe(gulp.dest(paths.dist + 'js/'))
 });
 
 gulp.task('game-js-lint', function() {
     return gulp.src(paths.game)
+        .pipe(cache('gamelint'))
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
 gulp.task('game', ['game-js-lint'], function() {
     return gulp.src(paths.game)
+        .pipe(newer(paths.dist + 'js/' + 'game.js'))
         .pipe(sourcemaps.init())
         .pipe(traceur({
             modules: 'register',
             moduleName: true
         }))
         .pipe(concat('game.js'))
-        //.pipe(uglify({preserveComments: false}))
+        .pipe(uglify({preserveComments: false}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.dist + 'js/'));
 });
@@ -202,10 +210,10 @@ gulp.task('game', ['game-js-lint'], function() {
 gulp.task('js-vendor', function() {
     gulp.src(paths.jsvendor)
         .pipe(plumber())
-        //.pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(concat('vendor.js'))
         .pipe(uglify({mangle:false, preserveComments: false}))
-        //.pipe(sourcemaps.write())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.dist + 'js/'))
 });
 

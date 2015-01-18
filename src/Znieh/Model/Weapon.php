@@ -21,10 +21,15 @@ class Weapon
 
    public function guessWeaponType(ExecutionContextInterface $context)
    {
+      if (count($this->parts) === 0) {
+        return;
+      }
+
       if (count($this->parts) < 3) {
         $context->addViolationAt('parts', 'Weapon not valid');
         return;
       }
+
       $availablesTypes = $this->parts->first()->getType()->getTypes();
 
       foreach ($this->parts as $key => $part) {

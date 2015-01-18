@@ -41,7 +41,7 @@ class Unit
 
     public function getMoves()
     {
-        return intval(abs(round(7*2^(-$this->getWeight()/20))));
+        return intval(abs(7*pow(2, - $this->getWeight() / 20)));
     }
 
     public function getLife()

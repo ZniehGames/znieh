@@ -64,12 +64,22 @@ class UnitSpec extends ObjectBehavior
 
     function it_returns_moves(Armor $armor)
     {
-        $this->getMoves()->shouldReturn(14);
+        $this->getMoves()->shouldReturn(7);
 
-        $armor->getWeight()->willReturn(100);
+        $armor->getWeight()->willReturn(25);
         $this->setArmor($armor);
 
-        $this->getMoves()->shouldReturn(11);
+        $this->getMoves()->shouldReturn(2);
+
+        $armor->getWeight()->willReturn(15);
+        $this->setArmor($armor);
+
+        $this->getMoves()->shouldReturn(4);
+
+        $armor->getWeight()->willReturn(5);
+        $this->setArmor($armor);
+
+        $this->getMoves()->shouldReturn(5);
     }
 
     function it_has_default_life()

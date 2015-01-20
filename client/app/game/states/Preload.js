@@ -12,7 +12,7 @@ class Preload {
         this.game.load.tiledmap(this.cacheKey('map', 'tiledmap'), '../../json/map.json', null, Phaser.Tilemap.TILED_JSON);
         this.game.load.image(this.cacheKey('map', 'tileset', 'tiles'), '../../images/fight/sprites/maps/tiles.jpg');
 
-        this.load.spritesheet('sprite_default', '../../images/fight/sprites/units/perso_casqueArgent.png', 40, 50);
+        this.load.spritesheet('sprite_default', '../../images/fight/sprites/units/deathknight.png', 42, 42);
     }
 
     create() {

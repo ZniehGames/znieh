@@ -19,6 +19,16 @@ class Unit extends Phaser.Sprite {
         this.inputEnabled = true;
         this.events.onInputDown.add(InputService.onUnitDown, this);
         game.add.existing(this);
+
+        this.anchor.setTo(0.2, 0.2);
+
+        this.animations.add('walk_right', [6,7,8,9]);
+        this.animations.add('idle_right', [10, 11], 5, true, true);
+        this.animations.add('idle_up',    [20, 21], 5, true, true);
+        this.animations.add('idle_down',  [30, 31], 5, true, true);
+
+        this.animations.play('idle_right');
+
     }
 
 }

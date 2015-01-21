@@ -13,13 +13,13 @@ module.exports = function() {
     });
 
     this.Then(/^I should be abble to see the map$/, function(done) {
+        browser.sleep(1000);
         canvas = element(by.css('canvas')).isPresent();
 
         expect(canvas).to.eventually.equal(true).and.notify(done);
     });
 
     this.Then(/^I should be able to see my team$/, function(done) {
-      browser.sleep(1000);
        names = element.all(by.repeater('unit in team.units').column('unit.name')).map(function(e, index) {
          return {
            index: index,

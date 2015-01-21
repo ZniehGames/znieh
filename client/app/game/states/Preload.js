@@ -16,15 +16,7 @@ class Preload {
     }
 
     create() {
-        var that = this;
-
-        this.game.io.on('load user team', function (team) {
-            // We need to start the placement state
-            that.game.state.states.placement.team = team;
-            that.game.state.start('placement');
-        });
-
-        this.game.stage.backgroundColor = '#ffffff';
+        this.game.state.start('placement');
     }
 }
 

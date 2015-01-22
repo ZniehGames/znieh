@@ -20,7 +20,7 @@ role :app,        domain, :primary => true       # This may be the same as your 
 
 set  :keep_releases,  3
 
-set :shared_files, ["app/config/parameters.yml"]
+set :shared_files, ["app/config/parameters.yml", "client/config/main.json", "gameserver/config/default.json"]
 set :shared_children, [app_path + "/logs", "vendor", "node_modules"]
 set :use_composer, true
 

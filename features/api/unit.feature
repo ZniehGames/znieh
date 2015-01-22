@@ -4,6 +4,15 @@ Feature: Unit
   Background:
     Given the database contains fixtures
 
+    Scenario: API client wants to get the list of units of a user
+        Given I send a GET request to "/users/1/units"
+        Then the JSON response should match:
+"""
+  [
+    @...@
+  ]
+"""
+
   Scenario: Anonymous wants to add a new unit
     When I send a POST request to "/units" with json:
 """

@@ -6,6 +6,7 @@ angular.module('znieh')
     $scope.pool = 1;
     $scope.user = AuthenticationService.currentUser();
     $scope.teams = null;
+    $scope.units = null;
     $scope.selectedTeam = null;
 
     Restangular
@@ -14,6 +15,13 @@ angular.module('znieh')
         .then(function(teams) {
             $scope.teams = teams;
             $scope.selectedTeam = teams[0];
+        });
+
+    Restangular
+        .one('users', AuthenticationService.currentUser().id)
+        .getList('units')
+        .then(function(units) {
+            $scope.units = units;
         });
 
     SocketService.on('searching match', function() {

@@ -18,6 +18,21 @@ use Znieh\Form\UnitForm;
 
 class UnitsController extends FOSRestController
 {
+
+    /**
+     * @Rest\View(serializerGroups={"default"})
+     *
+     * @param Request $request
+     * @return View view instance
+     *
+     */
+    public function getUserUnitsAction($user)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $units = $em->getRepository('AppBundle:Unit')->findBy(['user' => $user]);
+        return $units;
+    }
+
     /**
      * @Rest\View()
      *

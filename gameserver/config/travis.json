@@ -1,3 +1,4 @@
 {
-  "api": "http://127.0.0.2/app_test.php/"
+  "api": "http://127.0.0.2/app_test.php/",
+  "port": 1337
 }

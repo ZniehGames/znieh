@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('znieh')
-    .controller('LoginCtrl', function ($scope, AuthenticationService, SocketService, $route) {
+    .controller('LoginCtrl', function ($scope, AuthenticationService, SocketService, $location) {
 
         $scope.$watch(AuthenticationService.isLoggedIn, function(isLoggedIn) {
             $scope.hideLoginForm = isLoggedIn;
@@ -23,8 +23,12 @@ angular.module('znieh')
         });
 
         $scope.$on('event:auth-login-complete', function () {
-            $route.reload();
+            $location.path('/search');
         });
+
+        $scope.go = function(path) {
+            $location.path(path);
+        };
 
         $scope.submit = function () {
             AuthenticationService.login($scope.credentials);

@@ -6,7 +6,7 @@ import Game from 'states/Game';
 
 var game, GameApp = {};
 
-GameApp.start = function() {
+GameApp.start = function(io, side, user, team) {
 
     game = new Phaser.Game(
         864, 480,
@@ -14,9 +14,10 @@ GameApp.start = function() {
         'game-app'
     );
 
-    game.io = null;
-    game.side = null;
-    game.user = null;
+    game.io = io;
+    game.side = side;
+    game.user = user;
+    game.team = team;
 
     //game.analytics = new Analytics('phaser-game');
 

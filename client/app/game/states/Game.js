@@ -9,7 +9,6 @@ import Map from '../model/Map';
 class Game {
 
     constructor() {
-        this.team = null;
         this.side = null;
     }
 

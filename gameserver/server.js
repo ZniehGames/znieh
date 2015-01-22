@@ -6,6 +6,7 @@ var MatchMakingCtrl = require('./controllers/matchmaking.ctrl');
 var UserStorage = require('./storage/user.storage.js');
 var GameController = require('./controllers/game.ctrl.js');
 var GameStorage = require('./storage/game.storage.js');
+var config = require('config');
 
 var app = require('http').createServer();
 var io = require('socket.io')(app);
@@ -56,6 +57,6 @@ app.sockets = sockets; // we export sockets to avoid waiting timeout during test
 module.exports = app;
 
 if (!module.parent) { // lauch server if not required by another file
-  app.listen(1337);
-  console.log("✔ Server listening on http://localhost:1337/".green);
+  app.listen(config.get('port'));
+  console.log("✔ Server listening on http://localhost:".green, config.get('port'));
 }

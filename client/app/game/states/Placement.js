@@ -7,7 +7,6 @@ import Map from '../model/Map';
 class Placement {
 
     constructor() {
-        this.team = null;
         this.side = null;
         this.tilemap = null;
         this.units = []; // Array<Unit>
@@ -29,7 +28,7 @@ class Placement {
         MapService.init(map);
 
         // Add units
-        this.units = UnitsManager.createFromTeam(this.team, this.game);
+        this.units = UnitsManager.createFromTeam(this.game.team, this.game);
 
         this.game.io.on('match ready', function (data) {
             var units = [];

@@ -86,12 +86,10 @@ script:
 
 after_success:
   # Deploy master to production
-  - if [ $TRAVIS_BRANCH == 'master' ]; then
-      openssl aes-256-cbc -K $encrypted_168c5169b1c4_key -iv $encrypted_168c5169b1c4_iv -in app/config/id_rsa.enc -out app/config/id_rsa -d
-      gem install capifony
-      cp app/config/deploy.rb.dist app/config/deploy.rb
-      cap deploy;
-    fi
+  - openssl aes-256-cbc -K $encrypted_168c5169b1c4_key -iv $encrypted_168c5169b1c4_iv -in app/config/id_rsa.enc -out app/config/id_rsa -d
+  - gem install capifony
+  - cp app/config/deploy.rb.dist app/config/deploy.rb
+  - if [[ $TRAVIS_BRANCH == 'master' ]]; then cap deploy; fi
 
 after_script:
   - php -v

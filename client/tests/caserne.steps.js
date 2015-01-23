@@ -11,7 +11,7 @@ module.exports = function() {
     var CasernePage = require('./pages/caserne.page.js');
 
     this.Given(/^I go on the caserne page$/, function(done) {
-        browser.get(env.baseUrl + CasernePage.url);
+        CasernePage.go();
         done();
     });
 

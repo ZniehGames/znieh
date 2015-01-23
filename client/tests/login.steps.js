@@ -15,17 +15,11 @@ module.exports = function() {
         done();
     });
 
-    this.When(/^I should be logged in$/, function(done) {
-        expect(HomePage.loginWelcome()).to.eventually
-        .equal('Bienvenue test !')
-        .and.notify(done);
-    });
-
     this.Given(/^I am logged in as test$/, function(done) {
         browser.get(env.baseUrl + HomePage.url);
         HomePage.login('test', 'test');
-        expect(HomePage.loginWelcome()).to.eventually
-        .equal('Bienvenue test !')
+        expect(browser.getCurrentUrl()).to.eventually
+        .contain('/#/search')
         .and.notify(done);
     });
 };

@@ -2,6 +2,10 @@ var CasernePage = function () {
   this.url = '/#/caserne';
   this.submitElement = element(by.css('button'));
 
+  this.go = function() {
+    element(by.css('.nav-sidebar li:nth-child(2)')).click().then(function(){});
+  }
+
   this.success = function() {
      return element(by.css('.toast-success')).getText().then(function(text) {
       return text;

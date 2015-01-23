@@ -26,21 +26,13 @@ block content
                 .col-md-3.col-md-push-9
                     .teams
                         h1 Vos équipes
-                        .team(ng-repeat="team in teams", ng-click="select($index)" ng-if="team == selectedTeam").active
+                        .team(ng-repeat="team in teams", ng-click="select($index)" ng-class="{'active': team == selectedTeam }")
                             .points 23
                             .title Les Avengers
                             .stats
                                 span.green 7
                                 | /
                                 span.red 2
-                            .clearfix
-                        .team(ng-repeat="team in teams", ng-click="select($index)" ng-if="team != selectedTeam")
-                            .points 23
-                            .title Les Avengers
-                            .stats
-                                span.green 1
-                                | /
-                                span.red 4
                             .clearfix
                 .col-md-9.col-md-pull-3
                     .units.row
@@ -49,3 +41,7 @@ block content
             .search
                 button.btn.btn-success.btn-lg(ng-click="searchFight()")
                     |Je suis prêt !
+            .col-mod-12
+                h1 Créer une nouvelle équipe
+                .col-xs-6.col-sm-6.col-md-4.col-lg-3(ng-repeat="unit in units")
+                 unit-preview(unit="unit")

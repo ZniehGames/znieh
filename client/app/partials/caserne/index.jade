@@ -43,8 +43,9 @@ block content
                     .weapon-choice.sword(ng-class="{'active': weaponChoice === 'sword'}" ng-click="setWeaponChoice('sword')")
                     .weapon-choice.hammer(ng-class="{'active': weaponChoice === 'hammer'}" ng-click="setWeaponChoice('hammer')")
                 .stuff-slot.gear(ng-repeat="part in weapons[weaponChoice].types" ng-class="{'active': $parent.currentSlot === part}" ng-click="$parent.currentSlot = part; change()")
-            .col-sm-4.text-center
-                input(type="text" ng-model="unit.name" required placeholder="Le ptit nom" ng-change="change()")
+            .col-sm-3.text-center
+                .form-group
+                    input.form-control(type="text" ng-model="unit.name" required placeholder="Un petit nom" ng-change="change()")
                 .choice-container
                     .size-choice.size-1(ng-class="{'active': unit.size === 1}" ng-click="unit.size = 1; change()")
                     .size-choice.size-2(ng-class="{'active': unit.size === 2}" ng-click="unit.size = 2; change()")

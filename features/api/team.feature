@@ -14,7 +14,6 @@ Scenario: API client wants to get the selected team of a user
     "points": @integer@,
     "moves": @integer@,
     "weight": @integer@,
-    "id": @integer@,
     "life": @integer@,
     "stats": {
       "life": @integer@,
@@ -24,6 +23,10 @@ Scenario: API client wants to get the selected team of a user
       "precision": @integer@,
       "dodge": @integer@,
       "penetration": @integer@
+    },
+    "id": @integer@,
+    "sprite": {
+      "name": @string@
     },
     "size": {
       "name": @string@

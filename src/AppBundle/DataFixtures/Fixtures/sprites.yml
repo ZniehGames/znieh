@@ -1,3 +1,11 @@
 Znieh\Model\Sprite:
-  sprite_default:
-    name: "default"
+  deathknight:
+    name: "deathknight"
+  platearmor:
+    name: "platearmor"
+  goldenarmor:
+    name: "goldenarmor"
+  goblin:
+    name: "goblin"
+  spectre:
+    name: "spectre"

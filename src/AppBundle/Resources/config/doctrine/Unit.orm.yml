@@ -26,6 +26,11 @@ Znieh\Model\Unit:
           joinColumn:
             name: user_id
             referencedColumnName: id
+        sprite:
+          targetEntity: Sprite
+          joinColumn:
+            name: sprite_id
+            referencedColumnName: id
         size:
           targetEntity: Size
           joinColumn:

@@ -18,6 +18,8 @@ module.exports = function() {
     this.Given(/^I am logged in as test$/, function(done) {
         browser.get(env.baseUrl + HomePage.url);
         HomePage.login('test', 'test');
-        done();
+        expect(browser.getCurrentUrl()).to.eventually
+        .contain('/#/search')
+        .and.notify(done);
     });
 };

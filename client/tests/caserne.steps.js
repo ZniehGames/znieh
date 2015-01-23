@@ -12,6 +12,7 @@ module.exports = function() {
 
     this.Given(/^I go on the caserne page$/, function(done) {
         browser.get(env.baseUrl + CasernePage.url);
+        browser.sleep(1000);
         done();
     });
 

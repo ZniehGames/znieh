@@ -19,6 +19,9 @@ Znieh\Model\Unit:
     size:
       expose: true
       groups: [default, details]
+    sprite:
+      expose: true
+      groups: [default, details]
   virtual_properties:
     getPoints:
       serialized_name: points

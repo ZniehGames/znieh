@@ -77,7 +77,6 @@ class MapService {
       var end  = data.path[data.path.length -1];
       var tile = this.map.getTile(end.x, end.y);
       TweenService.move(unit, data.path, function() {
-        console.log(tile);
         unit.tile = tile;
         unit.x = tile.position.x;
         unit.y = tile.position.y;

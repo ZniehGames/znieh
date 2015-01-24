@@ -1,10 +1,10 @@
 name: Défaut
 units:
    1:
-      name: Jacky
+      name: Frodon
       size: Normal
       physical: Musclé
-      sprite: deathknight
+      sprite: goldenarmor
       weapon:
         type: Épée
         parts: [ Lame de dague en cuivre, Garde ciselée en cuivre, Manche en cèdre de pénétration, Pommeau en cuivre de précision]
@@ -26,10 +26,10 @@ units:
             part: Bottes en cuir rêche de défense
             rune: Rune de bénédiction mineur
    2:
-      name: Bobby
+      name: Toubib
       size: Normal
       physical: Musclé
-      sprite: deathknight
+      sprite: goldenarmor
       weapon:
         type: Épée
         parts: [ Lame de dague en cuivre, Garde ciselée en cuivre, Manche en cèdre de pénétration, Pommeau en cuivre de précision]
@@ -51,10 +51,10 @@ units:
             part: Bottes en cuir rêche de défense
             rune: Rune de bénédiction mineur
    3:
-      name: Neirda
+      name: Murden
       size: Normal
       physical: Musclé
-      sprite: deathknight
+      sprite: goldenarmor
       weapon:
         type: Hache
         parts: [ Tête de Labrys en cuivre, Hampe en cèdre de vie, Poignée en panier en cuivre ]
@@ -76,10 +76,10 @@ units:
             part: Bottes en cuir rêche de défense
             rune: Rune de bénédiction mineur
    4:
-      name: Sam Soul
+      name: Gobelin
       size: Normal
       physical: Musclé
-      sprite: deathknight
+      sprite: goldenarmor
       weapon:
         type: Hache
         parts: [ Tête de Labrys en cuivre, Hampe en cèdre de vie, Poignée en panier en cuivre ]

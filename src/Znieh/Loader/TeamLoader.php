@@ -23,6 +23,10 @@ class TeamLoader
   {
       $data = Yaml::parse(file_get_contents(__DIR__ . '/../../AppBundle/Resources/config/teams/default.yml'));
 
+      if ($user->getUsername() == "test") {
+        $data = Yaml::parse(file_get_contents(__DIR__ . '/../../AppBundle/Resources/config/teams/test.yml'));
+      }
+
       $team = new Team();
       $team->setName($data['name']);
       $team->setUser($user);

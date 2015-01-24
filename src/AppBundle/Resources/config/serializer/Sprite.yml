@@ -1,0 +1,6 @@
+Znieh\Model\Sprite:
+  exclusion_policy: ALL
+  properties:
+    name:
+      expose: true
+      groups: [default, details]

@@ -4,59 +4,33 @@ block content
     .game(ng-controller="FightCtrl")
         .center-block.game-block
             .left-side
-                .unit-block(ng-repeat="unit in team.units")
+                .unit-block(ng-repeat="unit in leftTeam.units")
                     .mini
                         h1 {{ unit.name }}
                         img(src="http://placehold.it/32x32" alt="...").avatar
                         .progress
-                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;")
+                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="{{ unit.life }}" aria-valuemin="0" aria-valuemax="{{ unit.maxLife }}" style="width: 40%;")
                                 .sr-only 100%
                         .stats
                             img(src="../../images/icons/spell0.png" alt="...")
                             img(src="../../images/icons/spell1.png" alt="...")
                             img(src="../../images/icons/spell2.png" alt="...")
-                    .details
-                        p {{ unit.size.name }} {{ unit.weight.name }}
+                    //- .details
+                    //-     p {{ unit.size.name }} {{ unit.weight.name }}
             .game-app#game-app
             .right-side
-                .unit-block
-                    .details
-                        p coucou
+                .unit-block(ng-repeat="unit in rightTeam.units")
                     .mini
-                        h1 GreG
+                        h1 {{ unit.name }}
                         img(src="http://placehold.it/32x32" alt="...").avatar
                         .progress
-                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;")
+                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="{{ unit.life }}" aria-valuemin="0" aria-valuemax="{{ unit.maxLife }}" style="width: 40%;")
                                 .sr-only 100%
                         .stats
                             img(src="../../images/icons/spell0.png" alt="...")
                             img(src="../../images/icons/spell1.png" alt="...")
                             img(src="../../images/icons/spell2.png" alt="...")
-                .unit-block
-                    .details
-                        p coucou
-                    .mini
-                        h1 Robert
-                        img(src="http://placehold.it/32x32" alt="...").avatar
-                        .progress
-                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;")
-                                .sr-only 100%
-                        .stats
-                            img(src="../../images/icons/spell0.png" alt="...")
-                            img(src="../../images/icons/spell1.png" alt="...")
-                            img(src="../../images/icons/spell2.png" alt="...")
-                .unit-block
-                    .details
-                        p coucou
-                    .mini
-                        h1 Maurice
-                        img(src="http://placehold.it/32x32" alt="...").avatar
-                        .progress
-                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;")
-                                .sr-only 100%
-                        .stats
-                            img(src="../../images/icons/spell0.png" alt="...")
-                            img(src="../../images/icons/spell1.png" alt="...")
-                            img(src="../../images/icons/spell2.png" alt="...")
+                    //- .details
+                    //-     p {{ unit.size.name }} {{ unit.weight.name }}
         .center-block.game-block
-            include ./fight_log.jade
+            //- include ./fight_log.jade

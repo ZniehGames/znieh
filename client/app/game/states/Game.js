@@ -1,6 +1,7 @@
 'use strict';
 
 import UnitsManager from '../services/UnitsManager';
+import FightService from '../services/FightService';
 import MapService from '../services/MapService';
 import TweenService from '../services/TweenService';
 import IoService from '../services/IoService';
@@ -25,6 +26,7 @@ class Game {
 
         // Init game services
         IoService.init(this.game.io);
+        FightService.init(this.game.io);
         MapService.init(map, this.game.io);
         TweenService.init(this.game);
         UnitsManager.create(this.units, this.game);

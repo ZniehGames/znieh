@@ -88,6 +88,26 @@ function GameCtrl() {
     Pathfinder.stopAvoidingAllAdditionalPoints();
   }
 
+  this.attack = function(socket, attackerId, defenderId) {
+    var game = GameStorage.findBySocket(socket);
+    var player = UserStorage.findBySocket(socket);
+    console.log('attack unit'.blue, player.username);
+
+    var attacker = game.findUnitById(attackerId);
+    var defender = game.findUnitById(defenderId);
+
+    defender.life -= 10;
+
+    var data = {
+      'attacker': attacker,
+      'defender': defender,
+      'dammage': 10
+    };
+
+    game.playerA.socket.emit('unit attacked', data);
+    game.playerB.socket.emit('unit attacked', data);
+  }
+
   this.remove = function (game) {
     var gameIndex = GameStorage.games.indexOf(game);
 

@@ -13,7 +13,6 @@ class MapService {
 
     init(map, io) {
       this.map = map;
-      console.log('map', this.map);
       Pathfinder.init(map);
       if (io) { // only for Game state
         this.io = io;

@@ -1,6 +1,7 @@
 'use strict';
 
 import MapService from './MapService';
+import FightService from './FightService';
 
 class IoService {
 
@@ -8,6 +9,9 @@ class IoService {
     this.io = io;
     this.io.on('unit moved', function(data) {
       MapService.moved(data);
+    });
+    this.io.on('unit attacked', function(data) {
+      FightService.attacked(data);
     });
   }
 

@@ -11,7 +11,6 @@ class TweenService {
     }
 
     move(unit, path, cb) {
-      var tween = this.game.add.tween(unit);
 
       var getOrientation = function(start, end) {
         start = start || unit.tile.indexes;
@@ -29,27 +28,44 @@ class TweenService {
         }
       };
 
-      unit.animations.play('walk_' + getOrientation(unit.tile.indexes, path[0]));
+      var orientation = getOrientation(unit.tile.indexes, path[0]);
+      unit.animations.play('walk_' + orientation);
 
       var onMoveComplete = function() {
         return function(i) {
           if (path[i + 1]) {
-            unit.animations.play('walk_' + getOrientation(path[i], path[i+1]));
-            return;
+            var nextOrientation = getOrientation(path[i], path[i+1]);
+            if (orientation !== nextOrientation) {
+              unit.animations.stop('walk_' + orientation, true);
+              orientation = nextOrientation;
+              unit.animations.play('walk_' + orientation);
+            }
           }
-          unit.animations.play('idle_' + getOrientation(path[i - 1], path[i]));
         };
       };
 
+      var tweens = [];
+
       for (var i = 0; i < path.length; i++) {
-          tween.to({
-            x: path[i].x * 32,
-            y: path[i].y * 32
-          }, 300, Phaser.Easing.Linear.None);
-          tween.onComplete.add(onMoveComplete(i).bind(this, i));
+          var tween = this.game.add.tween(unit);
+            tween.to({
+              x: path[i].x * 32,
+              y: path[i].y * 32
+            }, 300, Phaser.Easing.Quadratic.Out)
+            .onComplete.add(onMoveComplete().bind(this, i));
+
+           tweens[i] = tween;
+
+           if (i > 0) {
+             tweens[i - 1].chain(tweens[i]);
+           }
       }
-      tween._lastChild.onComplete.add(cb);
-      tween.start();
+
+      tweens[path.length - 1].onComplete.add(function() {
+        unit.animations.play('idle_' + orientation);
+      });
+      tweens[path.length - 1].onComplete.add(cb);
+      tweens[0].start();
     }
 
 }

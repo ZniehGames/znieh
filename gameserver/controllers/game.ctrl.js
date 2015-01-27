@@ -5,6 +5,7 @@ var UserStorage = require('./../storage/user.storage.js');
 var GameStorage = require('./../storage/game.storage.js');
 var UserManager = require('./../services/user.manager.js');
 var GameManager = require('./../services/game.manager.js');
+var DamageCalculator = require('./../services/damageCalculator.js');
 var Placement = require('./../services/placement.js');
 var Pathfinder = require('./../services/pathfinder.js');
 
@@ -59,7 +60,7 @@ function GameCtrl() {
     var unit = game.findUnitById(unitId);
     var additionalPoints = [];
     for (var i = 0; i < game.units.length; i++) {
-      if (game.units[i].id != unit.id) {
+      if (game.units[i].id != unit.id && game.units[i].isAlive()) {
           additionalPoints.push({'x': game.units[i].x, 'y': game.units[i].y});
       }
     };
@@ -91,17 +92,19 @@ function GameCtrl() {
   this.attack = function(socket, attackerId, defenderId) {
     var game = GameStorage.findBySocket(socket);
     var player = UserStorage.findBySocket(socket);
-    console.log('attack unit'.blue, player.username);
+    console.log('attack by'.green, player.username, attackerId, ' -> ', defenderId);
 
     var attacker = game.findUnitById(attackerId);
     var defender = game.findUnitById(defenderId);
 
-    defender.life -= 10;
+    var damage = DamageCalculator.calculate(attacker, defender);
+
+    defender.life -= damage;
 
     var data = {
       'attacker': attacker,
       'defender': defender,
-      'dammage': 10
+      'dammage': damage
     };
 
     game.playerA.socket.emit('unit attacked', data);

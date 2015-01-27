@@ -16,6 +16,10 @@ function Unit(data, user) {
   this.size = data.size;
   this.physical = data.physical;
   this.sprite = data.sprite;
+
+  this.isAlive = function() {
+      return this.life > 0;
+  };
 }
 
 module.exports = Unit;

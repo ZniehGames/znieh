@@ -36,7 +36,7 @@ class MapService {
       // We need to add additional tile to avoid (eg: a unit)
       var unitsIndex = [];
       GameController.units.forEach(function(u) {
-        if (u !== unit) {
+        if (u !== unit && u.isAlive()) {
           unitsIndex.push(u.tile.indexes);
         }
       });

@@ -16,6 +16,10 @@ class Unit extends Phaser.Sprite {
         this.isOwned = data.isOwned;
         this.sprite = data.sprite;
 
+        this.isAlive = function() {
+            return this.life > 0;
+        };
+
         this.inputEnabled = true;
         this.events.onInputDown.add(InputService.onUnitDown, this);
         game.add.existing(this);

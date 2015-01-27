@@ -55,9 +55,9 @@ class TweenService {
     }
 
     attack(attacker, defender, damage, cb) {
-
       var orientation = TweenHelper.getOrientation(attacker.tile.indexes, defender.tile.indexes);
       var animation = attacker.animations.play('atk_' + orientation, 7, false);
+      animation.onComplete.removeAll();
       animation.onComplete.add(cb);
       animation.onComplete.add(function() {
         this.showDamage(defender, damage);

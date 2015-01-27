@@ -7,9 +7,11 @@ class IoService {
 
   init(io) {
     this.io = io;
+
     this.io.on('unit moved', function(data) {
       MapService.moved(data);
     });
+
     this.io.on('unit attacked', function(data) {
       FightService.attacked(data);
     });

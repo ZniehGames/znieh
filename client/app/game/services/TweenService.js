@@ -1,5 +1,7 @@
 'use strict';
 
+import TweenHelper from './TweenHelper';
+
 class TweenService {
 
     constructor() {
@@ -12,29 +14,13 @@ class TweenService {
 
     move(unit, path, cb) {
 
-      var getOrientation = function(start, end) {
-        start = start || unit.tile.indexes;
-        if (start.y > end.y) {
-          return 'up';
-        }
-        if (start.y < end.y) {
-         return 'down';
-        }
-        if (start.x > end.x) {
-         return 'left';
-        }
-        if (start.x < end.x) {
-         return 'right';
-        }
-      };
-
-      var orientation = getOrientation(unit.tile.indexes, path[0]);
+      var orientation = TweenHelper.getOrientation(unit.tile.indexes, path[0]);
       unit.animations.play('walk_' + orientation);
 
       var onMoveComplete = function() {
         return function(i) {
           if (path[i + 1]) {
-            var nextOrientation = getOrientation(path[i], path[i+1]);
+            var nextOrientation = TweenHelper.getOrientation(path[i], path[i+1]);
             if (orientation !== nextOrientation) {
               unit.animations.stop('walk_' + orientation, true);
               orientation = nextOrientation;
@@ -66,6 +52,26 @@ class TweenService {
       });
       tweens[path.length - 1].onComplete.add(cb);
       tweens[0].start();
+    }
+
+    attack(attacker, defender, damage, cb) {
+      var orientation = TweenHelper.getOrientation(attacker.tile.indexes, defender.tile.indexes);
+      var animation = attacker.animations.play('atk_' + orientation, 7, false);
+      animation.onComplete.removeAll();
+      animation.onComplete.add(cb);
+      animation.onComplete.add(function() {
+        this.showDamage(defender, damage);
+      }, this);
+    }
+
+    showDamage(unit, damage) {
+        var text = this.game.add.text(unit.x, unit.y, '-' + damage);
+        var tween = this.game.add.tween(text);
+        tween.to({ x: unit.x + 10, y: unit.y - 10 }, 1000, Phaser.Easing.Linear.None);
+        tween.onComplete.add(function() {
+          text.destroy();
+        }, this);
+        tween.start();
     }
 
 }

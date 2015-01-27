@@ -51,6 +51,10 @@ io.on('connection', function(socket) {
     GameController.moveUnit(socket, data.unit, data.to);
   });
 
+  socket.on('attack', function(data) {
+    GameController.attack(socket, data.attacker, data.defender);
+  });
+
 });
 
 app.sockets = sockets; // we export sockets to avoid waiting timeout during tests

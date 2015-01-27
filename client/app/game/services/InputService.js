@@ -1,6 +1,7 @@
 'use strict';
 
 import MapService from './MapService';
+import FightService from './FightService';
 import GameController from '../controllers/GameController';
 
 class InputService {
@@ -9,6 +10,10 @@ class InputService {
       if (unit.isOwned) {
         GameController.selectedUnit = unit;
         MapService.highlightUnitPossibleMoves(unit);
+        return;
+      }
+      if (GameController.selectedUnit !== null) {
+        FightService.attack(GameController.selectedUnit, unit);
       }
     }
 

@@ -29,18 +29,22 @@ angular.module('znieh')
   SocketService.on('match ready', function(data) {
       console.log('match ready', data);
 
-      var team = [];
+      var opponentTeam = [], playerTeam = [];
       for (var i = 0; i < data.length; i++) {
           if (data[i].user !== AuthenticationService.currentUser().username) {
-            team.push(data[i]);
+            opponentTeam.push(data[i]);
+          } else {
+            playerTeam.push(data[i]);
           }
       }
 
       if ($scope.side === 'left') {
-        $scope.rightTeam = team;
+        $scope.rightTeam = opponentTeam;
+        $scope.leftTeam.units = playerTeam;
         return;
       }
-      $scope.leftTeam = team;
+      $scope.leftTeam = opponentTeam;
+      $scope.rightTeam.units = playerTeam;
   });
 
 });

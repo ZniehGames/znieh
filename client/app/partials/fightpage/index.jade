@@ -1,4 +1,4 @@
-extends ../village_layout.jade
+trextends ../village_layout.jade
 
 block content
     .game(ng-controller="FightCtrl")
@@ -7,10 +7,9 @@ block content
                 .unit-block(ng-repeat="unit in leftTeam")
                     .mini
                         h1 {{ unit.name }}
-                        img(src="http://placehold.it/32x32" alt="...").avatar
+                        img(src="../../images/units/{{ unit.sprite.name }}.png" alt="...").avatar
                         .progress
-                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="{{ unit.life }}" aria-valuemin="0" aria-valuemax="{{ unit.maxLife }}" style="width: 40%;")
-                                .sr-only 100%
+                            <progressbar animate="false" max="unit.maxLife" value="unit.life" type="success"></progressbar>
                         .stats
                             img(src="../../images/icons/spell0.png" alt="...")
                             img(src="../../images/icons/spell1.png" alt="...")
@@ -22,10 +21,9 @@ block content
                 .unit-block(ng-repeat="unit in rightTeam")
                     .mini
                         h1 {{ unit.name }}
-                        img(src="http://placehold.it/32x32" alt="...").avatar
+                        img(src="../../images/units/{{ unit.sprite.name }}.png" alt="...").avatar
                         .progress
-                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="{{ unit.life }}" aria-valuemin="0" aria-valuemax="{{ unit.maxLife }}" style="width: 40%;")
-                                .sr-only 100%
+                            <progressbar animate="false" max="unit.maxLife" value="unit.life" type="success"></progressbar>
                         .stats
                             img(src="../../images/icons/spell0.png" alt="...")
                             img(src="../../images/icons/spell1.png" alt="...")

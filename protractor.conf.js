@@ -17,6 +17,8 @@ exports.config = {
     console.log('Ready !');
   },
 
+  allScriptsTimeout: 20000,
+
   framework: 'cucumber',
 
   specs: [

@@ -34,7 +34,6 @@ function Placement() {
       unit.x = x;
       unit.y = y;
     });
-    console.log('random done');
   };
 
 }

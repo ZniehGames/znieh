@@ -28,8 +28,22 @@ function GameCtrl() {
       return false;
     }
 
-    UserManager.reloadTeam(playerA);
-    UserManager.reloadTeam(playerB);
+    UserManager.reloadTeam(playerA).then(function() {
+      Placement.random(playerA.team.units, 'left', map);
+      playerA.socket.emit('game start', {
+        'side': 'left',
+        'units': playerA.team.units
+      });
+    });
+
+    UserManager.reloadTeam(playerB).then(function() {
+      Placement.random(playerB.team.units, 'right', map);
+      playerB.socket.emit('game start', {
+        'side': 'right',
+        'units': playerB.team.units
+      });
+    });
+
     GameStorage.add(new Game(playerA, playerB, map));
     return true;
   }

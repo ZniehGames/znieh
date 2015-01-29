@@ -4,7 +4,7 @@ block content
     .game(ng-controller="FightCtrl")
         .center-block.game-block
             .left-side
-                .unit-block(ng-repeat="unit in leftTeam.units")
+                .unit-block(ng-repeat="unit in leftTeam")
                     .mini
                         h1 {{ unit.name }}
                         img(src="http://placehold.it/32x32" alt="...").avatar
@@ -19,7 +19,7 @@ block content
                     //-     p {{ unit.size.name }} {{ unit.weight.name }}
             .game-app#game-app
             .right-side
-                .unit-block(ng-repeat="unit in rightTeam.units")
+                .unit-block(ng-repeat="unit in rightTeam")
                     .mini
                         h1 {{ unit.name }}
                         img(src="http://placehold.it/32x32" alt="...").avatar

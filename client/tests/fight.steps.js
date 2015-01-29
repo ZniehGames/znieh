@@ -20,7 +20,7 @@ module.exports = function() {
     });
 
     this.Then(/^I should be able to see my team$/, function(done) {
-       names = element.all(by.repeater('unit in leftTeam.units').column('unit.name')).map(function(e, index) {
+       names = element.all(by.repeater('unit in leftTeam').column('unit.name')).map(function(e, index) {
          return {
            index: index,
            text: e.getText()

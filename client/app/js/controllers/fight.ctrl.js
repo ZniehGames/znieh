@@ -10,18 +10,19 @@ angular.module('znieh')
   $scope.rightTeam = null;
 
   // We start the game and add our team display
-  SocketService.on('load user team', function(team) {
+  SocketService.on('game start', function(data) {
       game = System.get('main')['default'].start(
         SocketService,
-        $window.sessionStorage.side,
+        data.side,
         AuthenticationService.currentUser().username,
-        team
+        data.units
       );
+
       if ($scope.side === 'left') {
-        $scope.leftTeam = team;
+        $scope.leftTeam = data.units;
         return;
       }
-      $scope.rightTeam = team;
+      $scope.rightTeam = data.units;
   });
 
   // We add opponent team
@@ -29,10 +30,9 @@ angular.module('znieh')
       console.log('match ready', data);
 
       var team = [];
-      team.units = [];
       for (var i = 0; i < data.length; i++) {
           if (data[i].user !== AuthenticationService.currentUser().username) {
-            team.units.push(data[i]);
+            team.push(data[i]);
           }
       }
 

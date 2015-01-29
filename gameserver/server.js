@@ -55,6 +55,10 @@ io.on('connection', function(socket) {
     GameController.attack(socket, data.attacker, data.defender);
   });
 
+  socket.on('debug', function(data) {
+    console.log('DEBUG:'.magenta, data);
+  });
+
 });
 
 app.sockets = sockets; // we export sockets to avoid waiting timeout during tests

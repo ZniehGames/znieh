@@ -20,7 +20,8 @@ module.exports = function() {
     });
 
     this.Then(/^I should be able to see my team$/, function(done) {
-       names = element.all(by.repeater('unit in leftTeam').column('unit.name')).map(function(e, index) {
+
+      var names = element(by.css('.right-side')).all(by.repeater('unit in units').column('unit.name')).map(function(e, index) {
          return {
            index: index,
            text: e.getText()
@@ -28,10 +29,10 @@ module.exports = function() {
        });
 
        expect(names).to.eventually.eql([
-           {index: 0, text: 'Frodon'},
-           {index: 1, text: 'Toubib'},
-           {index: 2, text: 'Murden'},
-           {index: 3, text: 'Gobelin'}
-       ]).and.notify(done);
+        { index: 0, text: 'Gobelin'},
+        { index: 1, text: 'Murden' },
+        { index: 2, text: 'Toubib' },
+        { index: 3, text: 'Frodon' }
+      ]).and.notify(done);
     });
 };

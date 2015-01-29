@@ -9,8 +9,9 @@ class FightService {
       this.io = null;
     }
 
-    init(io) {
+    init(io, $scope) {
       this.io = io;
+      this.$scope = $scope;
     }
 
     attack(attacker, defender) {
@@ -24,11 +25,12 @@ class FightService {
       var attacker = GameController.findUnitById(data.attacker.id);
       var defender = GameController.findUnitById(data.defender.id);
 
-      TweenService.attack(attacker, defender, data.dammage, function() {
+      TweenService.attack(attacker, defender, data.dammage, () => {
         defender.life = data.defender.life;
         if (defender.life <= 0) {
           defender.kill();
         }
+        this.$scope.$digest();
       });
     }
 

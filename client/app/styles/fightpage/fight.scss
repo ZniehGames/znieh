@@ -58,11 +58,6 @@
     z-index: 2;
     position: relative;
 
-    .unit-block:hover, .unit-block.active {
-        width: 250px;
-        margin-right: -170px;
-    }
-
     .unit-block {
         .mini {
             float: left;
@@ -80,6 +75,10 @@
                 margin-right: 2px;
             }
         }
+
+        &.active {
+            background: #888;
+        }
     }
 }
 
@@ -89,21 +88,7 @@
     z-index: 2;
     position: relative;
 
-    .unit-block:hover, .unit-block.active {
-        width: 250px;
-        margin-left: -150px;
-
-        .details {
-            float: left;
-            display: block;
-        }
-    }
-
     .unit-block {
-        .details {
-            float: left;
-            display: none;
-        }
 
         .mini {
             float: right;
@@ -124,6 +109,10 @@
             img {
                 margin-left: 2px;
             }
+        }
+
+        &.active {
+            background: #888;
         }
     }
 }

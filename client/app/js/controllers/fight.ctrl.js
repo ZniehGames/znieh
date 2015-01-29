@@ -5,9 +5,8 @@ angular.module('znieh')
 
   var game;
 
-  $scope.side = $window.sessionStorage.side;
-  $scope.leftTeam = null;
-  $scope.rightTeam = null;
+  $scope.side = '';
+  $scope.units = null;
 
   // We start the game and add our team display
   SocketService.on('game start', function(data) {
@@ -15,36 +14,11 @@ angular.module('znieh')
         SocketService,
         data.side,
         AuthenticationService.currentUser().username,
-        data.units
+        data.units,
+        $scope
       );
 
-      if ($scope.side === 'left') {
-        $scope.leftTeam = data.units;
-        return;
-      }
-      $scope.rightTeam = data.units;
-  });
-
-  // We add opponent team
-  SocketService.on('match ready', function(data) {
-      console.log('match ready', data);
-
-      var opponentTeam = [], playerTeam = [];
-      for (var i = 0; i < data.length; i++) {
-          if (data[i].user !== AuthenticationService.currentUser().username) {
-            opponentTeam.push(data[i]);
-          } else {
-            playerTeam.push(data[i]);
-          }
-      }
-
-      if ($scope.side === 'left') {
-        $scope.rightTeam = opponentTeam;
-        $scope.leftTeam.units = playerTeam;
-        return;
-      }
-      $scope.leftTeam = opponentTeam;
-      $scope.rightTeam.units = playerTeam;
+      $scope.side = data.side;
   });
 
 });

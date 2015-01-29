@@ -5,11 +5,12 @@ import InputService from '../services/InputService';
 class Unit extends Phaser.Sprite {
 
     constructor(game, tile, data) {
-        super(game, tile.position.x, tile.position.y, 'units', 0);
+        super(game, tile.position.x, tile.position.y, 'units');
         this.tile = tile;
         this.id = data.id;
         this.name = data.name;
         this.life = data.life;
+        this.maxLife = data.life;
         this.moves = data.moves;
         this.stats = data.stats;
         this.weapon = data.weapon;

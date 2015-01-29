@@ -8,17 +8,16 @@ class Placement {
 
     constructor() {
         this.side = null;
-        this.tilemap = null;
         this.units = []; // Array<Unit>
         this.ready = false;
     }
 
     create() {
-        var that = this;
 
         // We start the game
         this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.physics.p2.setBoundsToWorld(true, true, true, true, false);
+        this.game.stage.disableVisibilityChange = true;
 
         // Create the map with collisions
         var tiledmap = this.game.add.tiledmap('map');
@@ -29,14 +28,19 @@ class Placement {
 
         // Add units
         this.units = UnitsManager.create(this.game.team, this.game);
+        for (var i = this.units.length - 1; i >= 0; i--) {
+            this.units[i].isOwned = true;
+        }
+        this.game.$scope.units = this.units;
+        this.game.$scope.$digest();
 
-        this.game.io.on('match ready', function (data) {
+        this.game.io.on('match ready', (data) => {
             var units = [];
             for (var j = 0; j < data.length; j++) {
-                if (data[j].user === that.game.user) {
-                    for (var i = 0; i < that.units.length; i++) {
-                        if (that.units[i].id === data[j].id) {
-                            units[j] = that.units[i];
+                if (data[j].user === this.game.user) {
+                    for (var i = 0; i < this.units.length; i++) {
+                        if (this.units[i].id === data[j].id) {
+                            units[j] = this.units[i];
                             units[j].x = data[j].x;
                             units[j].y = data[j].y;
                             units[j].isOwned = true;
@@ -47,9 +51,9 @@ class Placement {
                     units[j].isOwned = false;
                 }
             }
-            that.game.state.states.game.units = units;
-            that.game.state.states.game.side = that.side;
-            that.game.state.start('game');
+            this.game.state.states.game.units = units;
+            this.game.state.states.game.side = this.side;
+            this.game.state.start('game');
         });
     }
 

@@ -2,6 +2,7 @@ var env = require('./environment.js');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
+var config = require('config');
 
 var io = require('socket.io-client');
 var expect = chai.expect;
@@ -12,14 +13,14 @@ module.exports = function() {
 
     this.Given(/^Gameserver is running$/, function(done) {
       this.server = require('./../../gameserver/server');
-      this.server.listen(1337);
+      this.server.listen(config.get('port'));
       done();
     });
 
     this.Given(/^Gameserver is running with 1 player in queue$/, function(done) {
       this.server = require('./../../gameserver/server');
-      this.server.listen(1337);
-      socket = io.connect('http://127.0.0.1:1337', {
+      this.server.listen(config.get('port'));
+      socket = io.connect('http://127.0.0.1:' + config.get('port'), {
         transports: ['websocket'],
         'force new connection': true
       });

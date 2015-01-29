@@ -5,6 +5,7 @@ import FightService from '../services/FightService';
 import MapService from '../services/MapService';
 import TweenService from '../services/TweenService';
 import IoService from '../services/IoService';
+import GameController from '../controllers/GameController';
 import Map from '../model/Map';
 
 class Game {
@@ -25,11 +26,14 @@ class Game {
         this.game.physics.p2.convertTiledmap(tiledmap, 'Map');
 
         // Init game services
+        GameController.init(this.game.$scope);
         IoService.init(this.game.io);
-        FightService.init(this.game.io);
+        FightService.init(this.game.io, this.game.$scope);
         MapService.init(map, this.game.io);
         TweenService.init(this.game);
-        UnitsManager.create(this.units, this.game);
+        var units = UnitsManager.create(this.units, this.game);
+        this.game.$scope.units = units;
+        this.game.$scope.$digest();
     }
 
 }

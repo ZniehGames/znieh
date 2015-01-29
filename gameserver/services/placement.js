@@ -17,6 +17,26 @@ function Placement() {
     };
   };
 
+
+
+  this.random = function(units, side, map) {
+    var positions = [];
+    var x, y;
+    units.forEach(function(unit) {
+      do {
+        x = Math.floor((Math.random() * 5));
+        y = Math.floor((Math.random() * 10) + 3);
+        if (side === 'right') {
+          x += 20;
+        }
+      } while(_.find(positions, {'x': x, 'y': y}) !== undefined || !map.isWalkableTile(x, y));
+      positions.push({'x': x, 'y': y});
+      unit.x = x;
+      unit.y = y;
+    });
+    console.log('random done');
+  };
+
 }
 
 module.exports = new Placement();

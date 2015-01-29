@@ -32,4 +32,8 @@ Map.prototype.getWalkables = function() {
   return walkables;
 };
 
+Map.prototype.isWalkableTile = function(x, y) {
+  return this.blockedTiles.indexOf(this.tiles[y][x]) === -1;
+};
+
 module.exports = Map;

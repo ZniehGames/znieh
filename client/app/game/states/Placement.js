@@ -28,7 +28,7 @@ class Placement {
         MapService.init(map);
 
         // Add units
-        this.units = UnitsManager.createFromTeam(this.game.team, this.game);
+        this.units = UnitsManager.create(this.game.team, this.game);
 
         this.game.io.on('match ready', function (data) {
             var units = [];

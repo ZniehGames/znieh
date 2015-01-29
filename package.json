@@ -51,6 +51,7 @@
     "express": "^4.10.4",
     "lodash": "^2.4.1",
     "node-rest-client": "^1.4.1",
+    "q": "^1.1.2",
     "socket.io": "^1.2.1",
     "socket.io-client": "^1.2.1"
   }

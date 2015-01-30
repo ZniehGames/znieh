@@ -8,7 +8,7 @@ class InputService {
 
     onUnitDown(unit) {
       if (unit.isOwned) {
-        GameController.selectedUnit = unit;
+        GameController.selectUnit(unit);
         MapService.highlightUnitPossibleMoves(unit);
         return;
       }

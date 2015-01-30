@@ -6,7 +6,7 @@ import Game from 'states/Game';
 
 var game, GameApp = {};
 
-GameApp.start = function(io, side, user, team) {
+GameApp.start = function(io, side, user, team, $scope) {
 
     game = new Phaser.Game(
         864, 480,
@@ -18,6 +18,7 @@ GameApp.start = function(io, side, user, team) {
     game.side = side;
     game.user = user;
     game.team = team;
+    game.$scope = $scope;
 
     //game.analytics = new Analytics('phaser-game');
 

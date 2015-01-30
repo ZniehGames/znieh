@@ -30,7 +30,7 @@
     "gulp-sass": "https://github.com/ajoslin/gulp-sass/tarball/5a3ee8d84eff2c71e3bbffbbcfe0b6a316dc766f",
     "gulp-scss-lint": "^0.1.4",
     "gulp-sourcemaps": "^1.2.4",
-    "gulp-traceur": "^0.13.0",
+    "gulp-traceur": "0.13.0",
     "gulp-uglify": "^0.3.1",
     "gulp-wrap": "^0.5.0",
     "jasmine": "^2.1.1",

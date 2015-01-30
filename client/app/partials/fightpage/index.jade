@@ -4,33 +4,27 @@ block content
     .game(ng-controller="FightCtrl")
         .center-block.game-block
             .left-side
-                .unit-block(ng-repeat="unit in leftTeam")
+                .unit-block(ng-repeat="unit in units" ng-class="{'active': unit.selected === true}" ng-if="side === 'left' && unit.isOwned === true || side === 'right' && unit.isOwned === false")
                     .mini
                         h1 {{ unit.name }}
-                        img(src="http://placehold.it/32x32" alt="...").avatar
+                        img(src="../../images/units/{{ unit.sprite.name }}.png" alt="...").avatar
                         .progress
-                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="{{ unit.life }}" aria-valuemin="0" aria-valuemax="{{ unit.maxLife }}" style="width: 40%;")
-                                .sr-only 100%
+                            <progressbar animate="false" max="unit.maxLife" value="unit.life" type="success"></progressbar>
                         .stats
                             img(src="../../images/icons/spell0.png" alt="...")
                             img(src="../../images/icons/spell1.png" alt="...")
                             img(src="../../images/icons/spell2.png" alt="...")
-                    //- .details
-                    //-     p {{ unit.size.name }} {{ unit.weight.name }}
             .game-app#game-app
             .right-side
-                .unit-block(ng-repeat="unit in rightTeam")
+                .unit-block(ng-repeat="unit in units" ng-class="{'active': unit.selected === true}" ng-if="side === 'right' && unit.isOwned === true || side === 'left' && unit.isOwned === false")
                     .mini
                         h1 {{ unit.name }}
-                        img(src="http://placehold.it/32x32" alt="...").avatar
+                        img(src="../../images/units/{{ unit.sprite.name }}.png" alt="...").avatar
                         .progress
-                            .progress-bar.progress-bar-success(role="progressbar" aria-valuenow="{{ unit.life }}" aria-valuemin="0" aria-valuemax="{{ unit.maxLife }}" style="width: 40%;")
-                                .sr-only 100%
+                            <progressbar animate="false" max="unit.maxLife" value="unit.life" type="success"></progressbar>
                         .stats
                             img(src="../../images/icons/spell0.png" alt="...")
                             img(src="../../images/icons/spell1.png" alt="...")
                             img(src="../../images/icons/spell2.png" alt="...")
-                    //- .details
-                    //-     p {{ unit.size.name }} {{ unit.weight.name }}
         .center-block.game-block
             //- include ./fight_log.jade

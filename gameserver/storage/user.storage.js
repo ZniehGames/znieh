@@ -15,7 +15,9 @@ function UserStorage() {
 
     if (this.users[userIndex] !== undefined) {
       this.users[userIndex].disconnectTimeout = setTimeout(function() {
-        this.users.splice(userIndex, 1);
+        if (this.users) {
+          this.users.splice(userIndex, 1);
+        }
       }, 30 * 1000); // 30 seconds
     }
   };

@@ -20,7 +20,7 @@ services:
       - { name: kernel.event_listener, event: email.registration, method: onEmailRegistration }
   email_registration.processor:
     class: AppBundle\Processor\EmailRegistrationProcessor
-    arguments: [@global_mailer]
+    arguments: [@global_mailer, @twig]
   currency_manager:
     class: Znieh\Currency\CurrencyManager
   team_update_listener:

@@ -5,18 +5,14 @@
     padding-top: 50px;
 }
 
-.logo {
-    margin: 0 auto;
-    display: block;
-    height: 274px;
-    width: 300px;
-    background: url('../images/logo.png') center center no-repeat scroll;
-    background-size: cover;
+.business-header {
+  padding-top: 15px;
 }
 
-.business-header {
-  height: 320px;
-  padding-top: 15px;
+.business-header h1 {
+  text-align: center;
+  font-size: 80px;
+  letter-spacing: 60px;
 }
 
 .homepage-layer {
@@ -25,4 +21,124 @@
 
 .user-content {
   color: white;
+}
+
+.login-form input {
+  margin-right: 5px;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.newsletter-cta, .registration {
+  background: #323b43;
+  border-radius: 3px;
+  color: white;
+  height: auto;
+  margin-bottom: 32px;
+  padding: 32px 5% 40px 5%;
+  -webkit-animation: nod 3s 15s ease-in-out;
+}
+
+.newsletter-cta h1, .registration h1 {
+  letter-spacing: -.5px;
+  margin: 0;
+}
+
+.newsletter-cta h2, .registration h2 {
+  color: #8b959e;
+  margin: 0;
+}
+
+.newsletter-cta form {
+  height: 40px;
+  margin-top: 24px;
+  position: relative;
+  width: 250px;
+}
+
+.registration form {
+  height: 200px;
+  margin-top: 24px;
+  position: relative;
+  width: 400px;
+}
+
+.registration input {
+  color: #8b959e;
+  -webkit-appearance: none;
+  border-radius: 3px 3px 3px 3px;
+  border: 0;
+  box-shadow: none;
+  font-size: 12px;
+  font-family: "Open Sans";
+  height: 40px;
+  outline: 0;
+  padding-left: 10px;
+  position: relative;
+  margin: 5px 5px 5px 5px;
+  -webkit-transition: box-shadow 200ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out;
+  width: 70%;
+}
+
+.registration button {
+  background: #168eea;
+  background-size: 26px;
+  border-radius: 3px 3px 3px 3px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  height: 40px;
+  outline: 0;
+  margin-left: 5px;
+}
+
+.newsletter-cta input {
+  color: #8b959e;
+  -webkit-appearance: none;
+  border-radius: 3px 0 0 3px;
+  border: 0;
+  box-shadow: none;
+  font-size: 12px;
+  font-family: "Open Sans";
+  height: 40px;
+  left: 0;
+  outline: 0;
+  padding-left: 10px;
+  position: absolute;
+  -webkit-transition: box-shadow 200ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out;
+  width: 98%;
+}
+.newsletter-cta button {
+  background: #168eea url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAAAEgAAABIAEbJaz4AAAAJdnBBZwAAAEAAAABAAOrz+GAAAAJkSURBVGje7ZnBaxNBGMVfdYsxDbbUUy0qgsWAirfSooj0JBQkQvGcv0J69NhzoTcP9eTRevNkU2khBSWIChHUmnhoFVNcmpoWY9PL27eBHZatbtgVZ3LIj2+++XhkHjPfbtBBzz/ljjc+iVwPjiHhYQU4Pas8gH5SE26AdpXXM+styXAThtkf1oSpERC3CUcwSPqK96SWIa+OHClm6y3KeoXQPGvC9AiIx4RnMUrawjpp25B3DSdJL+M14ZysVwzNqypvyIslvgVWgG/CfkyT2opu40XI2jFcJjXwlFQ35N3EMGkFVdIvzcogQ4bOrRxqqVnlzUbsCfPB2cS3wAroPgnX+O3Kelsokup4TrqIG6QWHpHeGCpP4RypJOu5hjyDCauKTSi2pFhRsbm/6AmtCdMjoK/jUQYPSE20SS2MkBo4HoiV8CxQbxpXSb9xmrSALyEKDMbIG07CgmKLsfSE1oTpEWDqCQ+wQvqs2L5im4YVt3GLVNGp9y6iglhMGLUntCZMowD/JPTHIO6SHF29G6iRshgnbepMrOiiXcWHIyoItUj4dVyK2BNaE6ZbgMmEo1gg1bBMGsYdUgWvSfs4QRrDddK8eseow56E/70AB2XST2RJDV2lO5pdxyTpimJV5EmPNVvQ7P3QJ2t/BP/D6Ho6fnvkk9D2hP+eAAcbpCbukc7gIamGGdKOVjyRzQ4kf0ad4EfVayPScHCB5KoIFPvWFYPygg/ZOVwifdfaiK9AE98CK6Cv4/+lNkCq4zzpFaYiVckgE4jtdr0LDBkOTok9yomyUUoA2MPen/4CiW+BFXAIUQPX5eYMa5UAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTUtMDItMDFUMTU6NTA6MTMrMDM6MDD1rHSlAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTAyLTAxVDE1OjUwOjEzKzAzOjAwhPHMGQAAAABJRU5ErkJggg==) no-repeat center;
+  background-size: 26px;
+  border-radius: 0 3px 3px 0;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  height: 40px;
+  outline: 0;
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+
+.newsletter-cta .caption {
+  color: #8b959e;
+  font-size: 12px;
+  left: 275px;
+  position: relative;
+  top: 5px;
+  width: 200px;
+}
+
+.registration .caption {
+  color: #8b959e;
+  font-size: 12px;
+  position: relative;
+  width: 300px;
 }

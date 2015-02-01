@@ -1,18 +1,13 @@
 br
-.panel.panel-info(ng-show="openRegistration")
-    .panel-heading Prêt pour l'aventure ?
-    .panel-body
-       p Renseigne vite les informations suivantes :
-       form#registration.form-horizontal(role="form" ng-submit="submit()" ng-controller="RegistrationCtrl")
-
-          .form-group
-            input.form-control(type="text", name="username" ng-model="user.username" placeholder="Ton p'tit nom")
-
-          .form-group
-            input.form-control(type="password", name="plainPassword" ng-model="user.plainPassword" placeholder="Ton mot de passe")
-
-          .form-group
-            input.form-control(type="text", name="email" ng-model="user.email" placeholder="Ton email")
-
+.registration(ng-show="openRegistration")
+    h1 Prêt pour l'aventure ?
+    h2 Renseigne vite les informations suivantes :
+    form#registration(role="form" ng-submit="submit()" ng-controller="RegistrationCtrl")
+      input(type="text", name="username" ng-model="user.username" placeholder="Ton p'tit nom")
+      input(type="password", name="plainPassword" ng-model="user.plainPassword" placeholder="Ton mot de passe")
+      input(type="text", name="email" ng-model="user.email" placeholder="Ton email")
+      .row
+        .col-xs-4
           button(type="submit") C'est parti !
-          p En cliquant vous vous engagez à respecter blabla..+.
+        .col-xs-8
+          .caption En cliquant vous vous engagez à respecter absolument tout ce qu'on vous demandera :)

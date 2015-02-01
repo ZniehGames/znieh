@@ -2,7 +2,7 @@
 
 namespace Znieh\Model;
 
-class GameObject
+abstract class GameObject
 {
     use \Znieh\Traits\NamableEntity;
     use \Znieh\Traits\HasBonusesEntity;

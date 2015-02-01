@@ -23,6 +23,7 @@ set  :keep_releases,  3
 set :shared_files, ["app/config/parameters.yml", "client/config/main.json", "gameserver/config/default.json"]
 set :shared_children, [app_path + "/logs", "vendor", "node_modules"]
 set :use_composer, true
+set :composer_options,  "--verbose --prefer-dist --optimize-autoloader --no-progress"
 
 set :writable_dirs, ["app/cache", "app/logs"]
 set :webserver_user, "www-data"

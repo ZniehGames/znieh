@@ -9,10 +9,12 @@ use Znieh\Mailer\GlobalMailer;
 class EmailRegistrationProcessor implements ProcessorInterface
 {
   protected $mailer;
+  protected $template;
 
-  public function __construct(GlobalMailer $mailer)
+  public function __construct(GlobalMailer $mailer, $template)
   {
     $this->mailer = $mailer;
+    $this->template = $template;
   }
 
   public function process(Message $message, array $options)
@@ -23,7 +25,7 @@ class EmailRegistrationProcessor implements ProcessorInterface
       $this->mailer->send(
         $data['email'],
         'Bienvenue dans l\'aventure Znieh Games !',
-        'ca va ?'
+        $this->template->render('Emails/email_registration.html.twig')
       );
 
       return;

@@ -9,11 +9,11 @@
   height: 100%;
   width: 100%;
   display: block;
-  border-radius: 20px;
+  border-radius: 3px;
   overflow: hidden;
 
   .name {
-    background: #777;
+    background: #b0bbc4;
     height: 60%;
     margin: 0 auto;
     text-align: center;
@@ -22,7 +22,7 @@
   }
 
   .bonuses {
-    background: #777;
+    background: #b0bbc4;
     height: 40%;
     margin: 0 auto;
     text-align: center;
@@ -32,6 +32,18 @@
 }
 
 .object-info-container.active > .object-info {
-  box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  box-shadow: rgba(255,255,255,0.8) 0 0 20px;
   transition: .5s background-size ease-in-out;
+}
+
+.object-info .stat {
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+
+}
+.object-info .stat img {
+  margin-right: 3px;
 }

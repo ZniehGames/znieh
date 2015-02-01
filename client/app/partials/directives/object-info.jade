@@ -1,14 +1,14 @@
-.col-md-3.object-info-container
+.col-xs-6.col-lg-4.object-info-container
   .object-info
      .name {{ object.name }}
      .bonuses
         object-bonuses(bonuses="object.bonuses")
         .stat(ng-if="object.defense > 0")
-          | {{ object.defense }}
           img(src="../images/stats/defense.png")
+          | {{ object.defense }}
         .stat(ng-if="object.min_damage > 0")
-          | {{ object.min_damage }}-{{ object.max_damage }}
           img(src="../images/stats/tranch.png")
+          | {{ object.min_damage }}-{{ object.max_damage }}
         .stat(ng-if="object.weight > 0")
-          | {{ object.weight }}
           img(src="../images/stats/weight.png")
+          | {{ object.weight }}

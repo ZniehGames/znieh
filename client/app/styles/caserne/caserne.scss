@@ -1,3 +1,25 @@
 .caserne {
   padding-top: 15px;
+  background: #323b43;
+}
+
+.caserne h4 {
+  color: #e8ebee;
+}
+
+.caserne .nav-tabs > li > a {
+  color: #788a9a;
+}
+
+.caserne .nav-tabs>li.active>a {
+  background: #e8ebee;
+  color: #111;
+}
+
+.caserne .nav-tabs {
+  border-bottom: 1px solid #e8ebee;
+}
+
+.caserne button {
+  margin-top: 10px;
 }

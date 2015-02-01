@@ -43,7 +43,7 @@ before_script:
 
 # Symfony specific
  - cp app/config/parameters.yml.travis app/config/parameters.yml
- - composer install --no-progress --prefer-dist
+ - composer self-update && composer install --no-progress --prefer-dist
  - php app/console doctrine:database:create --env=test
  - php app/console doctrine:schema:create --env=test
  - mkdir -p app/cache app/logs

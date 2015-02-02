@@ -23,6 +23,8 @@ env:
 before_script:
 # Prepare Webserver
  - sudo apt-get install apache2 libapache2-mod-fastcgi
+ - mysql -e 'create database znieh;'
+ - mysql -e 'create database znieh_test;'
 
 # Enable php-fpm
  - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
@@ -43,8 +45,7 @@ before_script:
 
 # Symfony specific
  - cp app/config/parameters.yml.travis app/config/parameters.yml
- - composer install --no-progress --prefer-dist
- - php app/console doctrine:database:create --env=test
+ - composer self-update && composer install --no-progress --prefer-dist
  - php app/console doctrine:schema:create --env=test
  - mkdir -p app/cache app/logs
  - chmod -R 777 /tmp/cache /tmp/logs app/cache app/logs

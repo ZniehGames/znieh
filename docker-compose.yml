@@ -1,0 +1,25 @@
+application:
+    build: docker/services/application
+    volumes:
+        - .:/var/www
+    ports:
+        - "80:80"
+    links:
+        - database
+
+database:
+    build: docker/services/mariadb
+    ports:
+        - "3306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: 4m81HGxH47i31Xw
+        MYSQL_USER:          'znieh'
+        MYSQL_PASSWORD:      'znieh'
+    volumes_from:
+        - mariadbdata
+
+mariadbdata:
+    image: busybox:latest
+    volumes:
+        - /var/lib/mysql
+    command: echo "I'm a data container"

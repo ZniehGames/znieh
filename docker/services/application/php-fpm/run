@@ -1,0 +1,11 @@
+#!/bin/bash
+
+chown -R znieh:znieh /var/www/znieh/app/cache
+chown -R znieh:znieh /var/www/znieh/app/logs
+
+su znieh <<'EOF'
+cd       /var/www/znieh
+composer install --no-dev --no-interaction --optimize-autoloader --no-scripts
+EOF
+
+exec php5-fpm -y /etc/service/php-fpm/fpm.conf -O

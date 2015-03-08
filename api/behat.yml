@@ -16,6 +16,6 @@ default:
               show_auto:    false
     suites:
         api:
-            paths: [ %paths.base%/features/api ]
+            paths: [ %paths.base%/features ]
             contexts:
                 - AppBundle\Behat\UserContext

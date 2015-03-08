@@ -1,4 +1,4 @@
-var env = require('./client/tests/environment.js');
+var env = require('./tests/environment.js');
 
 exports.config = {
 
@@ -22,17 +22,17 @@ exports.config = {
   framework: 'cucumber',
 
   specs: [
-    'features/frontend/*.feature'
+    'features/*.feature'
   ],
 
   cucumberOpts: {
     require: [
-      'client/tests/home.steps.js',
-      'client/tests/fight.steps.js',
-      'client/tests/search.steps.js',
-      'client/tests/login.steps.js',
-      'client/tests/caserne.steps.js',
-      'client/tests/gameserver.steps.js'
+      'tests/home.steps.js',
+      'tests/fight.steps.js',
+      'tests/search.steps.js',
+      'tests/login.steps.js',
+      'tests/caserne.steps.js',
+      'tests/gameserver.steps.js'
     ],
     format: 'pretty'
   }

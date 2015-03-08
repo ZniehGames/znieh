@@ -15,6 +15,7 @@ database:
         MYSQL_ROOT_PASSWORD: 4m81HGxH47i31Xw
         MYSQL_USER:          'znieh'
         MYSQL_PASSWORD:      'znieh'
+        TERM: dumb
     volumes_from:
         - mariadbdata
 

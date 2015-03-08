@@ -18,10 +18,10 @@ var gulp       = require('gulp'),
     csslint    = require('gulp-csslint');
 
 var paths = {};
-paths.app = './client/app/';
-paths.dist = './client/dist/';
-paths.tmp = './client/tmp/';
-paths.config = './client/config/';
+paths.app = './app/';
+paths.dist = './dist/';
+paths.tmp = './tmp/';
+paths.config = './config/';
 paths.images = paths.app + 'images/**/*';
 paths.fonts = paths.app + 'fonts/**/*';
 paths.json = paths.app + 'json/**/*';
@@ -53,7 +53,7 @@ paths.game = [
 
 paths.jsvendor = [
     paths.app + 'vendor/traceur-runtime/traceur-runtime.js',
-    paths.app + 'vendor/socket.io-client/socket.io.js',
+    paths.app + 'vendor/socket.io-socket.io.js',
     paths.app + 'vendor/jquery/dist/jquery.js',
     paths.app + 'vendor/angular/angular.js',
     paths.app + 'vendor/angular-route/angular-route.js',
@@ -89,7 +89,7 @@ gulp.task('jade-watch', function() {
   gulp.src(paths.jade)
         .pipe(plumber())
         .pipe(cache('jade'))
-        //.pipe(jadeInheritance({basedir: './client/app'}))
+        //.pipe(jadeInheritance({basedir: './app'}))
         .pipe(jade({pretty: true}))
         .pipe(gulp.dest(paths.dist + 'partials/'))
 });
@@ -105,7 +105,7 @@ gulp.task('templates', function() {
 gulp.task('sass-lint', function() {
     gulp.src(paths.sass)
         .pipe(cache('sasslint'))
-        .pipe(scsslint({config: './client/scsslint.yml'}))
+        .pipe(scsslint({config: './scsslint.yml'}))
 });
 
 gulp.task('sass', function() {
@@ -125,7 +125,7 @@ gulp.task('css-vendor', function() {
 
 gulp.task('css-lint-app', ['sass'], function() {
     gulp.src(paths.tmp + 'app.css')
-        .pipe(csslint('./client/csslintrc.json'))
+        .pipe(csslint('./csslintrc.json'))
         .pipe(csslint.reporter())
 });
 

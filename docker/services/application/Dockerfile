@@ -67,8 +67,8 @@ COPY php-fpm/znieh.ini /etc/php5/fpm/conf.d/znieh.ini
 COPY php-fpm/znieh.ini /etc/php5/cli/conf.d/znieh.ini
 
 # Volume for log / cache
-VOLUME /var/www/znieh/app/cache
-VOLUME /var/www/znieh/app/logs
+VOLUME /var/www/api/app/cache
+VOLUME /var/www/api/app/logs
 
 EXPOSE 80
 

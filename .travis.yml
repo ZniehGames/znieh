@@ -44,19 +44,20 @@ before_script:
 # - cp .travis-composer-config.json ~/.composer/config.json
 
 # Symfony specific
- - cp app/config/parameters.yml.travis app/config/parameters.yml
+ - cp api/app/config/parameters.yml.travis api/app/config/parameters.yml
  - composer self-update && composer install --no-progress --prefer-dist
- - php app/console doctrine:schema:create --env=test
- - mkdir -p app/cache app/logs
- - chmod -R 777 /tmp/cache /tmp/logs app/cache app/logs
+ - php api/app/console doctrine:schema:create --env=test
+ - mkdir -p api/app/cache api/app/logs
+ - chmod -R 777 /tmp/cache /tmp/logs api/app/cache api/app/logs
 
 # Assets dependencies
- - npm install
+ - cd frontend && npm install && cd ..
+ - cd gameserver && npm install && cd ..
  - npm install -g bower protractor cucumber karma-cli jasmine-node
  - bower install
 
 # JS specific
- - cp client/config/main.json.travis client/config/main.json
+ - cp frontend/config/main.json.travis frontend/config/main.json
 
 # Protractor
  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -69,21 +70,21 @@ before_script:
  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99.0 -ac -screen 0 1280x1024x24"
 
 # RabbitMQ
- - sudo chmod +x bin/prepare-rabbit.sh
- - sudo ./bin/prepare-rabbit.sh
+ - sudo chmod +x api/bin/prepare-rabbit.sh
+ - sudo ./api/bin/prepare-rabbit.sh
 
 # Karma
  - export CHROME_BIN=google-chrome-stable
 
 script:
-    - gulp
-    - php app/console doctrine:fixtures:load -n --env=test
-    - php app/console security:check
-    - php bin/phpspec run
-    - karma start karma.conf.js --single-run
+    - cd frontend && gulp && cd ..
+    - cd api && php app/console doctrine:fixtures:load -n --env=test && cd ..
+    - cd api && php app/console security:check && cd ..
+    - cd api && php bin/phpspec run && cd ..
+    - cd frontend && karma start karma.conf.js --single-run && cd ..
     - jasmine-node gameserver
-    - php bin/behat
-    - protractor protractor.conf.js
+    - cd api && php bin/behat cd ..
+    - cd frontend && protractor protractor.conf.js && cd ..
 
 after_success:
   # Deploy master to production

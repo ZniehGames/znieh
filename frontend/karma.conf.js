@@ -9,11 +9,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'client/dist/js/vendor.js',
-      'client/dist/js/game.js',
-      'client/dist/js/app.js',
-      'client/app/vendor/angular-mocks/angular-mocks.js',
-      'client/app/spec/**/*.js'
+      'dist/js/vendor.js',
+      'dist/js/game.js',
+      'dist/js/app.js',
+      'app/vendor/angular-mocks/angular-mocks.js',
+      'app/spec/**/*.js'
     ],
 
     // list of files to exclude

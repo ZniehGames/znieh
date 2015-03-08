@@ -1,3 +1,4 @@
+# This file is a "template" of what your parameters.yml file should look like
 parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
@@ -5,6 +6,9 @@ parameters:
     database_name:     znieh
     database_user:     znieh
     database_password: znieh
+
+    test_database_name: znieh_test
+    test_database_user: znieh_test
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
@@ -23,11 +27,14 @@ parameters:
     public_key_path:  %kernel.root_dir%/var/jwt/public-test.pem
     pass_phrase:      'spyl'
     token_ttl:        86400
-    test_database_name: znieh_test
-    test_database_user: znieh_test
 
     rabbitmq_host: 127.0.0.1
     rabbitmq_port: 5672
     rabbitmq_login: admin
     rabbitmq_password: admin
+
     mandrill_api_key: xxxx
+
+    # Elasticsearch
+    elasticsearch_host: 127.0.0.1
+    elasticsearch_port: 9200

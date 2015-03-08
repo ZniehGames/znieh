@@ -1,0 +1,13 @@
+app/*\.cache
+
+dist/
+app/vendor/
+tmp/
+config/main.json
+
+node_modules
+node_modules/*
+
+npm-debug.log
+.sass-cache/*
+.idea/*

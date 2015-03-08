@@ -50,34 +50,3 @@ docker exec -t -i znieh_application_1 /bin/bash
 ```
 
 Vous pouvez ensuite aller sur `/var/www` qui est le repertoire root du projet znieh.
-
-## C'est extrêmement lent
-
-Oui, le montage de fichier par défaut des différents composants de boot2docker est nul.... (vboxsf, système de fichier par défaut de virtual box).
-
-Il est possible de changer la méthode de partage en NFS.
-
-### Partager son repertoire /Users en nfs
-
-Modifier le fichier /etc/exports (ou le créer s'il n'existe pas) et rajouter la ligne suivante :
-
-```
-/Users 192.168.59.103 -alldirs -mapall=501:20
-```
-
-Relancer le service nfsd de MacOSX
-
-```
-sudo nfsd restart
-```
-
-### Changer le montage sur boot2docker
-
-Cette opération sera à executer à chaque fois que boot2docker est redemarré :
-
-```
-boot2docker ssh
-sudo umount /Users
-sudo /usr/local/etc/init.d/nfs-client start
-sudo mount -t nfs -o rw 192.168.59.3:/Users /Users
-```

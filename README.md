@@ -11,20 +11,8 @@ on structure, documentation, and code conventions.
 ## Development
 
     git clone git@github.com:ZniehGames/znieh.git
-    git submodule update --init
 
-It's recommended that you use the provided [vagrant](https://github.com/ZniehGames/znieh-vagrant) environment.
-
-Inside the VM (`vagrant ssh` and`cd /var/www/znieh`), run the following commands:
-
-* `composer install` for symfony deps
-* `npm install` for gulp and Node.js deps
-* `bower install` for frontend deps
-* `gulp`  to build
-* `gulp watch`  to build & rebuild on changes
-
-If you are experiencing issues with npm (EEXIST errors) see also the README of [vagrant](https://github.com/ZniehGames/znieh-vagrant)
-* `npm install --no-bin-links`
+It's recommended that you use the provided [docker](https://github.com/ZniehGames/znieh/tree/master/docker) environment.
 
 ## Using in production
 

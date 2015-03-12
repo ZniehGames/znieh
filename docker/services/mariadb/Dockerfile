@@ -1,8 +1,6 @@
 FROM debian:wheezy
 
-MAINTAINER Joël Wurtz <jwurtz@jolicode.com>
-
-VOLUME ["/var/lib/mysql"]
+MAINTAINER Aurélien David <adavid@jolicode.com>
 
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
@@ -17,14 +15,19 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     rm -rf /var/lib/mysql/*
 
-WORKDIR /usr/local/mysql
+# Change bind address to 0.0.0.0
+RUN sed -i -r 's/bind-address.*$/bind-address = 0.0.0.0/' /etc/mysql/my.cnf
+
+ADD create_mariadb_user.sh /create_mariadb_user.sh
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod 775 /*.sh
+
+# Add VOLUMEs to allow backup of config and databases
+VOLUME  ["/etc/mysql", "/var/lib/mysql"]
+
+#Added to avoid in container connection to the database with mysql client error message "TERM environment variable not set"
+ENV TERM dumb
 
 EXPOSE 3306
+CMD ["/entrypoint.sh"]
 
-COPY entrypoint.sh /entrypoint.sh
-
-ENV PATH $PATH:/usr/local/mysql/bin:/usr/local/mysql/scripts
-
-ENTRYPOINT ["/entrypoint.sh"]
-
-CMD ["mysqld", "--datadir=/var/lib/mysql", "--user=mysql"]

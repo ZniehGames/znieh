@@ -41,6 +41,13 @@ fig -f docker-compose.yml build
 fig -f docker-compose.yml up
 ```
 
++## Accèder depuis votre navigateur
++
++Ajoutez dans /etc/hosts :
++
++127.0.0.1      znieh.dev
++127.0.0.1      api.znieh.dev
+
 ## Executer des commandes à l'interieur de votre stack (php, gulp, bower)
 
 Il suffit d'executer un terminal dans votre stack gràace à la commande suivante :

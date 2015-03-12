@@ -45,8 +45,7 @@ fig -f docker-compose.yml up
 
 Ajoutez dans /etc/hosts :
 
-127.0.0.1      znieh.dev
-127.0.0.1      api.znieh.dev
+127.0.0.1      znieh.dev   api.znieh.dev
 
 ## Executer des commandes à l'interieur de votre stack (php, gulp, bower)
 

@@ -1,12 +1,7 @@
 {
   "name": "znieh",
   "version": "0.0.1",
-  "authors": [
-    "spyl <contact@spyl.net>"
-  ],
-  "moduleType": [
-    "amd"
-  ],
+  "private": true,
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -27,10 +22,10 @@
     "phaser": "2.2.2",
     "traceur-runtime": "0.0.74",
     "angular-socket-io": "~0.6.1",
-    "socket.io-client": "~1.2.1",
     "angular-lodash": "~0.1.2",
     "angular-mocks": "~1.3.8",
-    "easystarjs": "~0.1.13"
+    "easystarjs": "~0.1.13",
+    "sio-client": "~1.3.3"
   },
   "resolutions": {
     "angular": "1.3.3-build.3545+sha.9cc6835"

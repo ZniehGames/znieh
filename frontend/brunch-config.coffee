@@ -2,17 +2,21 @@ module.exports = config:
     files:
         javascripts:
               joinTo:
-                'app.js': /^app(\/|\\)js/
-                'game.js': /^app(\/|\\)game/
-                'vendor.js': /^bower_components/
+                'javascripts/app.js': /^app(\/|\\)js/
+                'javascripts/game.js': /^app(\/|\\)game/
+                'javascripts/vendor.js': /^bower_components/
 
         stylesheets:
             joinTo:
-                'app.css'
+                'styles/app.css'
 
         templates:
             joinTo:
-                'tmp.html'
+                'javascripts/app.js':  /^app(\/|\\)partials/
+
+    modules:
+        wrapper: false
+        definitionr: false
 
     plugins:
         ES6to5:

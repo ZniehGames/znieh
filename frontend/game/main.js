@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('game');
+
 import Preload from 'states/Preload';
 import Placement from 'states/Placement';
 import Game from 'states/Game';

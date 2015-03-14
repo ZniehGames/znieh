@@ -3,26 +3,27 @@ module.exports = config:
         javascripts:
               joinTo:
                 'javascripts/app.js': /^app(\/|\\)js/
-                'javascripts/game.js': /^app(\/|\\)game/
-                'javascripts/vendor.js': /^bower_components/
-
+                # 'javascripts/game.js': /^app(\/|\\)game/
+                'javascripts/vendor.js': /^vendor|bower_components/
+              order:
+                before: [
+                    "bower_components/react/react-with-addons.js",
+                    "bower_components/react-router/build/global/ReactRouter.js"
+                ]
         stylesheets:
             joinTo:
                 'styles/app.css'
 
-        templates:
-            joinTo:
-                'javascripts/app.js':  /^app(\/|\\)partials/
-
-    modules:
-        wrapper: false
-        definitionr: false
+    # modules:
+    #     wrapper: false
+    #     definition: false
 
     plugins:
         ES6to5:
-            format:
-                semicolons: false
+            # format:
+            #     semicolons: false
+            # modules: "system"
+            moduleIds: true
             ignore: [
                 /^(bower_components|vendor)/
-                'app/js/**/*'
             ]

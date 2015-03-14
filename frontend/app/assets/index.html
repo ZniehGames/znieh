@@ -8,9 +8,15 @@
     <link rel="icon" type="image/png" href="/images/favicon.ico">
   </head>
   <body>
-    <ng-view></ng-view>
+    <div id="content"></div>
+<!--     <script src="es6-module-loader.js"></script>
+    <script src="system.js"></script>
+    <script>
+      System.transpiler = 'babel';
+    </script> -->
+    <script src="require.js"></script>
     <script src="/javascripts/vendor.js?v=undefined"></script>
-    <script src="/javascripts/game.js?v=undefined"></script>
+    <!-- <script src="/javascripts/game.js?v=undefined"></script> -->
     <script src="/javascripts/app.js?v=undefined"></script>
   </body>
 </html>

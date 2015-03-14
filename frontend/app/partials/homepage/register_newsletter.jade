@@ -1,8 +1,0 @@
-br
-.newsletter-cta(ng-hide="openRegistration")
-    h1 Rejoins l'aventure dès maintenant
-    h2 Entre ton email pour jouer pendant le développement du jeu !
-    form#newsletter(role="form" ng-submit="submit()" ng-controller="RegistrationEmailCtrl")
-      input(type="text", name="email" ng-model="user.email" placeholder="Email")
-      button(type="submit")
-      .caption Ne vous inquiétez pas, vous pouvez vous désinscrire à tout moment.

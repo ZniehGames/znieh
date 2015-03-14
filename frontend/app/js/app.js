@@ -1,51 +1,13 @@
 'use strict';
 
-// you can use the global config (define by client/config/main.json)
+// import 'babel/runtime';
+// import 'babel/polyfill';
+import React from 'react';
+import HelloWorld from './components/HelloWorld';
 
-var app = angular.module('znieh', [
-  'ngRoute',
-  'restangular',
-  'toastr',
-  'btford.socket-io',
-  'ui.bootstrap',
-  'angular-lodash'
-]);
+App.start = function() {
+    React.render(<HelloWorld />, document.getElementById('content'));
+};
 
-app.config(function ($routeProvider, RestangularProvider) {
+export default App;
 
-    RestangularProvider.setBaseUrl(config.api);
-
-    $routeProvider.
-      when('/', {
-        templateUrl: 'partials/homepage/index.html',
-      }).
-      when('/caserne', {
-        templateUrl: 'partials/caserne/index.html',
-        controller: 'CaserneCtrl'
-      }).
-      when('/fight', {
-        templateUrl: 'partials/fightpage/index.html',
-      }).
-      when('/search', {
-        templateUrl: 'partials/fightsearch/index.html',
-      }).
-      otherwise({
-        redirectTo: '/'
-      });
-
-});
-
-app.run(function(Restangular, $rootScope, $window) {
-
-    if ($window.sessionStorage.token) {
-        Restangular.setDefaultHeaders({Authorization:'Bearer ' + $window.sessionStorage.token});
-    }
-
-    Restangular.setErrorInterceptor(function(response) {
-        if(response.status === 401) {
-            $rootScope.$broadcast('event:auth-login-required');
-            return false;
-        }
-        return true;
-    });
-});

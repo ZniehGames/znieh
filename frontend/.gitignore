@@ -5,8 +5,9 @@ app/vendor/
 tmp/
 config/main.json
 
-node_modules
 node_modules/*
+bower_components/*
+public/*
 
 npm-debug.log
 .sass-cache/*

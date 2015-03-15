@@ -8,12 +8,11 @@ class WeaponType
     use \Znieh\Traits\HasBuildingEntity;
     use \Znieh\Traits\HasImageEntity;
 
-
     private $id;
     private $parts;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -21,7 +20,7 @@ class WeaponType
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -31,9 +30,10 @@ class WeaponType
     }
 
     /**
-     * Add parts
+     * Add parts.
      *
      * @param \Znieh\Model\WeaponPartType $parts
+     *
      * @return WeaponType
      */
     public function addPart(\Znieh\Model\WeaponPartType $part)
@@ -45,7 +45,7 @@ class WeaponType
     }
 
     /**
-     * Remove parts
+     * Remove parts.
      *
      * @param \Znieh\Model\WeaponPartType $parts
      */
@@ -56,7 +56,7 @@ class WeaponType
     }
 
     /**
-     * Get parts
+     * Get parts.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

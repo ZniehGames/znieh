@@ -4,4 +4,3 @@ Znieh\Model\Rune:
     type:
       expose: true
       groups: [default, details]
-

@@ -7,4 +7,3 @@ Znieh\Model\RuneType:
     objects:
       expose: true
       groups: [details]
-

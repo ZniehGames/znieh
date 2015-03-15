@@ -30,7 +30,7 @@ RUN echo "deb http://packages.dotdeb.org wheezy all" > /etc/apt/sources.list.d/d
     echo "deb-src http://packages.dotdeb.org wheezy-php56 all" >> /etc/apt/sources.list.d/dotdeb.list && \
     wget http://www.dotdeb.org/dotdeb.gpg -O- -q | apt-key add - && \
     apt-get update && \
-    apt-get install -y nginx php5-fpm php5-curl php5-intl php5-mysqli && \
+    apt-get install -y nginx php5-fpm php5-curl php5-intl php5-mysqli php5-sqlite && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /etc/apt/sources.list.d/*
 

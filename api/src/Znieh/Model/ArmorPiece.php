@@ -5,41 +5,42 @@ namespace Znieh\Model;
 class ArmorPiece
 {
   private $id;
-  private $part;
-  private $rune;
+    private $part;
+    private $rune;
 
+    public function getPoints()
+    {
+        $i =  $this->part != null ? $this->part->getPoints() : 0;
+        $i += $this->rune != null ? $this->rune->getPoints() : 0;
 
-  public function getPoints()
-  {
-      $i =  $this->part != null ? $this->part->getPoints() : 0;
-      $i += $this->rune != null ? $this->rune->getPoints() : 0;
-      return $i;
-  }
-
-  public function getWeight()
-  {
-      return $this->part != null ? $this->part->getWeight() : 0;
-  }
-
-  public function getDefense()
-  {
-      return $this->part != null ? $this->part->getDefense() : 0;
-  }
-
-  public function getBonuses()
-  {
-    $bonuses = [];
-    if ($this->part != null) {
-      $bonuses = array_merge($bonuses, $this->part->getBonuses());
+        return $i;
     }
-    if ($this->rune != null) {
-      $bonuses = array_merge($bonuses, $this->rune->getBonuses());
+
+    public function getWeight()
+    {
+        return $this->part != null ? $this->part->getWeight() : 0;
     }
-    return $bonuses;
-  }
+
+    public function getDefense()
+    {
+        return $this->part != null ? $this->part->getDefense() : 0;
+    }
+
+    public function getBonuses()
+    {
+        $bonuses = [];
+        if ($this->part != null) {
+            $bonuses = array_merge($bonuses, $this->part->getBonuses());
+        }
+        if ($this->rune != null) {
+            $bonuses = array_merge($bonuses, $this->rune->getBonuses());
+        }
+
+        return $bonuses;
+    }
 
   /**
-   * Get id
+   * Get id.
    *
    * @return integer
    */
@@ -49,7 +50,7 @@ class ArmorPiece
   }
 
   /**
-   * Set rune
+   * Set rune.
    *
    * @param \Znieh\Model\Rune $rune
    *
@@ -58,11 +59,12 @@ class ArmorPiece
   public function setRune(\Znieh\Model\Rune $rune = null)
   {
       $this->rune = $rune;
+
       return $this;
   }
 
   /**
-   * Get rune
+   * Get rune.
    *
    * @return \Znieh\Model\Rune
    */
@@ -72,7 +74,7 @@ class ArmorPiece
   }
 
   /**
-   * Set part
+   * Set part.
    *
    * @param \Znieh\Model\ArmorPart $part
    *
@@ -81,11 +83,12 @@ class ArmorPiece
   public function setPart(\Znieh\Model\ArmorPart $part = null)
   {
       $this->part = $part;
+
       return $this;
   }
 
   /**
-   * Get part
+   * Get part.
    *
    * @return \Znieh\Model\ArmorPart
    */

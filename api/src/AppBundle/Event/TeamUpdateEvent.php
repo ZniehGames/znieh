@@ -4,7 +4,6 @@ namespace AppBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
-
 class TeamUpdateEvent extends Event
 {
     protected $team;
@@ -19,4 +18,3 @@ class TeamUpdateEvent extends Event
         return $this->team;
     }
 }
-

@@ -8,7 +8,6 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserRegistrationForm extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -22,7 +21,7 @@ class UserRegistrationForm extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'Znieh\Model\User',
-            'csrf_protection' => false
+            'csrf_protection' => false,
         ]);
     }
 

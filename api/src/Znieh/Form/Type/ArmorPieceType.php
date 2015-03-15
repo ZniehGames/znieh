@@ -8,17 +8,16 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ArmorPieceType extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('part', 'entity', [
                 'class' => 'AppBundle:ArmorPart',
-                'property' => 'name'
+                'property' => 'name',
             ])
             ->add('rune', 'entity', [
                 'class' => 'AppBundle:Rune',
-                'property' => 'name'
+                'property' => 'name',
             ])
         ;
     }
@@ -27,7 +26,7 @@ class ArmorPieceType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'Znieh\Model\ArmorPiece',
-            'csrf_protection' => false
+            'csrf_protection' => false,
         ]);
     }
 

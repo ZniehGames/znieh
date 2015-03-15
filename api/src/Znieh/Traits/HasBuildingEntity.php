@@ -7,7 +7,7 @@ trait HasBuildingEntity
     private $building;
 
     /**
-     * Set building
+     * Set building.
      *
      * @param \Znieh\Model\Building $building
      *
@@ -21,7 +21,7 @@ trait HasBuildingEntity
     }
 
     /**
-     * Get building
+     * Get building.
      *
      * @return \Znieh\Model\Building
      */

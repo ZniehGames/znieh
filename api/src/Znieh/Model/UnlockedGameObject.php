@@ -15,9 +15,10 @@ class UnlockedGameObject
     }
 
     /**
-     * Set createdAt
+     * Set createdAt.
      *
      * @param \DateTime $createdAt
+     *
      * @return UnlockedGameObject
      */
     public function setCreatedAt($createdAt)
@@ -28,7 +29,7 @@ class UnlockedGameObject
     }
 
     /**
-     * Get createdAt
+     * Get createdAt.
      *
      * @return \DateTime
      */
@@ -38,9 +39,10 @@ class UnlockedGameObject
     }
 
     /**
-     * Set object
+     * Set object.
      *
      * @param \Znieh\Model\GameObject $object
+     *
      * @return UnlockedGameObject
      */
     public function setObject(\Znieh\Model\GameObject $object)
@@ -51,7 +53,7 @@ class UnlockedGameObject
     }
 
     /**
-     * Get object
+     * Get object.
      *
      * @return \Znieh\Model\GameObject
      */

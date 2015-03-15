@@ -14,7 +14,7 @@ class ArmorPartType
     private $id;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */

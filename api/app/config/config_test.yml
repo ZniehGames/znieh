@@ -14,8 +14,13 @@ web_profiler:
 
 doctrine:
     dbal:
-        dbname: %test_database_name%
-        user:   %test_database_user%
+        default_connection: default
+        connections:
+            default:
+                driver:   pdo_sqlite
+                path:     %kernel.root_dir%/test.db
+                charset: utf8
+                user: test
 
 swiftmailer:
     disable_delivery: true

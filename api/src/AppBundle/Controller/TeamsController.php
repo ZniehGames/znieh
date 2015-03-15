@@ -2,16 +2,11 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use FOS\RestBundle\View\View;
-use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-
 use Znieh\Model\Team;
 use Znieh\Form\TeamForm;
 use AppBundle\Event\TeamUpdateEvent;
@@ -23,13 +18,14 @@ class TeamsController extends FOSRestController
      * @Rest\View(serializerGroups={"default"})
      *
      * @param Request $request
-     * @return View view instance
      *
+     * @return View view instance
      */
     public function getUserTeamsAction($user)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $teams = $em->getRepository('AppBundle:Team')->findAllByUser($user);
+
         return $teams;
     }
 
@@ -37,13 +33,14 @@ class TeamsController extends FOSRestController
      * @Rest\View(serializerGroups={"default"})
      *
      * @param Request $request
-     * @return View view instance
      *
+     * @return View view instance
      */
     public function getUserTeamAction($user)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $team = $em->getRepository('AppBundle:Team')->findOneByUserSelected($user);
+
         return $team;
     }
 
@@ -51,15 +48,14 @@ class TeamsController extends FOSRestController
      * @Rest\View()
      *
      * @param Request $request
-     * @return View view instance
      *
+     * @return View view instance
      */
     public function postTeamsAction(Request $request)
     {
         $team = new Team();
         $form = $this->createForm(new TeamForm(), $team);
         $form->handleRequest($request);
-
 
         $user = $this->getUser();
         if (!$user) {
@@ -71,6 +67,7 @@ class TeamsController extends FOSRestController
             $em = $this->getDoctrine()->getManager();
             $em->persist($team);
             $em->flush();
+
             return new JsonResponse(['message' => 'Team created.'], 201);
         }
 
@@ -81,8 +78,8 @@ class TeamsController extends FOSRestController
      * @Rest\View()
      *
      * @param Request $request
-     * @return View view instance
      *
+     * @return View view instance
      */
     public function putTeamsAction(Request $request, Team $team)
     {
@@ -102,6 +99,7 @@ class TeamsController extends FOSRestController
             $em = $this->getDoctrine()->getManager();
             $this->get('event_dispatcher')->dispatch(AppEvents::TEAM_UPDATE, new TeamUpdateEvent($team));
             $em->flush();
+
             return new JsonResponse(['message' => 'Team edited.'], 204);
         }
 

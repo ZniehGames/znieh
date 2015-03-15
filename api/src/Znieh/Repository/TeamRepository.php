@@ -6,7 +6,6 @@ use Doctrine\ORM\EntityRepository;
 
 class TeamRepository extends EntityRepository
 {
-
     public function findOneByUserSelected($user)
     {
         $qb = $this->createQueryBuilder('t');
@@ -22,11 +21,11 @@ class TeamRepository extends EntityRepository
                  ->getResult();
     }
 
-   public function findAllByUser($user)
-   {
-      $qb = $this->createQueryBuilder('t');
+    public function findAllByUser($user)
+    {
+        $qb = $this->createQueryBuilder('t');
 
-      return $qb->leftJoin('t.user', 'u')
+        return $qb->leftJoin('t.user', 'u')
                 ->addSelect('u')
                 ->leftJoin('t.units', 'un')
                 ->addSelect('un')

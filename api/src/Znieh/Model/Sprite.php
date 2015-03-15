@@ -6,10 +6,10 @@ class Sprite
 {
   use \Znieh\Traits\NamableEntity;
 
-  private $id;
+    private $id;
 
   /**
-   * Get id
+   * Get id.
    *
    * @return integer
    */

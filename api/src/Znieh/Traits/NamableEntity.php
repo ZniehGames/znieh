@@ -5,13 +5,14 @@ namespace Znieh\Traits;
 trait NamableEntity
 {
     protected $name;
- 
+
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
-    
+
     /**
      * Returns name.
      *

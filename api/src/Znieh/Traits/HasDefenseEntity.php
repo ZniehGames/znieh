@@ -3,7 +3,7 @@
 namespace Znieh\Traits;
 
 trait HasDefenseEntity
-{    
+{
     private $defense;
 
     /**

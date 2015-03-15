@@ -14,7 +14,7 @@ class ArmorPart extends GameObject
     }
 
     /**
-     * Set type
+     * Set type.
      *
      * @param \Znieh\Model\ArmorPartType $type
      *
@@ -28,7 +28,7 @@ class ArmorPart extends GameObject
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return \Znieh\Model\ArmorPartType
      */
@@ -38,7 +38,7 @@ class ArmorPart extends GameObject
     }
 
     /**
-     * Get Weight
+     * Get Weight.
      *
      * @return integer
      */
@@ -46,5 +46,4 @@ class ArmorPart extends GameObject
     {
         return $this->weight;
     }
-
 }

@@ -16,7 +16,7 @@ class WeaponPartType
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -26,7 +26,7 @@ class WeaponPartType
     }
 
     /**
-     * Add object
+     * Add object.
      *
      * @param \Znieh\Model\WeaponType $type
      *
@@ -35,11 +35,12 @@ class WeaponPartType
     public function addType(\Znieh\Model\WeaponType $type)
     {
         $this->types[] = $type;
+
         return $this;
     }
 
     /**
-     * Remove types
+     * Remove types.
      *
      * @param \Znieh\Model\WeaponType $type
      */
@@ -49,7 +50,7 @@ class WeaponPartType
     }
 
     /**
-     * Get types
+     * Get types.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

@@ -19,12 +19,11 @@ class DefaultTeamListener
     {
         $entity = $args->getEntity();
         if ($entity instanceof User) {
-           $em = $args->getEntityManager();
-           $this->loader->setEntityManager($em);
-           $team = $this->loader->getDefaultTeam($entity);
-           $em->persist($team);
-           $em->flush();
+            $em = $args->getEntityManager();
+            $this->loader->setEntityManager($em);
+            $team = $this->loader->getDefaultTeam($entity);
+            $em->persist($team);
+            $em->flush();
         }
-
     }
 }

@@ -32,4 +32,3 @@ Znieh\Model\Armor:
       serialized_name: points
       type: integer
       groups: [default, details]
-

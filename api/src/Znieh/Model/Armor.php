@@ -5,59 +5,59 @@ namespace Znieh\Model;
 class Armor
 {
   use \Znieh\Traits\NamableEntity;
-  use \Znieh\Traits\TimestampableEntity;
-  use \Znieh\Traits\OwnedByUserEntity;
+    use \Znieh\Traits\TimestampableEntity;
+    use \Znieh\Traits\OwnedByUserEntity;
 
-  private $id;
-  private $helm;
-  private $torso;
-  private $gloves;
-  private $greaves;
-  private $boots;
+    private $id;
+    private $helm;
+    private $torso;
+    private $gloves;
+    private $greaves;
+    private $boots;
 
-  public function getWeight()
-  {
-      return $this->helm->getWeight()  +
+    public function getWeight()
+    {
+        return $this->helm->getWeight()  +
              $this->torso->getWeight() +
              $this->gloves->getWeight() +
              $this->greaves->getWeight() +
              $this->boots->getWeight()
           ;
-  }
+    }
 
-  public function getPoints()
-  {
-      return $this->helm->getPoints()  +
+    public function getPoints()
+    {
+        return $this->helm->getPoints()  +
              $this->torso->getPoints() +
              $this->gloves->getPoints() +
              $this->greaves->getPoints() +
              $this->boots->getPoints()
           ;
-  }
+    }
 
-  public function getDefense()
-  {
-      return $this->helm->getDefense()  +
+    public function getDefense()
+    {
+        return $this->helm->getDefense()  +
              $this->torso->getDefense() +
              $this->gloves->getDefense() +
              $this->greaves->getDefense() +
              $this->boots->getDefense()
           ;
-  }
+    }
 
-  public function getBonuses()
-  {
-      return array_merge(
+    public function getBonuses()
+    {
+        return array_merge(
         $this->helm->getBonuses(),
         $this->torso->getBonuses(),
         $this->gloves->getBonuses(),
         $this->greaves->getBonuses(),
         $this->boots->getBonuses()
       );
-  }
+    }
 
   /**
-   * Get id
+   * Get id.
    *
    * @return integer
    */
@@ -67,7 +67,7 @@ class Armor
   }
 
   /**
-   * Set helm
+   * Set helm.
    *
    * @param \Znieh\Model\ArmorPiece $helm
    *
@@ -76,11 +76,12 @@ class Armor
   public function setHelm(\Znieh\Model\ArmorPiece $helm)
   {
       $this->helm = $helm;
+
       return $this;
   }
 
   /**
-   * Get helm
+   * Get helm.
    *
    * @return \Znieh\Model\ArmorPiece
    */
@@ -90,7 +91,7 @@ class Armor
   }
 
   /**
-   * Set torso
+   * Set torso.
    *
    * @param \Znieh\Model\ArmorPiece $torso
    *
@@ -99,11 +100,12 @@ class Armor
   public function setTorso(\Znieh\Model\ArmorPiece $torso)
   {
       $this->torso = $torso;
+
       return $this;
   }
 
   /**
-   * Get torso
+   * Get torso.
    *
    * @return \Znieh\Model\ArmorPiece
    */
@@ -113,7 +115,7 @@ class Armor
   }
 
   /**
-   * Set gloves
+   * Set gloves.
    *
    * @param \Znieh\Model\ArmorPiece $gloves
    *
@@ -122,11 +124,12 @@ class Armor
   public function setGloves(\Znieh\Model\ArmorPiece $gloves)
   {
       $this->gloves = $gloves;
+
       return $this;
   }
 
   /**
-   * Get gloves
+   * Get gloves.
    *
    * @return \Znieh\Model\ArmorPiece
    */
@@ -136,7 +139,7 @@ class Armor
   }
 
   /**
-   * Set greaves
+   * Set greaves.
    *
    * @param \Znieh\Model\ArmorPiece $greaves
    *
@@ -145,11 +148,12 @@ class Armor
   public function setGreaves(\Znieh\Model\ArmorPiece $greaves)
   {
       $this->greaves = $greaves;
+
       return $this;
   }
 
   /**
-   * Get greaves
+   * Get greaves.
    *
    * @return \Znieh\Model\ArmorPiece
    */
@@ -159,7 +163,7 @@ class Armor
   }
 
   /**
-   * Set boots
+   * Set boots.
    *
    * @param \Znieh\Model\ArmorPiece $boots
    *
@@ -168,11 +172,12 @@ class Armor
   public function setBoots(\Znieh\Model\ArmorPiece $boots)
   {
       $this->boots = $boots;
+
       return $this;
   }
 
   /**
-   * Get boots
+   * Get boots.
    *
    * @return \Znieh\Model\ArmorPiece
    */

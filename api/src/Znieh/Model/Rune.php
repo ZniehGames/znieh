@@ -7,7 +7,7 @@ class Rune extends GameObject
     private $type;
 
     /**
-     * Set type
+     * Set type.
      *
      * @param \Znieh\Model\RuneType $type
      *
@@ -21,7 +21,7 @@ class Rune extends GameObject
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return \Znieh\Model\RuneType
      */

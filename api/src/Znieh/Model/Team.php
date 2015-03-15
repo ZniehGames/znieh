@@ -13,7 +13,7 @@ class Team
     private $selected = false;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -21,7 +21,7 @@ class Team
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -31,7 +31,7 @@ class Team
     }
 
     /**
-     * Set selected
+     * Set selected.
      *
      * @param boolean $selected
      *
@@ -40,10 +40,11 @@ class Team
     public function setSelected($selected)
     {
         $this->selected = $selected;
+
         return $this;
     }
     /**
-     * Get selected
+     * Get selected.
      *
      * @return boolean
      */
@@ -53,7 +54,7 @@ class Team
     }
 
     /**
-     * Add units
+     * Add units.
      *
      * @param \Znieh\Model\Unit $unit
      *
@@ -66,11 +67,12 @@ class Team
         }
 
         $this->units[] = $unit;
+
         return $this;
     }
 
     /**
-     * Remove units
+     * Remove units.
      *
      * @param \Znieh\Model\Unit $unit
      */
@@ -84,7 +86,7 @@ class Team
     }
 
     /**
-     * Get teams
+     * Get teams.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

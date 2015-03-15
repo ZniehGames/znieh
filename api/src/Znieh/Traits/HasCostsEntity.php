@@ -10,5 +10,4 @@ trait HasCostsEntity
     {
         return $this->costs;
     }
-
 }

@@ -11,16 +11,17 @@ class User extends BaseUser
       parent::__construct();
   }
 
-  protected $currencies = [];
+    protected $currencies = [];
 
-  public function getCurrencies()
-  {
-      return $this->currencies;
-  }
+    public function getCurrencies()
+    {
+        return $this->currencies;
+    }
 
-  public function setCurrencies($currencies)
-  {
-      $this->currencies = $currencies;
-      return $this;
-  }
+    public function setCurrencies($currencies)
+    {
+        $this->currencies = $currencies;
+
+        return $this;
+    }
 }

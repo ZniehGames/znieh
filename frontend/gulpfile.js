@@ -53,7 +53,7 @@ paths.game = [
 
 paths.jsvendor = [
     paths.app + 'vendor/traceur-runtime/traceur-runtime.js',
-    paths.app + 'vendor/socket.io-socket.io.js',
+    paths.app + 'vendor/socket.io-client/socket.io.js',
     paths.app + 'vendor/jquery/dist/jquery.js',
     paths.app + 'vendor/angular/angular.js',
     paths.app + 'vendor/angular-route/angular-route.js',

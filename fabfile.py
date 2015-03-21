@@ -42,11 +42,13 @@ def build():
 def build_db():
     with lcd(env.local_dir+'api/'):
         local('php app/console doctrine:schema:update --force')
+        local('php app/console doctrine:schema:update --force -e test')
 
 @task
 def add_data():
     with lcd(env.local_dir+'api/'):
         local('php app/console doctrine:fixtures:load --no-interaction')
+        local('php app/console doctrine:fixtures:load --no-interaction -e test')
         # local('php app/console fos:elastica:populate')
 
 @task

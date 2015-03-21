@@ -1,6 +1,6 @@
 FROM debian:wheezy
 
-MAINTAINER Joël Wurtz <jwurtz@jolicode.com>
+MAINTAINER Aurélien David <adavid@jolicode.com>
 
 # Install basic
 RUN apt-get update && \
@@ -15,6 +15,14 @@ RUN apt-get update && \
     apt-get install -y nodejs npm && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Install python
+RUN apt-get update && \
+  apt-get install -y python python-dev python-pip python-virtualenv && \
+  rm -rf /var/lib/apt/lists/*
+
+# Install fabric
+RUN pip install fabric requests libsaas
 
 # Install ruby / compass
 RUN apt-get update && \
@@ -70,7 +78,12 @@ COPY php-fpm/znieh.ini /etc/php5/cli/conf.d/znieh.ini
 VOLUME /var/www/api/app/cache
 VOLUME /var/www/api/app/logs
 
+# Nginx
 EXPOSE 80
+
+# Node server
+EXPOSE 3000
+ENV NODE_CONFIG_DIR /var/www/gameserver/config
 
 # Default command
 CMD ["/usr/bin/runsvdir", "-P", "/etc/service"]

@@ -8,7 +8,6 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class EmailRegistrationForm extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -20,7 +19,7 @@ class EmailRegistrationForm extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'Znieh\Model\Email',
-            'csrf_protection' => false
+            'csrf_protection' => false,
         ]);
     }
 

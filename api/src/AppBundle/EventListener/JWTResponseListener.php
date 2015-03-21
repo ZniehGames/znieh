@@ -23,10 +23,9 @@ class JWTResponseListener
       $data['user'] = [
         'id'       => $user->getId(),
         'username' => $user->getUsername(),
-        'roles'    => $user->getRoles()
+        'roles'    => $user->getRoles(),
       ];
 
       $event->setData($data);
   }
-
 }

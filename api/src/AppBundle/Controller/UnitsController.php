@@ -2,34 +2,29 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use FOS\RestBundle\View\View;
-use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use JMS\Serializer\SerializationContext;
-
 use Znieh\Model\Unit;
 use Znieh\Form\UnitForm;
 
 class UnitsController extends FOSRestController
 {
-
     /**
      * @Rest\View(serializerGroups={"default"})
      *
      * @param Request $request
-     * @return View view instance
      *
+     * @return View view instance
      */
     public function getUserUnitsAction($user)
     {
         $em = $this->getDoctrine()->getEntityManager();
         $units = $em->getRepository('AppBundle:Unit')->findBy(['user' => $user]);
+
         return $units;
     }
 
@@ -37,8 +32,8 @@ class UnitsController extends FOSRestController
      * @Rest\View()
      *
      * @param Request $request
-     * @return View view instance
      *
+     * @return View view instance
      */
     public function postUnitsAction(Request $request)
     {
@@ -56,6 +51,7 @@ class UnitsController extends FOSRestController
             $em = $this->getDoctrine()->getManager();
             $em->persist($unit);
             $em->flush();
+
             return new JsonResponse(['message' => 'Unit created.'], 201);
         }
 
@@ -77,7 +73,6 @@ class UnitsController extends FOSRestController
                 $unit,
                 'json',
                 SerializationContext::create()->setGroups(['default'])
-            )
-        , 200);
+            ), 200);
     }
 }

@@ -7,7 +7,7 @@ trait HasGameObjectsEntity
     protected $objects;
 
     /**
-     * Add object
+     * Add object.
      *
      * @param \Znieh\Model\GameObject $object
      *
@@ -17,11 +17,12 @@ trait HasGameObjectsEntity
     {
         $object->setObject($this);
         $this->objects[] = $object;
+
         return $this;
     }
 
     /**
-     * Remove objects
+     * Remove objects.
      *
      * @param \Znieh\Model\GameObject $object
      */
@@ -31,7 +32,7 @@ trait HasGameObjectsEntity
     }
 
     /**
-     * Get objects
+     * Get objects.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

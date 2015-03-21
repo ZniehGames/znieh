@@ -13,7 +13,7 @@ class Step
     private $parent;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -23,7 +23,7 @@ class Step
     }
 
     /**
-     * Set parent
+     * Set parent.
      *
      * @param \Znieh\Model\Step $parent
      *
@@ -37,7 +37,7 @@ class Step
     }
 
     /**
-     * Get parent
+     * Get parent.
      *
      * @return \Znieh\Model\Step
      */

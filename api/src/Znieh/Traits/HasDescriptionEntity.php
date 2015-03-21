@@ -7,7 +7,7 @@ trait HasDescriptionEntity
     protected $description;
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      */
@@ -19,7 +19,7 @@ trait HasDescriptionEntity
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */

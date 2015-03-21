@@ -1,3 +1,4 @@
 .idea/*
-
-vagrant
+fabfile.pyc
+fabenv/
+.DS_Store

@@ -2,7 +2,6 @@
 
 namespace Znieh\Model;
 
-use Doctrine\ORM\Mapping as ORM;
 
 class Building
 {
@@ -13,7 +12,7 @@ class Building
     private $steps;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -21,7 +20,7 @@ class Building
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -31,9 +30,10 @@ class Building
     }
 
     /**
-     * Add steps
+     * Add steps.
      *
      * @param \Znieh\Model\Step $steps
+     *
      * @return Building
      */
     public function addStep(\Znieh\Model\Step $step)
@@ -44,7 +44,7 @@ class Building
     }
 
     /**
-     * Remove steps
+     * Remove steps.
      *
      * @param \Znieh\Model\Step $steps
      */
@@ -54,7 +54,7 @@ class Building
     }
 
     /**
-     * Get steps
+     * Get steps.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

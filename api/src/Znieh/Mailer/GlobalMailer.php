@@ -9,16 +9,16 @@ class GlobalMailer
 {
   protected $dispatcher;
 
-  public function __construct(Dispatcher $dispatcher)
-  {
-    $this->dispatcher = $dispatcher;
-  }
+    public function __construct(Dispatcher $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
+    }
 
-  public function send($to, $subject, $html)
-  {
-      $message = new Message();
+    public function send($to, $subject, $html)
+    {
+        $message = new Message();
 
-      $message
+        $message
           ->setFromEmail('team@zniehgames.com')
           ->setFromName('Team Znieh Games')
           ->addTo($to)
@@ -26,7 +26,6 @@ class GlobalMailer
           ->setHtml($html)
         ;
 
-      return $this->dispatcher->send($message);
-  }
-
+        return $this->dispatcher->send($message);
+    }
 }

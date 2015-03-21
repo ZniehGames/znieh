@@ -9,6 +9,7 @@ trait HasPointsEntity
     public function setPoints($points)
     {
         $this->points = $points;
+
         return $this;
     }
 

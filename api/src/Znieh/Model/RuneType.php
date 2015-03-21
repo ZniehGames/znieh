@@ -11,7 +11,7 @@ class RuneType
     private $id;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */

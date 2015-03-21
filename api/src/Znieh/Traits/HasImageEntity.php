@@ -7,7 +7,7 @@ trait HasImageEntity
     protected $image;
 
     /**
-     * Set Image
+     * Set Image.
      *
      * @param string $image
      */
@@ -19,7 +19,7 @@ trait HasImageEntity
     }
 
     /**
-     * Get Image
+     * Get Image.
      *
      * @return string
      */

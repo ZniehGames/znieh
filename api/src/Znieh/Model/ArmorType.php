@@ -11,7 +11,7 @@ class ArmorType
     private $parts;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -19,7 +19,7 @@ class ArmorType
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -29,7 +29,7 @@ class ArmorType
     }
 
     /**
-     * Add parts
+     * Add parts.
      *
      * @param \Znieh\Model\ArmorPartType $parts
      *
@@ -43,7 +43,7 @@ class ArmorType
     }
 
     /**
-     * Remove parts
+     * Remove parts.
      *
      * @param \Znieh\Model\ArmorPartType $parts
      */
@@ -53,7 +53,7 @@ class ArmorType
     }
 
     /**
-     * Get parts
+     * Get parts.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -61,5 +61,4 @@ class ArmorType
     {
         return $this->parts;
     }
-
 }

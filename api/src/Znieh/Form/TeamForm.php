@@ -8,7 +8,6 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class TeamForm extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -17,7 +16,7 @@ class TeamForm extends AbstractType
             ->add('units', 'entity', [
                 'class' => 'AppBundle:Unit',
                 'multiple' => true,
-                'property' => 'name'
+                'property' => 'name',
             ])
         ;
     }
@@ -26,7 +25,7 @@ class TeamForm extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'Znieh\Model\Team',
-            'csrf_protection' => false
+            'csrf_protection' => false,
         ]);
     }
 

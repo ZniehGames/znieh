@@ -17,7 +17,7 @@ class Unit
     private $teams;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -31,6 +31,7 @@ class Unit
         $i += ($this->weapon != null) ? $this->weapon->getPoints() : 0;
         $i += ($this->size != null) ? $this->size->getPoints() : 0;
         $i += ($this->physical != null) ? $this->physical->getPoints() : 0;
+
         return $i;
     }
 
@@ -61,17 +62,22 @@ class Unit
             'penetration' => 0,
         ];
 
-        if($this->armor != null) foreach ($this->armor->getBonuses() as $bonus) {
-            $stats[$bonus['attribute']] += $bonus['modifier'];
+        if ($this->armor != null) {
+            foreach ($this->armor->getBonuses() as $bonus) {
+                $stats[$bonus['attribute']] += $bonus['modifier'];
+            }
         }
-        if($this->weapon != null) foreach ($this->weapon->getBonuses() as $bonus) {
-            $stats[$bonus['attribute']] += $bonus['modifier'];
+        if ($this->weapon != null) {
+            foreach ($this->weapon->getBonuses() as $bonus) {
+                $stats[$bonus['attribute']] += $bonus['modifier'];
+            }
         }
+
         return $stats;
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -81,7 +87,7 @@ class Unit
     }
 
     /**
-     * Set weapon
+     * Set weapon.
      *
      * @param \Znieh\Model\Weapon $weapon
      *
@@ -95,7 +101,7 @@ class Unit
     }
 
     /**
-     * Get weapon
+     * Get weapon.
      *
      * @return \Znieh\Model\Weapon
      */
@@ -105,7 +111,7 @@ class Unit
     }
 
     /**
-     * Set armor
+     * Set armor.
      *
      * @param \Znieh\Model\Armor $armor
      *
@@ -119,7 +125,7 @@ class Unit
     }
 
     /**
-     * Get armor
+     * Get armor.
      *
      * @return \Znieh\Model\Armor
      */
@@ -129,7 +135,7 @@ class Unit
     }
 
     /**
-     * Set size
+     * Set size.
      *
      * @param \Znieh\Model\Size $size
      *
@@ -143,7 +149,7 @@ class Unit
     }
 
     /**
-     * Get size
+     * Get size.
      *
      * @return \Znieh\Model\Size
      */
@@ -153,7 +159,7 @@ class Unit
     }
 
     /**
-     * Set physical
+     * Set physical.
      *
      * @param \Znieh\Model\Physical $physical
      *
@@ -167,7 +173,7 @@ class Unit
     }
 
     /**
-     * Get physical
+     * Get physical.
      *
      * @return \Znieh\Model\Physical
      */
@@ -177,7 +183,7 @@ class Unit
     }
 
     /**
-     * Set sprite
+     * Set sprite.
      *
      * @param \Znieh\Model\Sprite $sprite
      *
@@ -191,7 +197,7 @@ class Unit
     }
 
     /**
-     * Get sprite
+     * Get sprite.
      *
      * @return \Znieh\Model\Sprite
      */
@@ -201,7 +207,7 @@ class Unit
     }
 
     /**
-     * Add teams
+     * Add teams.
      *
      * @param \Znieh\Model\Team $team
      *
@@ -214,11 +220,12 @@ class Unit
         }
 
         $this->teams[] = $team;
+
         return $this;
     }
 
     /**
-     * Remove teams
+     * Remove teams.
      *
      * @param \Znieh\Model\Team $team
      */
@@ -232,7 +239,7 @@ class Unit
     }
 
     /**
-     * Get teams
+     * Get teams.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

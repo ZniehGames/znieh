@@ -5,7 +5,6 @@ namespace AppBundle\Behat;
 use GuzzleHttp\Client;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
-use Behat\Testwork\Hook\Scope\BeforeScenarioScope;
 
 class WebApiContext extends DefaultContext
 {
@@ -35,7 +34,6 @@ class WebApiContext extends DefaultContext
         $this->createAuthenticatedClient($username, $username);
     }
 
-
     /**
      * Create a client with a default Authorization header.
      *
@@ -52,8 +50,8 @@ class WebApiContext extends DefaultContext
             [
                 'body' => [
                     'username' => $username,
-                    'password' => $password
-                ]
+                    'password' => $password,
+                ],
              ]
         );
 
@@ -72,7 +70,7 @@ class WebApiContext extends DefaultContext
     public function iSendARequest($method, $url)
     {
         $request = $this->client->createRequest($method, 'app_test.php'.$url, [
-            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)]
+            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)],
         ]);
         $this->response = $this->client->send($request);
     }
@@ -82,7 +80,7 @@ class WebApiContext extends DefaultContext
      *
      * @param string    $method request method
      * @param string    $url    relative url
-     * @param TableNode $values   table of values
+     * @param TableNode $values table of values
      *
      * @When /^(?:I )?send a ([A-Z]+) request to "([^"]+)" with values:$/
      */
@@ -91,7 +89,7 @@ class WebApiContext extends DefaultContext
         $request = $this->client->createRequest($method, 'app_test.php'.$url, [
             'body' => $table->getHash(),
             'exceptions' => false,
-            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)]
+            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)],
         ]);
         $this->response = $this->client->send($request);
     }
@@ -101,7 +99,7 @@ class WebApiContext extends DefaultContext
      *
      * @param string    $method request method
      * @param string    $url    relative url
-     * @param TableNode $values   table of values
+     * @param TableNode $values table of values
      *
      * @When /^(?:I )?send a ([A-Z]+) request to "([^"]+)" with json:$/
      */
@@ -110,7 +108,7 @@ class WebApiContext extends DefaultContext
         $request = $this->client->createRequest($method, 'app_test.php'.$url, [
             'body' => $string->getRaw(),
             'exceptions' => false,
-            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)]
+            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)],
         ]);
         $this->response = $this->client->send($request);
         var_dump((string) $this->response->getBody());

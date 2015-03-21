@@ -7,10 +7,9 @@ trait OwnedByUserEntity
     protected $user;
 
     /**
-     * Set user
+     * Set user.
      *
      * @param \Znieh\Model\User $user
-     *
      */
     public function setUser(\Znieh\Model\User $user)
     {
@@ -20,7 +19,7 @@ trait OwnedByUserEntity
     }
 
     /**
-     * Get user
+     * Get user.
      *
      * @return \Znieh\Model\User
      */

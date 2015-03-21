@@ -4,7 +4,6 @@ namespace AppBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
-
 class EmailRegistrationEvent extends Event
 {
     protected $email;
@@ -19,4 +18,3 @@ class EmailRegistrationEvent extends Event
         return $this->email;
     }
 }
-

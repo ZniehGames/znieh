@@ -8,14 +8,13 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class WeaponType extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('parts', 'entity', [
                 'class' => 'AppBundle:WeaponPart',
                 'multiple' => true,
-                'property' => 'name'
+                'property' => 'name',
             ])
         ;
     }
@@ -24,7 +23,7 @@ class WeaponType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'Znieh\Model\Weapon',
-            'csrf_protection' => false
+            'csrf_protection' => false,
         ]);
     }
 

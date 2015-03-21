@@ -14,7 +14,7 @@ class WeaponPart extends GameObject
     }
 
     /**
-     * Set type
+     * Set type.
      *
      * @param \Znieh\Model\WeaponPartType $type
      *
@@ -28,7 +28,7 @@ class WeaponPart extends GameObject
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return \Znieh\Model\WeaponPartType
      */

@@ -5,27 +5,25 @@ namespace Znieh\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-
 use Znieh\Form\Type\WeaponType;
 use Znieh\Form\Type\ArmorType;
 
 class UnitForm extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('name')
             ->add('size', 'entity', [
                 'class' => 'AppBundle:Size',
-                'property' => 'id'
+                'property' => 'id',
             ])
             ->add('physical', 'entity', [
                 'class' => 'AppBundle:Physical',
-                'property' => 'id'
+                'property' => 'id',
             ])
-            ->add('weapon', new WeaponType)
-            ->add('armor', new ArmorType)
+            ->add('weapon', new WeaponType())
+            ->add('armor', new ArmorType())
         ;
     }
 
@@ -34,7 +32,7 @@ class UnitForm extends AbstractType
         $resolver->setDefaults([
             'cascade_validation' => true,
             'data_class' => 'Znieh\Model\Unit',
-            'csrf_protection' => false
+            'csrf_protection' => false,
         ]);
     }
 

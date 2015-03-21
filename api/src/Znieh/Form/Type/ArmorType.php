@@ -8,15 +8,14 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ArmorType extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('helm', new ArmorPieceType)
-            ->add('torso', new ArmorPieceType)
-            ->add('gloves', new ArmorPieceType)
-            ->add('greaves', new ArmorPieceType)
-            ->add('boots', new ArmorPieceType)
+            ->add('helm', new ArmorPieceType())
+            ->add('torso', new ArmorPieceType())
+            ->add('gloves', new ArmorPieceType())
+            ->add('greaves', new ArmorPieceType())
+            ->add('boots', new ArmorPieceType())
         ;
     }
 
@@ -24,7 +23,7 @@ class ArmorType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'Znieh\Model\Armor',
-            'csrf_protection' => false
+            'csrf_protection' => false,
         ]);
     }
 

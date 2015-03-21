@@ -11,4 +11,3 @@ Znieh\Model\Team:
       expose: true
       type: ArrayCollection<Znieh\Model\Unit>
       groups: [default, details]
-

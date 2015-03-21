@@ -19,7 +19,7 @@ abstract class GameObject
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return integer
      */
@@ -29,7 +29,7 @@ abstract class GameObject
     }
 
     /**
-     * Get costs
+     * Get costs.
      *
      * @return array
      */
@@ -39,19 +39,21 @@ abstract class GameObject
     }
 
     /**
-     * Set step
+     * Set step.
      *
      * @param \Znieh\Model\Step $step
+     *
      * @return GameObject
      */
     public function setStep(\Znieh\Model\Step $step)
     {
         $this->step = $step;
+
         return $this;
     }
 
     /**
-     * Get step
+     * Get step.
      *
      * @return \Znieh\Model\Step
      */
@@ -61,7 +63,7 @@ abstract class GameObject
     }
 
     /**
-     * Add unlockeds
+     * Add unlockeds.
      *
      * @param \Znieh\Model\UnlockedGameObject $unlocked
      *
@@ -71,11 +73,12 @@ abstract class GameObject
     {
         $unlocked->setObject($this);
         $this->unlockeds[] = $unlocked;
+
         return $this;
     }
 
     /**
-     * Remove unlockeds
+     * Remove unlockeds.
      *
      * @param \Znieh\Model\UnlockedGameObject $unlocked
      */
@@ -85,7 +88,7 @@ abstract class GameObject
     }
 
     /**
-     * Get unlockeds
+     * Get unlockeds.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

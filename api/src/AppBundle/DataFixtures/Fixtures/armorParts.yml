@@ -2423,4 +2423,3 @@ Znieh\Model\ArmorPart:
     bonuses:
         - { attribute: "intelligence",  modifier: 30 }
     points: @gants_en_etoffe_standart->points
-

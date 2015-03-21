@@ -7,7 +7,7 @@ trait HasTypeEntity
     protected $type;
 
     /**
-     * Set type
+     * Set type.
      *
      * @param string $type
      */
@@ -19,7 +19,7 @@ trait HasTypeEntity
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return string
      */

@@ -4,7 +4,7 @@ function requireUncached(module){
     delete require.cache[require.resolve(module)]
     return require(module)
 }
-var MapData = requireUncached('./../../client/app/json/map.json');
+var MapData = requireUncached('./../../frontend/app/json/map.json');
 
 
 describe("Map Manager tests", function() {

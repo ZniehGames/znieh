@@ -8,13 +8,12 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UnlockForm extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('object', 'entity', [
                 'class' => 'AppBundle:GameObject',
-                'property' => 'id'
+                'property' => 'id',
             ])
         ;
     }
@@ -23,7 +22,7 @@ class UnlockForm extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'Znieh\Model\UnlockedGameObject',
-            'csrf_protection' => false
+            'csrf_protection' => false,
         ]);
     }
 

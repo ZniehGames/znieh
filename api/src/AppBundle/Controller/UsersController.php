@@ -2,13 +2,11 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\Controller\FOSRestController;
@@ -19,7 +17,7 @@ use Znieh\Form\UserRegistrationForm;
 class UsersController extends FOSRestController
 {
     /**
-     * Create a new user
+     * Create a new user.
      *
      * @ApiDoc(
      *   resource = true,
@@ -32,8 +30,8 @@ class UsersController extends FOSRestController
      * @Rest\View(statusCode = Codes::HTTP_BAD_REQUEST)
      *
      * @param Request $request
-     * @return View view instance
      *
+     * @return View view instance
      */
     public function postUsersAction(Request $request)
     {
@@ -52,13 +50,14 @@ class UsersController extends FOSRestController
             return $event->getResponse();
         }
 
-        $form = $this->createForm(new UserRegistrationForm, $user);
+        $form = $this->createForm(new UserRegistrationForm(), $user);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $event = new FormEvent($form, $request);
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
             $userManager->updateUser($user);
+
             return new JsonResponse(['message' => 'User created.'], 201);
         }
 

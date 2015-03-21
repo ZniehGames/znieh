@@ -5,12 +5,12 @@ namespace Znieh\Model;
 class Size
 {
   use \Znieh\Traits\NamableEntity;
-  use \Znieh\Traits\HasPointsEntity;
+    use \Znieh\Traits\HasPointsEntity;
 
-  private $id;
+    private $id;
 
   /**
-   * Get id
+   * Get id.
    *
    * @return integer
    */

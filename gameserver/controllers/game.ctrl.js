@@ -11,7 +11,7 @@ var Pathfinder = require('./../services/pathfinder.js');
 
 var Map = require('./../model/map');
 var MapManager = require('./../services/map.manager.js');
-var MapData = require('./../../client/app/json/map.json');
+var MapData = require('./../../frontend/app/json/map.json');
 
 function GameCtrl() {
 

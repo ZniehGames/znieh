@@ -78,11 +78,9 @@ COPY php-fpm/znieh.ini /etc/php5/cli/conf.d/znieh.ini
 VOLUME /var/www/api/app/cache
 VOLUME /var/www/api/app/logs
 
-# Nginx
 EXPOSE 80
 
-# Node server
-EXPOSE 3000
+# Gameserver
 ENV NODE_CONFIG_DIR /var/www/gameserver/config
 
 # Default command

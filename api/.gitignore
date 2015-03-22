@@ -8,6 +8,8 @@ app/config/deploy.rb
 app/var/jwt/private.pem
 app/var/jwt/public.pem
 
+app/test.db
+
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 

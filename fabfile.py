@@ -27,6 +27,10 @@ env.local_dir = env.real_fabfile[:-10]
 #             gh_pr     = gh_client.repo(GH_USER, REPO).issue(prId).comments().create('Warning: You should check your '+type+' files.\n '+result)
 #         except ValueError:
 #             print 'Can\'t retrieve pr id'
+@task
+def gulp():
+    with lcd(env.local_dir+'frontend/'):
+        local('gulp')
 
 @task
 def build():

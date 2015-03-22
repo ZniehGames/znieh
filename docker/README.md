@@ -20,13 +20,11 @@ apt-get install docker
 ```
 
 
-## Installer fig (bientôt docker-compose)
+## Installer docker-compose
 
-Fig permet de configurer et de lancer plusieurs containers Docker interagissants ensemble
+docker-compose permet de configurer et de lancer plusieurs containers Docker interagissants ensemble
 
-```
-brew install fig
-```
+http://docs.docker.com/compose/install/
 
 ## Lancer la stack
 
@@ -37,17 +35,19 @@ boot2docker shellinit
 Copier / Coller les commandes d'exports dans votre terminal, puis lancer les commandes suivantes :
 
 ```
-fig -f docker-compose.yml build
-fig -f docker-compose.yml up
+docker-compose build
+docker-compose up
 ```
 
 ## Accèder depuis votre navigateur
 
 Ajoutez dans /etc/hosts :
 
-127.0.0.1      znieh.dev   api.znieh.dev
+127.0.0.1      znieh.dev
+127.0.0.1      api.znieh.dev
+127.0.0.1      gs.znieh.dev 
 
-## Executer des commandes à l'interieur de votre stack (php, gulp, bower)
+## Executer des commandes à l'interieur de votre stack (fabric, php, node, gulp)
 
 Il suffit d'executer un terminal dans votre stack gràace à la commande suivante :
 

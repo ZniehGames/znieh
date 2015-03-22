@@ -17,11 +17,8 @@ function GameCtrl() {
 
   var map = MapManager.create(MapData);
   Pathfinder.init(map);
-  var games = [];
 
-  this.add = function (socketA, socketB) {
-    var playerA = UserStorage.findBySocket(socketA);
-    var playerB = UserStorage.findBySocket(socketB);
+  this.add = function (playerA, playerB) {
 
     if (playerA == null || playerB == null) {
       console.log('impossible de créer la partie'.red);
@@ -30,6 +27,7 @@ function GameCtrl() {
 
     UserManager.reloadTeam(playerA).then(function() {
       Placement.random(playerA.team.units, 'left', map);
+      console.log('game start', playerA.username);
       playerA.socket.emit('game start', {
         'side': 'left',
         'units': playerA.team.units
@@ -38,6 +36,7 @@ function GameCtrl() {
 
     UserManager.reloadTeam(playerB).then(function() {
       Placement.random(playerB.team.units, 'right', map);
+      console.log('game start', playerB.username);
       playerB.socket.emit('game start', {
         'side': 'right',
         'units': playerB.team.units
@@ -123,14 +122,6 @@ function GameCtrl() {
 
     game.playerA.socket.emit('unit attacked', data);
     game.playerB.socket.emit('unit attacked', data);
-  }
-
-  this.remove = function (game) {
-    var gameIndex = GameStorage.games.indexOf(game);
-
-    if (GameStorage.games[gameIndex] !== undefined) {
-      GameStorage.games.splice(gameIndex, 1);
-    }
   }
 
 }

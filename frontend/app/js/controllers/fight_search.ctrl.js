@@ -24,11 +24,14 @@ angular.module('znieh')
             $scope.units = units;
         });
 
-    SocketService.on('searching match', function() {
+    SocketService.forward('searching match', $scope);
+    SocketService.forward('match found', $scope);
+
+    $scope.$on('socket:searching match', function() {
         toastr.info('Recherche en cours', 'Informations');
     });
 
-    SocketService.on('match found', function(side) {
+    $scope.$on('socket:match found', function(ev, side) {
         $window.sessionStorage.side = side;
         $location.path('/fight');
     });

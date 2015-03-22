@@ -8,8 +8,19 @@ angular.module('znieh')
   $scope.side = '';
   $scope.units = null;
 
+  SocketService.forward('game start', $scope);
+
   // We start the game and add our team display
-  SocketService.on('game start', function(data) {
+  $scope.$on('socket:game start', function(ev, data) {
+
+    console.log('game start', data);
+
+      // kill previous game if any, this ctrl is not useful anymore
+      if (game) {
+        console.log('destroy game');
+        game.destroy();
+      }
+
       game = System.get('main')['default'].start(
         SocketService,
         data.side,

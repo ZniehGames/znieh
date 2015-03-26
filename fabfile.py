@@ -91,14 +91,20 @@ def lint(pr=''):
                 raise SystemExit()
 
 @task
+def check():
+    with lcd(env.local_dir+'api/'):
+        local('php app/console security:check')
+
+@task
 def test():
     with lcd(env.local_dir+'api/'):
-        result = local('php bin/behat', capture=True)
-        if result.return_code == 0:
-            print(green('Tests: OK'))
-        elif result.return_code == 1:
-            print result
-            print(red('Tests: /!\ KO!'))
+        local('php bin/phpspec run')
+        local('php bin/behat')
+
+    with lcd(env.local_dir+'frontend/'):
+        local('karma start karma.conf.js --single-run')
+        local('protractor')
+
 
 @task
 def reinit():

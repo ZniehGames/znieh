@@ -4,8 +4,8 @@ chown -R znieh:znieh /var/www/api/app/cache
 chown -R znieh:znieh /var/www/api/app/logs
 
 su znieh <<'EOF'
-cd       /var/www/api
-composer install --no-interaction --optimize-autoloader --no-scripts
+cd       /var/www
+fab build
 EOF
 
 exec php5-fpm -y /etc/service/php-fpm/fpm.conf -O

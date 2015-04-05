@@ -40,7 +40,7 @@ def build():
         local('gulp')
 
     with lcd(env.local_dir+'api/'):
-        local('composer install --prefer-source --no-interaction --optimize-autoloader')
+        local('composer install --prefer-source --no-interaction --optimize-autoloader --no-scripts')
 
 @task
 def build_db():

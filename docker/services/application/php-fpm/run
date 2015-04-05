@@ -2,10 +2,14 @@
 
 chown -R znieh:znieh /var/www/api/app/cache
 chown -R znieh:znieh /var/www/api/app/logs
+chmod -R 777 /var/www/api/app/cache
+chmod -R 777 /var/www/api/app/logs
 
 su znieh <<'EOF'
-cd       /var/www
+cd /var/www
 fab build
+cd /var/www/gameserver
+node server.js &
 EOF
 
 exec php5-fpm -y /etc/service/php-fpm/fpm.conf -O

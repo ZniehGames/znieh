@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Fernando Mayo <fernando@tutum.co>
+MAINTAINER Aurélien David <adavid@jolicode.com>
 
 # Install RabbitMQ
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F7B8CEA6056E8E56 && \
@@ -10,9 +10,9 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F7B8CEA6056E8E56 &&
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN echo "ERLANGCOOKIE" > /var/lib/rabbitmq/.erlang.cookie
-RUN chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
-RUN chmod 400 /var/lib/rabbitmq/.erlang.cookie
+# RUN apt-get update && apt-get install -y python
+# ADD https://raw.githubusercontent.com/rabbitmq/rabbitmq-management/rabbitmq_v3_5_1/bin/rabbitmqadmin /usr/bin/rabbitmqadmin
+# RUN chmod u+x /usr/bin/rabbitmqadmin
 
 # Add scripts
 ADD run.sh /run.sh

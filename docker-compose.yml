@@ -23,9 +23,8 @@ database:
 rabbitmq:
     build: docker/services/rabbitmq
     environment:
-        RABBITMQ_PASS: 4m81HGxH47i31Xw
     volumes:
-            - /var/docker/rabbit:data
+        - /var/docker/rabbit:data
     ports:
         - "5672:5672"
         - "15672:15672"

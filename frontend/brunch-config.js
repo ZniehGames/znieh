@@ -34,6 +34,7 @@ exports.config = {
   plugins: {
     'sass': {
       allowCache: true,
+      mode: 'ruby',
       options: {
         includePaths: ['bower_components/bootstrap/assets/stylesheets/bootstrap']
       }

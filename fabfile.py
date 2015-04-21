@@ -28,6 +28,7 @@ env.local_dir = env.real_fabfile[:-10]
 #         except ValueError:
 #             print 'Can\'t retrieve pr id'
 @task
+<<<<<<< HEAD
 def config():
     with lcd(env.local_dir):
         local('cp api/app/config/parameters.yml.dist api/app/config/parameters.yml')
@@ -42,16 +43,17 @@ def config_ci():
         local('cp gameserver/config/ci.json gameserver/config/default.json')
 
 @task
-def gulp():
+
+def brunch():
     with lcd(env.local_dir+'frontend/'):
-        local('gulp')
+        local('brunch watch')
 
 @task
 def build():
     with lcd(env.local_dir+'frontend/'):
         local('npm install')
         local('bower install --config.interactive=false --allow-root')
-        local('gulp')
+        local('brunch build')
 
     with lcd(env.local_dir+'gameserver/'):
         local('npm install')
@@ -74,23 +76,6 @@ def add_data():
 
 @task
 def lint(pr=''):
-    with lcd(env.local_dir+'frontend/'):
-        with settings(warn_only=True):
-            local('gulp', capture=True)
-            local('gulp sass-lint', capture=True)
-            result = local('gulp js-lint', capture=True)
-            if result.return_code == 0:
-                print(green('JS: OK'))
-            elif result.return_code == 1:
-                print result
-                print(red('JS: /!\ You should fix your JS files!'))
-                # if env.circleci:
-                #     create_PR_comment('JS', result, pr)
-
-            else: #print error to user
-                print result
-                raise SystemExit()
-
     with lcd(env.local_dir+'api/'):
         with settings(warn_only=True):
             result = local('php-cs-fixer fix . --config=sf23 --dry-run', capture=True)

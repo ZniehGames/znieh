@@ -1,7 +1,7 @@
 # This file is a "template" of what your parameters.yml file should look like
 parameters:
     database_driver:   pdo_mysql
-    database_host:     127.0.0.1
+    database_host:     database
     database_port:     null
     database_name:     znieh
     database_user:     znieh
@@ -28,10 +28,10 @@ parameters:
     pass_phrase:      'spyl'
     token_ttl:        86400
 
-    rabbitmq_host: 127.0.0.1
+    rabbitmq_host: rabbitmq
     rabbitmq_port: 5672
-    rabbitmq_login: admin
-    rabbitmq_password: admin
+    rabbitmq_login: guest
+    rabbitmq_password: guest
 
     mandrill_api_key: xxxx
 

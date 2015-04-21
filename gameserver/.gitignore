@@ -1,5 +1,6 @@
 node_modules
 node_modules/*
+config/default.json
 
 npm-debug.log
 gameserver.error.log

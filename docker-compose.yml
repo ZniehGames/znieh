@@ -6,6 +6,7 @@ application:
         - "80:80"
     links:
         - database
+        - rabbitmq
 
 database:
     build: docker/services/mariadb
@@ -18,6 +19,15 @@ database:
         TERM: dumb
     volumes_from:
         - mariadbdata
+
+rabbitmq:
+    build: docker/services/rabbitmq
+    environment:
+    volumes:
+        - /var/docker/rabbit:data
+    ports:
+        - "5672:5672"
+        - "15672:15672"
 
 mariadbdata:
     image: busybox:latest

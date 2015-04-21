@@ -28,6 +28,20 @@ env.local_dir = env.real_fabfile[:-10]
 #         except ValueError:
 #             print 'Can\'t retrieve pr id'
 @task
+def config():
+    with lcd(env.local_dir):
+        local('cp api/app/config/parameters.yml.dist api/app/config/parameters.yml')
+        local('cp frontend/config/main.json.dist frontend/config/main.json')
+        local('cp gameserver/config/default.json.dist gameserver/config/default.json')
+
+@task
+def config_ci():
+    with lcd(env.local_dir):
+        local('cp api/app/config/parameters.yml.ci api/app/config/parameters.yml')
+        local('cp frontend/config/main.json.ci frontend/config/main.json')
+        local('cp gameserver/config/ci.json gameserver/config/default.json')
+
+@task
 def gulp():
     with lcd(env.local_dir+'frontend/'):
         local('gulp')
@@ -38,6 +52,9 @@ def build():
         local('npm install')
         local('bower install --config.interactive=false --allow-root')
         local('gulp')
+
+    with lcd(env.local_dir+'gameserver/'):
+        local('npm install')
 
     with lcd(env.local_dir+'api/'):
         local('composer install --prefer-source --no-interaction --optimize-autoloader --no-scripts')

@@ -42,9 +42,9 @@ RUN echo "deb http://packages.dotdeb.org wheezy all" > /etc/apt/sources.list.d/d
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /etc/apt/sources.list.d/*
 
-# Update npm - Install gulp / bower
+# Update npm - Install brunch / bower
 RUN npm install -g npm && \
-    npm install -g gulp bower
+    npm install -g brunch bower
 
 # Install composer / phpunit / php-cs-fixer
 RUN wget https://getcomposer.org/composer.phar -O- -q >> /usr/local/bin/composer && \

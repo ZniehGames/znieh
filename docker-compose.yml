@@ -29,6 +29,13 @@ rabbitmq:
         - "5672:5672"
         - "15672:15672"
 
+adminer:
+  image: clue/adminer
+  links:
+    - database
+  ports:
+    - "1337:80"
+
 mariadbdata:
     image: busybox:latest
     volumes:

@@ -4,9 +4,6 @@
   "authors": [
     "spyl <contact@spyl.net>"
   ],
-  "moduleType": [
-    "amd"
-  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -16,23 +13,25 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.3.3-build.3545+sha.9cc6835",
-    "angular-route": "1.3.3-build.3545+sha.9cc6835",
     "bootstrap-sass-official": "~3.3.0",
     "lodash": "~2.4.1",
-    "restangular": "~1.4.0",
-    "angular-bootstrap": "~0.12.0",
-    "angular-toastr": "git://github.com/spyl94/angular-toastr#0200134a08",
     "bourbon": "~3.2.3",
     "phaser": "2.2.2",
-    "traceur-runtime": "0.0.74",
-    "angular-socket-io": "~0.6.1",
+    "phaser-tiled": "https://github.com/englercj/phaser-tiled.git#v1.4.1",
     "socket.io-client": "~1.2.1",
-    "angular-lodash": "~0.1.2",
-    "angular-mocks": "~1.3.8",
-    "easystarjs": "~0.1.13"
+    "easystarjs": "~0.1.13",
+    "react": "~0.13.1",
+    "flux": "~2.0.2",
+    "fetch": "~0.7.0",
+    "eventEmitter": "~4.2.11",
+    "compass-mixins": "~1.0.2"
   },
-  "resolutions": {
-    "angular": "1.3.3-build.3545+sha.9cc6835"
+  "overrides": {
+    "socket.io-client": {
+      "main": "socker.io.js"
+    },
+    "phaser-tiled": {
+      "main": "dist/phaser-tiled.js"
+    }
   }
 }

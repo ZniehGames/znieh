@@ -1,7 +1,8 @@
 app/*\.cache
 
 dist/
-app/vendor/
+bower_components/
+public/
 tmp/
 config/main.json
 

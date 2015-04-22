@@ -7,9 +7,6 @@ exports.config = {
       'node_modules/babel-brunch/node_modules/babel-core/browser-polyfill.js'
     ],
   },
-  conventions: {
-    // ignored: /^app\/spec/
-  },
   files: {
     javascripts: {
       joinTo: {
@@ -18,6 +15,7 @@ exports.config = {
           'bower_components/jquery/dist/jquery.js',
           'bower_components/lodash/dist/lodash.compat.js',
           'bower_components/phaser/build/phaser.js',
+          'bower_components/phaser-tiled/dist/phaser-tiled.js',
           'bower_components/eventEmitter/EventEmitter.js',
           'bower_components/react/react.js',
           'bower_components/flux/dist/Flux.js',
@@ -34,7 +32,7 @@ exports.config = {
   plugins: {
     'sass': {
       allowCache: true,
-      mode: 'ruby',
+      mode: 'native',
       options: {
         includePaths: ['bower_components/bootstrap/assets/stylesheets/bootstrap']
       }
@@ -48,6 +46,6 @@ exports.config = {
     }
   },
   onCompile: function() {
-    require('fs').appendFile('public/js/app.js', '\n\nrequire(\'app\');');
+    require('fs').appendFile('public/js/app.js', '\n\nrequire(\'js/app\');');
   }
 };

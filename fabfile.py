@@ -28,7 +28,6 @@ env.local_dir = env.real_fabfile[:-10]
 #         except ValueError:
 #             print 'Can\'t retrieve pr id'
 @task
-<<<<<<< HEAD
 def config():
     with lcd(env.local_dir):
         local('cp api/app/config/parameters.yml.dist api/app/config/parameters.yml')
@@ -43,7 +42,6 @@ def config_ci():
         local('cp gameserver/config/ci.json gameserver/config/default.json')
 
 @task
-
 def brunch():
     with lcd(env.local_dir+'frontend/'):
         local('brunch watch')

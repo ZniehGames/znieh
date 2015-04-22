@@ -17,16 +17,21 @@
     "lodash": "~2.4.1",
     "bourbon": "~3.2.3",
     "phaser": "2.2.2",
+    "phaser-tiled": "https://github.com/englercj/phaser-tiled.git#v1.4.1",
     "socket.io-client": "~1.2.1",
     "easystarjs": "~0.1.13",
     "react": "~0.13.1",
     "flux": "~2.0.2",
     "fetch": "~0.7.0",
-    "eventEmitter": "~4.2.11"
+    "eventEmitter": "~4.2.11",
+    "compass-mixins": "~1.0.2"
   },
   "overrides": {
     "socket.io-client": {
       "main": "socker.io.js"
+    },
+    "phaser-tiled": {
+      "main": "dist/phaser-tiled.js"
     }
   }
 }

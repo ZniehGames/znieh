@@ -8,4 +8,4 @@ dependencies:
 test:
   override:
     - docker-compose up -d
-    - docker run -it znieh_application_1 fab test
+    - docker run -it znieh_application fab test

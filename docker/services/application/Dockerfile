@@ -83,6 +83,10 @@ EXPOSE 80
 # Gameserver
 ENV NODE_CONFIG_DIR /var/www/gameserver/config
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+
+WORKDIR /var/www
 ENTRYPOINT ["/entrypoint.sh"]
 
 # Default command

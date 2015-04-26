@@ -18,6 +18,7 @@ exports.config = {
           'bower_components/phaser-tiled/dist/phaser-tiled.js',
           'bower_components/eventEmitter/EventEmitter.js',
           'bower_components/react/react.js',
+          'bower_components/react-router/build/global/ReactRouter.js',
           'bower_components/flux/dist/Flux.js',
           'bower_components/fetch/fetch.js',
           'app/plugins/phaser-tiled.js'
@@ -46,6 +47,6 @@ exports.config = {
     }
   },
   onCompile: function() {
-    require('fs').appendFile('public/js/app.js', '\n\nrequire(\'js/app\');');
+    require('fs').appendFile('public/js/app.js', '\n\nrequire(\'js/index\');');
   }
 };

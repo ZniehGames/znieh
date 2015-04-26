@@ -83,5 +83,7 @@ EXPOSE 80
 # Gameserver
 ENV NODE_CONFIG_DIR /var/www/gameserver/config
 
+ENTRYPOINT ["/entrypoint.sh"]
+
 # Default command
 CMD ["/usr/bin/runsvdir", "-P", "/etc/service"]

@@ -1,4 +1,0 @@
-{
-  'api': 'http://127.0.0.2/app_test.php',
-  'gameserver': 'http://127.0.0.1:1337'
-}

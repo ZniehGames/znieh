@@ -9,7 +9,6 @@ angular.module('znieh')
       Restangular.all('emails').post($scope.user).then(function(){
         toastr.success('Félicitations ton email a bien été enregistré, tu pourras jouer avant tout les autres !', 'Bienvenue sur Znieh');
       }, function() {
-        toastr.error('Cette email n\'a pas l\'air valide... Essayes en un autre ;-)', 'Oops !');
       });
     };
 

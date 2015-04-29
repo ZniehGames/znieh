@@ -33,7 +33,7 @@ const Navbar = React.createClass({
         </ul>
         <ul className='nav nav-sidebar bottom'>
           <li>
-            <h2>Znieh Games</h2>
+              <img src={'img/logo.png'} />
           </li>
         </ul>
       </div>

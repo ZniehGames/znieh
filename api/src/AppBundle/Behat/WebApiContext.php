@@ -22,7 +22,7 @@ class WebApiContext extends DefaultContext
      */
     public function createClient()
     {
-        $this->client = new Client(['base_url' => $this->getParameter('base_url')]);
+        $this->client = new Client(['base_url' => $this->getParameter('base.url')]);
         $this->token = null;
     }
 

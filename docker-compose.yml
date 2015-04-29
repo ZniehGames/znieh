@@ -7,6 +7,9 @@ application:
     links:
         - database
         - rabbitmq
+    environment:
+        SYMFONY__BASE__URL: http://api.znieh.dev/
+        GS_URL: http://gs.znieh.dev
 
 database:
     build: docker/services/mariadb
@@ -22,7 +25,6 @@ database:
 
 rabbitmq:
     build: docker/services/rabbitmq
-    environment:
     volumes:
         - /var/docker/rabbit:data
     ports:

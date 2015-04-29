@@ -11,7 +11,7 @@ function TeamConsumer() {
   this.setTeam = function (user) {
     var deferred = Q.defer();
 
-    client.get(config.get('api') + 'users/' + user.id + '/team', function(data, response) {
+    client.get(config.get('SYMFONY__BASE__URL') + 'users/' + user.id + '/team', function(data, response) {
       user.team = data[0];
       console.log('load user team'.blue, user.username);
       deferred.resolve();

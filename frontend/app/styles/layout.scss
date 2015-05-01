@@ -20,42 +20,61 @@ html, body, .App {
     padding: 0;
 }
 
+.login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    text-align: center;
+}
+
+.login-image {
+    position: relative;
+    width: 100%;
+    // background: url('../images/form.png') no-repeat left center;
+    // background-position: 0px 0px;
+}
+
+.login-form {
+   position: absolute;
+   top: 40px;
+   left: 0;
+   width: 100%;
+    input {
+        width: 50%;
+        z-index: 2000;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+    }
+}
+
 .landscape {
     min-height: 100%;
 }
 
-/* Hide for mobile, show later */
 .sidebar {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+    border-right: 1px solid #eee;
 }
 
-@media (min-width: 768px) {
-  .sidebar {
-    min-height: 100%;
-    z-index: 1000;
-    display: block;
-    background-color: black;
-    // border-right: 1px solid #eee;
-  }
+.sidebar-part {}
+
+.sidebar-part--center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
 }
 
-.nav-sidebar {
-    /*margin-right: -21px; /* 20px padding + 1px border */
-    /*margin-left: -20px;
-*/
-    li > a {
-        padding: 8px 10px 6px 10px;
-        text-align: center;
-    }
-
-    li:not(.active) > a {
-        border-top: 1px solid #d2d2d2;
-    }
-
-    li:last-child > a {
-      border-bottom: 1px solid #d2d2d2;
-    }
-
+.sidebar-link {
+    max-width: 50%;
     .active > a,
     .active > a:hover,
     .active > a:focus {
@@ -65,8 +84,10 @@ html, body, .App {
     }
 }
 
-.nav-sidebar.bottom {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.sidebar-part--top {
+    // padding-top: 50px;
+}
+
+.sidebar-part--bottom {
+    max-height: 20%;
 }

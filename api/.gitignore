@@ -11,6 +11,7 @@ app/var/jwt/public.pem
 app/test.db
 
 !app/cache/.gitkeep
+!app/cache/test/.gitkeep
 !app/logs/.gitkeep
 
 /* Assets */

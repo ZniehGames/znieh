@@ -1,8 +1,6 @@
 Feature: Registration
 
-  Background:
-    Given the database contains fixtures
-
+  @database
   Scenario: Register new user
     When I send a POST request to "/users" with values:
       | username | plainPassword | email            |

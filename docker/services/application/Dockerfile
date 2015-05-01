@@ -24,13 +24,6 @@ RUN apt-get update && \
 # Install fabric
 RUN pip install fabric requests libsaas
 
-# Install ruby / compass
-RUN apt-get update && \
-    apt-get install -y ruby rubygems ruby-dev && \
-    gem install compass --no-ri --no-rdoc && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 # Install nginx and php (fpm)
 RUN echo "deb http://packages.dotdeb.org wheezy all" > /etc/apt/sources.list.d/dotdeb.list && \
     echo "deb-src http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list.d/dotdeb.list && \
@@ -46,13 +39,9 @@ RUN echo "deb http://packages.dotdeb.org wheezy all" > /etc/apt/sources.list.d/d
 RUN npm install -g npm && \
     npm install -g brunch bower
 
-# Install composer / phpunit / php-cs-fixer
+# Install composer
 RUN wget https://getcomposer.org/composer.phar -O- -q >> /usr/local/bin/composer && \
-    chmod +x /usr/local/bin/composer && \
-    wget https://phar.phpunit.de/phpunit.phar -O- -q >> /usr/local/bin/phpunit && \
-    chmod +x /usr/local/bin/phpunit && \
-    wget http://get.sensiolabs.org/php-cs-fixer.phar -O- -q >> /usr/local/bin/php-cs-fixer && \
-    chmod +x /usr/local/bin/php-cs-fixer
+    chmod +x /usr/local/bin/composer
 
 # Install fake user 1000
 RUN addgroup --gid=1000 znieh && \

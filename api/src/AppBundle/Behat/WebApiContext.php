@@ -12,11 +12,6 @@ class WebApiContext extends DefaultContext
     public $token;
     public $response;
 
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
     /**
      * @BeforeScenario
      */
@@ -89,7 +84,10 @@ class WebApiContext extends DefaultContext
         $request = $this->client->createRequest($method, 'app_test.php'.$url, [
             'body' => $table->getHash(),
             'exceptions' => false,
-            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)],
+            'headers' => [
+                'Authorization' => sprintf('Bearer %s', $this->token),
+                'Content-Type' => 'application/json',
+            ],
         ]);
         $this->response = $this->client->send($request);
     }
@@ -108,10 +106,12 @@ class WebApiContext extends DefaultContext
         $request = $this->client->createRequest($method, 'app_test.php'.$url, [
             'body' => $string->getRaw(),
             'exceptions' => false,
-            'headers' => ['Authorization' => sprintf('Bearer %s', $this->token)],
+            'headers' => [
+                'Authorization' => sprintf('Bearer %s', $this->token),
+                'Content-Type' => 'application/json',
+            ],
         ]);
         $this->response = $this->client->send($request);
-        var_dump((string) $this->response->getBody());
     }
 
     /**
@@ -123,7 +123,11 @@ class WebApiContext extends DefaultContext
      */
     public function theResponseStatusCodeShouldBe($code)
     {
-        \PHPUnit_Framework_Assert::assertSame(intval($code), intval($this->response->getStatusCode()));
+        \PHPUnit_Framework_Assert::assertSame(
+            intval($code),
+            intval($this->response->getStatusCode()),
+            (string) $this->response->getBody()
+        );
     }
 
     /**
@@ -132,7 +136,7 @@ class WebApiContext extends DefaultContext
     public function theJsonResponseShouldMatch(PyStringNode $pattern)
     {
         $this->response->json(); // check if json
-        var_dump((string) $this->response->getBody()); // eases debug
-        \PHPUnit_Framework_Assert::assertTrue(match((string) $this->response->getBody(), $pattern->getRaw()));
+        $body = (string) $this->response->getBody();
+        \PHPUnit_Framework_Assert::assertTrue(match($body, $pattern->getRaw()), $body);
     }
 }

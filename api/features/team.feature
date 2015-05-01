@@ -1,8 +1,5 @@
 Feature: team
 
-Background:
-  Given the database contains fixtures
-
 Scenario: API client wants to get the selected team of a user
     Given I send a GET request to "/users/1/team"
     Then the JSON response should match:
@@ -114,6 +111,7 @@ Scenario: API client wants to get the selected team of a user
 }]
 """
 
+@database
 Scenario: A user wants to add a team
     Given I am logged in as "test"
     When I send a POST request to "/teams" with json:
@@ -150,6 +148,7 @@ Scenario: A user wants to update someone else team name
 """
     Then the response status code should be 400
 
+@database
 Scenario: A user wants to update his team name and list of units
     Given I am logged in as "test"
     When I send a PUT request to "/teams/11" with json:
@@ -161,6 +160,7 @@ Scenario: A user wants to update his team name and list of units
 """
     Then the response status code should be 204
 
+@database
 Scenario: A user wants to select a team
     Given User "11" has many teams
     And I am logged in as "test"

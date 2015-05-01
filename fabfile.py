@@ -1,6 +1,6 @@
 from __future__ import with_statement
 
-import requests
+# import requests
 import os
 
 from fabric.api import *
@@ -87,9 +87,9 @@ def test():
         local('php bin/phpspec run')
         local('php bin/behat')
 
-    with lcd(env.local_dir+'frontend/'):
-        local('karma start karma.conf.js --single-run')
-        local('protractor')
+    # with lcd(env.local_dir+'frontend/'):
+    #     local('karma start karma.conf.js --single-run')
+    #     local('protractor')
 
 
 @task

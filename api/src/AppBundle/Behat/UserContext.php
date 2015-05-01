@@ -9,14 +9,6 @@ use Znieh\Model\Team;
 class UserContext extends WebApiContext
 {
     /**
-     * @Given /^the database contains fixtures$/
-     */
-    public function theDatabaseContainsFixtures()
-    {
-        $this->purgeAndExecuteFixtures(new Loader());
-    }
-
-    /**
      * @Given /^There is a user "([^"]+)"$/
      */
     public function thereIsUser($username)
@@ -34,7 +26,7 @@ class UserContext extends WebApiContext
      */
     public function hasUnlockedObject($username, $id)
     {
-        $em = $this->getService('doctrine')->getManager();
+        $em = $this->getEntityManager();
         $user = $em->getRepository('AppBundle:User')->findOneBy(['username' => $username]);
         $object = $em->getRepository('AppBundle:GameObject')->find($id);
         $unlock = new UnlockedGameObject();

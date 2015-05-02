@@ -1,6 +1,6 @@
 {
-  "name": "Znieh",
-  "version": "0.0.0",
+  "name": "znieh-gameserver",
+  "version": "0.0.1",
   "description": "An awesome strategy game",
   "scripts": {
     "test": "jasmine-node"

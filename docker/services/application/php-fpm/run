@@ -8,6 +8,11 @@ chmod -R 777 /var/www/api/app/logs
 su znieh <<'EOF'
 cd /var/www
 fab build
+fab build_db
+
+cd /var/www/api
+php vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php
+
 cd /var/www/gameserver
 node server.js &
 EOF

@@ -2,71 +2,16 @@
 
 namespace AppBundle\Behat;
 
-use Behat\Behat\Context\Context;
-use Behat\MinkExtension\Context\RawMinkContext;
+use Behat\Symfony2Extension\Context\KernelDictionary;
 use Behat\Symfony2Extension\Context\KernelAwareContext;
-use Doctrine\Common\DataFixtures\Purger\ORMPurger;
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\Loader;
-use Faker\Factory as FakerFactory;
-use Faker\Generator;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpKernel\KernelInterface;
-use Symfony\Component\Security\Core\SecurityContextInterface;
+
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-abstract class DefaultContext extends RawMinkContext implements Context, KernelAwareContext
+
+abstract class DefaultContext implements KernelAwareContext
 {
-    /**
-     * Faker.
-     *
-     * @var Generator
-     */
-    protected $faker;
-
-    /**
-     * @var KernelInterface
-     */
-    protected $kernel;
-
-    public function __construct()
-    {
-        $this->faker = FakerFactory::create();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setKernel(KernelInterface $kernel)
-    {
-        $this->kernel = $kernel;
-    }
-
-    public function purgeDatabase()
-    {
-        $purger = new ORMPurger($this->getService('doctrine.orm.entity_manager'));
-        $purger->purge();
-    }
-
-    /**
-     * Get entity manager.
-     *
-     * @return ObjectManager
-     */
-    protected function getEntityManager()
-    {
-        return $this->getService('doctrine')->getManager();
-    }
-
-    /**
-     * Returns Container instance.
-     *
-     * @return ContainerInterface
-     */
-    protected function getContainer()
-    {
-        return $this->kernel->getContainer();
-    }
+    use KernelDictionary;
 
     /**
      * Get service by id.
@@ -78,6 +23,16 @@ abstract class DefaultContext extends RawMinkContext implements Context, KernelA
     protected function getService($id)
     {
         return $this->getContainer()->get($id);
+    }
+
+    /**
+     * Get entity manager.
+     *
+     * @return ObjectManager
+     */
+    protected function getEntityManager()
+    {
+        return $this->getService('doctrine')->getManager();
     }
 
     /**
@@ -101,74 +56,27 @@ abstract class DefaultContext extends RawMinkContext implements Context, KernelA
      */
     protected function getUser()
     {
-        $token = $this->getSecurityContext()->getToken();
-
+        $token = $this->getService('security.token_storage')->getToken();
         if (null === $token) {
-            throw new \Exception('No token found in security context.');
+            throw new \Exception('No token found in token storage.');
         }
-
         return $token->getUser();
     }
 
     /**
-     * Get security context.
-     *
-     * @return SecurityContextInterface
+     * @BeforeSuite
      */
-    protected function getSecurityContext()
+    public static function reinitDatabase()
     {
-        return $this->getContainer()->get('security.context');
+        exec('app/console d:s:u -e test --force');
+        DefaultContext::databaseContainsFixtures();
+    }
+    /**
+     * @AfterScenario @database
+     */
+    public static function databaseContainsFixtures()
+    {
+        exec('php app/console doctrine:fixtures:load -n -e test');
     }
 
-    /**
-     * Generate url.
-     *
-     * @param string  $route
-     * @param array   $parameters
-     * @param Boolean $absolute
-     *
-     * @return string
-     */
-    protected function generateUrl($route, array $parameters = array(), $absolute = false)
-    {
-        return $this->locatePath($this->getService('router')->generate($route, $parameters, $absolute));
-    }
-
-    /**
-     * Execute the fixtures.
-     *
-     * @param \Doctrine\Common\DataFixtures\Loader $loader Data fixtures loader
-     */
-    public function purgeAndExecuteFixtures(Loader $loader)
-    {
-        $manager = $this->getService('h4cc_alice_fixtures.manager');
-        $objects = $manager->loadFiles([
-            __DIR__.'/../DataFixtures/Fixtures/sizes.yml',
-            __DIR__.'/../DataFixtures/Fixtures/physicals.yml',
-            __DIR__.'/../DataFixtures/Fixtures/sprites.yml',
-            __DIR__.'/../DataFixtures/Fixtures/buildings.yml',
-            __DIR__.'/../DataFixtures/Fixtures/steps.yml',
-            __DIR__.'/../DataFixtures/Fixtures/armorPartTypes.yml',
-            __DIR__.'/../DataFixtures/Fixtures/armorTypes.yml',
-            __DIR__.'/../DataFixtures/Fixtures/armorParts.yml',
-            __DIR__.'/../DataFixtures/Fixtures/weaponPartTypes.yml',
-            __DIR__.'/../DataFixtures/Fixtures/weaponTypes.yml',
-            __DIR__.'/../DataFixtures/Fixtures/weaponParts.yml',
-            __DIR__.'/../DataFixtures/Fixtures/runeTypes.yml',
-            __DIR__.'/../DataFixtures/Fixtures/runes.yml',
-        ], 'yaml');
-        $manager->persist($objects, true);
-        $objects = $manager->loadFiles([
-            __DIR__.'/../DataFixtures/Fixtures/users.yml',
-        ], 'yaml');
-        $manager->persist($objects, false);
-    }
-
-    /**
-     * @Given /^the database is empty$/
-     */
-    public function theDatabaseIsEmpty()
-    {
-        $this->purgeDatabase();
-    }
 }

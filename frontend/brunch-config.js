@@ -28,7 +28,7 @@ exports.config = {
       }
     },
     stylesheets: {
-      joinTo: 'styles/main.css'
+      joinTo: 'styles/layout.css'
     }
   },
   plugins: {

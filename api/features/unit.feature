@@ -1,8 +1,5 @@
-@dev
 Feature: Unit
 
-  Background:
-    Given the database contains fixtures
 
     Scenario: API client wants to get the list of units of a user
         Given I send a GET request to "/users/1/units"
@@ -46,6 +43,7 @@ Feature: Unit
 """
     Then the response status code should be 400
 
+  @database
   Scenario: Logged in user wants to add a new unit
     Given I am logged in as "test"
     When I send a POST request to "/units" with json:

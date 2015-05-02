@@ -1,11 +1,30 @@
 machine:
+  php:
+    version: 5.5.11
   services:
     - docker
+  hosts:
+    znieh.dev: 127.0.0.1
+    api.znieh.dev: 127.0.0.1
+    gs.znieh.dev: 127.0.0.1
+
+general:
+  artifacts:
+    - "api/app/logs/test.log"
 
 dependencies:
+  cache_directories:
+    - "api/vendor"
+    - "frontend/node_modules"
+    - "frontend/bower_components"
   override:
-    - sudo pip install -U docker-compose
+    - sudo pip install -r requirements.txt
+    - docker-compose build
 test:
   override:
     - docker-compose up -d
-    - docker run -it znieh_application fab test
+    - sleep 360
+    - docker-compose logs:
+        background: true
+    - cp api/app/config/parameters.yml.dist api/app/config/parameters.yml
+    - fab test

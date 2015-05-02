@@ -1,0 +1,29 @@
+.login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 330px;
+    text-align: center;
+    z-index: 2;
+    // -webkit-animation-delay: 1s;
+}
+
+.login-image {
+    position: relative;
+    width: 100%;
+}
+
+.login-form {
+   position: absolute;
+   top: 40px;
+   left: 0;
+   width: 100%;
+    input {
+        width: 50%;
+        z-index: 2000;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+    }
+}

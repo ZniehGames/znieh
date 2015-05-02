@@ -5,68 +5,21 @@
 //@import "base";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
 @import "../../bower_components/bourbon/dist/bourbon";
-@import "fightpage/_fight.scss";
-@import "_homepage.scss";
-@import "fightsearch/_search.scss";
-@import "caserne/_caserne.scss";
-@import "caserne/_unit.scss";
-@import "caserne/_object-info.scss";
-@import "_unit.scss";
+// @import "fightpage/_fight.scss";
+// @import "fightsearch/_search.scss";
+// @import "caserne/_caserne.scss";
+// @import "caserne/_unit.scss";
+// @import "caserne/_object-info.scss";
+//@import "_unit.scss";
 @import "_toastr.scss";
+@import "_animate.scss";
+
+@import "components/_sidebar.scss";
+@import "pages/_home.scss";
 
 html, body, .App {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-.landscape {
-    min-height: 100%;
-}
-
-/* Hide for mobile, show later */
-.sidebar {
-    display: none;
-}
-
-@media (min-width: 768px) {
-  .sidebar {
-    min-height: 100%;
-    z-index: 1000;
-    display: block;
-    background-color: black;
-    // border-right: 1px solid #eee;
-  }
-}
-
-.nav-sidebar {
-    /*margin-right: -21px; /* 20px padding + 1px border */
-    /*margin-left: -20px;
-*/
-    li > a {
-        padding: 8px 10px 6px 10px;
-        text-align: center;
-    }
-
-    li:not(.active) > a {
-        border-top: 1px solid #d2d2d2;
-    }
-
-    li:last-child > a {
-      border-bottom: 1px solid #d2d2d2;
-    }
-
-    .active > a,
-    .active > a:hover,
-    .active > a:focus {
-        color: white;
-        background-color: #AD979E;
-        border-bottom: 4px solid #9a878d;
-    }
-}
-
-.nav-sidebar.bottom {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 }

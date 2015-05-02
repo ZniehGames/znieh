@@ -13,7 +13,7 @@ const App = React.createClass({
 
   render() {
     return (
-        <div className='App container-fluid'>
+        <div className='App row'>
             <Navbar />
             <Home />
             <RouteHandler {...this.props} />

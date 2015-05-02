@@ -14,29 +14,23 @@ const Navbar = React.createClass({
   render() {
     return (
       <div className='col-sm-1 sidebar'>
-        <ul className='nav nav-sidebar'>
-          <li>
-            <a onClick={this.handleGoClick}>
-              <i className='glyphicon glyphicon-tower'></i>
-            </a>
-          </li>
-          <li>
-            <a onClick={this.handleGoClick}>
-              <i className='glyphicon glyphicon-tower'></i>
-            </a>
-          </li>
-          <li>
-            <a onClick={this.handleGoClick}>
-              <i className='glyphicon glyphicon-tower'></i>
-            </a>
-          </li>
-        </ul>
-        <ul className='nav nav-sidebar bottom'>
-          <li>
-              <img src={'img/logo.png'} />
-          </li>
-        </ul>
-      </div>
+        <div className='sidebar-part sidebar-part--top'>
+        </div>
+        <div className='sidebar-part sidebar-part--center'>
+            <div className='sidebar-link'>
+              <a onClick={this.handleGoClick}>...</a>
+            </div>
+            <div className='sidebar-link'>
+              <a onClick={this.handleGoClick}>...</a>
+            </div>
+            <div className='sidebar-link'>
+              <a onClick={this.handleGoClick}>...</a>
+            </div>
+        </div>
+        <div className='sidebar-part sidebar-part--bottom'>
+          <img src={'images/banana.png'} className='img-responsive'/>
+        </div>
+    </div>
     );
   },
 

@@ -1,38 +1,6 @@
-.landscape {
-    display: block;
-    background: url('../images/landscape.jpg') center center no-repeat scroll;
-    background-size: cover;
-    padding-top: 50px;
-}
 
-.business-header {
-  padding-top: 15px;
-}
-
-.business-header h1 {
+.newsletter-cta,  {
   text-align: center;
-  font-size: 80px;
-  letter-spacing: 60px;
-}
-
-.homepage-layer {
-  background: rgba(255,255,255, 0.6);
-}
-
-.user-content {
-  color: white;
-}
-
-.login-form input {
-  margin-right: 5px;
-}
-
-.vertical-align {
-    display: flex;
-    align-items: center;
-}
-
-.newsletter-cta, .registration {
   background: #323b43;
   border-radius: 3px;
   color: white;
@@ -42,61 +10,43 @@
   -webkit-animation: nod 3s 15s ease-in-out;
 }
 
-.newsletter-cta h1, .registration h1 {
+.newsletter-cta h1 {
   letter-spacing: -.5px;
+  text-transform: uppercase;
   margin: 0;
 }
 
-.newsletter-cta h2, .registration h2 {
+.newsletter-cta h2 {
+  font-size: 1.3em;
   color: #8b959e;
   margin: 0;
 }
 
 .newsletter-cta form {
-  height: 40px;
-  margin-top: 24px;
+  height: 60px;
+  margin: 0 auto;
   position: relative;
-  width: 250px;
+  width: 90%;
+  text-align: center;
+  padding-top: 10px;
 }
 
-.registration form {
-  height: 200px;
-  margin-top: 24px;
+.newsletter-cta .arrow {
+  background: url('../images/fleche1.png') center center no-repeat scroll;
+  background-size: 40px auto;
+  height: 60px;
+  width: 10%;
+  margin-right: 20px;
   position: relative;
-  width: 400px;
-}
-
-.registration input {
-  color: #8b959e;
-  -webkit-appearance: none;
-  border-radius: 3px 3px 3px 3px;
-  border: 0;
-  box-shadow: none;
-  font-size: 12px;
-  font-family: "Open Sans";
-  height: 40px;
-  outline: 0;
-  padding-left: 10px;
-  position: relative;
-  margin: 5px 5px 5px 5px;
-  -webkit-transition: box-shadow 200ms ease-in-out;
-  transition: box-shadow 200ms ease-in-out;
-  width: 70%;
-}
-
-.registration button {
-  background: #168eea;
-  background-size: 26px;
-  border-radius: 3px 3px 3px 3px;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  height: 40px;
-  outline: 0;
-  margin-left: 5px;
+  display: inline-block;
+  top: -15px;
+  float: left;
 }
 
 .newsletter-cta input {
+  float: left;
+  position: relative;
+  display: inline-block;
   color: #8b959e;
   -webkit-appearance: none;
   border-radius: 3px 0 0 3px;
@@ -105,16 +55,16 @@
   font-size: 12px;
   font-family: "Open Sans";
   height: 40px;
-  left: 0;
   outline: 0;
-  padding-left: 10px;
-  position: absolute;
+  padding: 13px;
   -webkit-transition: box-shadow 200ms ease-in-out;
   transition: box-shadow 200ms ease-in-out;
-  width: 98%;
+  width: 40%;
 }
+
 .newsletter-cta button {
   background: #168eea url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAAAEgAAABIAEbJaz4AAAAJdnBBZwAAAEAAAABAAOrz+GAAAAJkSURBVGje7ZnBaxNBGMVfdYsxDbbUUy0qgsWAirfSooj0JBQkQvGcv0J69NhzoTcP9eTRevNkU2khBSWIChHUmnhoFVNcmpoWY9PL27eBHZatbtgVZ3LIj2+++XhkHjPfbtBBzz/ljjc+iVwPjiHhYQU4Pas8gH5SE26AdpXXM+styXAThtkf1oSpERC3CUcwSPqK96SWIa+OHClm6y3KeoXQPGvC9AiIx4RnMUrawjpp25B3DSdJL+M14ZysVwzNqypvyIslvgVWgG/CfkyT2opu40XI2jFcJjXwlFQ35N3EMGkFVdIvzcogQ4bOrRxqqVnlzUbsCfPB2cS3wAroPgnX+O3Kelsokup4TrqIG6QWHpHeGCpP4RypJOu5hjyDCauKTSi2pFhRsbm/6AmtCdMjoK/jUQYPSE20SS2MkBo4HoiV8CxQbxpXSb9xmrSALyEKDMbIG07CgmKLsfSE1oTpEWDqCQ+wQvqs2L5im4YVt3GLVNGp9y6iglhMGLUntCZMowD/JPTHIO6SHF29G6iRshgnbepMrOiiXcWHIyoItUj4dVyK2BNaE6ZbgMmEo1gg1bBMGsYdUgWvSfs4QRrDddK8eseow56E/70AB2XST2RJDV2lO5pdxyTpimJV5EmPNVvQ7P3QJ2t/BP/D6Ho6fnvkk9D2hP+eAAcbpCbukc7gIamGGdKOVjyRzQ4kf0ad4EfVayPScHCB5KoIFPvWFYPygg/ZOVwifdfaiK9AE98CK6Cv4/+lNkCq4zzpFaYiVckgE4jtdr0LDBkOTok9yomyUUoA2MPen/4CiW+BFXAIUQPX5eYMa5UAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTUtMDItMDFUMTU6NTA6MTMrMDM6MDD1rHSlAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTAyLTAxVDE1OjUwOjEzKzAzOjAwhPHMGQAAAABJRU5ErkJggg==) no-repeat center;
+  display: inline-block;
   background-size: 26px;
   border-radius: 0 3px 3px 0;
   border: 0;
@@ -122,23 +72,19 @@
   cursor: pointer;
   height: 40px;
   outline: 0;
-  position: absolute;
   right: 0;
   width: 40px;
+  float: left;
+  position: relative;
+
 }
 
 .newsletter-cta .caption {
+  margin-top: 5px;
   color: #8b959e;
+  display: inline-block;
   font-size: 12px;
-  left: 275px;
+  float: left;
   position: relative;
-  top: 5px;
-  width: 200px;
-}
-
-.registration .caption {
-  color: #8b959e;
-  font-size: 12px;
-  position: relative;
-  width: 300px;
+  max-width: 40%;
 }

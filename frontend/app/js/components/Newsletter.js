@@ -16,6 +16,7 @@ const Newsletter = React.createClass({
         <h1>Rejoins l'aventure dès maintenant</h1>
         <h2>Entre ton email pour jouer pendant le développement du jeu !</h2>
         <form id="newsletter" role="form">
+          <div className='arrow'></div>
           <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
           <button type="submit" onClick={this.handleSubmit}></button>
           <div className='caption'>Ne vous inquiétez pas, vous pouvez vous désinscrire à tout moment.</div>

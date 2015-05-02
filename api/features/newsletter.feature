@@ -1,8 +1,6 @@
 Feature: Newsletter
 
-  Background:
-    Given the database contains fixtures
-
+  @database
   Scenario: Register new email
     When I send a POST request to "/emails" with values:
       | email            |

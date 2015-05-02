@@ -14,7 +14,7 @@ application:
 database:
     build: docker/services/mariadb
     ports:
-        - "3306:3306"
+        - "3307:3306"
     environment:
         MYSQL_ROOT_PASSWORD: 4m81HGxH47i31Xw
         MYSQL_USER:          'znieh'
@@ -28,15 +28,15 @@ rabbitmq:
     volumes:
         - /var/docker/rabbit:data
     ports:
-        - "5672:5672"
-        - "15672:15672"
+        - "5673:5672"
+        - "15673:15672"
 
-adminer:
-  image: clue/adminer
-  links:
-    - database
-  ports:
-    - "1337:80"
+# adminer:
+#   image: clue/adminer
+#   links:
+#     - database
+#   ports:
+#     - "1337:80"
 
 mariadbdata:
     image: busybox:latest

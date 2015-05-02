@@ -12,7 +12,7 @@ const Login = React.createClass({
 
   render() {
     return (
-      <div className='login'>
+      <div className='login animated bounceInDown'>
         <div className='login-image'>
         <img src={'images/form.png'} className='img-responsive' />
         <form className="login-form" role="form">
@@ -23,6 +23,7 @@ const Login = React.createClass({
             <input type="password" name="password" placeholder="Mot de passe" value={this.state.password} onChange={this.handleChange} />
           </div>
           <button className='btn btn-default' type="submit" onClick={this.handleSubmit}>Connexion</button>
+          <p> Pas encore inscrit ?</p>
         </form>
         </div>
       </div>

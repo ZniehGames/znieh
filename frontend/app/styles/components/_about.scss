@@ -1,0 +1,27 @@
+
+.about  {
+  text-align: center;
+  background: #323b43;
+  border-radius: 3px;
+  color: white;
+  height: auto;
+  margin-bottom: 32px;
+  padding: 32px 5% 40px 5%;
+  -webkit-animation: nod 3s 15s ease-in-out;
+}
+
+.positioning {
+    border-radius: 5px 5px 5px 5px;
+    border: 1px white solid;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.positioning p {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

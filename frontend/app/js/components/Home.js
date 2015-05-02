@@ -2,6 +2,7 @@
 
 import Newsletter from './Newsletter';
 import Login from './Login';
+import About from './About';
 
 const Home = React.createClass({
 
@@ -12,12 +13,13 @@ const Home = React.createClass({
   render() {
     return (
       <div className='landscape col-sm-11'>
-        <div className='container homepage-layer'>
+        <div className='container'>
           <header className='business-header'>
             <h1> Znieh </h1>
+            <h2 class="tagline">Le <strong>MMO</strong> de stratégie gratuit sans classes !</h2>
           </header>
-          <h2 class="tagline">Le MMO de stratégie gratuit qui met fin aux classes prédéfinies !</h2>
           <Newsletter />
+          <About />‡
         </div>
         <Login />
       </div>

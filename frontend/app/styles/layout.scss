@@ -5,89 +5,21 @@
 //@import "base";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap";
 @import "../../bower_components/bourbon/dist/bourbon";
-@import "fightpage/_fight.scss";
-@import "_homepage.scss";
-@import "fightsearch/_search.scss";
-@import "caserne/_caserne.scss";
-@import "caserne/_unit.scss";
-@import "caserne/_object-info.scss";
-@import "_unit.scss";
+// @import "fightpage/_fight.scss";
+// @import "fightsearch/_search.scss";
+// @import "caserne/_caserne.scss";
+// @import "caserne/_unit.scss";
+// @import "caserne/_object-info.scss";
+//@import "_unit.scss";
 @import "_toastr.scss";
+@import "_animate.scss";
+
+@import "components/_sidebar.scss";
+@import "pages/_home.scss";
 
 html, body, .App {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-.login {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 400px;
-    text-align: center;
-}
-
-.login-image {
-    position: relative;
-    width: 100%;
-    // background: url('../images/form.png') no-repeat left center;
-    // background-position: 0px 0px;
-}
-
-.login-form {
-   position: absolute;
-   top: 40px;
-   left: 0;
-   width: 100%;
-    input {
-        width: 50%;
-        z-index: 2000;
-        height: 34px;
-        padding: 6px 12px;
-        font-size: 14px;
-        line-height: 1.42857;
-    }
-}
-
-.landscape {
-    min-height: 100%;
-}
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
-    background: black;
-    border-right: 1px solid #eee;
-}
-
-.sidebar-part {}
-
-.sidebar-part--center {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-}
-
-.sidebar-link {
-    max-width: 50%;
-    .active > a,
-    .active > a:hover,
-    .active > a:focus {
-        color: white;
-        background-color: #AD979E;
-        border-bottom: 4px solid #9a878d;
-    }
-}
-
-.sidebar-part--top {
-    // padding-top: 50px;
-}
-
-.sidebar-part--bottom {
-    max-height: 20%;
+    font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 }

@@ -1,7 +1,7 @@
 # Znieh Games
 ## Customize your units like never before
 
-[![Build Status](https://travis-ci.org/ZniehGames/znieh.svg?branch=master)](https://travis-ci.org/ZniehGames/znieh)
+[![Circle CI](https://circleci.com/gh/ZniehGames/znieh.svg?style=svg)](https://circleci.com/gh/ZniehGames/znieh)
 
 For issues, including feature requests, see the [Issue Tracker](https://github.com/ZniehGames/znieh/issues).
 

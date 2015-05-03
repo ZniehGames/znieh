@@ -35,6 +35,11 @@ exports.config = {
       allowCache: true,
       mode: 'native'
     },
+    'postcss': {
+      'processors': [
+        require('autoprefixer')(['last 8 versions']),
+      ]
+    },
     'fb-flo': {
       port: 8888
     },

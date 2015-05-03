@@ -39,6 +39,11 @@ RUN echo "deb http://packages.dotdeb.org wheezy all" > /etc/apt/sources.list.d/d
 RUN npm install -g npm && \
     npm install -g brunch bower
 
+# Install optimization tools
+RUN apt-get update && \
+    apt-get install optipng libjpeg libjpeg-progs && \
+    rm -rf /var/lib/apt/lists/*
+
 # Install composer
 RUN wget https://getcomposer.org/composer.phar -O- -q >> /usr/local/bin/composer && \
     chmod +x /usr/local/bin/composer

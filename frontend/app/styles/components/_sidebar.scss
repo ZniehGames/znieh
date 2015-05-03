@@ -11,7 +11,8 @@
     border-right: 1px solid #eee;
 }
 
-.sidebar-part {}
+.sidebar-part {
+}
 
 .sidebar-part--center {
     height: 100%;
@@ -37,4 +38,5 @@
 
 .sidebar-part--bottom {
     max-height: 20%;
+    width: 100%;
 }

@@ -7,7 +7,7 @@
   height: auto;
   margin-bottom: 32px;
   padding: 32px 5% 40px 5%;
-  -webkit-animation: nod 3s 15s ease-in-out;
+  animation: nod 3s 15s ease-in-out;
 }
 
 .newsletter-cta h1 {
@@ -57,7 +57,6 @@
   height: 40px;
   outline: 0;
   padding: 13px;
-  -webkit-transition: box-shadow 200ms ease-in-out;
   transition: box-shadow 200ms ease-in-out;
   width: 40%;
 }

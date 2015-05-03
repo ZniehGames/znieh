@@ -12,6 +12,7 @@
     "fb-flo-brunch": "^1.7.22"
   },
   "dependencies": {
+    "autoprefixer": "^5.1.1",
     "babel-brunch": "^5.0.0",
     "brunch": "^1.8.2",
     "clean-css-brunch": "^1.7.2",
@@ -19,6 +20,7 @@
     "imageoptmizer-brunch": "0.0.6",
     "javascript-brunch": "^1.7.1",
     "lodash": "^2.4.1",
+    "postcss-brunch": "^0.3.1",
     "process-env-brunch": "^1.4.4-d",
     "q": "^1.1.2",
     "react": "^0.13.2",

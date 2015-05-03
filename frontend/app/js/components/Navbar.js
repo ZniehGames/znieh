@@ -12,6 +12,7 @@ const Navbar = React.createClass({
   },
 
   render() {
+    console.log(this.props);
     return (
       <div className='col-sm-1 sidebar'>
         <div className='sidebar-part sidebar-part--top'>

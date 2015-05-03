@@ -15,6 +15,19 @@ function json(response) {
 
 class Fetcher {
 
+    postQ(uri, body) {
+      return fetch(config.api + uri, {
+          method: 'post',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body)
+        })
+        .then(status)
+        .then(json);
+    }
+
     post(uri, body, success, fail) {
         fetch(config.api + uri, {
           method: 'post',

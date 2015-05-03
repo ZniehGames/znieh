@@ -1,13 +1,25 @@
 'use strict';
 
-import Fetcher from '../utils/Fetcher';
+import AuthService from '../services/AuthService';
+import LoginStore from '../stores/LoginStore'
+
 
 const Login = React.createClass({
+  mixins: [React.addons.LinkedStateMixin],
 
   getInitialState() {
     return {
-      email: '',
+      username: '',
+      password: '',
     };
+  },
+
+  login(e) {
+    e.preventDefault();
+    AuthService.login(this.state.username, this.state.password)
+               .catch(function(err) {
+                  console.log('Error in login', err);
+               });
   },
 
   render() {
@@ -15,44 +27,18 @@ const Login = React.createClass({
       <div className='login animated bounceInDown'>
         <div className='login-image'>
         <img src={'images/form.png'} className='img-responsive' />
-        <form className="login-form" role="form">
+        <form className="login-form" role="form" noValidate>
           <div className="form-group">
-            <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
+            <input type="text" name="username" valueLink={this.linkState('username')} placeholder="Pseudo ou email" />
           </div>
           <div class="form-group">
-            <input type="password" name="password" placeholder="Mot de passe" value={this.state.password} onChange={this.handleChange} />
+            <input type="password" name="password" valueLink={this.linkState('password')} placeholder="Mot de passe" />
           </div>
-          <button className='btn btn-default' type="submit" onClick={this.handleSubmit}>Connexion</button>
+          <button className='btn btn-default' type="submit" onClick={this.login.bind(this)}>Connexion</button>
           <p> Pas encore inscrit ?</p>
         </form>
         </div>
       </div>
-    );
-  },
-
-  handleChange(e) {
-      this.setState({email: e.target.value});
-  },
-
-  success() {
-    toastr.success(this.state.email +' est inscrit, tu pourras jouer avant tous les autres !', 'Bienvenue sur Znieh');
-    this.setState({email: ''});
-  },
-
-  fail() {
-    toastr.error('Cette email n\'a pas l\'air valide... Essayes en un autre ;-)', 'Oops !');
-  },
-
-  handleSubmit(e) {
-    e.preventDefault();
-
-    Fetcher.post(
-      'emails',
-      {
-        email: this.state.email
-      },
-      this.success,
-      this.fail
     );
   }
 

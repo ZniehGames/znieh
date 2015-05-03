@@ -1,13 +1,14 @@
 @import "../components/_newsletter.scss";
 @import "../components/_about.scss";
 @import "../components/_login.scss";
+@import "../components/_contributing.scss";
 
 .landscape {
     float: right;
     overflow-y: scroll;
 
     display: block;
-    background: url('../images/landscape.jpg') center center no-repeat scroll;
+    background: url('../images/landscape_blur.jpg') center center no-repeat scroll;
     background-size: cover;
     padding-top: 20px;
     min-height: 100%;

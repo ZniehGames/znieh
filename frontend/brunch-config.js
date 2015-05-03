@@ -17,12 +17,11 @@ exports.config = {
           'bower_components/phaser/build/phaser.js',
           'bower_components/phaser-tiled/dist/phaser-tiled.js',
           'bower_components/eventEmitter/EventEmitter.js',
-          'bower_components/react/react.js',
+          'bower_components/react/react-with-addons.js',
           'bower_components/react-router/build/global/ReactRouter.js',
           'bower_components/flux/dist/Flux.js',
           'bower_components/fetch/fetch.js',
-          'bower_components/toastr/toastr.js',
-          'app/plugins/phaser-tiled.js'
+          'bower_components/toastr/toastr.js'
         ],
         'js/app.js': /^app/
       }
@@ -34,10 +33,12 @@ exports.config = {
   plugins: {
     'sass': {
       allowCache: true,
-      mode: 'native',
-      options: {
-        includePaths: ['bower_components/bootstrap/assets/stylesheets/bootstrap']
-      }
+      mode: 'native'
+    },
+    'postcss': {
+      'processors': [
+        require('autoprefixer')(['last 8 versions']),
+      ]
     },
     'fb-flo': {
       port: 8888
@@ -45,6 +46,13 @@ exports.config = {
     'cleancss': {
       keepSpecialComments: 0,
       removeEmpty: true
+    },
+    uglify: {
+      mangle: true,
+      compress: false
+    },
+    'imageoptimizer': {
+      'smushit': true
     }
   },
   onCompile: function() {

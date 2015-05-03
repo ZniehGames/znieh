@@ -29,6 +29,9 @@
     "toastr": "~2.1.1"
   },
   "overrides": {
+    "react": {
+      "main": "react-with-addons.js"
+    },
     "socket.io-client": {
       "main": "socker.io.js"
     },

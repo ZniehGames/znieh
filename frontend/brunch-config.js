@@ -18,7 +18,7 @@ exports.config = {
           'bower_components/phaser-tiled/dist/phaser-tiled.js',
           'bower_components/eventEmitter/EventEmitter.js',
           'bower_components/react/react-with-addons.js',
-          'bower_components/react-router/build/global/ReactRouter.js',
+          'bower_components/react-router/build/umd/ReactRouter.js',
           'bower_components/flux/dist/Flux.js',
           'bower_components/fetch/fetch.js',
           'bower_components/toastr/toastr.js'

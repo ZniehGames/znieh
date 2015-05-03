@@ -23,7 +23,7 @@ dependencies:
 test:
   override:
     - docker-compose up -d
-    - sleep 360
+    - sleep 400
     - docker-compose logs:
         background: true
     - cp api/app/config/parameters.yml.dist api/app/config/parameters.yml

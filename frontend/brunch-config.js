@@ -50,6 +50,9 @@ exports.config = {
     uglify: {
       mangle: true,
       compress: false
+    },
+    'imageoptimizer': {
+      'smushit': true
     }
   },
   onCompile: function() {

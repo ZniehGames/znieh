@@ -41,7 +41,7 @@ RUN npm install -g npm && \
 
 # Install optimization tools
 RUN apt-get update && \
-    apt-get install optipng libjpeg libjpeg-progs && \
+    apt-get install optipng libjpeg-dev libjpeg-progs && \
     rm -rf /var/lib/apt/lists/*
 
 # Install composer

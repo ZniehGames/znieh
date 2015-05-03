@@ -21,8 +21,7 @@ exports.config = {
           'bower_components/react-router/build/global/ReactRouter.js',
           'bower_components/flux/dist/Flux.js',
           'bower_components/fetch/fetch.js',
-          'bower_components/toastr/toastr.js',
-          'app/plugins/phaser-tiled.js'
+          'bower_components/toastr/toastr.js'
         ],
         'js/app.js': /^app/
       }
@@ -34,10 +33,7 @@ exports.config = {
   plugins: {
     'sass': {
       allowCache: true,
-      mode: 'native',
-      options: {
-        includePaths: ['bower_components/bootstrap/assets/stylesheets/bootstrap']
-      }
+      mode: 'native'
     },
     'fb-flo': {
       port: 8888
@@ -45,6 +41,10 @@ exports.config = {
     'cleancss': {
       keepSpecialComments: 0,
       removeEmpty: true
+    },
+    uglify: {
+      mangle: true,
+      compress: false
     }
   },
   onCompile: function() {

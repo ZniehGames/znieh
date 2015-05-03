@@ -1,6 +1,6 @@
 'use strict';
 
-import App from './App';
+import App from './app';
 
 let Route = ReactRouter.Route;
 

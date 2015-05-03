@@ -37,7 +37,7 @@ def build():
     with lcd(env.local_dir+'frontend/'):
         local('npm install')
         local('bower install --config.interactive=false --allow-root')
-        local('brunch build')
+        local('brunch build --production')
 
     with lcd(env.local_dir+'gameserver/'):
         local('npm install')

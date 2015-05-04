@@ -14,7 +14,7 @@
     border-radius: 5px 5px 5px 5px;
     border: 1px white solid;
     display: block;
-    margin-bottom: 40px;
+    margin-top: 40px;
     text-align: center;
     height: 60px;
     line-height: 60px;
@@ -23,4 +23,9 @@
 .positioning p {
   display: inline-block;
   vertical-align: middle;
+}
+
+.github {
+  width: 60px;
+  height: auto;
 }

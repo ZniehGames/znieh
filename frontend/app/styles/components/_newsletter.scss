@@ -19,16 +19,13 @@
 .newsletter-cta h2 {
   font-size: 1.3em;
   color: #8b959e;
-  margin: 0;
+  margin: 10px;
 }
 
 .newsletter-cta form {
-  height: 60px;
-  margin: 0 auto;
-  position: relative;
-  width: 90%;
   text-align: center;
   padding-top: 10px;
+  position: relative;
 }
 
 .newsletter-cta .arrow {
@@ -36,17 +33,12 @@
   background-size: 40px auto;
   height: 60px;
   width: 10%;
-  margin-right: 20px;
-  position: relative;
-  display: inline-block;
-  top: -15px;
-  float: left;
+  left: 15%;
+  top: -10px;
+  position: absolute;
 }
 
 .newsletter-cta input {
-  float: left;
-  position: relative;
-  display: inline-block;
   color: #8b959e;
   -webkit-appearance: none;
   border-radius: 3px 0 0 3px;
@@ -54,36 +46,29 @@
   box-shadow: none;
   font-size: 12px;
   font-family: "Open Sans";
-  height: 40px;
   outline: 0;
+  height: 40px;
+  width: 250px;
   padding: 13px;
   transition: box-shadow 200ms ease-in-out;
-  width: 40%;
 }
 
 .newsletter-cta button {
   background: #168eea url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAAAEgAAABIAEbJaz4AAAAJdnBBZwAAAEAAAABAAOrz+GAAAAJkSURBVGje7ZnBaxNBGMVfdYsxDbbUUy0qgsWAirfSooj0JBQkQvGcv0J69NhzoTcP9eTRevNkU2khBSWIChHUmnhoFVNcmpoWY9PL27eBHZatbtgVZ3LIj2+++XhkHjPfbtBBzz/ljjc+iVwPjiHhYQU4Pas8gH5SE26AdpXXM+styXAThtkf1oSpERC3CUcwSPqK96SWIa+OHClm6y3KeoXQPGvC9AiIx4RnMUrawjpp25B3DSdJL+M14ZysVwzNqypvyIslvgVWgG/CfkyT2opu40XI2jFcJjXwlFQ35N3EMGkFVdIvzcogQ4bOrRxqqVnlzUbsCfPB2cS3wAroPgnX+O3Kelsokup4TrqIG6QWHpHeGCpP4RypJOu5hjyDCauKTSi2pFhRsbm/6AmtCdMjoK/jUQYPSE20SS2MkBo4HoiV8CxQbxpXSb9xmrSALyEKDMbIG07CgmKLsfSE1oTpEWDqCQ+wQvqs2L5im4YVt3GLVNGp9y6iglhMGLUntCZMowD/JPTHIO6SHF29G6iRshgnbepMrOiiXcWHIyoItUj4dVyK2BNaE6ZbgMmEo1gg1bBMGsYdUgWvSfs4QRrDddK8eseow56E/70AB2XST2RJDV2lO5pdxyTpimJV5EmPNVvQ7P3QJ2t/BP/D6Ho6fnvkk9D2hP+eAAcbpCbukc7gIamGGdKOVjyRzQ4kf0ad4EfVayPScHCB5KoIFPvWFYPygg/ZOVwifdfaiK9AE98CK6Cv4/+lNkCq4zzpFaYiVckgE4jtdr0LDBkOTok9yomyUUoA2MPen/4CiW+BFXAIUQPX5eYMa5UAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTUtMDItMDFUMTU6NTA6MTMrMDM6MDD1rHSlAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTAyLTAxVDE1OjUwOjEzKzAzOjAwhPHMGQAAAABJRU5ErkJggg==) no-repeat center;
-  display: inline-block;
   background-size: 26px;
   border-radius: 0 3px 3px 0;
   border: 0;
   color: #fff;
-  cursor: pointer;
   height: 40px;
-  outline: 0;
-  right: 0;
   width: 40px;
-  float: left;
-  position: relative;
-
+  cursor: pointer;
 }
 
 .newsletter-cta .caption {
-  margin-top: 5px;
-  color: #8b959e;
-  display: inline-block;
-  font-size: 12px;
-  float: left;
   position: relative;
-  max-width: 40%;
+  margin: 5px auto 0;
+  color: #8b959e;
+  display: block;
+  font-size: 12px;
+  width: 200px;
 }

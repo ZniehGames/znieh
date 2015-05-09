@@ -22,7 +22,7 @@ const Newsletter = React.createClass({
                 <button className="btn btn-default" onClick={this.handleSubmit} type="submit"></button>
               </span>
           </div>
-          <div className='arrow'></div>
+          <div className='arrow hidden-xs hidden-sm'></div>
         </form>
         <div className='caption'>Ne vous inquiétez pas, vous pouvez vous désinscrire à tout moment.</div>
       </div>

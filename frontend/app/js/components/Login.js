@@ -24,7 +24,7 @@ const Login = React.createClass({
 
   render() {
     return (
-      <div className='login animated bounceInDown'>
+      <div className='login animated bounceInDown hidden-xs hidden-sm'>
         <div className='login-image'>
         <img src={'images/form.png'} className='img-responsive' />
         <form className="login-form" role="form" noValidate>
@@ -35,7 +35,6 @@ const Login = React.createClass({
             <input type="password" name="password" valueLink={this.linkState('password')} placeholder="Mot de passe" />
           </div>
           <button className='btn btn-default' type="submit" onClick={this.login.bind(this)}>Connexion</button>
-          <p> Pas encore inscrit ?</p>
         </form>
         </div>
       </div>

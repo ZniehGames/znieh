@@ -1,6 +1,5 @@
 
 .about  {
-  text-align: center;
   background: #323b43;
   border-radius: 3px;
   color: white;
@@ -14,10 +13,24 @@
     border-radius: 5px 5px 5px 5px;
     border: 1px white solid;
     display: block;
-    margin-top: 40px;
+    margin-top: 5px;
+    margin-bottom: 30px;
     text-align: center;
     height: 60px;
     line-height: 60px;
+}
+
+
+.about ul {
+    margin: 0 0 10px;
+    padding: 0;
+    list-style: none;
+    li {
+      background: transparent url('../images/sword-icon.png') no-repeat 0 50%;
+      padding-left: 40px;
+      font-size: 16px;
+      line-height: 40px;
+    }
 }
 
 .positioning p {
@@ -31,6 +44,7 @@
 }
 
 .sample-map {
-  max-height: 250px;
-  margin: 0 auto;
+  width: 45%;
+  max-height: 100px;
+  margin-right: 5%;
 }

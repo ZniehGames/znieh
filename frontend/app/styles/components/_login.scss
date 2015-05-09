@@ -17,6 +17,9 @@
    top: 40px;
    left: 0;
    width: 100%;
+   .form-group {
+    margin-bottom: 10px;
+   }
     input {
         width: 50%;
         z-index: 2000;
@@ -24,5 +27,8 @@
         padding: 6px 12px;
         font-size: 14px;
         line-height: 1.42857;
+    }
+    button {
+        margin-top: 5px;
     }
 }

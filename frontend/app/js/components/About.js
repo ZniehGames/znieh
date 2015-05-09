@@ -22,11 +22,12 @@ const About = React.createClass({
         </div>
         <div className='col-md-7'>
           <ul>
-            <li>Assemble de toutes pièces tes propres armes et armures.</li>
+            <li>Assemble de toutes pièces les armes et armures.</li>
             <li>Invente les unités du jeu en choissant leurs compétences !</li>
-            <li>Et défi les autres joueurs en combattant dans les arènes...</li>
+            <li>Défi les autres joueurs en combattant dans les arènes...</li>
           </ul>
-          <img src={'images/map-example.jpg'} className='img-responsive sample-map'/>
+          <img src={'images/map-example.jpg'} className='sample-map'/>
+          <img src={'images/map-example-2.jpg'} className='sample-map'/>
         </div>
       </div>
     );

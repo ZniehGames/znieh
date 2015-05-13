@@ -9,7 +9,7 @@ export default {
   loginUser: (jwt, user) => {
     // RouterContainer.get().transitionTo('/');
     localStorage.setItem('jwt', jwt);
-    localStorage.setItem('user', user);
+    localStorage.setItem('user', JSON.stringify(user));
 
     AppDispatcher.dispatch({
       actionType: LOGIN_USER,

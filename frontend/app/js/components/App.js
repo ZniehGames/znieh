@@ -2,6 +2,7 @@
 
 import Navbar from './Navbar';
 import Home from './Home';
+import GameSearch from './GameSearch';
 import LoginStore from '../stores/LoginStore';
 
 let RouteHandler = ReactRouter.RouteHandler;
@@ -54,7 +55,7 @@ const App = React.createClass({
       );
     }
     return (
-      <h1>HELLO DEAR FRIEND</h1>
+      <GameSearch />
     );
   }
 

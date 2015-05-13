@@ -24,7 +24,7 @@ const About = React.createClass({
           <ul>
             <li>Assemble de toutes pièces les armes et armures.</li>
             <li>Invente les unités du jeu en choissant leurs compétences !</li>
-            <li>Défi les autres joueurs en combattant dans les arènes...</li>
+            <li>Défi tes amis en combattant dans les arènes...</li>
           </ul>
           <img src={'images/map-example.jpg'} className='sample-map'/>
           <img src={'images/map-example-2.jpg'} className='sample-map'/>

@@ -33,7 +33,7 @@
       "main": "react-with-addons.js"
     },
     "socket.io-client": {
-      "main": "socker.io.js"
+      "main": "socket.io.js"
     },
     "phaser-tiled": {
       "main": "dist/phaser-tiled.js"

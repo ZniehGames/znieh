@@ -1,18 +1,22 @@
 'use strict';
 
-import Fetcher from '../utils/Fetcher';
+import Fetcher from '../services/Fetcher';
 import LoginActions from '../actions/LoginActions';
 
 class AuthService {
 
   login(username, password) {
-      return Fetcher.postQ('login_check', {username: username, password: password })
-                    .then(function(response) {
-                      let jwt = response.token;
-                      let user = response.user;
-                      LoginActions.loginUser(jwt, user);
-                      return true;
-                    });
+    return Fetcher
+    .post('/login_check', {
+      username: username,
+      password: password
+    })
+    .then(function(response) {
+      let jwt = response.token;
+      let user = response.user;
+      LoginActions.loginUser(jwt, user);
+      return true;
+    });
   }
 
   logout() {

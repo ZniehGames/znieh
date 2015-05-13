@@ -1,34 +1,24 @@
 from __future__ import with_statement
 
-# import requests
-import os
-
 from fabric.api import *
 from fabric.context_managers import lcd
 from fabric.colors import red, green
-# from libsaas.services import github
 
-# GH_USER  = 'jolicode'
-# REPO     = 'naissance'
-
-# env.circleci  = False
 env.local_dir = env.real_fabfile[:-10]
 
-# @task
-# def circleci():
-#     env.circleci = True
-#     env.gh_token = os.environ['GH_TOKEN']
-
-# def create_PR_comment(type, result, pr):
-#     if os.getenv('GH_TOKEN', True):
-#         try:
-#             prId      = int(pr.split('/')[-1])
-#             gh_client = github.Github(env.gh_token)
-#             gh_pr     = gh_client.repo(GH_USER, REPO).issue(prId).comments().create('Warning: You should check your '+type+' files.\n '+result)
-#         except ValueError:
-#             print 'Can\'t retrieve pr id'
 @task
-def brunch():
+def restart():
+    with lcd(env.local_dir):
+        local('boot2docker restart --vbox-share=disable')
+        local('boot2docker up')
+        local('docker-compose up -d')
+@task
+def docker():
+    with lcd(env.local_dir):
+        local('docker exec -it znieh_application_1 bash')
+
+@task
+def watch():
     with lcd(env.local_dir+'frontend/'):
         local('brunch watch')
 
@@ -44,6 +34,9 @@ def build():
 
     with lcd(env.local_dir+'api/'):
         local('composer install --prefer-source --no-interaction --optimize-autoloader --no-scripts')
+
+
+
 
 @task
 def build_db():
@@ -69,9 +62,6 @@ def lint(pr=''):
             elif result.return_code == 1:
                 print result
                 print(red('PHP: /!\ You should fix your PHP files!'))
-
-                # if env.circleci:
-                #     create_PR_comment('PHP', result, pr)
             else: #print error to user
                 print result
                 raise SystemExit()

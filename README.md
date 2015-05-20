@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ZniehGames/znieh.png?label=ready&title=Ready)](https://waffle.io/ZniehGames/znieh)
 # Znieh Games
 ## Customize your units like never before
 
